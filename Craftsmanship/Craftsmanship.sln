@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonOne", "LessonOne", "{98E3B392-9389-4193-B15A-114E3C17D5B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KizzBuzzKata", "KizzBuzzKata", "{28BC5198-E725-41A5-921F-1CF119A52488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonOne\FizzBuzzKata\src\src.csproj", "{539345AF-DE45-460F-A26B-3322680453A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonOne\FizzBuzzKata\tests\tests.csproj", "{799C4C59-085D-4489-BA70-5434A335C3B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28BC5198-E725-41A5-921F-1CF119A52488} = {98E3B392-9389-4193-B15A-114E3C17D5B2}
+		{539345AF-DE45-460F-A26B-3322680453A6} = {28BC5198-E725-41A5-921F-1CF119A52488}
+		{799C4C59-085D-4489-BA70-5434A335C3B1} = {28BC5198-E725-41A5-921F-1CF119A52488}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{539345AF-DE45-460F-A26B-3322680453A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539345AF-DE45-460F-A26B-3322680453A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539345AF-DE45-460F-A26B-3322680453A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539345AF-DE45-460F-A26B-3322680453A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799C4C59-085D-4489-BA70-5434A335C3B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799C4C59-085D-4489-BA70-5434A335C3B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799C4C59-085D-4489-BA70-5434A335C3B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799C4C59-085D-4489-BA70-5434A335C3B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
