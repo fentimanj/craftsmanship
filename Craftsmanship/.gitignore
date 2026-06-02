@@ -5,3 +5,7 @@ riderModule.iml
 /_ReSharper.Caches/
 /.idea*
 *.user
+workspace.xml
+**/workspace.xml
+**/.idea/
+**/.idea/**
