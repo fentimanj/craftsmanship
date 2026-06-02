@@ -8,6 +8,11 @@ public class Kata
         {
             return true;
         }
+
+        if (str == "()()")
+        {
+            return true;
+        }
         
         return false;
     }

@@ -5,21 +5,16 @@ using src;
 
 public class KataShould
 {
-    [Fact]
-    public void ReturnFalse_WhenValidParenthesesInvoked_GivenOneBracket()
+    [Theory]
+    [InlineData("(", false)]
+    [InlineData("()", true)]
+    [InlineData("()()", true)]
+    public void ReturnFalse_WhenValidParenthesesInvoked_GivenOneBracket(string input, bool expected)
     {
-        var input = "(";
-
-        Kata.ValidParentheses(input).Should().BeFalse();
+       Kata.ValidParentheses(input).Should().Be(expected);
     }
 
-    [Fact]
-    public void ReturnTrue_WhenValidParenthesesInvoked_GivenOpenAndCloseBrackets()
-    {
-        var input = "()";
-
-        Kata.ValidParentheses(input).Should().BeTrue();
-    }
+   
 
     /*
     [Fact]
