@@ -31,6 +31,11 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28BC5198-E725-41A5-921F-1CF119A52488} = {98E3B392-9389-4193-B15A-114E3C17D5B2}
+		{539345AF-DE45-460F-A26B-3322680453A6} = {28BC5198-E725-41A5-921F-1CF119A52488}
+		{799C4C59-085D-4489-BA70-5434A335C3B1} = {28BC5198-E725-41A5-921F-1CF119A52488}
+	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{539345AF-DE45-460F-A26B-3322680453A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{539345AF-DE45-460F-A26B-3322680453A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
