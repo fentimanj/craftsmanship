@@ -9,6 +9,7 @@ public class KataShould
     [InlineData("(", false)]
     [InlineData("()", true)]
     [InlineData("()()", true)]
+    [InlineData("()()()", true)]
     public void ReturnFalse_WhenValidParenthesesInvoked_GivenOneBracket(string input, bool expected)
     {
        Kata.ValidParentheses(input).Should().Be(expected);
