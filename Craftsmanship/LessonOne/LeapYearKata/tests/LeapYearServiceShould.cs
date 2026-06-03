@@ -1,24 +1,27 @@
-using FluentAssertions;
-
 namespace tests;
+
+using FluentAssertions;
+using src.Services;
 
 public class LeapYearServiceShould
 {
-    [Fact]
-    public void ReturnTrue_WhenIsLeapYearInvoked_GivenYearIs1996()
+    [Theory]
+    [InlineData(1996)]
+    [InlineData(1992)]
+    public void ReturnTrue_WhenIsLeapYearInvoked_GivenYearIsALeapYear(int year)
     {
-        
-        
         var leapYearService = new LeapYearService();
-        bool isLeapYear = leapYearService.IsLeapYear(1996);
+        var isLeapYear = leapYearService.IsLeapYear(year);
         isLeapYear.Should().BeTrue();
     }
-}
 
-public class LeapYearService
-{
-    public bool IsLeapYear(int i)
+    [Theory]
+    [InlineData(1991)]
+    [InlineData(1995)]
+    public void ReturnFalse_WhenIsLeapYearInvoked_GivenYearIsNotALeapYear(int year)
     {
-        return true;
+        var leapYearService = new LeapYearService();
+        var isLeapYear = leapYearService.IsLeapYear(year);
+        isLeapYear.Should().BeFalse();
     }
 }
