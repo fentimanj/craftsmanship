@@ -20,6 +20,7 @@ public class LeapYearServiceShould
     [InlineData(1991)]
     [InlineData(1995)]
     [InlineData(1900)]
+    [InlineData(1800)]
     public void ReturnFalse_WhenIsLeapYearInvoked_GivenYearIsNotALeapYear(int year)
     {
         var leapYearService = new LeapYearService();

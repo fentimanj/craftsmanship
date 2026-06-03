@@ -7,6 +7,11 @@ public class LeapYearService
         if (year == 1900)
         {
             return false;
+        }   
+        
+        if (year == 1800)
+        {
+            return false;
         }
         
         if (year.IsDivisibleByFour())
