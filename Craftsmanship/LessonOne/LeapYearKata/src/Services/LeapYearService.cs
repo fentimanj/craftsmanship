@@ -1,6 +1,6 @@
 namespace src.Services;
 
-public class LeapYearService
+public static class LeapYearService
 {
     public static bool IsLeapYear(int year)
     {
