@@ -8,6 +8,7 @@ public class LeapYearServiceShould
     [Theory]
     [InlineData(1996)]
     [InlineData(1992)]
+    [InlineData(1984)]
     public void ReturnTrue_WhenIsLeapYearInvoked_GivenYearIsALeapYear(int year)
     {
         var leapYearService = new LeapYearService();
