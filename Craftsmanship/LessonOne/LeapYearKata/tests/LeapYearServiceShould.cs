@@ -19,6 +19,7 @@ public class LeapYearServiceShould
     [Theory]
     [InlineData(1991)]
     [InlineData(1995)]
+    [InlineData(1900)]
     public void ReturnFalse_WhenIsLeapYearInvoked_GivenYearIsNotALeapYear(int year)
     {
         var leapYearService = new LeapYearService();
