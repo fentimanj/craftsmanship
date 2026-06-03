@@ -5,9 +5,20 @@ namespace tests;
 public class LeapYearServiceShould
 {
     [Fact]
-    public void IsLeapYear()
+    public void ReturnTrue_WhenIsLeapYearInvoked_GivenYearIs1996()
     {
-        var x = 2;
-        x.Should().Be(2);
+        
+        
+        var leapYearService = new LeapYearService();
+        bool isLeapYear = leapYearService.IsLeapYear(1996);
+        isLeapYear.Should().BeTrue();
+    }
+}
+
+public class LeapYearService
+{
+    public bool IsLeapYear(int i)
+    {
+        return true;
     }
 }
