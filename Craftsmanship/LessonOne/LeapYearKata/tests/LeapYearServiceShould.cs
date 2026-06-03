@@ -9,10 +9,10 @@ public class LeapYearServiceShould
     [InlineData(1996)]
     [InlineData(1992)]
     [InlineData(1984)]
+    [InlineData(2000)]
     public void ReturnTrue_WhenIsLeapYearInvoked_GivenYearIsALeapYear(int year)
     {
-        var leapYearService = new LeapYearService();
-        var isLeapYear = leapYearService.IsLeapYear(year);
+        var isLeapYear = LeapYearService.IsLeapYear(year);
         isLeapYear.Should().BeTrue();
     }
 
@@ -24,8 +24,7 @@ public class LeapYearServiceShould
     [InlineData(2100)]
     public void ReturnFalse_WhenIsLeapYearInvoked_GivenYearIsNotALeapYear(int year)
     {
-        var leapYearService = new LeapYearService();
-        var isLeapYear = leapYearService.IsLeapYear(year);
+        var isLeapYear = LeapYearService.IsLeapYear(year);
         isLeapYear.Should().BeFalse();
     }
 }
