@@ -1,5 +1,7 @@
 namespace src.Services;
 
+using Extensions;
+
 public static class LeapYearService
 {
     public static bool IsLeapYear(int year)
@@ -10,13 +12,5 @@ public static class LeapYearService
         }
         
         return !year.IsDivisibleBy(100) && year.IsDivisibleBy(4);
-    }
-}
-
-internal static class LeapYearServiceExtensions
-{
-    public static bool IsDivisibleBy(this int year, int divisor)
-    {
-        return year % divisor == 0;
     }
 }
