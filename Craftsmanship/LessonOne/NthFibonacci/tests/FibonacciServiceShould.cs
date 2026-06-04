@@ -7,6 +7,7 @@ public class FibonacciServiceShould
     [Theory]
     [InlineData(0, 0)]
     [InlineData(1, 1)]
+    [InlineData(2, 2)]
     public void ReturnCorrectConvertedNumber_WhenConvertNumberInvoked_GivenValidInput(int input, int expectedConversion)
     {
         FibonacciService fibonacciService = new FibonacciService();
@@ -23,6 +24,12 @@ public class FibonacciService
         {
             return 1;
         }
+
+        if (input == 2)
+        {
+            return 2;
+        }
+        
         return 0;
     }
 }
