@@ -38,6 +38,10 @@ fi
 echo ""
 read -rp "Kata name: " KATA
 
+# --- Description ---
+echo ""
+read -rp "Short description: " DESCRIPTION
+
 # --- Scaffold ---
 KATA_DIR="$SCRIPT_DIR/$LESSON/$KATA"
 SRC_DIR="$KATA_DIR/src"
@@ -92,6 +96,12 @@ cat > "$TESTS_DIR/tests.csproj" << 'CSPROJ'
 </Project>
 CSPROJ
 
+cat > "$KATA_DIR/ReadMe.md" << README
+# $KATA
+
+$DESCRIPTION
+README
+
 cp "$SCRIPT_DIR/.gitignore" "$KATA_DIR/.gitignore"
 
 dotnet new sln -n "$KATA" -o "$KATA_DIR"
@@ -104,4 +114,5 @@ echo "Scaffolded $LESSON/$KATA"
 echo "  $KATA_DIR/src/src.csproj"
 echo "  $KATA_DIR/tests/tests.csproj"
 echo "  $KATA_SLN"
+echo "  $KATA_DIR/ReadMe.md"
 echo "  Added to Craftsmanship.sln under $LESSON > $KATA"
