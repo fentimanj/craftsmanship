@@ -9,6 +9,7 @@ public class StringCalculatorServiceShould
     [InlineData("", 0)]
     [InlineData("1", 1)]
     [InlineData("2", 2)]
+    [InlineData("3", 3)]
     public void ReturnConvertedNumber_WhenAddInvoked_GivenSingleDigit(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
