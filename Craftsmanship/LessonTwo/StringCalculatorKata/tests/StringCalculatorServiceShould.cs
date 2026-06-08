@@ -5,35 +5,16 @@ using src.Services;
 
 public class StringCalculatorServiceShould
 {
-    [Fact]
-    public void ReturnZero_WhenAddInvoked_GivenEmptyString()
+    [Theory]
+    [InlineData("", 0)]
+    [InlineData("1", 1)]
+    [InlineData("2", 2)]
+    public void ReturnConvertedNumber_WhenAddInvoked_GivenSingleDigit(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
-        
-        var result = stringCalculatorService.Add(string.Empty);
-        
-        result.Should().Be(0);
-    }
 
-    [Fact]
-    public void ReturnOne_WhenAddInvoked_GivenOne()
-    {
-        var stringCalculatorService = new StringCalculatorService();
-        const string oneAsString = "1";
-        
-        var result = stringCalculatorService.Add(oneAsString);
-        
-        result.Should().Be(1);
-    }
+        var result = stringCalculatorService.Add(digits);
 
-    [Fact]
-    public void ReturnTwo_WhenAddInvoked_GivenTwo()
-    {
-        var stringCalculatorService = new StringCalculatorService();
-        const string twoAsString = "2";
-
-        var result = stringCalculatorService.Add(twoAsString);
-
-        result.Should().Be(2);
+        result.Should().Be(expectedResult);
     }
 }
