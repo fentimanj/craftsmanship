@@ -6,20 +6,16 @@ public class StringCalculatorService
 {
     public int Add(string inputString)
     {
-        if (inputString == "1,2")
+        if (inputString.Contains(','))
         {
-            return 3;
+            var digits = inputString.Split(',');
+            var first = digits[0];
+            var second = digits[1];
+ 
+            return int.Parse(first) + int.Parse(second);
         }
 
-        if (inputString == "1,3")
-        {
-            return 4;
-        }
-        
-        if(inputString == "1,4")
-        {
-            return 5;
-        }
+      
         
         if (string.IsNullOrEmpty(inputString))
         {
