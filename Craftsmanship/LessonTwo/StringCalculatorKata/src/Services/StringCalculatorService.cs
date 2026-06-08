@@ -9,13 +9,9 @@ public class StringCalculatorService
         if (inputString.Contains(','))
         {
             var digits = inputString.Split(',');
-            var first = digits[0];
-            var second = digits[1];
- 
-            return int.Parse(first) + int.Parse(second);
-        }
 
-      
+            return int.Parse(digits[0]) + int.Parse(digits[1]);
+        }
         
         if (string.IsNullOrEmpty(inputString))
         {
