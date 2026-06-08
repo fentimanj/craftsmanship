@@ -11,23 +11,9 @@ public class StringCalculatorService
             return 0;
         }
 
-        if (inputString.Contains('\n') && inputString.Contains(','))
-        {
-            var normalisedString = inputString.Replace("\n", ",");
-            var splitString = normalisedString.Split(',');
-            
-            return int.Parse(splitString[0]) + int.Parse(splitString[1]) + int.Parse(splitString[2]);
-        }
-
-        string[] digits;
-
-        if (inputString.Contains('\n'))
-        {
-            inputString = inputString.Replace('\n', ',');
-        }
-
-        digits = inputString.Split(',');
+        var normalisedString = inputString.Replace("\n", ",");
         
+        var digits = normalisedString.Split(',');
 
         var sumOfDigits = 0;
         
