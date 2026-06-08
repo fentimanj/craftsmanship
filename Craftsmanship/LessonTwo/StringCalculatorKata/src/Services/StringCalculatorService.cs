@@ -10,23 +10,17 @@ public class StringCalculatorService
 
         if (string.IsNullOrEmpty(inputString)) return 0;
 
-        if (inputString.Contains("//;\n1;2"))
+        var formattedString = string.Empty;
+
+        if (inputString.Substring(0, 2) == "//")
         {
-            return 1 + 2;
+            formattedString = inputString.Replace("//", "");
+            var deliminator = inputString.Substring(2, 1);
+            formattedString = formattedString.Replace($"{deliminator}\n", "");
+            formattedString = formattedString.Replace(deliminator, ",");
         }
 
-        if (inputString.Contains("//;\n1;3"))
-        {
-            return 1 + 3;
-        }
-        
-
-        if (inputString.Contains("//;\n1;4"))
-        {
-            return 1 + 4;
-        }
-
-        var normalisedString = inputString.Replace("\n", ",");
+        var normalisedString = formattedString.Replace("\n", ",");
 
         var digits = normalisedString.Split(',');
 
