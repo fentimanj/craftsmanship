@@ -5,11 +5,10 @@ using FluentAssertions;
 public class StringCalculatorServiceShould
 {
     [Fact]
-    public void x()
+    public void ReturnZerO_WhenAddInvoked_GivenEmptyString()
     {
-        var inputString = "";
         var stringCalculatorService = new StringCalculatorService();
-        var result = stringCalculatorService.Add(inputString);
+        var result = stringCalculatorService.Add(string.Empty);
         result.Should().Be(0);
     }
 }
