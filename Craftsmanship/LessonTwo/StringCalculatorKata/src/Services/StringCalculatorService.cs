@@ -14,10 +14,7 @@ public class StringCalculatorService
 
         if (inputString.Substring(0, 2) == "//")
         {
-            formattedString = inputString.Replace("//", "");
-            var deliminator = inputString.Substring(2, 1);
-            formattedString = formattedString.Replace($"{deliminator}\n", "");
-            formattedString = formattedString.Replace(deliminator, ",");
+            formattedString = ReplaceCustomDeliminator(inputString);
         }
 
         var normalisedString = formattedString.Replace("\n", ",");
@@ -29,5 +26,14 @@ public class StringCalculatorService
         foreach (var digit in digits) sumOfDigits += int.Parse(digit);
 
         return sumOfDigits;
+    }
+
+    private static string ReplaceCustomDeliminator(string inputString)
+    {
+        var formattedString = inputString.Replace("//", "");
+        var deliminator = formattedString.Substring(0, 1);
+        formattedString = formattedString.Replace($"{deliminator}\n", "");
+        formattedString = formattedString.Replace(deliminator, ",");
+        return formattedString;
     }
 }
