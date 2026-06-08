@@ -43,4 +43,27 @@ public class StringCalculatorServiceShould
 
         result.Should().Be(expectedResult);
     }
+
+    [Theory]
+    [InlineData("1\n2", 3)]
+    [InlineData("1\n3", 4)]
+    public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiter(string digits, int expectedResult)
+    {
+        var stringCalculatorService = new StringCalculatorService();
+
+        var result = stringCalculatorService.Add(digits);
+
+        result.Should().Be(expectedResult);
+    }
+    
+    [Theory]
+    [InlineData("1\n2,3", 6)]
+    public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiterAndCommas(string digits, int expectedResult)
+    {
+        var stringCalculatorService = new StringCalculatorService();
+
+        var result = stringCalculatorService.Add(digits);
+
+        result.Should().Be(expectedResult);
+    }
 }

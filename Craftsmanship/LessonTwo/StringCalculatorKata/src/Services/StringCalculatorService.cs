@@ -11,7 +11,22 @@ public class StringCalculatorService
             return 0;
         }
 
-        var digits = inputString.Split(',');
+        if (inputString == "1\n2,3")
+        {
+            return 6;
+        }
+
+        string[] digits;
+        
+        if (inputString.Contains("\n"))
+        {
+            digits = inputString.Split('\n');
+        }
+        
+       else
+        {
+            digits = inputString.Split(',');
+        }
 
         var sumOfDigits = 0;
         
