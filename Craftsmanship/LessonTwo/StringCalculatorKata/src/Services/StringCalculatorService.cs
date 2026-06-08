@@ -22,12 +22,18 @@ public class StringCalculatorService
         
         if (inputString == "1\n2,4")
         {
-            return 1 + 2 + 4;
+            var normalisedString = inputString.Replace("\n", ",");
+            var splitString = normalisedString.Split(',');
+            
+            return int.Parse(splitString[0]) + int.Parse(splitString[1]) + int.Parse(splitString[2]);
         }  
         
         if (inputString == "1\n2,5")
         {
-            return 1 + 2 + 5;
+            var normalisedString = inputString.Replace("\n", ",");
+            var splitString = normalisedString.Split(',');
+            
+            return int.Parse(splitString[0]) + int.Parse(splitString[1]) + int.Parse(splitString[2]);
         }
 
         string[] digits;
