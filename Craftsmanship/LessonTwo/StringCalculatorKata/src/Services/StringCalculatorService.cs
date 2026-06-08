@@ -6,18 +6,23 @@ public class StringCalculatorService
 {
     public int Add(string inputString)
     {
-        if (inputString.Contains(','))
-        {
-            var digits = inputString.Split(',');
-
-            return int.Parse(digits[0]) + int.Parse(digits[1]);
-        }
-        
         if (string.IsNullOrEmpty(inputString))
         {
             return 0;
         }
+
+        var digits = inputString.Split(',');
+
+        if (digits.Length == 3)
+        {
+            return int.Parse(digits[0]) + int.Parse(digits[1]) + int.Parse(digits[2]);
+        }
         
-        return int.Parse(inputString);
+        if (inputString.Contains(','))
+        { 
+            return int.Parse(digits[0]) + int.Parse(digits[1]);
+        }
+        
+        return int.Parse(digits[0]);
     }
 }
