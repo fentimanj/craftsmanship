@@ -82,6 +82,8 @@ public class StringCalculatorServiceShould
     
     [Theory]
     [InlineData("//;\n1;2", 3)]
+    [InlineData("//;\n1;3", 4)]
+    [InlineData("//;\n1;4", 5)]
     public void ReturnSumOfNumbers_WhenAddInvoked_GivenListOfNumbersWithDifferentDelimiters(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
