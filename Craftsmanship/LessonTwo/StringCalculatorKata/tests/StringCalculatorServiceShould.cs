@@ -19,11 +19,21 @@ public class StringCalculatorServiceShould
     public void ReturnOne_WhenAddInvoked_GivenOne()
     {
         var stringCalculatorService = new StringCalculatorService();
-        var oneAsString = "1";
+        const string oneAsString = "1";
         
         var result = stringCalculatorService.Add(oneAsString);
         
         result.Should().Be(1);
-        
+    }
+
+    [Fact]
+    public void ReturnTwo_WhenAddInvoked_GivenTwo()
+    {
+        var stringCalculatorService = new StringCalculatorService();
+        const string twoAsString = "2";
+
+        var result = stringCalculatorService.Add(twoAsString);
+
+        result.Should().Be(2);
     }
 }
