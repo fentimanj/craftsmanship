@@ -13,21 +13,13 @@ public class StringCalculatorService
 
         var digits = inputString.Split(',');
 
-        if (digits.Length == 4)
+        var sumOfDigits = 0;
+        
+        foreach (var digit in digits)
         {
-            return int.Parse(digits[0]) + int.Parse(digits[1]) + int.Parse(digits[2]) + int.Parse(digits[3]);
+            sumOfDigits += int.Parse(digit);
         }
         
-        if (digits.Length == 3)
-        {
-            return int.Parse(digits[0]) + int.Parse(digits[1]) + int.Parse(digits[2]);
-        }
-        
-        if (digits.Length == 2)
-        { 
-            return int.Parse(digits[0]) + int.Parse(digits[1]);
-        }
-        
-        return int.Parse(digits[0]);
+        return sumOfDigits;
     }
 }
