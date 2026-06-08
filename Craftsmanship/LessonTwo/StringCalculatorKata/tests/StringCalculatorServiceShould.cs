@@ -34,7 +34,8 @@ public class StringCalculatorServiceShould
     
     [Theory]
     [InlineData("1,2,3", 6)]
-    public void ReturnSumOfThreeNumbers_WhenAddInvoked_GivenTwoNumbers(string digits, int expectedResult)
+    [InlineData("1,2,3,4",10)]
+    public void ReturnSumOfMoreThanTwoNumbers_WhenAddInvoked_GivenTwoNumbers(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
 
