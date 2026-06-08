@@ -18,4 +18,17 @@ public class StringCalculatorServiceShould
 
         result.Should().Be(expectedResult);
     }
+
+    [Fact]
+    public void ReturnSumOfTwoNumbers_WhenAddInvoked_GivenTwoNumbers()
+    {
+        var stringCalculatorService = new StringCalculatorService();
+        var twoNumbers = "1,2";
+
+        var result = stringCalculatorService.Add(twoNumbers);
+
+        var expectedResult = 3;
+        result.Should().Be(expectedResult);
+        
+    }
 }
