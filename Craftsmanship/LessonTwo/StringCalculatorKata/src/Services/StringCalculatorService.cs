@@ -11,24 +11,7 @@ public class StringCalculatorService
             return 0;
         }
 
-        if (inputString == "1\n2,3")
-        {
-            
-            var normalisedString = inputString.Replace("\n", ",");
-            var splitString = normalisedString.Split(',');
-            
-            return int.Parse(splitString[0]) + int.Parse(splitString[1]) + int.Parse(splitString[2]);
-        }
-        
-        if (inputString == "1\n2,4")
-        {
-            var normalisedString = inputString.Replace("\n", ",");
-            var splitString = normalisedString.Split(',');
-            
-            return int.Parse(splitString[0]) + int.Parse(splitString[1]) + int.Parse(splitString[2]);
-        }  
-        
-        if (inputString == "1\n2,5")
+        if (inputString.Contains('\n') && inputString.Contains(','))
         {
             var normalisedString = inputString.Replace("\n", ",");
             var splitString = normalisedString.Split(',');
@@ -37,16 +20,14 @@ public class StringCalculatorService
         }
 
         string[] digits;
-        
-        if (inputString.Contains("\n"))
+
+        if (inputString.Contains('\n'))
         {
-            digits = inputString.Split('\n');
+            inputString = inputString.Replace('\n', ',');
         }
+
+        digits = inputString.Split(',');
         
-        else
-        {
-            digits = inputString.Split(',');
-        }
 
         var sumOfDigits = 0;
         
