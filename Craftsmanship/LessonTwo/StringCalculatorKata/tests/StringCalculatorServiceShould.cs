@@ -1,5 +1,6 @@
 namespace tests;
 
+using System.Data;
 using FluentAssertions;
 using src.Services;
 
@@ -61,6 +62,27 @@ public class StringCalculatorServiceShould
     [InlineData("1\n2,4", 7)]
     [InlineData("1\n2,5", 8)]
     public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiterAndCommas(string digits, int expectedResult)
+    {
+        var stringCalculatorService = new StringCalculatorService();
+
+        var result = stringCalculatorService.Add(digits);
+
+        result.Should().Be(expectedResult);
+    }
+
+    [Fact]
+    public void ThrowArgumentException_WhenAddInvoked_GivenCommaFollowedByNewLineDelimiter()
+    {
+        var stringCalculatorService = new StringCalculatorService();
+
+        Action action = () => stringCalculatorService.Add("1,\n2");
+
+        action.Should().Throw<InvalidExpressionException>();
+    }
+    
+    [Theory]
+    [InlineData("//;\n1;2", 3)]
+    public void ReturnSumOfNumbers_WhenAddInvoked_GivenListOfNumbersWithDifferentDelimiters(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
 
