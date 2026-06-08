@@ -22,6 +22,7 @@ public class StringCalculatorServiceShould
     [Theory]
     [InlineData("1,2", 3)]
     [InlineData("1,3", 4)]
+    [InlineData("1,4", 5)]
     public void ReturnSumOfTwoNumbers_WhenAddInvoked_GivenTwoNumbers(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
