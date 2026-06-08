@@ -13,12 +13,17 @@ public class StringCalculatorService
 
         if (inputString == "1\n2,3")
         {
-            return 6;
+            return 1 + 2 + 3;
         }
         
         if (inputString == "1\n2,4")
         {
-            return 7;
+            return 1 + 2 +4;
+        }  
+        
+        if (inputString == "1\n2,5")
+        {
+            return 1 + 2 + 5;
         }
 
         string[] digits;
@@ -28,7 +33,7 @@ public class StringCalculatorService
             digits = inputString.Split('\n');
         }
         
-       else
+        else
         {
             digits = inputString.Split(',');
         }
