@@ -58,6 +58,7 @@ public class StringCalculatorServiceShould
     
     [Theory]
     [InlineData("1\n2,3", 6)]
+    [InlineData("1\n2,4", 7)]
     public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiterAndCommas(string digits, int expectedResult)
     {
         var stringCalculatorService = new StringCalculatorService();
