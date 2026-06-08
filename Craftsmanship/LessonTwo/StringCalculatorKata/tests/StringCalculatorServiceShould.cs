@@ -92,6 +92,12 @@ public class StringCalculatorServiceShould
 
         result.Should().Be(expectedResult);
     }
-    
-    
+
+    [Fact]
+    public void ThrowExcpetion_WhenAddInvoked_GivenStringContainsNegativeNumbers()
+    {
+        var stringCalculatorService = new StringCalculatorService();
+        Action action = () => stringCalculatorService.Add("-1");
+        action.Should().Throw<Exception>();
+    }
 }

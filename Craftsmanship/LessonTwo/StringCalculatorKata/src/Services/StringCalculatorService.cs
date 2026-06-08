@@ -23,7 +23,16 @@ public class StringCalculatorService
 
         var sumOfDigits = 0;
 
-        foreach (var digit in digits) sumOfDigits += int.Parse(digit);
+        foreach (var digit in digits)
+        {
+            var parsedInteger = int.Parse(digit);
+            if (parsedInteger < 0)
+            {
+                throw new Exception("Negative integers are not allowed");
+            }
+            
+            sumOfDigits += int.Parse(digit);
+        }
 
         return sumOfDigits;
     }
