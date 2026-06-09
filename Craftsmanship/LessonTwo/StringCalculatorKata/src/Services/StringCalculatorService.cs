@@ -10,30 +10,39 @@ public class StringCalculatorService
 
         if (string.IsNullOrEmpty(inputString)) return 0;
 
-        if (inputString.Contains("//;\n1;2"))
+        var formattedString = string.Empty;
+
+        if (inputString.Substring(0, 2) == "//")
         {
-            return 1 + 2;
+            formattedString = ReplaceCustomDeliminator(inputString);
         }
 
-        if (inputString.Contains("//;\n1;3"))
-        {
-            return 1 + 3;
-        }
-        
-
-        if (inputString.Contains("//;\n1;4"))
-        {
-            return 1 + 4;
-        }
-
-        var normalisedString = inputString.Replace("\n", ",");
+        var normalisedString = formattedString.Replace("\n", ",");
 
         var digits = normalisedString.Split(',');
 
         var sumOfDigits = 0;
 
-        foreach (var digit in digits) sumOfDigits += int.Parse(digit);
+        foreach (var digit in digits)
+        {
+            var parsedInteger = int.Parse(digit);
+            if (parsedInteger < 0)
+            {
+                throw new Exception("Negative integers are not allowed");
+            }
+            
+            sumOfDigits += int.Parse(digit);
+        }
 
         return sumOfDigits;
+    }
+
+    private static string ReplaceCustomDeliminator(string inputString)
+    {
+        var formattedString = inputString.Replace("//", "");
+        var deliminator = formattedString.Substring(0, 1);
+        formattedString = formattedString.Replace($"{deliminator}\n", "");
+        formattedString = formattedString.Replace(deliminator, ",");
+        return formattedString;
     }
 }
