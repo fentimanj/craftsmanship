@@ -5,25 +5,26 @@ using Extensions;
 
 public static class StringCalculatorService
 {
+    private const string DeliminatorPrefix = "//";
+    private const string NewLine = "\n";
+
     public static int Add(this string inputString)
     {
         if (inputString.Contains(",\n")) throw new InvalidExpressionException();
 
         if (string.IsNullOrEmpty(inputString)) return 0;
 
-        const string deliminatorPrefix = "//";
-        const string newLine = "\n";
         var deliminator = ",";
-        
-        if (inputString.Contains(deliminatorPrefix))
+
+        if (inputString.Contains(DeliminatorPrefix))
         {
-            deliminator = inputString[2].ToString();
-            inputString = inputString.Replace($"{deliminator}{newLine}", "");
+            deliminator = inputString.ExtractDeliminator();
         }
         
-        var normalisedString = inputString.Replace(newLine, deliminator).Replace(deliminatorPrefix, "");
-
-        var digits = normalisedString.Split(deliminator);
+        var digits = inputString
+            .RemoveDeliminatorIdentifiers(deliminator)
+            .Replace(NewLine, deliminator)
+            .Split(deliminator);
 
         var sumOfDigits = 0;
 
@@ -33,5 +34,15 @@ public static class StringCalculatorService
         }
 
         return sumOfDigits;
+    }
+
+    private static string RemoveDeliminatorIdentifiers(this string inputString, string deliminator)
+    {
+        return inputString.Replace($"{deliminator}{NewLine}", "").Replace(DeliminatorPrefix, "");
+    }
+
+    private static string ExtractDeliminator(this string inputString)
+    {
+        return inputString[2].ToString();
     }
 }
