@@ -10,25 +10,23 @@ public class StringCalculatorService
 
         if (string.IsNullOrEmpty(inputString)) return 0;
 
-        var deliminatorPrefix = "//";
-
+        const string deliminatorPrefix = "//";
+        var deliminator = ",";
         
         if (inputString.Contains(deliminatorPrefix))
         {
             var deliminatorSuffix = "\n";
             var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
-            var deliminator = withoutDeliminatorPrefix[0];
+            deliminator = inputString[2].ToString();
             var unsplitDigits = withoutDeliminatorPrefix.Replace($"{deliminator}{deliminatorSuffix}", "");
             var newDigits = unsplitDigits.Split(deliminator);
-            var first = int.Parse(newDigits[0]);
-            var second = int.Parse(newDigits[1]);
-            
-            return first + second;
+
+            return int.Parse(newDigits[0]) + int.Parse(newDigits[1]);
         }
 
-       
 
-        var normalisedString = inputString.Replace("\n", ",");
+
+        var normalisedString = inputString.Replace("\n", deliminator).Replace(deliminatorPrefix, "");
 
         var digits = normalisedString.Split(',');
 
