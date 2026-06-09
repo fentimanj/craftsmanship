@@ -13,9 +13,7 @@ public class StringCalculatorServiceShould
     [InlineData("3", 3)]
     public void ReturnConvertedNumber_WhenAddInvoked_GivenSingleDigit(string digits, int expectedResult)
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        var result = stringCalculatorService.Add(digits);
+        var result = digits.Add();
 
         result.Should().Be(expectedResult);
     }
@@ -26,9 +24,7 @@ public class StringCalculatorServiceShould
     [InlineData("1,4", 5)]
     public void ReturnSumOfTwoNumbers_WhenAddInvoked_GivenTwoNumbers(string digits, int expectedResult)
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        var result = stringCalculatorService.Add(digits);
+        var result = digits.Add();
 
         result.Should().Be(expectedResult);
     }
@@ -38,9 +34,7 @@ public class StringCalculatorServiceShould
     [InlineData("1,2,3,4",10)]
     public void ReturnSumOfMoreThanTwoNumbers_WhenAddInvoked_GivenTwoNumbers(string digits, int expectedResult)
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        var result = stringCalculatorService.Add(digits);
+        var result = digits.Add();
 
         result.Should().Be(expectedResult);
     }
@@ -50,9 +44,7 @@ public class StringCalculatorServiceShould
     [InlineData("1\n3", 4)]
     public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiter(string digits, int expectedResult)
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        var result = stringCalculatorService.Add(digits);
+        var result = digits.Add();
 
         result.Should().Be(expectedResult);
     }
@@ -63,9 +55,7 @@ public class StringCalculatorServiceShould
     [InlineData("1\n2,5", 8)]
     public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiterAndCommas(string digits, int expectedResult)
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        var result = stringCalculatorService.Add(digits);
+        var result = digits.Add();
 
         result.Should().Be(expectedResult);
     }
@@ -73,9 +63,7 @@ public class StringCalculatorServiceShould
     [Fact]
     public void ThrowArgumentException_WhenAddInvoked_GivenCommaFollowedByNewLineDelimiter()
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        Action action = () => stringCalculatorService.Add("1,\n2");
+        Action action = () => "1,\n2".Add();
 
         action.Should().Throw<InvalidExpressionException>();
     }
@@ -86,9 +74,7 @@ public class StringCalculatorServiceShould
     [InlineData("//;\n1;4", 5)]
     public void ReturnSumOfNumbers_WhenAddInvoked_GivenListOfNumbersWithDifferentDelimiters(string digits, int expectedResult)
     {
-        var stringCalculatorService = new StringCalculatorService();
-
-        var result = stringCalculatorService.Add(digits);
+        var result = digits.Add();
 
         result.Should().Be(expectedResult);
     }
@@ -96,8 +82,7 @@ public class StringCalculatorServiceShould
     [Fact]
     public void ThrowExcpetion_WhenAddInvoked_GivenStringContainsNegativeNumbers()
     {
-        var stringCalculatorService = new StringCalculatorService();
-        Action action = () => stringCalculatorService.Add("-1");
+        Action action = () => "-1".Add();
         action.Should().Throw<Exception>();
     }
 }

@@ -1,10 +1,11 @@
 namespace src.Services;
 
 using System.Data;
+using Extensions;
 
-public class StringCalculatorService
+public static class StringCalculatorService
 {
-    public int Add(string inputString)
+    public static int Add(this string inputString)
     {
         if (inputString.Contains(",\n")) throw new InvalidExpressionException();
 
@@ -13,8 +14,6 @@ public class StringCalculatorService
         const string deliminatorPrefix = "//";
         const string newLine = "\n";
         var deliminator = ",";
-        
-        
         
         if (inputString.Contains(deliminatorPrefix))
         {
@@ -31,14 +30,5 @@ public class StringCalculatorService
         foreach (var digit in digits) sumOfDigits += digit.ToPositiveInt();
 
         return sumOfDigits;
-    }
-}
-
-internal static class StringExtensions
-{
-    public static int ToPositiveInt(this string value)
-    {
-        var parsed = int.Parse(value);
-        return parsed < 0 ? throw new Exception() : parsed;
     }
 }
