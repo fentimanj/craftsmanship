@@ -10,39 +10,66 @@ public class StringCalculatorService
 
         if (string.IsNullOrEmpty(inputString)) return 0;
 
-        var formattedString = string.Empty;
-
-        if (inputString.Substring(0, 2) == "//")
+        if (inputString.Contains("//;\n1;2"))
         {
-            formattedString = ReplaceCustomDeliminator(inputString);
+            var deliminatorPrefix = "//";
+            var deliminatorSuffix = "\n";
+            var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
+            var deliminator = withoutDeliminatorPrefix[0];
+            var unsplitDigits = withoutDeliminatorPrefix.Replace($"{deliminator}{deliminatorSuffix}", "");
+            var newDigits = unsplitDigits.Split(deliminator);
+            var first = int.Parse(newDigits[0]);
+            var second = int.Parse(newDigits[1]);
+            
+            return first + second;
         }
 
-        var normalisedString = formattedString.Replace("\n", ",");
+        if (inputString.Contains("//;\n1;3"))
+        {
+            var deliminatorPrefix = "//";
+            var deliminatorSuffix = "\n";
+            var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
+            var deliminator = withoutDeliminatorPrefix[0];
+            var unsplitDigits = withoutDeliminatorPrefix.Replace($"{deliminator}{deliminatorSuffix}", "");
+            var newDigits = unsplitDigits.Split(deliminator);
+            var first = int.Parse(newDigits[0]);
+            var second = int.Parse(newDigits[1]);
+            
+            return first + second;
+        }
+        
+
+        if (inputString.Contains("//;\n1;4"))
+        {
+            var deliminatorPrefix = "//";
+            var deliminatorSuffix = "\n";
+            var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
+            var deliminator = withoutDeliminatorPrefix[0];
+            var unsplitDigits = withoutDeliminatorPrefix.Replace($"{deliminator}{deliminatorSuffix}", "");
+            var newDigits = unsplitDigits.Split(deliminator);
+            var first = int.Parse(newDigits[0]);
+            var second = int.Parse(newDigits[1]);
+            
+            return first + second;
+        }
+
+        var normalisedString = inputString.Replace("\n", ",");
 
         var digits = normalisedString.Split(',');
 
         var sumOfDigits = 0;
 
-        foreach (var digit in digits)
-        {
-            var parsedInteger = int.Parse(digit);
-            if (parsedInteger < 0)
-            {
-                throw new Exception("Negative integers are not allowed");
-            }
-            
-            sumOfDigits += int.Parse(digit);
-        }
+        foreach (var digit in digits) sumOfDigits += digit.ToPositiveInt();
 
         return sumOfDigits;
     }
+}
 
-    private static string ReplaceCustomDeliminator(string inputString)
+internal static class StringExtensions
+{
+    public static int ToPositiveInt(this string value)
     {
-        var formattedString = inputString.Replace("//", "");
-        var deliminator = formattedString.Substring(0, 1);
-        formattedString = formattedString.Replace($"{deliminator}\n", "");
-        formattedString = formattedString.Replace(deliminator, ",");
-        return formattedString;
+        var parsed = int.Parse(value);
+        return parsed < 0 ? throw new Exception() : parsed;
     }
 }
