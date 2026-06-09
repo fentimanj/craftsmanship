@@ -10,38 +10,11 @@ public class StringCalculatorService
 
         if (string.IsNullOrEmpty(inputString)) return 0;
 
-        if (inputString.Contains("//;\n1;2"))
-        {
-            var deliminatorPrefix = "//";
-            var deliminatorSuffix = "\n";
-            var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
-            var deliminator = withoutDeliminatorPrefix[0];
-            var unsplitDigits = withoutDeliminatorPrefix.Replace($"{deliminator}{deliminatorSuffix}", "");
-            var newDigits = unsplitDigits.Split(deliminator);
-            var first = int.Parse(newDigits[0]);
-            var second = int.Parse(newDigits[1]);
-            
-            return first + second;
-        }
+        var deliminatorPrefix = "//";
 
-        if (inputString.Contains("//;\n1;3"))
-        {
-            var deliminatorPrefix = "//";
-            var deliminatorSuffix = "\n";
-            var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
-            var deliminator = withoutDeliminatorPrefix[0];
-            var unsplitDigits = withoutDeliminatorPrefix.Replace($"{deliminator}{deliminatorSuffix}", "");
-            var newDigits = unsplitDigits.Split(deliminator);
-            var first = int.Parse(newDigits[0]);
-            var second = int.Parse(newDigits[1]);
-            
-            return first + second;
-        }
         
-
-        if (inputString.Contains("//;\n1;4"))
+        if (inputString.Contains(deliminatorPrefix))
         {
-            var deliminatorPrefix = "//";
             var deliminatorSuffix = "\n";
             var withoutDeliminatorPrefix = inputString.Replace(deliminatorPrefix, "");
             var deliminator = withoutDeliminatorPrefix[0];
@@ -52,6 +25,8 @@ public class StringCalculatorService
             
             return first + second;
         }
+
+       
 
         var normalisedString = inputString.Replace("\n", ",");
 
