@@ -27,7 +27,10 @@ public static class StringCalculatorService
 
         var sumOfDigits = 0;
 
-        foreach (var digit in digits) sumOfDigits += digit.ToPositiveInt();
+        foreach (var digit in digits)
+        {
+            sumOfDigits += digit.ToPositiveInt();
+        }
 
         return sumOfDigits;
     }
