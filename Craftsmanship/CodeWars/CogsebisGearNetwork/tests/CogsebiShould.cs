@@ -20,15 +20,15 @@ public class CogsebiShould
     }
 
     [Theory]
-    [InlineData(100.0, 20.0, -50.0)]
+    [InlineData(20.0, -50.0)]
     
-    public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenTwoGears(double driverRpm, int teethOnSecondCog, double expectedRpmOfSecondCog)
+    public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenTwoGears(int teethOnSecondCog, double expectedRpmOfSecondCog)
     {
         var rpmOfCog = Cogsebi.CalculateRpms(
             gears: [10, teethOnSecondCog],
             connections: [(0, 1)],
             driverId: 0,
-            driverRpm: driverRpm
+            driverRpm: 100.0
         );
 
         rpmOfCog.Should().BeEqualTo([100.0, expectedRpmOfSecondCog]);
