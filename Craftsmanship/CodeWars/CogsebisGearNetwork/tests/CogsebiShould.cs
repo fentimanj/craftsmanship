@@ -21,6 +21,7 @@ public class CogsebiShould
 
     [Theory]
     [InlineData(20.0, -50.0)]
+    [InlineData(10.0, -100.0)]
     
     public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenTwoGears(int teethOnSecondCog, double expectedRpmOfSecondCog)
     {
@@ -44,4 +45,7 @@ const gears = [10, 20, 50, 10];
    
    cogsebi(gears, connections, driverId, driverRpm);
    // Returns: [100.0, -50.0, 20.0, 100.0]
+   
+   
+   RPM_B = RPM_A * (Teeth_A / Teeth_B)
 */
