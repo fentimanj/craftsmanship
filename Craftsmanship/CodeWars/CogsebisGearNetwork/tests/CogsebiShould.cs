@@ -38,11 +38,12 @@ public class CogsebiShould
     
     [Theory]
     [InlineData(20.0, 50.0, -50, 20)]
+    [InlineData(20.0, 10.0, -50, 100)]
     
     public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenThreeGears(int teethOnSecondCog, int teethOnThirdCog, double expectedRpmOfSecondCog, double expectedRpmOfThirdCog)
     {
         var rpmOfCog = Cogsebi.CalculateRpms(
-            gears: [10, teethOnSecondCog, teethOnSecondCog],
+            gears: [10, teethOnSecondCog, teethOnThirdCog],
             connections: [(0, 1),  (1, 2)],
             driverId: 0,
             driverRpm: 100.0
