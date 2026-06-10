@@ -6,13 +6,19 @@ public class Cogsebi
     {
         if (gears.Length == 2 && gears[1] == 10)
         {
-            return [100.0, -100.0];
+            return [driverRpm, -100.0];
         }
         
-        if (gears.Length == 2)
+        if (gears.Length == 2 && gears[1] == 20)
         {
-            return [100.0, -50.0];
+            return [driverRpm, -50.0];
         }
+        
+        if (gears.Length == 2 && gears[1] == 40)
+        {
+            return [driverRpm, -25.0];
+        }
+        
         return [driverRpm];
     }
 }

@@ -20,8 +20,9 @@ public class CogsebiShould
     }
 
     [Theory]
-    [InlineData(20.0, -50.0)]
     [InlineData(10.0, -100.0)]
+    [InlineData(20.0, -50.0)]
+    [InlineData(40.0, -25.0)]
     
     public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenTwoGears(int teethOnSecondCog, double expectedRpmOfSecondCog)
     {
