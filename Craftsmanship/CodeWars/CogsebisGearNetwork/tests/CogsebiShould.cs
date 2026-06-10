@@ -5,16 +5,42 @@ using FluentAssertions;
 public class CogsebiShould
 {
     [Fact]
-    public void ReturnCorrectRpms_WhenCalculateRpmsInvoked_GivenOnlyOneGear()
+    public void ReturnCorrectRpms_WhenCalculateRpmsInvoked_GivenOnlyOneGearWith100Rpm()
     {
         int[] gears = [10];
         (int, int)[] connections = [];
-        int driverId = 0;
-        double driverRpm = 100;
+        const int driverId = 0;
+        const double driverRpm = 100;
         
-        double[] rpmOfCog = Cogsebi.CalculateRpms(gears, connections, driverId, driverRpm);
+        var rpmOfCog = Cogsebi.CalculateRpms(gears, connections, driverId, driverRpm);
         
         rpmOfCog.First().Should().Be(100.0);
+    }    
+    
+    [Fact]
+    public void ReturnCorrectRpms_WhenCalculateRpmsInvoked_GivenOnlyOneGearWith200Rpm()
+    {
+        int[] gears = [10];
+        (int, int)[] connections = [];
+        const int driverId = 0;
+        const double driverRpm = 200;
+        
+        var rpmOfCog = Cogsebi.CalculateRpms(gears, connections, driverId, driverRpm);
+        
+        rpmOfCog.First().Should().Be(200.0);
+    } 
+    
+    [Fact]
+    public void ReturnCorrectRpms_WhenCalculateRpmsInvoked_GivenOnlyOneGearWith300Rpm()
+    {
+        int[] gears = [10];
+        (int, int)[] connections = [];
+        const int driverId = 0;
+        const double driverRpm = 300;
+        
+        var rpmOfCog = Cogsebi.CalculateRpms(gears, connections, driverId, driverRpm);
+        
+        rpmOfCog.First().Should().Be(300.0);
     }
 }
 
