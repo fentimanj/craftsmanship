@@ -8,8 +8,17 @@ public class Cogsebi
         
         if(gears.Length == 3)
         {
-            var repmOfThirdCog = rpmOfSecondCog * (gears[1] / (double)gears[2]);
-            return [driverRpm, -rpmOfSecondCog, repmOfThirdCog];
+            var rpmOfThirdCog = rpmOfSecondCog * (gears[1] / (double)gears[2]);
+            return [driverRpm, -rpmOfSecondCog, rpmOfThirdCog];
+        }
+        
+        
+        
+        if(gears.Length == 4)
+        {
+            var rpmOfThirdCogx = rpmOfSecondCog * (gears[1] / (double)gears[2]);
+            var rpmOfFourthCog  = rpmOfThirdCogx * (gears[2] / (double)gears[3]);
+            return [driverRpm, -rpmOfSecondCog, rpmOfThirdCogx, -rpmOfFourthCog];
         }
         
         return [driverRpm, -rpmOfSecondCog];

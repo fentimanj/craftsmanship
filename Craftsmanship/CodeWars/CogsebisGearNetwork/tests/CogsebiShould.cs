@@ -37,19 +37,32 @@ public class CogsebiShould
     }
     
     [Theory]
-    [InlineData(20.0, 50.0, -50, 20)]
-    [InlineData(20.0, 10.0, -50, 100)]
-    
-    public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenThreeGears(int teethOnSecondCog, int teethOnThirdCog, double expectedRpmOfSecondCog, double expectedRpmOfThirdCog)
+    [InlineData( 50.0,  20)]
+    [InlineData( 10.0, 100)]
+    public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenThreeGears(int teethOnThirdCog, double expectedRpmOfThirdCog)
     {
         var rpmOfCog = Cogsebi.CalculateRpms(
-            gears: [10, teethOnSecondCog, teethOnThirdCog],
+            gears: [10, 20, teethOnThirdCog],
             connections: [(0, 1),  (1, 2)],
             driverId: 0,
             driverRpm: 100.0
         );
 
-        rpmOfCog.Should().BeEqualTo([100.0, expectedRpmOfSecondCog, expectedRpmOfThirdCog]);
+        rpmOfCog.Should().BeEqualTo([100.0, -50, expectedRpmOfThirdCog]);
+    }
+    
+    [Theory]
+    [InlineData( 10.0,  -100)]
+    public void ReturnCorrectRpm_WhenCalculateRpmsInvoked_GivenFourGears(int teethOnFourthCog, double expectedRpmOfFourthCog)
+    {
+        var rpmOfCog = Cogsebi.CalculateRpms(
+            gears: [10, 20, 50, teethOnFourthCog],
+            connections: [(0, 1),  (1, 2)],
+            driverId: 0,
+            driverRpm: 100.0
+        );
+
+        rpmOfCog.Should().BeEqualTo([100.0, -50, 20, expectedRpmOfFourthCog]);
     }
 }
 
