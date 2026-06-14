@@ -4,6 +4,13 @@ public static class Kata
 {
     public static string CaffeineBuzz(int input)
     {
+        var buzz = string.Empty;
+
+        if (input % 2 == 0)
+        {
+            buzz = "Script";
+        }
+            
 
         if (input == 6)
         {
