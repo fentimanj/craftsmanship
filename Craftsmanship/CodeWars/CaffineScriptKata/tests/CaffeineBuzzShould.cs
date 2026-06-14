@@ -13,10 +13,12 @@ public class CaffeineBuzzShould
         result.Should().Be("mocha_missing!");
     }
 
-    [Fact]
-    public void ReturnJave_WhenInvoked_GivenIntegerDivisibleByThree()
+    [Theory]
+    [InlineData(3)]
+    [InlineData(9)]
+    public void ReturnJave_WhenInvoked_GivenIntegerDivisibleByThree(int inputInteger)
     {
-        var result = Kata.CaffeineBuzz(3);
+        var result = Kata.CaffeineBuzz(inputInteger);
         result.Should().Be("Java");
     }
 }
