@@ -4,20 +4,11 @@ public class Kata
 {
     public static string CaffeineBuzz(int n)
     {
-        if (n == 3)
+        if (n % 3 == 0)
         {
             return "Java";
         }
-
-        if (n == 6)
-        {
-            return "Java";
-        }
-
-        if (n == 9)
-        {
-            return "Java";
-        }
+        
         return "mocha_missing!";
     }
 }
