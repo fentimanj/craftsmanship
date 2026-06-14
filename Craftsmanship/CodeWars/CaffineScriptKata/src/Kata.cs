@@ -11,16 +11,6 @@ public static class Kata
             buzz = "Script";
         }
         
-        if (input == 6)
-        {
-            return $"Java{buzz}";
-        }   
-        
-        if (input == 18)
-        {
-            return $"Java{buzz}";
-        }
-        
         if (input == 24)
         {
             return $"Java{buzz}";
