@@ -33,5 +33,17 @@ public class OneShould
         
         bool result = Kata.One(inputArray, InputFunction);
         result.Should().BeFalse();
-    }
+    }  
+    
+    [Fact]
+    public void ReturnFalse_WhenInvoked_GivenDuplicatedOneInSequenceAndMatchingFunction()
+    {
+        int[] inputArray = [1, 1];
+        bool InputFunction(int valueFromSequence) => valueFromSequence == 1;
+        
+        bool result = Kata.One(inputArray, InputFunction);
+        result.Should().BeFalse();
+    } 
+
+
 }
