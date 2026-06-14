@@ -5,7 +5,7 @@ public static class Kata
     public static string CaffeineBuzz(int input)
     {
         
-        if (input == 12)
+        if (input.IsDivisibleByThree() && input.IsDivisibleByFour())
         {
             return "CoffeeScript";
         }
@@ -21,5 +21,10 @@ public static class Kata
     private static bool IsDivisibleByThree(this int input)
     {
         return input % 3 == 0;
+    }
+    
+    private static bool IsDivisibleByFour(this int input)
+    {
+        return input % 4 == 0;
     }
 }
