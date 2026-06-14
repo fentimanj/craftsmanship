@@ -4,7 +4,7 @@ public class Kata
 {
     public static bool One(int[] arr, Func<int, bool> fun)
     {
-        if(arr.Contains(1))
+        if(arr.Where(value => fun(value)).Any())
            return true;
 
         return false; 
