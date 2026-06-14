@@ -23,10 +23,11 @@ public class CaffeineBuzzShould
         result.Should().Be("Java");
     }
 
-    [Fact]
-    public void ReturnCoffee_WhenInvoked_GivenIntegerDivisibleByThreeAndFour()
+    [Theory]
+    [InlineData(12)]
+    public void ReturnCoffee_WhenInvoked_GivenIntegerDivisibleByThreeAndFour(int inputInteger)
     {
-        var result = Kata.CaffeineBuzz(12);
+        var result = Kata.CaffeineBuzz(inputInteger);
 
         result.Should().Be("CoffeeScript");
     }
