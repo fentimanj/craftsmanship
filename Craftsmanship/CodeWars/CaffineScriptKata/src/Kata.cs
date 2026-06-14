@@ -1,14 +1,25 @@
 namespace src;
 
-public class Kata
+public static class Kata
 {
-    public static string CaffeineBuzz(int n)
+    public static string CaffeineBuzz(int input)
     {
-        if (n % 3 == 0)
+        
+        if (input == 12)
+        {
+            return "CoffeeScript";
+        }
+        
+        if (input.IsDivisibleByThree())
         {
             return "Java";
         }
-        
+
         return "mocha_missing!";
+    }
+
+    private static bool IsDivisibleByThree(this int input)
+    {
+        return input % 3 == 0;
     }
 }

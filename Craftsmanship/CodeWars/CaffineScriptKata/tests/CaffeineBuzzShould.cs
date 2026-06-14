@@ -22,6 +22,14 @@ public class CaffeineBuzzShould
         var result = Kata.CaffeineBuzz(inputInteger);
         result.Should().Be("Java");
     }
+
+    [Fact]
+    public void ReturnCoffee_WhenInvoked_GivenIntegerDivisibleByThreeAndFour()
+    {
+        var result = Kata.CaffeineBuzz(12);
+
+        result.Should().Be("CoffeeScript");
+    }
 }
 
 /*
