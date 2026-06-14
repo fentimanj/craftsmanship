@@ -10,31 +10,30 @@ public static class Kata
         {
             buzz = "Script";
         }
-            
-
+        
         if (input == 6)
         {
-            return "JavaScript";
+            return $"Java{buzz}";
         }   
         
         if (input == 18)
         {
-            return "JavaScript";
+            return $"Java{buzz}";
         }
         
         if (input == 24)
         {
-            return "JavaScript";
+            return $"Java{buzz}";
         }
 
         if (input.IsDivisibleByThree() && input.IsDivisibleByFour())
         {
-            return "Coffee";
+            return $"Coffee{buzz}";
         }
 
         if (input.IsDivisibleByThree())
         {
-            return "Java";
+            return $"Java{buzz}";
         }
 
         return "mocha_missing!";

@@ -28,7 +28,7 @@ public class CaffeineBuzzShould
     {
         var result = Kata.CaffeineBuzz(inputInteger);
 
-        result.Should().Be("Coffee");
+        result.Should().Be("CoffeeScript");
     }
     
     [Theory]
