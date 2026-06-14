@@ -15,7 +15,6 @@ public class CaffeineBuzzShould
 
     [Theory]
     [InlineData(3)]
-    [InlineData(6)]
     [InlineData(9)]
     public void ReturnJave_WhenInvoked_GivenIntegerDivisibleByThree(int inputInteger)
     {
@@ -29,7 +28,17 @@ public class CaffeineBuzzShould
     {
         var result = Kata.CaffeineBuzz(inputInteger);
 
-        result.Should().Be("CoffeeScript");
+        result.Should().Be("Coffee");
+    }
+    
+    [Theory]
+    [InlineData(6)]
+    [InlineData(18)]
+    [InlineData(24)]
+    public void ReturnJavaScript_WhenInvoked_GivenIntegerDivisibleByThree(int inputInteger)
+    {
+        var result = Kata.CaffeineBuzz(inputInteger);
+        result.Should().Be("JavaScript");
     }
 }
 

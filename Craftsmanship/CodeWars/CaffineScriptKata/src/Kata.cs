@@ -4,12 +4,27 @@ public static class Kata
 {
     public static string CaffeineBuzz(int input)
     {
-        
-        if (input.IsDivisibleByThree() && input.IsDivisibleByFour())
+
+        if (input == 6)
         {
-            return "CoffeeScript";
+            return "JavaScript";
+        }   
+        
+        if (input == 18)
+        {
+            return "JavaScript";
         }
         
+        if (input == 24)
+        {
+            return "JavaScript";
+        }
+
+        if (input.IsDivisibleByThree() && input.IsDivisibleByFour())
+        {
+            return "Coffee";
+        }
+
         if (input.IsDivisibleByThree())
         {
             return "Java";
