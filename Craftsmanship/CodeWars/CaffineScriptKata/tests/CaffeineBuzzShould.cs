@@ -15,6 +15,7 @@ public class CaffeineBuzzShould
 
     [Theory]
     [InlineData(3)]
+    [InlineData(6)]
     [InlineData(9)]
     public void ReturnJave_WhenInvoked_GivenIntegerDivisibleByThree(int inputInteger)
     {

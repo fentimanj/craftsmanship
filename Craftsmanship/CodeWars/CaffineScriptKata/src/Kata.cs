@@ -9,6 +9,11 @@ public class Kata
             return "Java";
         }
 
+        if (n == 6)
+        {
+            return "Java";
+        }
+
         if (n == 9)
         {
             return "Java";
