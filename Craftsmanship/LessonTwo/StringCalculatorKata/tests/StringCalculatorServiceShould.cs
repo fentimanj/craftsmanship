@@ -28,10 +28,10 @@ public class StringCalculatorServiceShould
 
         result.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("1,2,3", 6)]
-    [InlineData("1,2,3,4",10)]
+    [InlineData("1,2,3,4", 10)]
     public void ReturnSumOfMoreThanTwoNumbers_WhenAddInvoked_GivenTwoNumbers(string digits, int expectedResult)
     {
         var result = digits.Add();
@@ -48,12 +48,13 @@ public class StringCalculatorServiceShould
 
         result.Should().Be(expectedResult);
     }
-    
+
     [Theory]
     [InlineData("1\n2,3", 6)]
     [InlineData("1\n2,4", 7)]
     [InlineData("1\n2,5", 8)]
-    public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiterAndCommas(string digits, int expectedResult)
+    public void ReturnSumOfNumbers_WhenAddInvoked_GivenNumbersWithNewLineDelimiterAndCommas(string digits,
+        int expectedResult)
     {
         var result = digits.Add();
 
@@ -67,12 +68,13 @@ public class StringCalculatorServiceShould
 
         action.Should().Throw<InvalidExpressionException>();
     }
-    
+
     [Theory]
     [InlineData("//;\n1;2", 3)]
     [InlineData("//;\n1;3", 4)]
     [InlineData("//;\n1;4", 5)]
-    public void ReturnSumOfNumbers_WhenAddInvoked_GivenListOfNumbersWithDifferentDelimiters(string digits, int expectedResult)
+    public void ReturnSumOfNumbers_WhenAddInvoked_GivenListOfNumbersWithDifferentDelimiters(string digits,
+        int expectedResult)
     {
         var result = digits.Add();
 

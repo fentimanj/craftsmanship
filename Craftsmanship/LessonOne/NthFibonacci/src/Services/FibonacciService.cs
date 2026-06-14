@@ -6,7 +6,7 @@ public static class FibonacciService
     {
         var conversionNMinus1 = input - 1;
         var conversionNMinus2 = input - 2;
-        
+
         return input switch
         {
             0 => 0,

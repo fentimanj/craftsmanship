@@ -1,4 +1,5 @@
 ## Bowling game kata
+
 ### Write a program to calculate the score of a game of Ten-Pin Bowling.
 
 Input: a string representing a bowling game (* scoring rules on the next slide).
@@ -6,6 +7,7 @@ Input: a string representing a bowling game (* scoring rules on the next slide).
 Output: the score as integer.
 
 ## Conventions:
+
 > “X” indicates a strike
 
 > “/” indicates a spare
@@ -17,6 +19,7 @@ Output: the score as integer.
 > The characters after the “||” are bonus balls
 
 ### Examples:
+
 > “X|X|X|X|X|X|X|X|X|X||XX” => Total score = 300 [10 frames x 30]
 
 > “9- | 9- | 9- | 9- | 9- | 9- | 9- | 9- | 9- | 9- ||” => Total score = 90 [10 frames x 9]
@@ -26,6 +29,7 @@ Output: the score as integer.
 > “X | 7/ | 9- | X | -8 | 8/ | -6 | X | X | X || 81” => Total score = 167
 
 ## The scoring rules:
+
 - Each game, or "line" of bowling, includes ten turns, or "frames" for the bowler.
 - In each frame, the bowler gets up to two tries to knock down all ten pins.
 - If the first ball in a frame knocks down all ten pins, this is called a "strike". The

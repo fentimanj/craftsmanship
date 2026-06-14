@@ -5,10 +5,8 @@ public static class Kata
     public static bool ValidParentheses(string input)
     {
         while (input.ContainsOpenAndCloseBrackets() && input.CanStillBeProcessed() && input.StartsCorrectly())
-        {
             input = input.RemoveMatchedPairs();
-        }
-        
+
         return string.IsNullOrEmpty(input);
     }
 }
@@ -19,7 +17,7 @@ internal static class StringExtensions
     {
         return input.Contains('(') && input.Contains(')');
     }
-    
+
     public static bool CanStillBeProcessed(this string input)
     {
         return input.Length > 1;
@@ -29,7 +27,7 @@ internal static class StringExtensions
     {
         return input[0] != ')';
     }
-    
+
     public static string RemoveMatchedPairs(this string input)
     {
         const string matchedNeighbourPair = "()";

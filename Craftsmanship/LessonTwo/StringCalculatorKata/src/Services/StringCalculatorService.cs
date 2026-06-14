@@ -16,11 +16,8 @@ public static class StringCalculatorService
 
         var deliminator = ",";
 
-        if (inputString.Contains(DeliminatorPrefix))
-        {
-            deliminator = inputString.ExtractDeliminator();
-        }
-        
+        if (inputString.Contains(DeliminatorPrefix)) deliminator = inputString.ExtractDeliminator();
+
         var digits = inputString
             .RemoveDeliminatorIdentifiers(deliminator)
             .Replace(NewLine, deliminator)
@@ -28,10 +25,7 @@ public static class StringCalculatorService
 
         var sumOfDigits = 0;
 
-        foreach (var digit in digits)
-        {
-            sumOfDigits += digit.ToPositiveInt();
-        }
+        foreach (var digit in digits) sumOfDigits += digit.ToPositiveInt();
 
         return sumOfDigits;
     }

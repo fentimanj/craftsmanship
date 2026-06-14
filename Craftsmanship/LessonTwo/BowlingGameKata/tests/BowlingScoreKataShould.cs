@@ -8,10 +8,10 @@ public class BowlingScoreKataShould
     public void ReturnScoreOfZero_WhenCalculateScoreInvoked_GivenAllZeros()
     {
         var bowlingScoreService = new BowlingScoreService();
-        var scoreString= "0|0|0|0|0|0|0|0|0|0||";
-        
+        var scoreString = "0|0|0|0|0|0|0|0|0|0||";
+
         var calculatedScore = bowlingScoreService.CalculateScore(scoreString);
-        
+
         calculatedScore.Should().Be(0);
     }
 }
