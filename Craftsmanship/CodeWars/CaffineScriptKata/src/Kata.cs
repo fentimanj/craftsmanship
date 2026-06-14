@@ -10,12 +10,7 @@ public static class Kata
         {
             buzz = "Script";
         }
-        
-        if (input == 24)
-        {
-            return $"Java{buzz}";
-        }
-
+     
         if (input.IsDivisibleByThree() && input.IsDivisibleByFour())
         {
             return $"Coffee{buzz}";

@@ -34,7 +34,6 @@ public class CaffeineBuzzShould
     [Theory]
     [InlineData(6)]
     [InlineData(18)]
-    [InlineData(24)]
     public void ReturnJavaScript_WhenInvoked_GivenIntegerDivisibleByThree(int inputInteger)
     {
         var result = Kata.CaffeineBuzz(inputInteger);
