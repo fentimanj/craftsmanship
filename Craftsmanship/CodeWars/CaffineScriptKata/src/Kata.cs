@@ -6,17 +6,17 @@ public static class Kata
     {
         var buzz = string.Empty;
 
-        if (input % 2 == 0)
+        if (input.IsEven())
         {
             buzz = "Script";
         }
-     
-        if (input.IsDivisibleByThree() && input.IsDivisibleByFour())
+
+        if (input.IsDivisibleBy(3) && input.IsDivisibleBy(4))
         {
             return $"Coffee{buzz}";
         }
 
-        if (input.IsDivisibleByThree())
+        if (input.IsDivisibleBy(3))
         {
             return $"Java{buzz}";
         }
@@ -24,13 +24,13 @@ public static class Kata
         return "mocha_missing!";
     }
 
-    private static bool IsDivisibleByThree(this int input)
+    private static bool IsEven(this int input)
     {
-        return input % 3 == 0;
+        return input % 2 == 0;
     }
-    
-    private static bool IsDivisibleByFour(this int input)
+
+    private static bool IsDivisibleBy(this int input, int divisor)
     {
-        return input % 4 == 0;
+        return input % divisor == 0;
     }
 }
