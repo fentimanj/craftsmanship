@@ -55,6 +55,7 @@ public class BowlingScoreService
     {
         if (scoreString.Contains("1"))
         {
+            var score = int.Parse(scoreString.Substring(0, 1));
             return 1;
         }
         
