@@ -56,17 +56,19 @@ public class BowlingScoreService
         if (scoreString.Contains("1"))
         {
             var score = int.Parse(scoreString.Substring(0, 1));
-            return 1;
+            return score;
         }
         
         if (scoreString.Contains("2"))
         {
-            return 2;
+            var score = int.Parse(scoreString.Substring(0, 1));
+            return score;
         }    
         
         if (scoreString.Contains("3"))
         {
-            return 3;
+            var score = int.Parse(scoreString.Substring(0, 1));
+            return score;
         }
         return 0;
     }
