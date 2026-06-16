@@ -15,14 +15,7 @@ internal static class StringArrayExtensions
 
         var twoBallScoreCards = twoBallScoreSets
             .Select(scoreCard => scoreCard.Replace("-", "0"))
-            .Select(scoreCard =>
-            {
-                if (scoreCard[1] == '/')
-                {
-                    return new BowlingSet(10, 0);
-                }
-                return new BowlingSet(int.Parse($"{scoreCard[0]}"), int.Parse($"{scoreCard[1]}"));
-            });
+            .Select(scoreCard => scoreCard[1] == '/' ? new BowlingSet(10, 0) : new BowlingSet(int.Parse($"{scoreCard[0]}"), int.Parse($"{scoreCard[1]}")));
         
         return singleBallScoreCards.Concat(twoBallScoreCards);
     }
