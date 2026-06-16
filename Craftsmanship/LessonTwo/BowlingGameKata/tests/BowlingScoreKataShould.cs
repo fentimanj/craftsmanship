@@ -22,7 +22,7 @@ public class BowlingScoreKataShould
     {
         var bowlingScoreService = new BowlingScoreService();
 
-        var calculatedScore = bowlingScoreService.CalculateScore(scoreCard);
+        var calculatedScore = BowlingScoreService.CalculateScore(scoreCard);
 
         calculatedScore.Should().Be(expectedScore);
     } 
