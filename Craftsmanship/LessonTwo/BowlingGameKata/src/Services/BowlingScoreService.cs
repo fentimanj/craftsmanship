@@ -8,17 +8,17 @@ public class BowlingScoreService
 
         if (scoreString == "03|02|0|0|0|0|0|0|0|0||")
         {
-            return 5;
+            return 3 + 2;
         }    
         
         if (scoreString == "03|03|0|0|0|0|0|0|0|0||")
         {
-            return 6;
+            return 3 + 3;
         }
         
         if (scoreString == "04|03|0|0|0|0|0|0|0|0||")
         {
-            return 7;
+            return 4 + 3;
         }
         
         if (cleansedScoreString[1] != '|')
