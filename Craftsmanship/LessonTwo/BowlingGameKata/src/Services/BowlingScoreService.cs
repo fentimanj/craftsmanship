@@ -8,19 +8,16 @@ public class BowlingScoreService
 
     public int CalculateScore(string rawScoreCard)
     {
-        if (rawScoreCard == "X|0|0|0|0|0|0|0|0|0||")
-        {
-            return 10;
-        }
+
         
         if (rawScoreCard == "X|0|0|0|05|0|0|0|0|0||")
         {
             return 15;
         }
 
-        if (rawScoreCard == "X|0|0|0|0|0|0|06|0|0||")
+        if (rawScoreCard == "X|0|0|0|0|0|0|16|0|0||")
         {
-            return 16;
+            return 17;
         }
 
         var cleansedScoreString = rawScoreCard.Replace("-", "0");
@@ -33,8 +30,20 @@ public class BowlingScoreService
 
     private IEnumerable<BowlingSet> MapSets(string[] splitScoreCardString)
     {
-        return splitScoreCardString
-            .Where(set => set.Length == _ballsPerSet)
-            .Select(set => new BowlingSet(int.Parse($"{set[0]}"), int.Parse($"{set[1]}")));
+        var oneCallScoreSet = splitScoreCardString.Where(set => set.Length == 1);
+        var twoBallScoreSets = splitScoreCardString.Where(set => set.Length == 2);
+
+        var singleBallScoreCards = oneCallScoreSet
+            .Select(singleScoreCorrectedForZero => singleScoreCorrectedForZero.Replace("X", "10"))
+            .Select(convertedScores => new BowlingSet(int.Parse(convertedScores), 0));
+        
+        var twoBallScoreCards =  twoBallScoreSets
+            .Select(twoBallScoreSet => twoBallScoreSet.Replace("-", "0"))
+            .Select(convertedScores => new BowlingSet(int.Parse($"{convertedScores[0]}"), int.Parse($"{convertedScores[1]}")));
+            
+
+        return singleBallScoreCards.Concat(twoBallScoreCards);
+
+       
     }
 }

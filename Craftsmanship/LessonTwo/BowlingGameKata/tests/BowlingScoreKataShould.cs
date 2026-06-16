@@ -17,7 +17,7 @@ public class BowlingScoreKataShould
     [InlineData("04|03|0|0|0|0|0|0|0|0||", 7)]
     [InlineData("X|0|0|0|0|0|0|0|0|0||", 10)]
     [InlineData("X|0|0|0|05|0|0|0|0|0||", 15)]
-    [InlineData("X|0|0|0|0|0|0|06|0|0||", 16)]
+    [InlineData("X|0|0|0|0|0|0|16|0|0||", 17)]
     public void ReturnCorrectScore_WhenCalculateScoreInvoked_GivenValidScoreCard(string scoreCard, int expectedScore)
     {
         var bowlingScoreService = new BowlingScoreService();
