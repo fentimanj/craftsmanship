@@ -8,17 +8,27 @@ public class BowlingScoreService
 
         if (scoreString == "03|02|0|0|0|0|0|0|0|0||")
         {
-            return 3 + 2;
+            var splitScoreCardString = scoreString.Split("|");
+            
+            var firstSet = $"{splitScoreCardString[0]}";
+            var secondSet = $"{splitScoreCardString[1]}";
+            
+            var firstSetFirstBallPins = int.Parse($"{firstSet[0]}");
+            var firstSetSecondBallPins = int.Parse($"{firstSet[1]}");
+            var secondSetFirstBallPins = int.Parse($"{secondSet[0]}");
+            var secondSetSecondBallPins = int.Parse($"{secondSet[1]}");
+            
+            return (firstSetFirstBallPins + firstSetSecondBallPins) + (secondSetFirstBallPins + secondSetSecondBallPins);
         }    
         
         if (scoreString == "03|03|0|0|0|0|0|0|0|0||")
         {
-            return 3 + 3;
+            return (0 + 3) + (0 + 3);
         }
         
         if (scoreString == "04|03|0|0|0|0|0|0|0|0||")
         {
-            return 4 + 3;
+            return (0 + 4) + (0 + 3);
         }
         
         if (cleansedScoreString[1] != '|')
