@@ -2,16 +2,29 @@ namespace src.Services;
 
 public class BowlingScoreService
 {
-    public int CalculateScore(string scoreString)
+    public int CalculateScore(string rawScoreCard)
     {
-        var cleansedScoreString = scoreString.Replace("-", "0");
-        var splitScoreCardString = scoreString.Split("|");
+        var cleansedScoreString = rawScoreCard.Replace("-", "0");
+        var splitScoreCardString = cleansedScoreString.Split("|");
 
         var firstSetAsString = $"{splitScoreCardString[0]}";
         var secondSetAsString = $"{splitScoreCardString[1]}";
 
         var totalScore = 0;
+
+        var scoringSets = splitScoreCardString.Where(set => set.Length == 2);
+
+        foreach (var set in scoringSets)
+        {
+            var firstBallPinsAsString = $"{set[0]}";
+            var secondBallPinsAsString = $"{set[1]}";
+            
+            var totalSetScore = int.Parse(firstBallPinsAsString) + int.Parse(secondBallPinsAsString);
+            
+            totalScore += totalSetScore;
+        }
         
+        return totalScore;
         
         if (firstSetAsString.Length == 2 && secondSetAsString.Length == 2)
         {
