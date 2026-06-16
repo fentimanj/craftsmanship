@@ -10,15 +10,18 @@ public class BowlingScoreService
         {
             var splitScoreCardString = scoreString.Split("|");
             
-            var firstSet = $"{splitScoreCardString[0]}";
-            var secondSet = $"{splitScoreCardString[1]}";
+            var firstSetAsString = $"{splitScoreCardString[0]}";
+            var secondSetAsString = $"{splitScoreCardString[1]}";
             
-            var firstSetFirstBallPins = int.Parse($"{firstSet[0]}");
-            var firstSetSecondBallPins = int.Parse($"{firstSet[1]}");
-            var secondSetFirstBallPins = int.Parse($"{secondSet[0]}");
-            var secondSetSecondBallPins = int.Parse($"{secondSet[1]}");
+            var firstSetFirstBallPins = int.Parse($"{firstSetAsString[0]}");
+            var firstSetSecondBallPins = int.Parse($"{firstSetAsString[1]}");
+            var secondSetFirstBallPins = int.Parse($"{secondSetAsString[0]}");
+            var secondSetSecondBallPins = int.Parse($"{secondSetAsString[1]}");
+
+            var firstSet = firstSetFirstBallPins + firstSetSecondBallPins;
+            var secondSet = secondSetFirstBallPins + secondSetSecondBallPins;
             
-            return (firstSetFirstBallPins + firstSetSecondBallPins) + (secondSetFirstBallPins + secondSetSecondBallPins);
+            return firstSet + secondSet;
         }    
         
         if (scoreString == "03|03|0|0|0|0|0|0|0|0||")
