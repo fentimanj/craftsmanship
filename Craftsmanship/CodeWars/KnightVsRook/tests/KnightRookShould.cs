@@ -8,9 +8,20 @@ public class KnightRookShould
     public void ReturnNone_WhenKnightVsRookInvoked_GivenKnightAndRookNextToEachOther()
     {
         object[] rookPosition = { 4, "C" };
-        object[] knightPosition = { 4, "D" };
+        object[] knightPosition = { 5, "D" };
         
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("None");
+    }
+
+    [Theory]
+    [InlineData(5 ,"D", 5, "C")]
+    [InlineData(6 ,"D", 6, "E")]
+    public void ReturnRook_WhenKnightVsRookInvoked_GivenKnightIsInlineWithRook(int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
+    {
+        object[] rookPosition = { rookNumberPosition, rookLetterPosition };
+        object[] knightPosition = { knightNumberPosition, knightLetterPosition };
+
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Rook");
     }
     
 }
