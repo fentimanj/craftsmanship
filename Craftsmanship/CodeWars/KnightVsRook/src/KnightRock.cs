@@ -9,7 +9,7 @@ public class KnightRook
         var knightNumberRow = (int)knightPosition[0];
         var knightLetterRow = (string)knightPosition[1];
         
-        if(rookNumberRow == 5 && rookLetterRow == "D" && knightNumberRow == 8 && knightLetterRow == "C")
+        if(rookNumberRow == 6 && rookLetterRow == "D" && knightNumberRow == 8 && knightLetterRow == "C")
         {
             return "Knight";
         }
