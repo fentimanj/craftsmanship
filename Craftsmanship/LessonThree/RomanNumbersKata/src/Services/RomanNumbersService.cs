@@ -19,24 +19,14 @@ public class RomanNumbersService
 
         var output = string.Empty;
 
-        while (inputNumber >= 10)
+        foreach (var item in arabicToRoman.Keys.OrderByDescending(x => x))
         {
-            output += arabicToRoman[10];
-            inputNumber -= 10;
+            while (inputNumber >= item)
+            {
+                output += arabicToRoman[item];
+                inputNumber -= item;
+            }
         }
-
-        while (inputNumber >= 5)
-        {
-            output += arabicToRoman[5];
-            inputNumber -= 5;
-        }
-
-        while (inputNumber >= 1)
-        {
-            output += arabicToRoman[1];
-            inputNumber -= 1;
-        }
-
         return output;
     }
 }
