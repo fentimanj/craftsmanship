@@ -1,15 +1,11 @@
-using System;
-
 public class KnightRook
 {
-    public static string KnightVsRook(object[] rawknightPosition, object[]rawrookPosition)
+    public static string KnightVsRook(object[] rawKnightPosition, object[] rawRookPosition)
     {
-        var rookPosition = new Position(rawrookPosition);
-
-        var knightLetterRow = (int)((string)rawknightPosition[1])[0];
-        var knightPosition = new Position(rawknightPosition);
+        var rookPosition = new Position(rawRookPosition);
+        var knightPosition = new Position(rawKnightPosition);
         
-        if((rookPosition.Row == (knightPosition.Row - 2) || rookPosition.Row == (knightPosition.Row + 2) ) && (rookPosition.Column == (knightLetterRow + 1) || rookPosition.Column == (knightPosition.Column - 1) ) )
+        if(rookPosition.IsWithinReachOfKnight(knightPosition))
         {
             return "Knight";
         }
@@ -21,11 +17,6 @@ public class KnightRook
 
         return "None";
     }
-
-    private static bool IsInReachOfRook(Position knightPosition, Position rookPosition)
-    {
-        return rookPosition.Row == knightPosition.Row || rookPosition.Column == knightPosition.Column;
-    }
 }
 
 public static class PositionExtensions
@@ -34,6 +25,13 @@ public static class PositionExtensions
     {
         return rookPosition.Row == knightPosition.Row || rookPosition.Column == knightPosition.Column;
     }
+    
+    public static bool IsWithinReachOfKnight(this Position rookPosition, Position knightPosition)
+    {
+        return (rookPosition.Row == knightPosition.Row - 2 || rookPosition.Row == knightPosition.Row + 2 ) && (rookPosition.Column == knightPosition.Column + 1 || rookPosition.Column == knightPosition.Column - 1 );
+    }
+    
+   
 }
 
 public class Position(object[] rawPosition)
