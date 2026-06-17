@@ -4,6 +4,10 @@ public class RomanNumbersService
 {
     public string Convert(int inputNumber)
     {
+        if (inputNumber == 5)
+        {
+            return "V";
+        }
         var output = string.Empty;
         
         for (var i = 0; i < inputNumber; i++)
