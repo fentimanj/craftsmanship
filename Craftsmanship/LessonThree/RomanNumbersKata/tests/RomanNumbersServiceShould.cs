@@ -11,6 +11,7 @@ public class RomanNumbersServiceShould
     [InlineData(3, "III")]
     [InlineData(5, "V")]
     [InlineData(6, "VI")]
+    [InlineData(7, "VII")]
     public void ReturnRomanNumeral_WhenConverting_GivenValidInputNumber(int inputNumber, string expectedRomanNumeral)
     {
         var romanNumbersService = new RomanNumbersService();

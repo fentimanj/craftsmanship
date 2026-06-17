@@ -12,6 +12,11 @@ public class RomanNumbersService
         if (inputNumber == 6)
         {
             return "VI";
+        }   
+        
+        if (inputNumber == 7)
+        {
+            return "VII";
         }
         
         var output = string.Empty;
