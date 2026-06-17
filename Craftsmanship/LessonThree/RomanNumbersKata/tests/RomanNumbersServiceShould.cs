@@ -1,25 +1,18 @@
 namespace tests;
 
 using FluentAssertions;
+using src.Services;
 
 public class RomanNumbersServiceShould
 {
     [Fact]
     public void ReturnCorrectNumber()
     {
-        RomanNumbersService romanNumbersService = new RomanNumbersService();
-        int inputNumber = 1;
+        var romanNumbersService = new RomanNumbersService();
+        var inputNumber = 1;
         
-        string expectedRomanNumeral = romanNumbersService.Convert(inputNumber);
+        var expectedRomanNumeral = romanNumbersService.Convert(inputNumber);
         
         expectedRomanNumeral.Should().Be("I");
-    }
-}
-
-public class RomanNumbersService
-{
-    public string Convert(int inputNumber)
-    {
-        return "I";
     }
 }
