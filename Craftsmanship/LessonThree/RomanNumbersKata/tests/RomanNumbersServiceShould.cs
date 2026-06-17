@@ -5,14 +5,14 @@ using src.Services;
 
 public class RomanNumbersServiceShould
 {
-    [Fact]
-    public void ReturnCorrectNumber()
+    [Theory]
+    [InlineData(1, "I")]
+    public void ReturnRomanNumeral_WhenConverting_GivenValidInputNumber(int inputNumber, string expectedRomanNumeral)
     {
         var romanNumbersService = new RomanNumbersService();
-        var inputNumber = 1;
+
+        var actualRomanNumeral = romanNumbersService.Convert(inputNumber);
         
-        var expectedRomanNumeral = romanNumbersService.Convert(inputNumber);
-        
-        expectedRomanNumeral.Should().Be("I");
+        actualRomanNumeral.Should().Be(expectedRomanNumeral);
     }
 }
