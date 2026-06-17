@@ -9,16 +9,17 @@ public class KnightRook
         var knightNumberRow = (int)knightPosition[0];
         var knightLetterRow = (string)knightPosition[1];
         
-        if(rookNumberRow == 6 && rookLetterRow == "D" && knightNumberRow == 8 && knightLetterRow == "C")
+        if(rookNumberRow == (knightNumberRow - 2) && rookLetterRow == "D" && knightNumberRow == 8 && knightLetterRow == "C")
         {
             return "Knight";
         }
         
-        if(rookNumberRow == 6 && rookLetterRow == "B" && knightNumberRow == 8 && knightLetterRow == "C")
+        if(rookNumberRow == (knightNumberRow - 2)  && rookLetterRow == "B" && knightNumberRow == 8 && knightLetterRow == "C")
         {
             return "Knight";
-        }        
-        if(rookNumberRow == 10 && rookLetterRow == "B" && knightNumberRow == 8 && knightLetterRow == "C")
+        }
+        
+        if(rookNumberRow == (knightNumberRow + 2) && rookLetterRow == "B" && knightNumberRow == 8 && knightLetterRow == "C")
         {
             return "Knight";
         }
