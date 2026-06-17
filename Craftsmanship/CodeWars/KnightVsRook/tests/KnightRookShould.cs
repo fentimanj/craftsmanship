@@ -29,6 +29,7 @@ public class KnightRookShould
     [Theory]
     [InlineData(6 ,"D", 8, "C")]
     [InlineData(6 ,"B", 8, "C")]
+    [InlineData(10 ,"B", 8, "C")]
     public void ReturnKnight_WhenKnightVsRookInvoked_GivenRookIsWithinKnightReach
         (int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
     {
