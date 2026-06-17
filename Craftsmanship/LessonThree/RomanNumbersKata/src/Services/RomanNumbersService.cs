@@ -8,7 +8,8 @@ public class RomanNumbersService
         {
             { 1, "I" },
             { 4, "IV" },
-            { 5, "V" }
+            { 5, "V" },
+            { 10, "X" }
         };
 
         if (arabicToRoman.ContainsKey(inputNumber))
@@ -18,13 +19,19 @@ public class RomanNumbersService
 
         var output = string.Empty;
 
+        while (inputNumber >= 10)
+        {
+            output += arabicToRoman[10];
+            inputNumber -= 10;
+        }
+
         while (inputNumber >= 5)
         {
             output += arabicToRoman[5];
             inputNumber -= 5;
         }
 
-        while(inputNumber >= 1)
+        while (inputNumber >= 1)
         {
             output += arabicToRoman[1];
             inputNumber -= 1;
