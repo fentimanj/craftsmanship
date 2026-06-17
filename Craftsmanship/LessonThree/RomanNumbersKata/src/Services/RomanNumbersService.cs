@@ -4,23 +4,31 @@ public class RomanNumbersService
 {
     public string Convert(int inputNumber)
     {
-        if (inputNumber == 5)
-        {
-            return "V";
-        }  
-        
-        if (inputNumber == 6)
-        {
-            return "VI";
-        }   
-        
-        if (inputNumber == 7)
-        {
-            return "VII";
-        }
-        
         var output = string.Empty;
         
+        if (inputNumber == 5)
+        {
+            output = "V";
+            inputNumber -= 5;
+        }
+
+        if (inputNumber == 6)
+        {
+            output = "VI";
+            inputNumber -= 6;
+        }
+
+        if (inputNumber == 7)
+        {
+            output = "VII";
+            inputNumber -= 7;
+        }
+
+        if (inputNumber > 4)
+        {
+            return output;
+        }
+
         for (var i = 0; i < inputNumber; i++)
         {
             output += "I";
