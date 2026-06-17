@@ -11,12 +11,12 @@ public class KnightRook
 
 
         
-        if(rookNumberRow == (knightNumberRow - 2) && rookLetterRow == (knightLetterRow + 1) && knightNumberRow == 8 && knightLetterRow == 'C')
+        if(rookNumberRow == (knightNumberRow - 2) && (rookLetterRow == (knightLetterRow + 1) || rookLetterRow == (knightLetterRow - 1) ) )
         {
             return "Knight";
         }
         
-        if(rookNumberRow == (knightNumberRow - 2)  && rookLetterRow == 'B' && knightNumberRow == 8 && knightLetterRow == 'C')
+        if(rookNumberRow == (knightNumberRow - 2)  && rookLetterRow == (knightLetterRow - 1))
         {
             return "Knight";
         }
