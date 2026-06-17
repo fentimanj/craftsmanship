@@ -16,12 +16,25 @@ public class KnightRookShould
     [Theory]
     [InlineData(5 ,"D", 5, "C")]
     [InlineData(6 ,"D", 6, "E")]
-    public void ReturnRook_WhenKnightVsRookInvoked_GivenKnightIsInlineWithRook(int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
+    [InlineData(7 ,"D", 9, "D")]
+    public void ReturnRook_WhenKnightVsRookInvoked_GivenKnightIsInlineWithRook
+        (int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
     {
         object[] rookPosition = { rookNumberPosition, rookLetterPosition };
         object[] knightPosition = { knightNumberPosition, knightLetterPosition };
 
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Rook");
+    } 
+    
+    [Theory]
+    [InlineData(5 ,"D", 8, "C")]
+    public void ReturnKnight_WhenKnightVsRookInvoked_GivenRookIsWithinKnightReach
+        (int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
+    {
+        object[] rookPosition = { rookNumberPosition, rookLetterPosition };
+        object[] knightPosition = { knightNumberPosition, knightLetterPosition };
+
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Knight");
     }
     
 }
