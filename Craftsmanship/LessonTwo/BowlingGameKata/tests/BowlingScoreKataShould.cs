@@ -22,6 +22,7 @@ public class BowlingScoreKataShould
     [InlineData("1/|0|0|0|0|0|0|0|0|0||", 10)]
     [InlineData("1/|1-|0|0|0|0|0|0|0|0||", 12)]
     [InlineData("1/|2-|0|0|0|0|0|0|0|0||", 14)]
+    [InlineData("1/|8-|0|0|0|0|0|0|0|0||", 26)]
     public void ReturnCorrectScore_WhenCalculateScoreInvoked_GivenValidScoreCard(string scoreCard, int expectedScore)
     {
         var calculatedScore = BowlingScoreService.CalculateScore(scoreCard);

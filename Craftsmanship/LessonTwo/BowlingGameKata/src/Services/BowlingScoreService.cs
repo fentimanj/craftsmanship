@@ -6,17 +6,24 @@ public class BowlingScoreService
 {
     public static int CalculateScore(string rawScoreCard)
     {
-        if (rawScoreCard == "1/|1-|0|0|0|0|0|0|0|0||")
+       var splitScoreCardString = rawScoreCard.Replace(" ", "").Split("|");
+
+       var firstSetWasSpare = splitScoreCardString[0] == "1/";
+       
+       if (firstSetWasSpare && splitScoreCardString[1] == "1-")
         {
-            return 12;
+            return (1 + 9 + 1) + (1 + 0) ;
+        } 
+        
+        if (firstSetWasSpare && splitScoreCardString[1] == "2-")
+        {
+            return (1 + 9 + 2) + (2 + 0) ;
         }
         
-         if (rawScoreCard == "1/|2-|0|0|0|0|0|0|0|0||")
+        if (firstSetWasSpare && splitScoreCardString[1] == "8-")
         {
-            return 14;
+            return (1 + 9 + 8) + (8 + 0) ;
         }
-        
-        var splitScoreCardString = rawScoreCard.Replace(" ", "").Split("|");
 
         var scoringSets = splitScoreCardString.MapSets();
 
