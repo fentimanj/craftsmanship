@@ -4,29 +4,29 @@ public class RomanNumbersService
 {
     public string Convert(int inputNumber)
     {
-        var edgeCases = new Dictionary<int, string>
+        var arabicToRoman = new Dictionary<int, string>
         {
-            {
-                4, "IV"
-            }
+            { 1, "I" },
+            { 4, "IV" },
+            { 5, "V" }
         };
 
-        if (edgeCases.ContainsKey(inputNumber))
+        if (arabicToRoman.ContainsKey(inputNumber))
         {
-            return edgeCases[inputNumber];
+            return arabicToRoman[inputNumber];
         }
 
         var output = string.Empty;
 
         if (inputNumber >= 5)
         {
-            output = "V";
+            output = arabicToRoman[5];
             inputNumber -= 5;
         }
 
         for (var i = 0; i < inputNumber; i++)
         {
-            output += "I";
+            output += arabicToRoman[1];
         }
 
         return output;
