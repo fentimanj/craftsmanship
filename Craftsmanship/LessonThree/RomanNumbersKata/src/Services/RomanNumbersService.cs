@@ -18,15 +18,16 @@ public class RomanNumbersService
 
         var output = string.Empty;
 
-        if (inputNumber >= 5)
+        while (inputNumber >= 5)
         {
-            output = arabicToRoman[5];
+            output += arabicToRoman[5];
             inputNumber -= 5;
         }
 
-        for (var i = 0; i < inputNumber; i++)
+        while(inputNumber >= 1)
         {
             output += arabicToRoman[1];
+            inputNumber -= 1;
         }
 
         return output;
