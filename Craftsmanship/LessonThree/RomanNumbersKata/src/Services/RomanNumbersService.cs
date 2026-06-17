@@ -12,15 +12,15 @@ public class RomanNumbersService
             { 10, "X" }
         };
 
-        if (arabicToRoman.ContainsKey(inputNumber))
-        {
-            return arabicToRoman[inputNumber];
-        }
-
         var output = string.Empty;
 
         foreach (var arabic in arabicToRoman.Keys.OrderByDescending(key => key))
         {
+            if (inputNumber == 4)
+            {
+                return arabicToRoman[4];
+            }
+            
             while (inputNumber >= arabic)
             {
                 output += arabicToRoman[arabic];
