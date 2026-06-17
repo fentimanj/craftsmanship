@@ -4,8 +4,13 @@ public class RomanNumbersService
 {
     public string Convert(int inputNumber)
     {
-        var romanNumerals = new[] { "I", "II", "III" };
+        var output = string.Empty;
         
-        return romanNumerals[inputNumber - 1];
+        for (var i = 0; i < inputNumber; i++)
+        {
+            output += "I";
+        }
+        
+        return output;
     }
 }
