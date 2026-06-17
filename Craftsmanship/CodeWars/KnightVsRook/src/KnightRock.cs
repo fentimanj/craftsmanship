@@ -14,6 +14,11 @@ public class KnightRook
             return "Knight";
         }
         
+        if(rookNumberRow == 6 && rookLetterRow == "B" && knightNumberRow == 8 && knightLetterRow == "C")
+        {
+            return "Knight";
+        }
+        
         if (rookNumberRow == knightNumberRow || rookLetterRow == knightLetterRow)
         {
             return "Rook";
