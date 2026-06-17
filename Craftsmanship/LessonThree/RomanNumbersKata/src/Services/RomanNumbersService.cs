@@ -4,10 +4,8 @@ public class RomanNumbersService
 {
     public string Convert(int inputNumber)
     {
-        if (inputNumber == 2)
-        {
-            return "II";
-        }
-        return "I";
+        var romanNumerals = new[] { "I", "II", "III" };
+        
+        return romanNumerals[inputNumber - 1];
     }
 }
