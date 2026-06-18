@@ -9,14 +9,14 @@ public class KnightRookShould
     {
         object[] rookPosition = { 4, "C" };
         object[] knightPosition = { 5, "D" };
-        
+
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("None");
     }
 
     [Theory]
-    [InlineData(5 ,"D", 5, "C")]
-    [InlineData(6 ,"D", 6, "E")]
-    [InlineData(7 ,"D", 9, "D")]
+    [InlineData(5, "D", 5, "C")]
+    [InlineData(6, "D", 6, "E")]
+    [InlineData(7, "D", 9, "D")]
     public void ReturnRook_WhenKnightVsRookInvoked_GivenKnightIsInlineWithRook
         (int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
     {
@@ -24,10 +24,12 @@ public class KnightRookShould
         object[] knightPosition = { knightNumberPosition, knightLetterPosition };
 
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Rook");
-    } 
-    
+    }
+
     [Theory]
-    [InlineData(5 ,"D", 8, "C")]
+    [InlineData(6, "D", 8, "C")]
+    [InlineData(6, "B", 8, "C")]
+    [InlineData(10, "B", 8, "C")]
     public void ReturnKnight_WhenKnightVsRookInvoked_GivenRookIsWithinKnightReach
         (int rookNumberPosition, string rookLetterPosition, int knightNumberPosition, string knightLetterPosition)
     {
@@ -36,31 +38,28 @@ public class KnightRookShould
 
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Knight");
     }
-    
-}
 
-/*
- [Test, Order(1)]
-      public void KnightTest()
-      {
-          object[] rookPosition = { 4, "C" };
-          object[] knightPosition = {6, "D"};
-          Assert.That(KnightRook.KnightVsRook(knightPosition, rookPosition), Is.EqualTo("Knight").IgnoreCase);
-      }
-      
-      [Test, Order(2)]
-      public void RookTest()
-      {
-          object[] rookPosition = { 2, "G" };
-          object[] knightPosition = { 2, "B" };
-          Assert.That(KnightRook.KnightVsRook(knightPosition, rookPosition), Is.EqualTo("Rook").IgnoreCase);
-      }
-      
-      [Test, Order(3)]
-      public void NoneTest()
-      {
-          object[] rookPosition = { 2, "F" };
-          object[] knightPosition = { 7, "B" };
-          Assert.That(KnightRook.KnightVsRook(knightPosition, rookPosition), Is.EqualTo("None").IgnoreCase);
-      }
-      */
+    [Fact]
+    public void CodeWarsTestOne()
+    {
+        object[] rookPosition = { 4, "C" };
+        object[] knightPosition = { 6, "D" };
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Knight");
+    }
+
+    [Fact]
+    public void CodeWarsTestTwo()
+    {
+        object[] rookPosition = { 2, "G" };
+        object[] knightPosition = { 2, "B" };
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Rook");
+    }
+
+    [Fact]
+    public void CodeWarsTestThree()
+    {
+        object[] rookPosition = { 2, "F" };
+        object[] knightPosition = { 7, "B" };
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("None");
+    }
+}
