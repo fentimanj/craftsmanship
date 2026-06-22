@@ -31,6 +31,8 @@ public class TitleCaseShould
     
     [Theory]
     [InlineData("harry potter and dobby", "Harry Potter and Dobby", "and")]
+    [InlineData("gary snotter on ice", "Gary Snotter on Ice", "on")]
+    [InlineData("jenny groover in dark", "Jenny Groover in Dark", "in")]
     public void ReturnACorrectlyFormattedTitle_WhenConverted_GivenTwoLowerCaseWords(string inputTitle, string expectedConvertedTitle, string minorWords)
     {
         var result = Kata.TitleCase(inputTitle, minorWords);
