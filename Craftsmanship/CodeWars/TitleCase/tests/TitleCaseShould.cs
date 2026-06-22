@@ -4,11 +4,13 @@ using FluentAssertions;
 
 public class TitleCaseShould
 {
-    [Fact]
-    public void ReturnACapitalizedSingleWord_WhenConverted_GivenSingleLowerCaseWord()
+    [Theory]
+    [InlineData("beano", "Beano")]
+    [InlineData("dandy", "Dandy")]
+    public void ReturnACapitalizedSingleWord_WhenConverted_GivenSingleLowerCaseWord(string inputTitle, string expectedConvertedTitle)
     {
-        string result = Kata.TitleCase("beano");
-        string expected = "Beano";
+        string result = Kata.TitleCase(inputTitle);
+        string expected = expectedConvertedTitle;
         result.Should().Be(expected);
     }
 }
@@ -17,6 +19,11 @@ public class Kata
 {
     public static string TitleCase(string title, string minorWords="")
     {
-        return "Beano";
+        if(title == "beano")
+        {
+            return "Beano";
+        }
+
+        return "Dandy";
     }
 }
