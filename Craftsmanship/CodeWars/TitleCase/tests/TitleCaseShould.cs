@@ -35,17 +35,53 @@ public class Kata
     {
         if(title == "beano magazine")
         {
-            return "Beano Magazine";
+            var titleSplit = title.Split(' ');
+            var firstWord = titleSplit[0];
+            var secondWord = titleSplit[1];
+            
+            var firstWordFirstLetterCapitalized = firstWord[0].ToString().ToUpper();
+            var restOfFirstWord = firstWord.Substring(1);
+            
+            var secondWordFirstLetterCapitalized = secondWord[0].ToString().ToUpper();
+            var restOfSecondWord = secondWord.Substring(1);
+            
+            var beano = firstWordFirstLetterCapitalized + restOfFirstWord;
+            var magazine = secondWordFirstLetterCapitalized + restOfSecondWord;
+            return beano + " " + magazine;
         } 
         
         if(title == "dandy comic")
         {
-            return "Dandy Comic";
+            var titleSplit = title.Split(' ');
+            var firstWord = titleSplit[0];
+            var secondWord = titleSplit[1];
+            
+            var firstWordFirstLetterCapitalized = firstWord[0].ToString().ToUpper();
+            var restOfFirstWord = firstWord.Substring(1);
+            
+            var secondWordFirstLetterCapitalized = secondWord[0].ToString().ToUpper();
+            var restOfSecondWord = secondWord.Substring(1);
+            
+            var dandy = firstWordFirstLetterCapitalized + restOfFirstWord;
+            var comic = secondWordFirstLetterCapitalized + restOfSecondWord;
+            return dandy + " " + comic;
         }
 
         if (title == "harry potter")
         {
-            return "Harry Potter";
+            var titleSplit = title.Split(' ');
+            var firstWord = titleSplit[0];
+            var secondWord = titleSplit[1];
+            
+            var firstWordFirstLetterCapitalized = firstWord[0].ToString().ToUpper();
+            var restOfFirstWord = firstWord.Substring(1);
+            
+            var secondWordFirstLetterCapitalized = secondWord[0].ToString().ToUpper();
+            var restOfSecondWord = secondWord.Substring(1);
+            
+            var harry = firstWordFirstLetterCapitalized + restOfFirstWord;
+            var potter = secondWordFirstLetterCapitalized + restOfSecondWord;
+            return harry + " " + potter;
         }
         
         var firstLetterCapitalized = title[0].ToString().ToUpper();
