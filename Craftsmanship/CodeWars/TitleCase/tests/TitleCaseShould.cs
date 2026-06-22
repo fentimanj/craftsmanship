@@ -27,5 +27,16 @@ public class TitleCaseShould
         var result = Kata.TitleCase(inputTitle);
         var expected = expectedConvertedTitle;
         result.Should().Be(expected);
+    } 
+    
+    [Theory]
+    [InlineData("harry potter and dobby", "Harry Potter and Dobby", "and")]
+    public void ReturnACorrectlyFormattedTitle_WhenConverted_GivenTwoLowerCaseWords(string inputTitle, string expectedConvertedTitle, string minorWords)
+    {
+        var result = Kata.TitleCase(inputTitle, minorWords);
+        var expected = expectedConvertedTitle;
+        result.Should().Be(expected);
     }
+    
+    
 }
