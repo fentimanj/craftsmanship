@@ -7,23 +7,22 @@ public class TitleCaseShould
     [Theory]
     [InlineData("beano", "Beano")]
     [InlineData("dandy", "Dandy")]
-    public void ReturnACapitalizedSingleWord_WhenConverted_GivenSingleLowerCaseWord(string inputTitle, string expectedConvertedTitle)
+    [InlineData("harry", "Harry")]
+    public void ReturnACapitalizedSingleWord_WhenConverted_GivenSingleLowerCaseWord(string inputTitle,
+        string expectedConvertedTitle)
     {
-        string result = Kata.TitleCase(inputTitle);
-        string expected = expectedConvertedTitle;
+        var result = Kata.TitleCase(inputTitle);
+        var expected = expectedConvertedTitle;
         result.Should().Be(expected);
     }
 }
 
 public class Kata
 {
-    public static string TitleCase(string title, string minorWords="")
+    public static string TitleCase(string title, string minorWords = "")
     {
-        if(title == "beano")
-        {
-            return "Beano";
-        }
-
-        return "Dandy";
+        var firstLetterCapitalized = title[0].ToString().ToUpper();
+        var restOfWord = title.Substring(1);
+        return firstLetterCapitalized + restOfWord;
     }
 }
