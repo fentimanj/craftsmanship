@@ -61,5 +61,22 @@ public class KnightRookShould
         object[] rookPosition = { 2, "F" };
         object[] knightPosition = { 7, "B" };
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("None");
+    } 
+    
+    [Fact]
+    public void CodeWarsTestFour()
+    {
+        object[] rookPosition = { 6, "G" };
+        object[] knightPosition = { 7, "E" };
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Knight");
     }
 }
+
+/*
+Test Failed
+     Knight Position: 6,G and Rook Position: 7,E --> Knight
+   Assert.That(KnightRook.KnightVsRook(positions[0], positions[1]), Is.EqualTo(expected).IgnoreCase)
+     Expected string length 6 but was 4. Strings differ at index 0.
+     Expected: "Knight", ignoring case
+     But was:  "None"
+*/
