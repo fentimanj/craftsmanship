@@ -33,9 +33,10 @@ public class Kata
 {
     public static string TitleCase(string title, string minorWords = "")
     {
-        if(title == "beano magazine")
+        var titleSplit = title.Split(' ');
+
+        if(titleSplit.Length == 2)
         {
-            var titleSplit = title.Split(' ');
             var firstWord = titleSplit[0];
             var secondWord = titleSplit[1];
             
@@ -52,7 +53,6 @@ public class Kata
         
         if(title == "dandy comic")
         {
-            var titleSplit = title.Split(' ');
             var firstWord = titleSplit[0];
             var secondWord = titleSplit[1];
             
@@ -69,7 +69,6 @@ public class Kata
 
         if (title == "harry potter")
         {
-            var titleSplit = title.Split(' ');
             var firstWord = titleSplit[0];
             var secondWord = titleSplit[1];
             
