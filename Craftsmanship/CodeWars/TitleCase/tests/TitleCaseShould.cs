@@ -1,6 +1,7 @@
 namespace tests;
 
 using FluentAssertions;
+using src.Services;
 
 public class TitleCaseShould
 {
@@ -26,65 +27,5 @@ public class TitleCaseShould
         var result = Kata.TitleCase(inputTitle);
         var expected = expectedConvertedTitle;
         result.Should().Be(expected);
-    }
-}
-
-public class Kata
-{
-    public static string TitleCase(string title, string minorWords = "")
-    {
-        var titleSplit = title.Split(' ');
-
-        if(titleSplit.Length == 2)
-        {
-            var firstWord = titleSplit[0];
-            var secondWord = titleSplit[1];
-            
-            var firstWordFirstLetterCapitalized = firstWord[0].ToString().ToUpper();
-            var restOfFirstWord = firstWord.Substring(1);
-            
-            var secondWordFirstLetterCapitalized = secondWord[0].ToString().ToUpper();
-            var restOfSecondWord = secondWord.Substring(1);
-            
-            var beano = firstWordFirstLetterCapitalized + restOfFirstWord;
-            var magazine = secondWordFirstLetterCapitalized + restOfSecondWord;
-            return beano + " " + magazine;
-        } 
-        
-        if(title == "dandy comic")
-        {
-            var firstWord = titleSplit[0];
-            var secondWord = titleSplit[1];
-            
-            var firstWordFirstLetterCapitalized = firstWord[0].ToString().ToUpper();
-            var restOfFirstWord = firstWord.Substring(1);
-            
-            var secondWordFirstLetterCapitalized = secondWord[0].ToString().ToUpper();
-            var restOfSecondWord = secondWord.Substring(1);
-            
-            var dandy = firstWordFirstLetterCapitalized + restOfFirstWord;
-            var comic = secondWordFirstLetterCapitalized + restOfSecondWord;
-            return dandy + " " + comic;
-        }
-
-        if (title == "harry potter")
-        {
-            var firstWord = titleSplit[0];
-            var secondWord = titleSplit[1];
-            
-            var firstWordFirstLetterCapitalized = firstWord[0].ToString().ToUpper();
-            var restOfFirstWord = firstWord.Substring(1);
-            
-            var secondWordFirstLetterCapitalized = secondWord[0].ToString().ToUpper();
-            var restOfSecondWord = secondWord.Substring(1);
-            
-            var harry = firstWordFirstLetterCapitalized + restOfFirstWord;
-            var potter = secondWordFirstLetterCapitalized + restOfSecondWord;
-            return harry + " " + potter;
-        }
-        
-        var firstLetterCapitalized = title[0].ToString().ToUpper();
-        var restOfWord = title.Substring(1);
-        return firstLetterCapitalized + restOfWord;
     }
 }
