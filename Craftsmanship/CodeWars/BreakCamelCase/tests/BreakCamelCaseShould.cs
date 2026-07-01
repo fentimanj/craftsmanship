@@ -1,6 +1,7 @@
 namespace tests;
 
 using FluentAssertions;
+using src.Services;
 
 public class BreakCamelCaseShould
 {
@@ -16,29 +17,10 @@ public class BreakCamelCaseShould
     [Theory]
     [InlineData("helloWorld", "hello World")]
     [InlineData("niceDay", "nice Day")]
+    [InlineData("badPlan", "bad Plan")]
     public void ReturnTwoWords_WhenWordIsSplit_GivenTwoWords(string input, string expected)
     {
         var splitWord = Kata.BreakCamelCase(input);
         splitWord.Should().Be(expected);
-    }
-}
-
-public class Kata
-{
-    public static string BreakCamelCase(string str)
-    {
-        if (str == "helloWorld")
-        {
-            return "hello World";
-        }  
-        
-        if (str == "niceDay")
-        {
-            return "nice Day";
-        }
-        
-        
-
-        return str;
     }
 }
