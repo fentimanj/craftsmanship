@@ -28,7 +28,17 @@ public static class PositionExtensions
     
     public static bool IsWithinReachOfKnight(this Position rookPosition, Position knightPosition)
     {
-        return (rookPosition.Row == knightPosition.Row - 2 || rookPosition.Row == knightPosition.Row + 2 ) && (rookPosition.Column == knightPosition.Column + 1 || rookPosition.Column == knightPosition.Column - 1 );
+        return (rookPosition.Row == knightPosition.Row.TwoToLeft() || rookPosition.Row == knightPosition.Row + 2 ) && (rookPosition.Column == knightPosition.Column + 1 || rookPosition.Column == knightPosition.Column - 1 );
+    }
+
+    private static int TwoToLeft(this int rowInt)
+    {
+        return rowInt - 2;
+    }
+    
+    private static int TwoToRight(this int rowInt)
+    {
+        return rowInt - 2;
     }
     
    
