@@ -96,6 +96,17 @@ cat > "$TESTS_DIR/tests.csproj" << 'CSPROJ'
 </Project>
 CSPROJ
 
+cat > "$TESTS_DIR/${KATA}Should.cs" << TESTCLASS
+public class ${KATA}Should
+{
+    [Fact]
+    public void Return_When_Given()
+    {
+        throw new NotImplementedException();
+    }
+}
+TESTCLASS
+
 cat > "$KATA_DIR/ReadMe.md" << README
 # $KATA
 
@@ -113,6 +124,7 @@ echo ""
 echo "Scaffolded $LESSON/$KATA"
 echo "  $KATA_DIR/src/src.csproj"
 echo "  $KATA_DIR/tests/tests.csproj"
+echo "  $TESTS_DIR/${KATA}Should.cs"
 echo "  $KATA_SLN"
 echo "  $KATA_DIR/ReadMe.md"
 echo "  Added to Craftsmanship.sln under $LESSON > $KATA"

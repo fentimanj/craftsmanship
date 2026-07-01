@@ -61,5 +61,15 @@ public class KnightRookShould
         object[] rookPosition = { 2, "F" };
         object[] knightPosition = { 7, "B" };
         KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("None");
+    } 
+    
+    [Fact]
+    public void CodeWarsTestFour()
+    {
+        object[] rookPosition = { 6, "G" };
+        object[] knightPosition = { 7, "E" };
+        KnightRook.KnightVsRook(knightPosition, rookPosition).Should().Be("Knight");
     }
 }
+
+
