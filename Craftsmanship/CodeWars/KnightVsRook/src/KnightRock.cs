@@ -1,4 +1,9 @@
-public class KnightRook
+using src.Extensions;
+using src.Models;
+
+namespace src;
+
+public static class KnightRook
 {
     public static string KnightVsRook(object[] rawKnightPosition, object[] rawRookPosition)
     {
@@ -17,28 +22,4 @@ public class KnightRook
 
         return "None";
     }
-}
-
-public static class PositionExtensions
-{
-    public static bool IsInReachOfRook(this Position knightPosition, Position rookPosition)
-    {
-        return rookPosition.Row == knightPosition.Row || rookPosition.Column == knightPosition.Column;
-    }
-    
-    public static bool IsWithinReachOfKnight(this Position rookPosition, Position knightPosition)
-    {
-        return ((rookPosition.Row == knightPosition.Row - 2 || rookPosition.Row == knightPosition.Row + 2) &&
-                (rookPosition.Column == knightPosition.Column + 1 || rookPosition.Column == knightPosition.Column - 1))
-               ||
-               ((rookPosition.Row == knightPosition.Row - 1 || rookPosition.Row == knightPosition.Row + 1) &&
-                (rookPosition.Column == knightPosition.Column + 2 || rookPosition.Column == knightPosition.Column - 2));
-    }
-   
-}
-
-public class Position(object[] rawPosition)
-{
-    public int Row { get; } = (int)rawPosition[0];
-    public int Column { get; } = ((string)rawPosition[1])[0];
 }

@@ -1,6 +1,7 @@
 namespace tests;
 
 using FluentAssertions;
+using src;
 
 public class KnightRookShould
 {
