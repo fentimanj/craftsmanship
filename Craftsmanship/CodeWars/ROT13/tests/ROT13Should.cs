@@ -10,6 +10,7 @@ public class ROT13Should
     [InlineData("MA", "ZN")]
     [InlineData("FI", "SV")]
     [InlineData("EBG", "ROT")]
+    [InlineData("EBG1", "ROT1")]
     public void ReturnCorrectString_WhenConverstionInvoked_GivenString(string inputString, string expectedString)
     {
         var convertedString = Kata.Rot13(inputString);
@@ -59,6 +60,11 @@ public class Kata
     {
         if (input.Length == 1)
         {
+            if(char.IsNumber(input[0]))
+            {
+                return 1.ToString();
+            }
+            
             var firstChar = input[0];
 
             if (!char.IsUpper(firstChar))
@@ -70,16 +76,12 @@ public class Kata
         }
 
         var output = "";
-        
-            for (var i = 0; i < input.Length; i++)
-            {
-                output += rot13DictionaryMapping[input[i]];
-            }
-            
-            return output;
-       
 
-        return "";
-        
+        for (var i = 0; i < input.Length; i++)
+        {
+            output += Rot13(input[i].ToString());
+        }
+
+        return output;
     }
 }
