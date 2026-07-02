@@ -69,22 +69,15 @@ public class Kata
             return rot13DictionaryMapping[firstChar].ToString();
         }
 
-        if (input.Length == 2)
-        {
-            var firstLetter = Rot13(input[0].ToString());
-            var secondLetter = Rot13(input[1].ToString());
-            
-            return firstLetter + secondLetter;
-        }
+        var output = "";
         
-        if (input.Length == 3)
-        {
-            var firstLetter = Rot13(input[0].ToString());
-            var secondLetter = Rot13(input[1].ToString());
-            var thirdLetter = Rot13(input[2].ToString());
+            for (var i = 0; i < input.Length; i++)
+            {
+                output += rot13DictionaryMapping[input[i]];
+            }
             
-            return firstLetter + secondLetter + thirdLetter;
-        }
+            return output;
+       
 
         return "";
         
