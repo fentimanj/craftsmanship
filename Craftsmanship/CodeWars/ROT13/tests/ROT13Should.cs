@@ -11,6 +11,7 @@ public class ROT13Should
     [InlineData("FI", "SV")]
     [InlineData("EBG", "ROT")]
     [InlineData("EBG1", "ROT1")]
+    [InlineData("EBG13 ", "ROT13 ")]
     public void ReturnCorrectString_WhenConverstionInvoked_GivenString(string inputString, string expectedString)
     {
         var convertedString = Kata.Rot13(inputString);
@@ -60,9 +61,9 @@ public class Kata
     {
         if (input.Length == 1)
         {
-            if(char.IsNumber(input[0]))
+            if(char.IsNumber(input[0]) || !char.IsLetter(input[0]))
             {
-                return 1.ToString();
+                return input[0].ToString();
             }
             
             var firstChar = input[0];
