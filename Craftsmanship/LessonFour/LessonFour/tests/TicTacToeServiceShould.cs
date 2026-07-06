@@ -6,7 +6,7 @@ namespace tests;
 public class TicTacToeServiceShould
 {
     [Fact]
-    public void ReturnSinglePlayerSymbol_WhenTurnTaken_GivenOneMoveIsMade()
+    public void ReturnEmptyBoard_WhenNewGameStarted_GivenNoMovesTaken()
     {
         var game = new TicTacToeGame();
         
