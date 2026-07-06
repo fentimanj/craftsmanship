@@ -2,17 +2,15 @@ namespace src.Services;
 
 public class TicTacToeGame
 {
-    private bool isX = true;
+    private bool _isXSymbolNext = true;
     
     public char NextSymbolIs()
     {
-        return isX ? 'X' : 'O';
+        return _isXSymbolNext ? 'X' : 'O';
     }
-    
-    public List<char> Board { get; set; } = new();
 
     public void TakeTurn(int i, int i1)
     {
-        isX = false;
+        _isXSymbolNext = !_isXSymbolNext;
     }
 }

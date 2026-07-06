@@ -21,6 +21,17 @@ public class TicTacToeServiceShould
         game.TakeTurn(0, 0);
         
         game.NextSymbolIs().Should().Be('O');
+    }   
+    
+    [Fact]
+    public void ReturnXSymbol_WhenNewGameStarted_GivenTwoTurnsTaken()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(0, 0);
+        game.TakeTurn(1, 0);
+        
+        game.NextSymbolIs().Should().Be('X');
     }
 }
 
