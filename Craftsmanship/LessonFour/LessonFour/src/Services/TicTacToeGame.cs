@@ -2,11 +2,17 @@ namespace src.Services;
 
 public class TicTacToeGame
 {
-    public static char NextSymbolIs()
+    private bool isX = true;
+    
+    public char NextSymbolIs()
     {
-        return 'X';
+        return isX ? 'X' : 'O';
     }
-
-
+    
     public List<char> Board { get; set; } = new();
+
+    public void TakeTurn(int i, int i1)
+    {
+        isX = false;
+    }
 }
