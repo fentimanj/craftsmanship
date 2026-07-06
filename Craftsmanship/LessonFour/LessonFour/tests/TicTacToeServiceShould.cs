@@ -1,9 +1,12 @@
 using FluentAssertions;
+using src.Services;
+
+namespace tests;
 
 public class TicTacToeServiceShould
 {
     [Fact]
-    public void Return_When_Given()
+    public void ReturnSinglePlayerSymbol_WhenTurnTaken_GivenOneMoveIsMade()
     {
         var game = new TicTacToeGame();
         
@@ -11,15 +14,4 @@ public class TicTacToeServiceShould
 
         game.Board[0].Should().Be('X');
     }
-}
-
-public class TicTacToeGame
-{
-    public void TakeTurn(char playerSymbol, int i, int i1)
-    {
-        
-    }
-
-
-    public List<char> Board { get; set; } = new List<char>(){'X'};
 }
