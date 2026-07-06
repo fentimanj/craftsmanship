@@ -21,6 +21,13 @@ public class TicTacToeGame
 
     public string WinnerIs()
     {
+        if (this.ThereAreThreeInColumn('O', Column.Left) ||
+            this.ThereAreThreeInColumn('O', Column.Centre) ||
+            this.ThereAreThreeInColumn('O', Column.Right))
+        {
+            return "O";
+        }
+        
         if (this.ThereAreThreeInColumn('X', Column.Left))
         {
             return "X";
@@ -32,6 +39,11 @@ public class TicTacToeGame
         } 
         
         if (this.ThereAreThreeInColumn('O', Column.Centre))
+        {
+            return "O";
+        } 
+        
+        if (this.ThereAreThreeInColumn('O', Column.Right))
         {
             return "O";
         }

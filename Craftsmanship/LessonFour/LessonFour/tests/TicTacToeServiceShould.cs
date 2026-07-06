@@ -93,6 +93,21 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Centre, Row.Bottom); 
         
         game.WinnerIs().Should().Be("O");
+    } 
+    
+    [Fact]
+    public void ReturnWinnerIsO_WhenNewGameStarted_Given0SymbolHasALineInThirdColumn()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(Column.Right, Row.Bottom); 
+        game.TakeTurn(Column.Right, Row.Top); 
+        game.TakeTurn(Column.Left, Row.Top); 
+        game.TakeTurn(Column.Right,Row.Centre); 
+        game.TakeTurn(Column.Centre, Row.Centre); 
+        game.TakeTurn(Column.Right, Row.Bottom); 
+        
+        game.WinnerIs().Should().Be("O");
     }
 
     [Fact]
