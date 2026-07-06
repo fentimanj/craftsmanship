@@ -28,25 +28,24 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.TakeTurn(0, 0);
-        game.TakeTurn(1, 0);
+        game.TakeTurn(Column.Left, 0);
+        game.TakeTurn(Column.Centre, 0);
         
         game.NextSymbolIs().Should().Be('X');
     }
-
+    
     
     
     [Fact]
-    public void ReturnWinnerIsX_WhenNewGameStarted_GivenXSymbolHasALine()
+    public void ReturnWinnerIsX_WhenNewGameStarted_GivenXSymbolHasALineInFirstColumn()
     {
         var game = new TicTacToeGame();
         
-        //I have to write these on a piece of paper as it's hard to work this out
-        game.TakeTurn(0, 0); 
-        game.TakeTurn(1, 0); 
-        game.TakeTurn(0,1); 
-        game.TakeTurn(1, 1); 
-        game.TakeTurn(0, 2); 
+        game.TakeTurn(Column.Left, Row.Top); 
+        game.TakeTurn(Column.Centre, Row.Top); 
+        game.TakeTurn(Column.Left,Row.Middle); 
+        game.TakeTurn(Column.Centre, Row.Middle); 
+        game.TakeTurn(Column.Left, Row.Bottom); 
         
         game.WinnerIs().Should().Be("X");
     }
@@ -56,10 +55,10 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.TakeTurn(0, 0);
-        game.TakeTurn(1, 0);
-        game.TakeTurn(2, 0);
-        game.TakeTurn(3, 0);
+        game.TakeTurn(Column.Left, Row.Top);
+        game.TakeTurn(Column.Centre, Row.Top);
+        game.TakeTurn(Column.Right, Row.Top);
+        game.TakeTurn(Column.Centre, Row.Middle);
         
         game.WinnerIs().Should().Be("Unknown");
     }
@@ -69,12 +68,12 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.TakeTurn(2, 2); 
-        game.TakeTurn(0, 0); 
-        game.TakeTurn(1, 0); 
-        game.TakeTurn(0,1); 
-        game.TakeTurn(1, 1); 
-        game.TakeTurn(0, 2); 
+        game.TakeTurn(Column.Right, Row.Bottom); 
+        game.TakeTurn(Column.Left, Row.Top); 
+        game.TakeTurn(Column.Centre, Row.Top); 
+        game.TakeTurn(Column.Left,Row.Middle); 
+        game.TakeTurn(Column.Centre, Row.Middle); 
+        game.TakeTurn(Column.Left, Row.Bottom); 
         
         game.WinnerIs().Should().Be("O");
     }
