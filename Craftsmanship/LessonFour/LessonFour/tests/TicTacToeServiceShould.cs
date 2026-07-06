@@ -35,7 +35,7 @@ public class TicTacToeServiceShould
     }
 
     [Fact]
-    public void ReturnSomeoneHasWonIsTrue_WhenNewGameStarted_GivenXSymbolHasALine()
+    public void ReturnWinnerIsX_WhenNewGameStarted_GivenXSymbolHasALine()
     {
         var game = new TicTacToeGame();
         
@@ -46,7 +46,19 @@ public class TicTacToeServiceShould
         game.TakeTurn(0, 2); 
         
         game.WinnerIs().Should().Be("X");
+    }
+
+    [Fact]
+    public void ReturnWinnerIsUnknown_WhenNewGameStarted_GivenOnlyFourMoves()
+    {
+        var game = new TicTacToeGame();
         
+        game.TakeTurn(0, 0);
+        game.TakeTurn(1, 0);
+        game.TakeTurn(2, 0);
+        game.TakeTurn(3, 0);
+        
+        game.WinnerIs().Should().Be("Unknown");
     }
 
 }
