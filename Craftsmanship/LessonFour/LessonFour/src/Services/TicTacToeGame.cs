@@ -28,24 +28,11 @@ public class TicTacToeGame
             return "O";
         }
         
-        if (this.ThereAreThreeInColumn('X', Column.Left))
+        if (this.ThereAreThreeInColumn('X', Column.Left) ||
+            this.ThereAreThreeInColumn('X', Column.Centre) ||
+            this.ThereAreThreeInColumn('X', Column.Right))
         {
             return "X";
-        }
-        
-        if (this.ThereAreThreeInColumn('O', Column.Left))
-        {
-            return "O";
-        } 
-        
-        if (this.ThereAreThreeInColumn('O', Column.Centre))
-        {
-            return "O";
-        } 
-        
-        if (this.ThereAreThreeInColumn('O', Column.Right))
-        {
-            return "O";
         }
         
         if (this.ThereAreThreeInRow('X', Row.Top))
