@@ -2,7 +2,7 @@ namespace src.Services;
 
 public class RomanNumbersService
 {
-    private readonly Dictionary<int, string> _arabicToRoman = new Dictionary<int, string>
+    private readonly Dictionary<int, string> arabicToRoman = new Dictionary<int, string>
     {
         { 1, "I" },
         { 4, "IV" },
@@ -15,14 +15,14 @@ public class RomanNumbersService
     {
         var output = string.Empty;
 
-        foreach (var arabic in _arabicToRoman.Keys.OrderByDescending(key => key))
+        foreach (var arabic in this.arabicToRoman.Keys.OrderByDescending(key => key))
         {
             if (inputNumber < arabic)
             {
                 continue;
             }
             
-            output += _arabicToRoman[arabic] + Convert(inputNumber - arabic);
+            output += this.arabicToRoman[arabic] + Convert(inputNumber - arabic);
             return output;
         }
         

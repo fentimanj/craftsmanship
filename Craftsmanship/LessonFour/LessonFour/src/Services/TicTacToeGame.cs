@@ -4,29 +4,29 @@ using Enums;
 
 public class TicTacToeGame
 {
-    private bool _isXSymbolNext = true;
-    private List<Move> _moves = new();
+    private bool isXSymbolNext = true;
+    private readonly List<Move> moves = new();
     
     public char NextSymbolIs()
     {
-        return _isXSymbolNext ? 'X' : 'O';
+        return this.isXSymbolNext ? 'X' : 'O';
     }
 
     public void TakeTurn(Column column, Row rowIndex)
     {
         var move = new Move(NextSymbolIs(), column);
-        _moves.Add(move);
-        _isXSymbolNext = !_isXSymbolNext;
+        this.moves.Add(move);
+        this.isXSymbolNext = !this.isXSymbolNext;
     }
 
     public string WinnerIs()
     {
-        if (_moves.Count(move => move is { symbol: 'X', column: 0 }) == 3)
+        if (this.moves.Count(move => move is { Symbol: 'X', Column: 0 }) == 3)
         {
             return "X";
         }
         
-        if (_moves.Count(move => move is { symbol: 'O', column: 0 }) == 3)
+        if (this.moves.Count(move => move is { Symbol: 'O', Column: 0 }) == 3)
         {
             return "O";
         }
@@ -34,4 +34,4 @@ public class TicTacToeGame
     }
 }
 
-public record Move(char symbol, Column column);
+public record Move(char Symbol, Column Column);

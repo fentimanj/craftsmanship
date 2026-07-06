@@ -1,6 +1,6 @@
 using FluentAssertions;
 
-public class ROT13Should
+public class Rot13Should
 {
     [Theory]
     [InlineData("A", "N")]
