@@ -45,8 +45,8 @@ public class TicTacToeServiceShould
         
         game.TakeTurn(Column.Left, Row.Top); 
         game.TakeTurn(Column.Centre, Row.Top); 
-        game.TakeTurn(Column.Left,Row.Middle); 
-        game.TakeTurn(Column.Centre, Row.Middle); 
+        game.TakeTurn(Column.Left,Row.Centre); 
+        game.TakeTurn(Column.Centre, Row.Centre); 
         game.TakeTurn(Column.Left, Row.Bottom); 
         
         game.WinnerIs().Should().Be("X");
@@ -60,7 +60,7 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, Row.Top);
         game.TakeTurn(Column.Centre, Row.Top);
         game.TakeTurn(Column.Right, Row.Top);
-        game.TakeTurn(Column.Centre, Row.Middle);
+        game.TakeTurn(Column.Centre, Row.Centre);
         
         game.WinnerIs().Should().Be("Unknown");
     }
@@ -73,12 +73,13 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Right, Row.Bottom); 
         game.TakeTurn(Column.Left, Row.Top); 
         game.TakeTurn(Column.Centre, Row.Top); 
-        game.TakeTurn(Column.Left,Row.Middle); 
-        game.TakeTurn(Column.Centre, Row.Middle); 
+        game.TakeTurn(Column.Left,Row.Centre); 
+        game.TakeTurn(Column.Centre, Row.Centre); 
         game.TakeTurn(Column.Left, Row.Bottom); 
         
         game.WinnerIs().Should().Be("O");
-    }    
+    }   
+    
     [Fact]
     public void ReturnWinnerIsO_WhenNewGameStarted_Given0SymbolHasALineInSecondColumn()
     {
@@ -87,12 +88,28 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Right, Row.Bottom); 
         game.TakeTurn(Column.Centre, Row.Top); 
         game.TakeTurn(Column.Left, Row.Top); 
-        game.TakeTurn(Column.Centre,Row.Middle); 
-        game.TakeTurn(Column.Centre, Row.Middle); 
+        game.TakeTurn(Column.Centre,Row.Centre); 
+        game.TakeTurn(Column.Centre, Row.Centre); 
         game.TakeTurn(Column.Centre, Row.Bottom); 
         
         game.WinnerIs().Should().Be("O");
     }
+
+    [Fact]
+    public void ReturnWinnerIsX_WhenNewGameStarted_GivenXSymbolHasALineInFirstRow()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(Column.Left, Row.Top);
+        game.TakeTurn(Column.Centre, Row.Centre);
+        game.TakeTurn(Column.Centre, Row.Top);
+        game.TakeTurn(Column.Centre, Row.Bottom);
+        game.TakeTurn(Column.Left, Row.Top);
+        
+        game.WinnerIs().Should().Be("X");
+        
+    }
+    
     
 
 }

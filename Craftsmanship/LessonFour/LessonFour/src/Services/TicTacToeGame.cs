@@ -12,9 +12,9 @@ public class TicTacToeGame
         return this.isXSymbolNext ? 'X' : 'O';
     }
 
-    public void TakeTurn(Column column, Row rowIndex)
+    public void TakeTurn(Column column, Row row)
     {
-        var move = new Move(NextSymbolIs(), column);
+        var move = new Move(this.NextSymbolIs(), column,row);
         this.moves.Add(move);
         this.isXSymbolNext = !this.isXSymbolNext;
     }
@@ -36,13 +36,27 @@ public class TicTacToeGame
             return "O";
         }
         
+        if (this.ThereAreThreeInRow('X', Row.Top))
+        {
+            return "X";
+        }
+        
         return "Unknown";
     }
 
     private bool ThereAreThreeInColumn(char symbol, Column column)
     {
         return this.moves.Count(move => move.Column == column && move.Symbol == symbol) == 3;
+    } 
+    
+    private bool ThereAreThreeInRow(char symbol, Row row)
+    {
+        return this.moves.Count(move => move.Row == row && move.Symbol == symbol) == 3;
     }
+    
+    
+    
+    
 }
 
-public record Move(char Symbol, Column Column);
+public record Move(char Symbol, Column Column, Row Row);
