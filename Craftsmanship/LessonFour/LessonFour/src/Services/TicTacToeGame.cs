@@ -21,22 +21,27 @@ public class TicTacToeGame
 
     public string WinnerIs()
     {
-        if (this.moves.Count(move => move is { Symbol: 'X', Column: Column.Left }) == 3)
+        if (this.ThereAreThreeInColumn('X', Column.Left))
         {
             return "X";
         }
         
-        if (this.moves.Count(move => move is { Symbol: 'O', Column: Column.Left }) == 3)
+        if (this.ThereAreThreeInColumn('O', Column.Left))
         {
             return "O";
         } 
         
-        if (this.moves.Count(move => move is { Symbol: 'O', Column: Column.Centre }) == 3)
+        if (this.ThereAreThreeInColumn('O', Column.Centre))
         {
             return "O";
         }
         
         return "Unknown";
+    }
+
+    private bool ThereAreThreeInColumn(char symbol, Column column)
+    {
+        return this.moves.Count(move => move.Column == column && move.Symbol == symbol) == 3;
     }
 }
 
