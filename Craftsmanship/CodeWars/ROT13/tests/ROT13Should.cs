@@ -18,16 +18,16 @@ public class ROT13Should
         convertedString.Should().Be(expectedString);
     }
 
-    // [Fact]
+    [Fact]
     public void CodeWarTest()
     {
         Kata.Rot13("EBG13 rknzcyr.").Should().Be("ROT13 example.");
     }
 }
 
-public class Kata
+public static class Kata
 {
-    private static readonly Dictionary<char, char> rot13DictionaryMapping = new()
+    private static readonly Dictionary<char, char> Rot13DictionaryMapping = new()
     {
         { 'A', 'N' },
         { 'B', 'O' },
@@ -61,26 +61,26 @@ public class Kata
     {
         if (input.Length == 1)
         {
-            if(char.IsNumber(input[0]) || !char.IsLetter(input[0]))
-            {
-                return input[0].ToString();
-            }
-            
             var firstChar = input[0];
+            
+            if(char.IsNumber(firstChar) || !char.IsLetter(firstChar))
+            {
+                return firstChar.ToString();
+            }
 
             if (!char.IsUpper(firstChar))
             {
-                return rot13DictionaryMapping[char.ToUpper(firstChar)].ToString().ToLower();
+                return Rot13DictionaryMapping[char.ToUpper(firstChar)].ToString().ToLower();
             }
 
-            return rot13DictionaryMapping[firstChar].ToString();
+            return Rot13DictionaryMapping[firstChar].ToString();
         }
 
         var output = "";
 
-        for (var i = 0; i < input.Length; i++)
+        foreach (var letter in input)
         {
-            output += Rot13(input[i].ToString());
+            output += Rot13(letter.ToString());
         }
 
         return output;
