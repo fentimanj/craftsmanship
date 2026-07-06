@@ -10,17 +10,17 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.Board.Count.Should().Be(0);
+        TicTacToeGame.NextSymbolIs().Should().Be('X');
     }
 
-    [Fact]
-    public void ReturnBoardWithOneSymbol_WhenNewGameStarted_GivenOneTurnTaken()
-    {
-        var game = new TicTacToeGame();
-        
-        game.TakeTurn('X', 0, 0);
-        
-        game.Board.Count.Should().Be(1);
-    }
+    // [Fact]
+    // public void ReturnBoardWithOneSymbol_WhenNewGameStarted_GivenOneTurnTaken()
+    // {
+    //     var game = new TicTacToeGame();
+    //     
+    //     game.TakeTurn( 0, 0);
+    //     
+    //     game.NextSymbolIs().Should().Be('O');
+    // }
 }
 

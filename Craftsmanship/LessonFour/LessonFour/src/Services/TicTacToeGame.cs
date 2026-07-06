@@ -2,9 +2,9 @@ namespace src.Services;
 
 public class TicTacToeGame
 {
-    public void TakeTurn(char playerSymbol, int rowIndex, int columnIndex)
+    public static char NextSymbolIs()
     {
-        Board.Add(playerSymbol);
+        return 'X';
     }
 
 
