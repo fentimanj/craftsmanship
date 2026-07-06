@@ -34,11 +34,14 @@ public class TicTacToeServiceShould
         game.NextSymbolIs().Should().Be('X');
     }
 
+    
+    
     [Fact]
     public void ReturnWinnerIsX_WhenNewGameStarted_GivenXSymbolHasALine()
     {
         var game = new TicTacToeGame();
         
+        //I have to write these on a piece of paper as it's hard to work this out
         game.TakeTurn(0, 0); 
         game.TakeTurn(1, 0); 
         game.TakeTurn(0,1); 
@@ -59,6 +62,21 @@ public class TicTacToeServiceShould
         game.TakeTurn(3, 0);
         
         game.WinnerIs().Should().Be("Unknown");
+    }
+    
+    [Fact]
+    public void ReturnWinnerIs0_WhenNewGameStarted_Given0SymbolHasALine()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(2, 2); 
+        game.TakeTurn(0, 0); 
+        game.TakeTurn(1, 0); 
+        game.TakeTurn(0,1); 
+        game.TakeTurn(1, 1); 
+        game.TakeTurn(0, 2); 
+        
+        game.WinnerIs().Should().Be("O");
     }
 
 }
