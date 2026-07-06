@@ -12,5 +12,15 @@ public class TicTacToeServiceShould
         
         game.Board.Count.Should().Be(0);
     }
+
+    [Fact]
+    public void ReturnBoardWithOneSymbol_WhenNewGameStarted_GivenOneTurnTaken()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn('X', 0, 0);
+        
+        game.Board.Count.Should().Be(1);
+    }
 }
 
