@@ -3,7 +3,7 @@ namespace src.Services;
 public class TicTacToeGame
 {
     private bool _isXSymbolNext = true;
-    private List<char> moves = new();
+    private List<char> _moves = new();
     
     public char NextSymbolIs()
     {
@@ -12,13 +12,13 @@ public class TicTacToeGame
 
     public void TakeTurn(int i, int i1)
     {
-        moves.Add(this.NextSymbolIs());
+        _moves.Add(NextSymbolIs());
         _isXSymbolNext = !_isXSymbolNext;
     }
 
     public string WinnerIs()
     {
-        if (moves.Count < 5)
+        if (_moves.Count < 5)
         {
             return "Unknown";
         }
