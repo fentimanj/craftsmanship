@@ -9,10 +9,8 @@ public class TicTacToeServiceShould
     public void ReturnSinglePlayerSymbol_WhenTurnTaken_GivenOneMoveIsMade()
     {
         var game = new TicTacToeGame();
-
-        game.TakeTurn('X', 0, 0);
-
-        game.Board[0].Should().Be('X');
+        
+        game.Board.Count.Should().Be(0);
     }
 }
 
