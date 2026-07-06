@@ -19,16 +19,16 @@ public class TicTacToeGame
 
     public string WinnerIs()
     {
-        if (_moves.Count < 5)
-        {
-            return "Unknown";
-        }
-
         if (_moves.Count(move => move.symbol == 'X' && move.column == 0) == 3)
         {
             return "X";
         }
-        return "O";
+        
+        if (_moves.Count(move => move.symbol == 'O' && move.column == 0) == 3)
+        {
+            return "O";
+        }
+        return "Unknown";
     }
 }
 
