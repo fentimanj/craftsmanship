@@ -66,7 +66,7 @@ public class TicTacToeServiceShould
     }
     
     [Fact]
-    public void ReturnWinnerIs0_WhenNewGameStarted_Given0SymbolHasALine()
+    public void ReturnWinnerIsO_WhenNewGameStarted_Given0SymbolHasALineInFirstColumn()
     {
         var game = new TicTacToeGame();
         
@@ -78,7 +78,22 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, Row.Bottom); 
         
         game.WinnerIs().Should().Be("O");
+    }    
+    [Fact]
+    public void ReturnWinnerIsO_WhenNewGameStarted_Given0SymbolHasALineInSecondColumn()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(Column.Right, Row.Bottom); 
+        game.TakeTurn(Column.Centre, Row.Top); 
+        game.TakeTurn(Column.Left, Row.Top); 
+        game.TakeTurn(Column.Centre,Row.Middle); 
+        game.TakeTurn(Column.Centre, Row.Middle); 
+        game.TakeTurn(Column.Centre, Row.Bottom); 
+        
+        game.WinnerIs().Should().Be("O");
     }
+    
 
 }
 

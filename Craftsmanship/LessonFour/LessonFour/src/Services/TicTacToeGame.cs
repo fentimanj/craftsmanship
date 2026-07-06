@@ -21,15 +21,21 @@ public class TicTacToeGame
 
     public string WinnerIs()
     {
-        if (this.moves.Count(move => move is { Symbol: 'X', Column: 0 }) == 3)
+        if (this.moves.Count(move => move is { Symbol: 'X', Column: Column.Left }) == 3)
         {
             return "X";
         }
         
-        if (this.moves.Count(move => move is { Symbol: 'O', Column: 0 }) == 3)
+        if (this.moves.Count(move => move is { Symbol: 'O', Column: Column.Left }) == 3)
+        {
+            return "O";
+        } 
+        
+        if (this.moves.Count(move => move is { Symbol: 'O', Column: Column.Centre }) == 3)
         {
             return "O";
         }
+        
         return "Unknown";
     }
 }
