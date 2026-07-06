@@ -8,5 +8,5 @@ public class TicTacToeGame
     }
 
 
-    public List<char> Board { get; set; } = new() {'X', 'O'};
+    public List<char> Board { get; set; } = new() {'X'};
 }
