@@ -33,5 +33,21 @@ public class TicTacToeServiceShould
         
         game.NextSymbolIs().Should().Be('X');
     }
+
+    [Fact]
+    public void ReturnSomeoneHasWonIsTrue_WhenNewGameStarted_GivenXSymbolHasALine()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(0, 0); //X
+        game.TakeTurn(1, 0); //O
+        game.TakeTurn(0,1); //x
+        game.TakeTurn(1, 1); //0
+        game.TakeTurn(0, 2); //X
+        
+        game.SomeoneHasWon().Should().Be(true);
+        
+    }
+
 }
 
