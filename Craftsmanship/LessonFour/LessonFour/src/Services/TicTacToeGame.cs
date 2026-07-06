@@ -14,8 +14,8 @@ public class TicTacToeGame
         _isXSymbolNext = !_isXSymbolNext;
     }
 
-    public bool SomeoneHasWon()
+    public string WinnerIs()
     {
-        return true;
+        return "X";
     }
 }

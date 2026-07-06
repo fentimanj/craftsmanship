@@ -39,13 +39,13 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.TakeTurn(0, 0); //X
-        game.TakeTurn(1, 0); //O
-        game.TakeTurn(0,1); //x
-        game.TakeTurn(1, 1); //0
-        game.TakeTurn(0, 2); //X
+        game.TakeTurn(0, 0); 
+        game.TakeTurn(1, 0); 
+        game.TakeTurn(0,1); 
+        game.TakeTurn(1, 1); 
+        game.TakeTurn(0, 2); 
         
-        game.SomeoneHasWon().Should().Be(true);
+        game.WinnerIs().Should().Be("X");
         
     }
 
