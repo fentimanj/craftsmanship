@@ -3,6 +3,8 @@ using src.Services;
 
 namespace tests;
 
+using src.Enums;
+
 public class TicTacToeServiceShould
 {
     [Fact]

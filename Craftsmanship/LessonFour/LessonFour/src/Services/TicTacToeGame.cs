@@ -1,18 +1,6 @@
 namespace src.Services;
 
-public enum Column
-{
-    Left = 0,
-    Centre = 1,
-    Right = 2
-}
-
-public enum Row
-{
-    Top = 0,
-    Middle = 1,
-    Bottom = 2
-}
+using Enums;
 
 public class TicTacToeGame
 {
