@@ -89,7 +89,7 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Centre, Row.Top); 
         game.TakeTurn(Column.Left, Row.Top); 
         game.TakeTurn(Column.Centre,Row.Centre); 
-        game.TakeTurn(Column.Centre, Row.Centre); 
+        game.TakeTurn(Column.Right, Row.Top); 
         game.TakeTurn(Column.Centre, Row.Bottom); 
         
         game.WinnerIs().Should().Be("O");
@@ -100,7 +100,7 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.TakeTurn(Column.Right, Row.Bottom); 
+        game.TakeTurn(Column.Centre, Row.Bottom); 
         game.TakeTurn(Column.Right, Row.Top); 
         game.TakeTurn(Column.Left, Row.Top); 
         game.TakeTurn(Column.Right,Row.Centre); 
@@ -119,7 +119,7 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Centre, Row.Centre);
         game.TakeTurn(Column.Centre, Row.Top);
         game.TakeTurn(Column.Centre, Row.Bottom);
-        game.TakeTurn(Column.Left, Row.Top);
+        game.TakeTurn(Column.Right, Row.Top);
         
         game.WinnerIs().Should().Be("X");
         
@@ -131,10 +131,10 @@ public class TicTacToeServiceShould
         var game = new TicTacToeGame();
         
         game.TakeTurn(Column.Left, Row.Centre);
-        game.TakeTurn(Column.Centre, Row.Centre);
+        game.TakeTurn(Column.Centre, Row.Top);
         game.TakeTurn(Column.Centre, Row.Centre);
         game.TakeTurn(Column.Centre, Row.Bottom);
-        game.TakeTurn(Column.Left, Row.Centre);
+        game.TakeTurn(Column.Right, Row.Centre);
         
         game.WinnerIs().Should().Be("X");
     }
@@ -147,8 +147,8 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, Row.Bottom);
         game.TakeTurn(Column.Centre, Row.Centre);
         game.TakeTurn(Column.Centre, Row.Bottom);
-        game.TakeTurn(Column.Centre, Row.Bottom);
-        game.TakeTurn(Column.Left, Row.Bottom);
+        game.TakeTurn(Column.Centre, Row.Top);
+        game.TakeTurn(Column.Right, Row.Bottom);
         
         game.WinnerIs().Should().Be("X");
     } 
@@ -177,7 +177,7 @@ public class TicTacToeServiceShould
         
         game.TakeTurn(Column.Left, Row.Bottom);
         game.TakeTurn(Column.Left, Row.Centre);
-        game.TakeTurn(Column.Centre, Row.Centre);
+        game.TakeTurn(Column.Centre, Row.Top);
         game.TakeTurn(Column.Centre, Row.Centre);
         game.TakeTurn(Column.Centre, Row.Bottom);
         game.TakeTurn(Column.Right, Row.Centre);
@@ -195,7 +195,7 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, Row.Bottom);
         game.TakeTurn(Column.Centre, Row.Centre);
         game.TakeTurn(Column.Centre, Row.Bottom);
-        game.TakeTurn(Column.Centre, Row.Bottom);
+        game.TakeTurn(Column.Centre, Row.Top);
         game.TakeTurn(Column.Right, Row.Bottom);
         
         
@@ -237,7 +237,7 @@ public class TicTacToeServiceShould
         var game = new TicTacToeGame();
         
         game.TakeTurn(Column.Right, Row.Top);
-        game.TakeTurn(Column.Left, Row.Bottom);
+        game.TakeTurn(Column.Left, Row.Top);
         game.TakeTurn(Column.Centre, Row.Centre);
         game.TakeTurn(Column.Centre, Row.Top);
         game.TakeTurn(Column.Left, Row.Bottom);
@@ -258,6 +258,17 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, Row.Bottom);
         
         game.WinnerIs().Should().Be("O");
+    }
+
+    [Fact]
+    public void ReturnNextSymbolIsO_WhenGameStarted_GivenOPlaysSameMoveAsX()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(Column.Left, Row.Top);
+        game.TakeTurn(Column.Left, Row.Top);
+
+        game.NextSymbolIs().Should().Be(Symbol.O);
     }
     
     

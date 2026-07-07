@@ -16,6 +16,12 @@ public class TicTacToeGame
     public void TakeTurn(Column column, Row row)
     {
         var move = new Move(this.NextSymbolIs(), column,row);
+
+        if (this.moves.Where(move => move.Column == column && move.Row == row).Any())
+        {
+            return;
+        }
+        
         this.moves.Add(move);
         this.isXSymbolNext = !this.isXSymbolNext;
     }
