@@ -22,21 +22,17 @@ public class TicTacToeGame
 
     public string WinnerIs()
     {
-        if (this.OHasOneInAColumn())
+        if (this.SymbolHasCompleteColumn(Symbol.O))
         {
             return "O";
         }
         
-        if (this.ThereAreThreeInColumn(Symbol.X, Column.Left) ||
-            this.ThereAreThreeInColumn(Symbol.X, Column.Centre) ||
-            this.ThereAreThreeInColumn(Symbol.X, Column.Right))
+        if (this.SymbolHasCompleteColumn(Symbol.X))
         {
             return "X";
         }
         
-        if (this.ThereAreThreeInRow(Symbol.X, Row.Top) ||
-            this.ThereAreThreeInRow(Symbol.X, Row.Centre) ||
-            this.ThereAreThreeInRow(Symbol.X, Row.Bottom))
+        if (this.SymbolHasCompleteRow(Symbol.X))
         {
             return "X";
         }
@@ -44,13 +40,22 @@ public class TicTacToeGame
         return "Unknown";
     }
 
-    private bool OHasOneInAColumn()
+    private bool SymbolHasCompleteColumn(Symbol symbol)
     {
-        var leftColumn = ThereAreThreeInColumn(Symbol.O, Column.Left);
-        var rightColumn = ThereAreThreeInColumn(Symbol.O, Column.Right);
-        var centreColumn = ThereAreThreeInColumn(Symbol.O, Column.Centre);
+        var leftColumn = this.ThereAreThreeInColumn(symbol, Column.Left);
+        var rightColumn = this.ThereAreThreeInColumn(symbol, Column.Right);
+        var centreColumn = this.ThereAreThreeInColumn(symbol, Column.Centre);
         
         return leftColumn || rightColumn || centreColumn;
+    }
+
+    private bool SymbolHasCompleteRow(Symbol symbol)
+    {
+        var leftRow = this.ThereAreThreeInRow(symbol, Row.Top);
+        var centreRow = this.ThereAreThreeInRow(symbol, Row.Centre);
+        var rightRow = this.ThereAreThreeInRow(symbol, Row.Bottom);
+        
+        return leftRow || rightRow || centreRow;
     }
     
     private bool ThereAreThreeInColumn(Symbol symbol, Column column)
