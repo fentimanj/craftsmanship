@@ -6,7 +6,6 @@ using Records;
 
 public class TicTacToeGame
 {
-    private readonly List<Move> moves = new();
     private bool isXSymbolNext = true;
     private readonly Board board = new();
     
@@ -23,7 +22,6 @@ public class TicTacToeGame
         {
             return;
         }
-        
         
         this.board.AddMove(lastestMove);
 
