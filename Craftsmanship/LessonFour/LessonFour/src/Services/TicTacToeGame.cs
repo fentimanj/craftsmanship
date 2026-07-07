@@ -47,6 +47,11 @@ public class TicTacToeGame
             return "X";
         }
         
+        if(this.SymbolHasDiagnolTopLeftToBottomRight(Symbol.O))
+        {
+            return "O";
+        }
+        
         return "Unknown";
     }
 

@@ -216,6 +216,21 @@ public class TicTacToeServiceShould
         game.WinnerIs().Should().Be("X");
     }
     
+    [Fact]
+    public void ReturnWinnerIsO_WhenGameStarted_GivenOHasDiagonalTopLeftToBottomRight()
+    {
+        var game = new TicTacToeGame();
+        
+        game.TakeTurn(Column.Right, Row.Top);
+        game.TakeTurn(Column.Left, Row.Top);
+        game.TakeTurn(Column.Right, Row.Centre);
+        game.TakeTurn(Column.Centre, Row.Centre);
+        game.TakeTurn(Column.Left, Row.Bottom);
+        game.TakeTurn(Column.Right, Row.Bottom);
+        
+        game.WinnerIs().Should().Be("O");
+    }
+    
     
 
 }
