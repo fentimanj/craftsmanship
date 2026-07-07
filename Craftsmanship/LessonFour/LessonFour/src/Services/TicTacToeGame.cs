@@ -51,6 +51,17 @@ public class TicTacToeGame
         {
             return "O";
         }
+
+        if (this.SymbolHasDiagnolTopRightToBottomLeft(Symbol.X))
+        {
+            return "X";
+        }
+        
+        if (this.SymbolHasDiagnolTopRightToBottomLeft(Symbol.O))
+        {
+            return "O";
+        }
+        
         
         return "Unknown";
     }
@@ -60,6 +71,15 @@ public class TicTacToeGame
         var topLeft = moves.FirstOrDefault(move => move is { Column: Column.Left, Row: Row.Top } && move.Symbol == symbol);
         var centreCentre = moves.FirstOrDefault(move => move is { Column: Column.Centre, Row: Row.Centre } && move.Symbol == symbol);
         var bottomRight = moves.FirstOrDefault(move => move is { Column: Column.Right, Row: Row.Bottom } && move.Symbol == symbol);
+
+        return topLeft != null && centreCentre != null && bottomRight != null;
+    }  
+    
+    private bool SymbolHasDiagnolTopRightToBottomLeft(Symbol symbol)
+    {
+        var topLeft = moves.FirstOrDefault(move => move is { Column: Column.Right, Row: Row.Top } && move.Symbol == symbol);
+        var centreCentre = moves.FirstOrDefault(move => move is { Column: Column.Centre, Row: Row.Centre } && move.Symbol == symbol);
+        var bottomRight = moves.FirstOrDefault(move => move is { Column: Column.Left, Row: Row.Bottom } && move.Symbol == symbol);
 
         return topLeft != null && centreCentre != null && bottomRight != null;
     }
