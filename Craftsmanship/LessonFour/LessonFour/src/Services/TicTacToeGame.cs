@@ -37,6 +37,11 @@ public class TicTacToeGame
             return "X";
         }
         
+        if (this.SymbolHasCompleteRow(Symbol.O))
+        {
+            return "O";
+        }
+        
         return "Unknown";
     }
 
