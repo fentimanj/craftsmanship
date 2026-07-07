@@ -12,7 +12,7 @@ public class TicTacToeServiceShould
     {
         var game = new TicTacToeGame();
         
-        game.NextSymbolIs().Should().Be('X');
+        game.NextSymbolIs().Should().Be(Symbol.X);
     }
 
     [Fact]
@@ -22,7 +22,7 @@ public class TicTacToeServiceShould
         
         game.TakeTurn(0, 0);
         
-        game.NextSymbolIs().Should().Be('O');
+        game.NextSymbolIs().Should().Be(Symbol.O);
     }   
     
     [Fact]
@@ -33,7 +33,7 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, 0);
         game.TakeTurn(Column.Centre, 0);
         
-        game.NextSymbolIs().Should().Be('X');
+        game.NextSymbolIs().Should().Be(Symbol.X);
     }
     
     

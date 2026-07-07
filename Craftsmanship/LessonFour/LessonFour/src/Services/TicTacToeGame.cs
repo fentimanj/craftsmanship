@@ -3,14 +3,19 @@ namespace src.Services;
 using Enums;
 using Records;
 
+public enum Symbol
+{
+    X = 0,
+    O = 1
+}
 public class TicTacToeGame
 {
     private bool isXSymbolNext = true;
     private readonly List<Move> moves = new();
     
-    public char NextSymbolIs()
+    public Symbol NextSymbolIs()
     {
-        return this.isXSymbolNext ? 'X' : 'O';
+        return this.isXSymbolNext ? Symbol.X : Symbol.O;
     }
 
     public void TakeTurn(Column column, Row row)
@@ -22,23 +27,21 @@ public class TicTacToeGame
 
     public string WinnerIs()
     {
-        if (this.ThereAreThreeInColumn('O', Column.Left) ||
-            this.ThereAreThreeInColumn('O', Column.Centre) ||
-            this.ThereAreThreeInColumn('O', Column.Right))
+        if (this.OHasOneInAColumn())
         {
             return "O";
         }
         
-        if (this.ThereAreThreeInColumn('X', Column.Left) ||
-            this.ThereAreThreeInColumn('X', Column.Centre) ||
-            this.ThereAreThreeInColumn('X', Column.Right))
+        if (this.ThereAreThreeInColumn(Symbol.X, Column.Left) ||
+            this.ThereAreThreeInColumn(Symbol.X, Column.Centre) ||
+            this.ThereAreThreeInColumn(Symbol.X, Column.Right))
         {
             return "X";
         }
         
-        if (this.ThereAreThreeInRow('X', Row.Top) ||
-            this.ThereAreThreeInRow('X', Row.Centre) ||
-            this.ThereAreThreeInRow('X', Row.Bottom))
+        if (this.ThereAreThreeInRow(Symbol.X, Row.Top) ||
+            this.ThereAreThreeInRow(Symbol.X, Row.Centre) ||
+            this.ThereAreThreeInRow(Symbol.X, Row.Bottom))
         {
             return "X";
         }
@@ -46,12 +49,21 @@ public class TicTacToeGame
         return "Unknown";
     }
 
-    private bool ThereAreThreeInColumn(char symbol, Column column)
+    private bool OHasOneInAColumn()
+    {
+        var leftColumn = ThereAreThreeInColumn(Symbol.O, Column.Left);
+        var rightColumn = ThereAreThreeInColumn(Symbol.O, Column.Right);
+        var centreColumn = ThereAreThreeInColumn(Symbol.O, Column.Centre);
+        
+        return leftColumn || rightColumn || centreColumn;
+    }
+    
+    private bool ThereAreThreeInColumn(Symbol symbol, Column column)
     {
         return this.moves.Count(move => move.Column == column && move.Symbol == symbol) == 3;
     } 
     
-    private bool ThereAreThreeInRow(char symbol, Row row)
+    private bool ThereAreThreeInRow(Symbol symbol, Row row)
     {
         return this.moves.Count(move => move.Row == row && move.Symbol == symbol) == 3;
     }

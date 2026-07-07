@@ -1,5 +1,6 @@
 namespace src.Records;
 
 using Enums;
+using Services;
 
-public record Move(char Symbol, Column Column, Row Row);
+public record Move(Symbol Symbol, Column Column, Row Row);
