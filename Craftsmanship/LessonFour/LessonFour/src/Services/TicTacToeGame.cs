@@ -3,11 +3,6 @@ namespace src.Services;
 using Enums;
 using Records;
 
-public enum Symbol
-{
-    X = 0,
-    O = 1
-}
 public class TicTacToeGame
 {
     private bool isXSymbolNext = true;
