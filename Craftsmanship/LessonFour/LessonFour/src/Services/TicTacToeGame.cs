@@ -42,9 +42,23 @@ public class TicTacToeGame
             return "O";
         }
         
+        if(this.SymbolHasDiagnolTopLeftToBottomRight(Symbol.X))
+        {
+            return "X";
+        }
+        
         return "Unknown";
     }
 
+    private bool SymbolHasDiagnolTopLeftToBottomRight(Symbol symbol)
+    {
+        var topLeft = moves.FirstOrDefault(move => move is { Column: Column.Left, Row: Row.Top } && move.Symbol == symbol);
+        var centreCentre = moves.FirstOrDefault(move => move is { Column: Column.Centre, Row: Row.Centre } && move.Symbol == symbol);
+        var bottomRight = moves.FirstOrDefault(move => move is { Column: Column.Right, Row: Row.Bottom } && move.Symbol == symbol);
+
+        return topLeft != null && centreCentre != null && bottomRight != null;
+    }
+    
     private bool SymbolHasCompleteColumn(Symbol symbol)
     {
         var leftColumn = this.ThereAreThreeInColumn(symbol, Column.Left);
