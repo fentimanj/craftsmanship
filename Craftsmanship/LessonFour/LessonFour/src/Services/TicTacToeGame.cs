@@ -36,7 +36,8 @@ public class TicTacToeGame
             return "X";
         }
         
-        if (this.ThereAreThreeInRow('X', Row.Top))
+        if (this.ThereAreThreeInRow('X', Row.Top) ||
+            this.ThereAreThreeInRow('X', Row.Centre))
         {
             return "X";
         }
