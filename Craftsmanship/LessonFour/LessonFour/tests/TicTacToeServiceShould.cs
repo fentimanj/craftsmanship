@@ -137,7 +137,20 @@ public class TicTacToeServiceShould
         game.TakeTurn(Column.Left, Row.Centre);
         
         game.WinnerIs().Should().Be("X");
+    }
+    
+    [Fact]
+    public void ReturnWinnerIsX_WhenNewGameStarted_GivenXSymbolHasALineInBottomRow()
+    {
+        var game = new TicTacToeGame();
         
+        game.TakeTurn(Column.Left, Row.Bottom);
+        game.TakeTurn(Column.Centre, Row.Centre);
+        game.TakeTurn(Column.Centre, Row.Bottom);
+        game.TakeTurn(Column.Centre, Row.Bottom);
+        game.TakeTurn(Column.Left, Row.Bottom);
+        
+        game.WinnerIs().Should().Be("X");
     }
     
     
