@@ -11,12 +11,12 @@ public static class Kata
         
         if (dice.Count(die => die == 5) == 1)
         {
-            return 50;
+            return 50 ;
         }        
         
         if (dice.Count(die => die == 1) == 2)
         {
-            return 200;
+            return 100  * dice.Count(die => die == 1);
         }  
         
         if (dice.Count(die => die == 5) == 2)
