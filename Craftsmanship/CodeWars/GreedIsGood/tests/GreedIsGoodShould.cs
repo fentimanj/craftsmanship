@@ -1,0 +1,8 @@
+public class GreedIsGoodShould
+{
+    [Fact]
+    public void Return_When_Given()
+    {
+        throw new NotImplementedException();
+    }
+}
