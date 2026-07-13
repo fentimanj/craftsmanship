@@ -1,16 +1,12 @@
 namespace src.Services;
 
 using Enums;
+using Models;
 
 public class TicTacToe
 {
-    public TicTacToe()
-    {
-        this.moves = new Moves();
-    }
     private Symbol currentSymbol = Symbol.X;
-    private int numberOfMoves = 0;
-    private Moves moves;
+    private readonly Board board = new();
     
     public Symbol CurrentSymbol()
     {
@@ -19,8 +15,7 @@ public class TicTacToe
 
     public void TakeTurn(Column columnIndex, Row rowIndex)
     {
-        this.numberOfMoves++;
-        this.moves.AddMove(columnIndex);
+        this.board.AddMove(columnIndex);
         
         if (this.currentSymbol == Symbol.X)
         {
@@ -33,26 +28,6 @@ public class TicTacToe
 
     public Symbol GetWinningSymbnol()
     {
-        return this.moves.WinningSymbol();
-    }
-}
-
-internal class Moves
-{
-    private List<Column> columns = new List<Column>();
-
-    public void AddMove(Column column)
-    {
-        this.columns.Add(column);
-    }
-
-    public Symbol WinningSymbol()
-    {
-        if (this.columns.Count == 5)
-        {
-            return Symbol.X;
-        }
-        
-        return Symbol.Unknown;
+        return this.board.WinningSymbol();
     }
 }
