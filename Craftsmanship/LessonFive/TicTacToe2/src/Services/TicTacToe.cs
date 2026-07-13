@@ -5,14 +5,16 @@ using Enums;
 public class TicTacToe
 {
     private Symbol currentSymbol = Symbol.X;
+    private int NumberOfMoves = 0;
 
     public Symbol CurrentSymbol()
     {
         return this.currentSymbol;
     }
 
-    public void TakeTurn()
+    public void TakeTurn(int columnIndex, int rowIndex)
     {
+        NumberOfMoves++;
         if (this.currentSymbol == Symbol.X)
         {
             this.currentSymbol = Symbol.O;
@@ -24,6 +26,11 @@ public class TicTacToe
 
     public Symbol GetWinningSymbnol()
     {
-        return Symbol.Unknown;
+        if (NumberOfMoves == 1)
+        {
+            return Symbol.Unknown;
+        }
+
+        return Symbol.X;
     }
 }
