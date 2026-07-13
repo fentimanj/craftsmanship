@@ -12,7 +12,7 @@ public class TicTacToe
         return this.currentSymbol;
     }
 
-    public void TakeTurn(Column columnIndex, int rowIndex)
+    public void TakeTurn(Column columnIndex, Row rowIndex)
     {
         NumberOfMoves++;
         if (this.currentSymbol == Symbol.X)
@@ -33,11 +33,4 @@ public class TicTacToe
 
         return Symbol.X;
     }
-}
-
-public enum Column
-{
-    Left,
-    Centre,
-    Right
 }

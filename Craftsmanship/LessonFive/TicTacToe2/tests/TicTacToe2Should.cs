@@ -19,7 +19,7 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
 
-        ticTacToe.TakeTurn(0,0);
+        ticTacToe.TakeTurn(Column.Left,Row.Top);
         
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.O);
@@ -30,8 +30,8 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
 
-        ticTacToe.TakeTurn(0,0);
-        ticTacToe.TakeTurn(0,1);
+        ticTacToe.TakeTurn(Column.Left,Row.Top);
+        ticTacToe.TakeTurn(Column.Left,Row.Bottom);
         
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.X);
@@ -42,7 +42,7 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(0,0);
+        ticTacToe.TakeTurn(Column.Left,Row.Top);
 
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
@@ -54,11 +54,11 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Column.Left,0); 
-        ticTacToe.TakeTurn(Column.Centre,0); 
-        ticTacToe.TakeTurn(Column.Left, 1);
-        ticTacToe.TakeTurn(Column.Right, 1);
-        ticTacToe.TakeTurn(Column.Left,2);
+        ticTacToe.TakeTurn(Column.Left,Row.Top); 
+        ticTacToe.TakeTurn(Column.Centre,Row.Top); 
+        ticTacToe.TakeTurn(Column.Left, Row.Middle);
+        ticTacToe.TakeTurn(Column.Right, Row.Middle);
+        ticTacToe.TakeTurn(Column.Left,Row.Bottom);
         
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
