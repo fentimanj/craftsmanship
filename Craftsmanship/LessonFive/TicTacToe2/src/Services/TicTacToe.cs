@@ -26,7 +26,7 @@ public class TicTacToe
         this.currentSymbol = Symbol.X;
     }
 
-    public Symbol GetWinningSymbnol()
+    public Symbol GetWinningSymbol()
     {
         return this.board.WinningSymbol();
     }

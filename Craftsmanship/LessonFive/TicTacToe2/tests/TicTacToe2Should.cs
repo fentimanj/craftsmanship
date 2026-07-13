@@ -44,7 +44,7 @@ public class TicTacToe2Should
         
         ticTacToe.TakeTurn(Position.LeftTop);
 
-        var currentWinner = ticTacToe.GetWinningSymbnol();
+        var currentWinner = ticTacToe.GetWinningSymbol();
 
         currentWinner.Should().Be(Symbol.Unknown);
     }
@@ -60,7 +60,7 @@ public class TicTacToe2Should
         ticTacToe.TakeTurn(Position.RightCentre);
         ticTacToe.TakeTurn(Position.LeftBottom);
         
-        var currentWinner = ticTacToe.GetWinningSymbnol();
+        var currentWinner = ticTacToe.GetWinningSymbol();
 
         currentWinner.Should().Be(Symbol.X);
     } 

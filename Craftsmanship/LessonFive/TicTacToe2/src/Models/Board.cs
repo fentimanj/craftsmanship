@@ -4,11 +4,11 @@ using Enums;
 
 internal class Board
 {
-   private Dictionary<Position, Symbol> symbols = new();
+   private readonly Dictionary<Position, Symbol> symbols = new();
 
    public void AddMove(Position position, Symbol symbol)
     {
-        symbols.Add(position, symbol);
+        this.symbols.Add(position, symbol);
     }
 
     public Symbol WinningSymbol()
