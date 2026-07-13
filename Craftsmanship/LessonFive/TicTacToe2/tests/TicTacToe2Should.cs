@@ -36,4 +36,16 @@ public class TicTacToe2Should
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.X);
     }
+
+    [Fact]
+    public void ReturnWinnerNotKnown_WhenGameStarted_GivenCurrentlyNoWinner()
+    {
+        var ticTacToe = new TicTacToe();
+        
+        ticTacToe.TakeTurn();
+
+        var currentWinner = ticTacToe.GetWinningSymbnol();
+
+        currentWinner.Should().Be("Unknown");
+    }
 }

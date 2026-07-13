@@ -21,4 +21,9 @@ public class TicTacToe
 
         this.currentSymbol = Symbol.X;
     }
+
+    public string GetWinningSymbnol()
+    {
+        return "Unknown";
+    }
 }
