@@ -16,6 +16,11 @@ internal class Board
         if (this.columns.Count == 5)
         {
             return Symbol.X;
+        } 
+        
+        if (this.columns.Count == 6)
+        {
+            return Symbol.O;
         }
         
         return Symbol.Unknown;

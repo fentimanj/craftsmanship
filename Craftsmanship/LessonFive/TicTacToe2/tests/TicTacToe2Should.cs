@@ -63,5 +63,22 @@ public class TicTacToe2Should
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
         currentWinner.Should().Be(Symbol.X);
+    } 
+    
+    [Fact]
+    public void ReturnSymbolO_WhenWinnerQueired_GivenOHasThreeInARow()
+    {
+        var ticTacToe = new TicTacToe();
+        
+        ticTacToe.TakeTurn(Column.Right,Row.Top);
+        ticTacToe.TakeTurn(Column.Left,Row.Top); 
+        ticTacToe.TakeTurn(Column.Centre,Row.Top); 
+        ticTacToe.TakeTurn(Column.Left, Row.Middle);
+        ticTacToe.TakeTurn(Column.Right, Row.Middle);
+        ticTacToe.TakeTurn(Column.Left,Row.Bottom);
+        
+        var currentWinner = ticTacToe.GetWinningSymbnol();
+
+        currentWinner.Should().Be(Symbol.O);
     }
 }
