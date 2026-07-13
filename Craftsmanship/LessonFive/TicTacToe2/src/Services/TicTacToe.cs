@@ -4,16 +4,16 @@ using Enums;
 
 public class TicTacToe
 {
-    private Symbol symbol = Symbol.X;
+    private Symbol currentSymbol = Symbol.X;
     
     public Symbol CurrentSymbol()
     {
-        return this.symbol;
+        return this.currentSymbol;
     }
 
     public void TakeTurn()
     {
-        this.symbol = Symbol.O;
+        this.currentSymbol = Symbol.O;
         
     }
 }
