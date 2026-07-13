@@ -54,11 +54,11 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(0,0); 
-        ticTacToe.TakeTurn(1,0); 
-        ticTacToe.TakeTurn(0, 1);
-        ticTacToe.TakeTurn(1, 1);
-        ticTacToe.TakeTurn(0,2);
+        ticTacToe.TakeTurn(Column.Left,0); 
+        ticTacToe.TakeTurn(Column.Centre,0); 
+        ticTacToe.TakeTurn(Column.Left, 1);
+        ticTacToe.TakeTurn(Column.Right, 1);
+        ticTacToe.TakeTurn(Column.Left,2);
         
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
