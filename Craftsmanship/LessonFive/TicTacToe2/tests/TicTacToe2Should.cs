@@ -50,7 +50,7 @@ public class TicTacToe2Should
     }
 
     [Fact]
-    public void ReturnSymbolX_WhenWinnerQueired_GivenXHasThreeInARow()
+    public void ReturnSymbolX_WhenWinnerQueried_GivenXHasThreeInARow()
     {
         var ticTacToe = new TicTacToe();
         
@@ -66,7 +66,7 @@ public class TicTacToe2Should
     } 
     
     [Fact]
-    public void ReturnSymbolO_WhenWinnerQueired_GivenOHasThreeInARowInLeftColumn()
+    public void ReturnSymbolO_WhenWinnerQueried_GivenOHasThreeInARowInLeftColumn()
     {
         var ticTacToe = new TicTacToe();
         
@@ -83,7 +83,7 @@ public class TicTacToe2Should
     }
     
     [Fact]
-    public void ReturnSymbolUnknown_WhenWinnerQueired_GivenNoOneHasThreeInARow()
+    public void ReturnSymbolUnknown_WhenWinnerQueried_GivenNoOneHasThreeInARow()
     {
         var ticTacToe = new TicTacToe();
         
@@ -100,7 +100,7 @@ public class TicTacToe2Should
     }
     
     [Fact]
-    public void ReturnSymbolX_WhenWinnerQueired_GivenXHasThreeInACentreRow()
+    public void ReturnSymbolX_WhenWinnerQueried_GivenXHasThreeInACentreColumn()
     {
         var ticTacToe = new TicTacToe();
         
@@ -109,6 +109,22 @@ public class TicTacToe2Should
         ticTacToe.TakeTurn(Position.MiddleRowCentreColumn); 
         ticTacToe.TakeTurn(Position.MiddleRowLeftColumn);
         ticTacToe.TakeTurn(Position.BottomRowCentreColumn);
+        
+        var currentWinner = ticTacToe.GetWinningSymbol();
+    
+        currentWinner.Should().Be(Symbol.X);
+    }
+    
+    [Fact]
+    public void ReturnSymbolX_WhenWinnerQueried_GivenXHasThreeInARightRow()
+    {
+        var ticTacToe = new TicTacToe();
+        
+        ticTacToe.TakeTurn(Position.TopRowRightColumn);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn); 
+        ticTacToe.TakeTurn(Position.MiddleRowRightColumn); 
+        ticTacToe.TakeTurn(Position.MiddleRowLeftColumn);
+        ticTacToe.TakeTurn(Position.BottomRowRightColumn);
         
         var currentWinner = ticTacToe.GetWinningSymbol();
     

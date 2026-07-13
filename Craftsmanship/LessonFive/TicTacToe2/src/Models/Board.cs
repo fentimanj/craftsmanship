@@ -26,17 +26,45 @@ internal class Board
 
     public Symbol WinningSymbol()
     {
+        var winningSymbol = Symbol.Unknown;
+        
         if (this.ThreeInLeftColumn())
         {
-            return this.moves[Position.TopRowLeftColumn];
+            winningSymbol = this.moves[Position.TopRowLeftColumn];
+        }
+
+        if (winningSymbol != Symbol.Unknown)
+        {
+            return winningSymbol;
         }
 
         if (this.ThreeInCentreColumn())
         {
-            return this.moves[Position.TopRowCentreColumn];
+            winningSymbol = this.moves[Position.TopRowCentreColumn];
         }
         
-        return Symbol.Unknown;
+        if (winningSymbol != Symbol.Unknown)
+        {
+            return winningSymbol;
+        }
+
+        if (this.ThreeInRightColumn())
+        {
+            winningSymbol = this.moves[Position.TopRowRightColumn];
+        }
+        
+        if (winningSymbol != Symbol.Unknown)
+        {
+            return winningSymbol;
+        }
+
+        return winningSymbol;
+    }
+
+    private bool ThreeInRightColumn()
+    {
+        return this.moves[Position.TopRowRightColumn] == this.moves[Position.MiddleRowRightColumn] &&
+               this.moves[Position.TopRowRightColumn] == this.moves[Position.BottomRowRightColumn];
     }
 
     private bool ThreeInCentreColumn()
