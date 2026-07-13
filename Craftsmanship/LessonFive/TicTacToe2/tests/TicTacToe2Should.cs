@@ -1,4 +1,5 @@
 using FluentAssertions;
+using src.Services;
 
 public class TicTacToe2Should
 {
@@ -7,13 +8,5 @@ public class TicTacToe2Should
     {
         string currentSymbolIs = TicTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be("X");
-    }
-}
-
-public class TicTacToe
-{
-    public static string CurrentSymbol()
-    {
-        return "X";
     }
 }
