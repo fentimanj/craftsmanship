@@ -5,7 +5,7 @@ using src.Services;
 public class TicTacToe2Should
 {
     [Fact]
-    public void Return_When_Given()
+    public void ReturnSymbolX_WhenGameStarted_GivenNoTurnsHaveBeenTaken()
     {
         var ticTacToe = new TicTacToe();
         
