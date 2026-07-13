@@ -12,10 +12,10 @@ public class TicTacToe
     {
         return this.currentSymbol;
     }
-
-    public void TakeTurn(Column columnIndex, Row rowIndex)
+    
+    public void TakeTurn(Position position)
     {
-        this.board.AddMove(columnIndex);
+        this.board.AddMove(position, this.currentSymbol);
         
         if (this.currentSymbol == Symbol.X)
         {

@@ -4,21 +4,21 @@ using Enums;
 
 internal class Board
 {
-    private readonly List<Column> columns = new();
+   private Dictionary<Position, Symbol> symbols = new();
 
-    public void AddMove(Column column)
+   public void AddMove(Position position, Symbol symbol)
     {
-        this.columns.Add(column);
+        symbols.Add(position, symbol);
     }
 
     public Symbol WinningSymbol()
     {
-        if (this.columns.Count == 5)
+        if (this.symbols.Count == 5)
         {
             return Symbol.X;
         } 
         
-        if (this.columns.Count == 6)
+        if (this.symbols.Count == 6)
         {
             return Symbol.O;
         }

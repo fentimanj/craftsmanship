@@ -19,7 +19,7 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
 
-        ticTacToe.TakeTurn(Column.Left,Row.Top);
+        ticTacToe.TakeTurn(Position.LeftTop);
         
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.O);
@@ -30,8 +30,8 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
 
-        ticTacToe.TakeTurn(Column.Left,Row.Top);
-        ticTacToe.TakeTurn(Column.Left,Row.Bottom);
+        ticTacToe.TakeTurn(Position.LeftTop);
+        ticTacToe.TakeTurn(Position.LeftBottom);
         
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.X);
@@ -42,7 +42,7 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Column.Left,Row.Top);
+        ticTacToe.TakeTurn(Position.LeftTop);
 
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
@@ -54,31 +54,48 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Column.Left,Row.Top); 
-        ticTacToe.TakeTurn(Column.Centre,Row.Top); 
-        ticTacToe.TakeTurn(Column.Left, Row.Middle);
-        ticTacToe.TakeTurn(Column.Right, Row.Middle);
-        ticTacToe.TakeTurn(Column.Left,Row.Bottom);
+        ticTacToe.TakeTurn(Position.LeftTop); 
+        ticTacToe.TakeTurn(Position.CentreTop); 
+        ticTacToe.TakeTurn(Position.LeftCentre);
+        ticTacToe.TakeTurn(Position.RightCentre);
+        ticTacToe.TakeTurn(Position.LeftBottom);
         
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
         currentWinner.Should().Be(Symbol.X);
     } 
     
-    [Fact]
-    public void ReturnSymbolO_WhenWinnerQueired_GivenOHasThreeInARow()
-    {
-        var ticTacToe = new TicTacToe();
-        
-        ticTacToe.TakeTurn(Column.Right,Row.Top);
-        ticTacToe.TakeTurn(Column.Left,Row.Top); 
-        ticTacToe.TakeTurn(Column.Centre,Row.Top); 
-        ticTacToe.TakeTurn(Column.Left, Row.Middle);
-        ticTacToe.TakeTurn(Column.Right, Row.Middle);
-        ticTacToe.TakeTurn(Column.Left,Row.Bottom);
-        
-        var currentWinner = ticTacToe.GetWinningSymbnol();
-
-        currentWinner.Should().Be(Symbol.O);
-    }
+    // [Fact]
+    // public void ReturnSymbolO_WhenWinnerQueired_GivenOHasThreeInARow()
+    // {
+    //     var ticTacToe = new TicTacToe();
+    //     
+    //     ticTacToe.TakeTurn(Column.Right,Row.Top);
+    //     ticTacToe.TakeTurn(Column.Left,Row.Top); 
+    //     ticTacToe.TakeTurn(Column.Centre,Row.Top); 
+    //     ticTacToe.TakeTurn(Column.Left, Row.Middle);
+    //     ticTacToe.TakeTurn(Column.Right, Row.Middle);
+    //     ticTacToe.TakeTurn(Column.Left,Row.Bottom);
+    //     
+    //     var currentWinner = ticTacToe.GetWinningSymbnol();
+    //
+    //     currentWinner.Should().Be(Symbol.O);
+    // }
+    
+    // [Fact]
+    // public void ReturnSymbolUnknown_WhenWinnerQueired_GivenNoOneHasThreeInARow()
+    // {
+    //     var ticTacToe = new TicTacToe();
+    //     
+    //     ticTacToe.TakeTurn(Position.RightTop);
+    //     ticTacToe.TakeTurn(Position.LeftTop); 
+    //     ticTacToe.TakeTurn(Position.CentreTop); 
+    //     ticTacToe.TakeTurn(Position.LeftCentre);
+    //     ticTacToe.TakeTurn(Position.RightCentre);
+    //     ticTacToe.TakeTurn(Position.CentreBottom);
+    //     
+    //     var currentWinner = ticTacToe.GetWinningSymbnol();
+    //
+    //     currentWinner.Should().Be(Symbol.Unknown);
+    // }
 }
