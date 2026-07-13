@@ -4,47 +4,44 @@ using Enums;
 
 internal class Board
 {
-   private readonly Dictionary<Position, Symbol> symbols = new();
-
-   public void AddMove(Position position, Symbol symbol)
+    private readonly Dictionary<Position, Symbol> symbols = new()
     {
-        this.symbols.Add(position, symbol);
+        { Position.LeftTop, Symbol.Unknown },
+        { Position.CentreTop, Symbol.Unknown },
+        { Position.RightTop, Symbol.Unknown },
+
+        { Position.LeftCentre, Symbol.Unknown },
+        { Position.RightCentre, Symbol.Unknown },
+        { Position.CentreCentre, Symbol.Unknown },
+
+        { Position.LeftBottom, Symbol.Unknown },
+        { Position.CentreBottom, Symbol.Unknown },
+        { Position.RightBottom, Symbol.Unknown }
+    };
+
+
+    public void AddMove(Position position, Symbol symbol)
+    {
+        this.symbols[position] = symbol;
     }
 
     public Symbol WinningSymbol()
     {
-        
         var leftTop = this.symbols[Position.LeftTop];
-        
-        Symbol rightCentre = Symbol.Unknown;
-        if (this.symbols.Keys.Contains(Position.RightCentre))
+        var rightCentre = this.symbols[Position.RightCentre];
+        var leftBottom = this.symbols[Position.LeftBottom];
+        var leftCentre = this.symbols[Position.LeftCentre];
+
+        if (leftCentre == leftTop && leftTop == leftBottom)
         {
-            rightCentre = this.symbols[Position.RightCentre];
-        }
-        
-        Symbol leftBottom = Symbol.Unknown;
-        if(this.symbols.Keys.Contains(Position.LeftBottom))
-        {
-            leftBottom = this.symbols[Position.LeftBottom];
+            return leftTop;
         }
 
-        Symbol leftCentre = Symbol.Unknown;
-        if(this.symbols.Keys.Contains(Position.LeftCentre))
-        {
-            leftCentre = this.symbols[Position.LeftCentre];
-        }
-        
-        if(leftCentre == leftTop && leftTop == leftBottom)
+        if (leftTop == rightCentre && rightCentre == leftCentre)
         {
             return leftTop;
         }
-        
-        if(leftTop == rightCentre && rightCentre == leftCentre)
-        {
-            return leftTop;
-        }
-     
-        
+
         return Symbol.Unknown;
     }
 }

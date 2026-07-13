@@ -7,8 +7,10 @@ public enum Position
     LeftBottom,
 
     CentreTop,
+    CentreCentre,
     CentreBottom,
-    
+
     RightTop,
     RightCentre,
+    RightBottom
 }
