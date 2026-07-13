@@ -46,6 +46,6 @@ public class TicTacToe2Should
 
         var currentWinner = ticTacToe.GetWinningSymbnol();
 
-        currentWinner.Should().Be("Unknown");
+        currentWinner.Should().Be(Symbol.Unknown);
     }
 }
