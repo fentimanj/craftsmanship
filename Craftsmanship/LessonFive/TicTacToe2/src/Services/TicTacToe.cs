@@ -13,7 +13,14 @@ public class TicTacToe
 
     public void TakeTurn()
     {
-        this.currentSymbol = Symbol.O;
-        
+        if (currentSymbol == Symbol.X)
+        {
+            this.currentSymbol = Symbol.O;
+        }
+        else
+        {
+            this.currentSymbol = Symbol.X;
+        }
+
     }
 }

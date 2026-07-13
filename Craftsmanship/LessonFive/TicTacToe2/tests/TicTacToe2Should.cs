@@ -24,4 +24,16 @@ public class TicTacToe2Should
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.O);
     }
+    
+    [Fact]
+    public void ReturnSymbolX_WhenGameStarted_GivenTwoTurnsHasBeenTaken()
+    {
+        var ticTacToe = new TicTacToe();
+
+        ticTacToe.TakeTurn();
+        ticTacToe.TakeTurn();
+        
+        Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
+        currentSymbolIs.Should().Be(Symbol.X);
+    }
 }
