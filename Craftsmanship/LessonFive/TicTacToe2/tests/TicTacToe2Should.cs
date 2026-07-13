@@ -19,7 +19,7 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
 
-        ticTacToe.TakeTurn(Position.LeftTop);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn);
         
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.O);
@@ -30,8 +30,8 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
 
-        ticTacToe.TakeTurn(Position.LeftTop);
-        ticTacToe.TakeTurn(Position.LeftBottom);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn);
+        ticTacToe.TakeTurn(Position.BottomRowLeftColumn);
         
         Symbol currentSymbolIs = ticTacToe.CurrentSymbol();
         currentSymbolIs.Should().Be(Symbol.X);
@@ -42,7 +42,7 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Position.LeftTop);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn);
 
         var currentWinner = ticTacToe.GetWinningSymbol();
 
@@ -54,11 +54,11 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Position.LeftTop); 
-        ticTacToe.TakeTurn(Position.CentreTop); 
-        ticTacToe.TakeTurn(Position.LeftCentre);
-        ticTacToe.TakeTurn(Position.RightCentre);
-        ticTacToe.TakeTurn(Position.LeftBottom);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn); 
+        ticTacToe.TakeTurn(Position.TopRowCentreColumn); 
+        ticTacToe.TakeTurn(Position.MiddleRowLeftColumn);
+        ticTacToe.TakeTurn(Position.MiddleRowRightColumn);
+        ticTacToe.TakeTurn(Position.BottomRowLeftColumn);
         
         var currentWinner = ticTacToe.GetWinningSymbol();
 
@@ -66,16 +66,16 @@ public class TicTacToe2Should
     } 
     
     [Fact]
-    public void ReturnSymbolO_WhenWinnerQueired_GivenOHasThreeInARow()
+    public void ReturnSymbolO_WhenWinnerQueired_GivenOHasThreeInARowInLeftColumn()
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Position.RightTop);
-        ticTacToe.TakeTurn(Position.LeftTop); 
-        ticTacToe.TakeTurn(Position.CentreTop);
-        ticTacToe.TakeTurn(Position.RightCentre);
-        ticTacToe.TakeTurn(Position.LeftBottom);
-        ticTacToe.TakeTurn(Position.LeftCentre);
+        ticTacToe.TakeTurn(Position.TopRowRightColumn);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn); 
+        ticTacToe.TakeTurn(Position.TopRowCentreColumn);
+        ticTacToe.TakeTurn(Position.MiddleRowLeftColumn);
+        ticTacToe.TakeTurn(Position.MiddleRowCentreColumn);
+        ticTacToe.TakeTurn(Position.BottomRowLeftColumn);
 
         var currentWinner = ticTacToe.GetWinningSymbol();
     
@@ -87,15 +87,31 @@ public class TicTacToe2Should
     {
         var ticTacToe = new TicTacToe();
         
-        ticTacToe.TakeTurn(Position.RightTop);
-        ticTacToe.TakeTurn(Position.LeftTop); 
-        ticTacToe.TakeTurn(Position.CentreTop); 
-        ticTacToe.TakeTurn(Position.LeftCentre);
-        ticTacToe.TakeTurn(Position.RightCentre);
-        ticTacToe.TakeTurn(Position.CentreBottom);
+        ticTacToe.TakeTurn(Position.TopRowRightColumn);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn); 
+        ticTacToe.TakeTurn(Position.TopRowCentreColumn); 
+        ticTacToe.TakeTurn(Position.MiddleRowLeftColumn);
+        ticTacToe.TakeTurn(Position.MiddleRowRightColumn);
+        ticTacToe.TakeTurn(Position.BottomRowCentreColumn);
         
         var currentWinner = ticTacToe.GetWinningSymbol();
     
         currentWinner.Should().Be(Symbol.Unknown);
+    }
+    
+    [Fact]
+    public void ReturnSymbolX_WhenWinnerQueired_GivenXHasThreeInACentreRow()
+    {
+        var ticTacToe = new TicTacToe();
+        
+        ticTacToe.TakeTurn(Position.TopRowCentreColumn);
+        ticTacToe.TakeTurn(Position.TopRowLeftColumn); 
+        ticTacToe.TakeTurn(Position.MiddleRowCentreColumn); 
+        ticTacToe.TakeTurn(Position.MiddleRowLeftColumn);
+        ticTacToe.TakeTurn(Position.BottomRowCentreColumn);
+        
+        var currentWinner = ticTacToe.GetWinningSymbol();
+    
+        currentWinner.Should().Be(Symbol.X);
     }
 }

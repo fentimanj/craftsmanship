@@ -6,19 +6,29 @@ internal class Board
 {
     private readonly Dictionary<Position, Symbol> symbols = new()
     {
-        { Position.LeftTop, Symbol.Unknown },
-        { Position.CentreTop, Symbol.Unknown },
-        { Position.RightTop, Symbol.Unknown },
+        { Position.TopRowLeftColumn, Symbol.Unknown },
+        { Position.TopRowCentreColumn, Symbol.Unknown },
+        { Position.TopRowRightColumn, Symbol.Unknown },
 
-        { Position.LeftCentre, Symbol.Unknown },
-        { Position.RightCentre, Symbol.Unknown },
-        { Position.CentreCentre, Symbol.Unknown },
+        { Position.MiddleRowLeftColumn, Symbol.Unknown },
+        { Position.MiddleRowRightColumn, Symbol.Unknown },
+        { Position.MiddleRowCentreColumn, Symbol.Unknown },
 
-        { Position.LeftBottom, Symbol.Unknown },
-        { Position.CentreBottom, Symbol.Unknown },
-        { Position.RightBottom, Symbol.Unknown }
+        { Position.BottomRowLeftColumn, Symbol.Unknown },
+        { Position.BottomRowCentreColumn, Symbol.Unknown },
+        { Position.BottomRowRightColumn, Symbol.Unknown }
     };
 
+    private Symbol topRowLeftColumn() => this.symbols[Position.TopRowLeftColumn];
+    private Symbol topRowCentreColumn() => this.symbols[Position.TopRowCentreColumn];
+    private Symbol middleRowLeftColumn() => this.symbols[Position.MiddleRowLeftColumn];
+    private Symbol middleRowRightColumn() => this.symbols[Position.MiddleRowRightColumn];
+    private Symbol middleRowCentreColumn() => this.symbols[Position.MiddleRowCentreColumn];
+    private Symbol bottomRowLeftColumn() => this.symbols[Position.BottomRowLeftColumn];
+    private Symbol bottomRowCentreColumn() => this.symbols[Position.BottomRowCentreColumn];
+    private Symbol bottomRowRightColumn() => this.symbols[Position.BottomRowRightColumn];
+
+   
 
     public void AddMove(Position position, Symbol symbol)
     {
@@ -27,21 +37,26 @@ internal class Board
 
     public Symbol WinningSymbol()
     {
-        var leftTop = this.symbols[Position.LeftTop];
-        var rightCentre = this.symbols[Position.RightCentre];
-        var leftBottom = this.symbols[Position.LeftBottom];
-        var leftCentre = this.symbols[Position.LeftCentre];
-
-        if (leftCentre == leftTop && leftTop == leftBottom)
+        if (this.RowInLeftColumn())
         {
-            return leftTop;
+            return this.topRowLeftColumn();
         }
 
-        if (leftTop == rightCentre && rightCentre == leftCentre)
+        if (this.ThreeInCentreColumn())
         {
-            return leftTop;
+            return this.topRowCentreColumn();
         }
-
+        
         return Symbol.Unknown;
+    }
+
+    private bool ThreeInCentreColumn()
+    {
+        return this.topRowCentreColumn() == this.middleRowCentreColumn() && this.topRowCentreColumn() == this.bottomRowCentreColumn();
+    }
+    
+    private bool RowInLeftColumn()
+    {
+        return this.topRowLeftColumn() == this.middleRowLeftColumn() && this.topRowLeftColumn() == this.bottomRowLeftColumn();
     }
 }

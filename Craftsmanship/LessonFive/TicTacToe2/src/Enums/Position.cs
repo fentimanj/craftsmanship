@@ -2,15 +2,15 @@ namespace src.Enums;
 
 public enum Position 
 {
-    LeftTop,
-    LeftCentre,
-    LeftBottom,
+    TopRowLeftColumn,
+    MiddleRowLeftColumn,
+    BottomRowLeftColumn,
 
-    CentreTop,
-    CentreCentre,
-    CentreBottom,
+    TopRowCentreColumn,
+    MiddleRowCentreColumn,
+    BottomRowCentreColumn,
 
-    RightTop,
-    RightCentre,
-    RightBottom
+    TopRowRightColumn,
+    MiddleRowRightColumn,
+    BottomRowRightColumn
 }
