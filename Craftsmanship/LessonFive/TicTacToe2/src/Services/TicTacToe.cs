@@ -1,9 +1,11 @@
 namespace src.Services;
 
+using Enums;
+
 public class TicTacToe
 {
-    public static string CurrentSymbol()
+    public Symbol CurrentSymbol()
     {
-        return "X";
+        return Symbol.X;
     }
 }
