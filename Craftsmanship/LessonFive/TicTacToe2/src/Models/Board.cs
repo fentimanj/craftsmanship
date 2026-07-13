@@ -13,15 +13,37 @@ internal class Board
 
     public Symbol WinningSymbol()
     {
-        if (this.symbols.Count == 5)
-        {
-            return Symbol.X;
-        } 
         
-        if (this.symbols.Count == 6)
+        var leftTop = this.symbols[Position.LeftTop];
+        
+        Symbol rightCentre = Symbol.Unknown;
+        if (this.symbols.Keys.Contains(Position.RightCentre))
         {
-            return Symbol.O;
+            rightCentre = this.symbols[Position.RightCentre];
         }
+        
+        Symbol leftBottom = Symbol.Unknown;
+        if(this.symbols.Keys.Contains(Position.LeftBottom))
+        {
+            leftBottom = this.symbols[Position.LeftBottom];
+        }
+
+        Symbol leftCentre = Symbol.Unknown;
+        if(this.symbols.Keys.Contains(Position.LeftCentre))
+        {
+            leftCentre = this.symbols[Position.LeftCentre];
+        }
+        
+        if(leftCentre == leftTop && leftTop == leftBottom)
+        {
+            return leftTop;
+        }
+        
+        if(leftTop == rightCentre && rightCentre == leftCentre)
+        {
+            return leftTop;
+        }
+     
         
         return Symbol.Unknown;
     }
