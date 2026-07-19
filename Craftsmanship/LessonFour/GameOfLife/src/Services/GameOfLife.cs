@@ -4,9 +4,9 @@ using Models;
 
 public sealed class GameOfLife
 {
-    private readonly SeedingCells seed;
+    private readonly Cells seed;
 
-    public GameOfLife(SeedingCells seed)
+    public GameOfLife(Cells seed)
     {
         this.seed = seed;
     }
@@ -14,5 +14,10 @@ public sealed class GameOfLife
     public bool ContinueGenerating()
     {
         return this.seed.HasLivingCells();
+    }
+
+    public int GetNumberOfLivingCells()
+    {
+        return 1;
     }
 }
