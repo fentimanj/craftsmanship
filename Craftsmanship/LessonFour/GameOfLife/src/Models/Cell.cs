@@ -1,5 +1,5 @@
 namespace src.Models;
 
-public class Cell
+public  abstract class Cell
 {
 }

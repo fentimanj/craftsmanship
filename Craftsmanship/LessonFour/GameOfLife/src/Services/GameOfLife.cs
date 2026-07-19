@@ -2,7 +2,7 @@ namespace src.Services;
 
 using Models;
 
-public class GameOfLife
+public sealed class GameOfLife
 {
     public GameOfLife(List<Cell> seed)
     {

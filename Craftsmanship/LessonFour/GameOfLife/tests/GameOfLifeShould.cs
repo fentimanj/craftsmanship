@@ -2,15 +2,18 @@ using FluentAssertions;
 using src.Models;
 using src.Services;
 
+
+namespace tests;
+
 public class GameOfLifeShould
 {
     [Fact]
-    public void Return_When_Given()
+    public void ReturnFalse_WhenCheckIfGameShouldContinue_GivenAnEmptyListOfCellsAtStart()
     {
-        List<Cell> seed = new List<Cell>();
-        GameOfLife gameOfLife = new GameOfLife(seed);
+        List<Cell> seed = [];
+        var gameOfLife = new GameOfLife(seed);
         
-        bool continueGenerating = gameOfLife.ContinueGenerating();
+        var continueGenerating = gameOfLife.ContinueGenerating();
         
         continueGenerating.Should().BeFalse();
     }
