@@ -11,10 +11,23 @@ public class GameOfLifeShould
     public void ReturnFalse_WhenCheckIfGameShouldContinue_GivenAnEmptyListOfCellsAtStart()
     {
         List<Cell> seed = [];
-        var gameOfLife = new GameOfLife(seed);
+        var seedingCells = new SeedingCells(seed);
+        var gameOfLife = new GameOfLife(seedingCells);
         
         var continueGenerating = gameOfLife.ContinueGenerating();
         
         continueGenerating.Should().BeFalse();
+    }
+
+    [Fact]
+    public void ReturnTrue_WhenCheckIfGameShouldContinue_GivenOneCellInSeed()
+    {
+        List<Cell> seed = [new Cell()];
+        var seedingCells = new SeedingCells(seed);
+        var gameOfLife = new GameOfLife(seedingCells);
+
+        var continueGenerating = gameOfLife.ContinueGenerating();
+
+        continueGenerating.Should().BeTrue();
     }
 }

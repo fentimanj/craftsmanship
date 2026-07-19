@@ -4,13 +4,15 @@ using Models;
 
 public sealed class GameOfLife
 {
-    public GameOfLife(List<Cell> seed)
+    private readonly SeedingCells seed;
+
+    public GameOfLife(SeedingCells seed)
     {
-       
+        this.seed = seed;
     }
 
     public bool ContinueGenerating()
     {
-        return false;
+        return this.seed.HasLivingCells();
     }
 }
