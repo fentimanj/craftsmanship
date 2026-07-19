@@ -1,4 +1,6 @@
 using FluentAssertions;
+using src.Models;
+using src.Services;
 
 public class GameOfLifeShould
 {
@@ -7,24 +9,9 @@ public class GameOfLifeShould
     {
         List<Cell> seed = new List<Cell>();
         GameOfLife gameOfLife = new GameOfLife(seed);
+        
         bool continueGenerating = gameOfLife.ContinueGenerating();
+        
         continueGenerating.Should().BeFalse();
     }
-}
-
-public class GameOfLife
-{
-    public GameOfLife(List<Cell> seed)
-    {
-       
-    }
-
-    public bool ContinueGenerating()
-    {
-        return false;
-    }
-}
-
-public class Cell
-{
 }
