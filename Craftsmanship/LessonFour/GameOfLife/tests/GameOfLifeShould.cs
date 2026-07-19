@@ -40,4 +40,17 @@ public class GameOfLifeShould
         
         gameOfLife.GetNumberOfLivingCells().Should().Be(1);
     }
+
+    [Fact]
+    public void ReturnFalse_WhenCheckIfGameShouldContinue_GivenOneCellInSeedAndOneLifecycles()
+    {
+        
+        List<Cell> seed = [new()];
+        var seedingCells = new Cells(seed);
+        var gameOfLife = new GameOfLife(seedingCells);
+
+        gameOfLife.CompleteLifecycle();
+        
+        gameOfLife.GetNumberOfLivingCells().Should().Be(0);
+    }
 }

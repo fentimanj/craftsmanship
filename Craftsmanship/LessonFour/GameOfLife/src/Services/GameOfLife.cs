@@ -4,7 +4,7 @@ using Models;
 
 public sealed class GameOfLife
 {
-    private readonly Cells seed;
+    private Cells seed;
 
     public GameOfLife(Cells seed)
     {
@@ -18,6 +18,11 @@ public sealed class GameOfLife
 
     public int GetNumberOfLivingCells()
     {
-        return 1;
+        return this.seed.GetLivingCells();
+    }
+
+    public void CompleteLifecycle()
+    {
+        this.seed.RemoveCell();
     }
 }
