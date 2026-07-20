@@ -22,7 +22,7 @@ public class EmcService
         return AddNew(partOne, partTwo);
     }
 
-    private static string AddNew(string partOne, string partTwo)
+    public string AddNew(string partOne, string partTwo)
     {
         return partOne + partTwo;
     }
