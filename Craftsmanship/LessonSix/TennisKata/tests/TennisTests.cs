@@ -54,7 +54,7 @@ namespace Tennis
         [Test]
         public void CheckTennisGame1()
         {
-            var game = new TennisGame1();
+            var game = new TennisGame1("player1", "player2");
             CheckAllScores(game);
         }
 
@@ -93,7 +93,7 @@ namespace Tennis
         [Test]
         public void CheckGame1()
         {
-            var game = new TennisGame1();
+            var game = new TennisGame1("player1", "player2");
             RealisticTennisGame(game);
         }
 

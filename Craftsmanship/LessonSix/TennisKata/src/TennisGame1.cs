@@ -2,28 +2,32 @@ namespace src;
 
 public class TennisGame1 : ITennisGame
 {
-    private int playerOneScore;
-    private int playerTwoScore;
+    private int playerOnePoints;
+    private int playerTwoPoints;
+    private string player1Name;
+    private string player2Name;
 
-    public TennisGame1()
+    public TennisGame1(string player1Name, string player2Name)
     {
+        this.player1Name = player1Name;
+        this.player2Name = player2Name;
     }
 
     public void WonPoint(string playerName)
     {
         if (playerName == "player1")
-            this.playerOneScore += 1;
+            this.playerOnePoints += 1;
         else
-            this.playerTwoScore += 1;
+            this.playerTwoPoints += 1;
     }
 
     public string GetScore()
     {
         string score = "";
-        var tempScore = 0;
-        if (this.playerOneScore == this.playerTwoScore)
+        var tempScore = 0;  //This looks wrong
+        if (this.playerOnePoints == this.playerTwoPoints)  // This is a tie
         {
-            switch (this.playerOneScore)
+            switch (this.playerOnePoints)
             {
                 case 0:
                     score = "Love-All";
@@ -34,28 +38,28 @@ public class TennisGame1 : ITennisGame
                 case 2:
                     score = "Thirty-All";
                     break;
-                default:
+                default: //Dodgy
                     score = "Deuce";
                     break;
             }
         }
-        else if (this.playerOneScore >= 4 || this.playerTwoScore >= 4)
+        else if (this.playerOnePoints >= 4 || this.playerTwoPoints >= 4)  // What is 4? 
         {
-            var minusResult = this.playerOneScore - this.playerTwoScore;
-            if (minusResult == 1) score = "Advantage player1";
-            else if (minusResult == -1) score = "Advantage player2";
-            else if (minusResult >= 2) score = "Win for player1";
+            var playerOneHasAnAdvantageOf = this.playerOnePoints - this.playerTwoPoints; 
+            if (playerOneHasAnAdvantageOf == 1) score = "Advantage player1";
+            else if (playerOneHasAnAdvantageOf == -1) score = "Advantage player2";
+            else if (playerOneHasAnAdvantageOf >= 2) score = "Win for player1";
             else score = "Win for player2";
         }
         else
         {
             for (var i = 1; i < 3; i++)
             {
-                if (i == 1) tempScore = this.playerOneScore;
+                if (i == 1) tempScore = this.playerOnePoints;
                 else
                 {
                     score += "-";
-                    tempScore = this.playerTwoScore;
+                    tempScore = this.playerTwoPoints;
                 }
 
                 switch (tempScore)
