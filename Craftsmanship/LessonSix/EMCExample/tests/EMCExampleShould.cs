@@ -6,8 +6,9 @@ public class EMCExampleShould
     public void Return_When_Given()
     {
         var emcService = new EmcService();
-        
-        var result = emcService.AddOld(1, 2);
+
+        var couple = new Couple(1, 2);
+        var result = emcService.Add(couple);
 
         result.Should().Be("12");
     }
@@ -15,12 +16,6 @@ public class EMCExampleShould
 
 public class EmcService
 {
-    public string AddOld(int i, int i1)
-    {
-        var couple = new Couple(i, i1);
-        return this.Add(couple);
-    }
-
     public string Add(Couple couple)
     {
         return couple.iInteger + couple.i1Integer;
