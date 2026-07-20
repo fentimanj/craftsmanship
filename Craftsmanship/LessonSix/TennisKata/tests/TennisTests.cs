@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace Tennis
 {
+    using src;
     using Assert = NUnit.Framework.Assert;
 
     [TestFixture(0, 0, "Love-All")]
@@ -53,7 +54,7 @@ namespace Tennis
         [Test]
         public void CheckTennisGame1()
         {
-            var game = new TennisGame1("player1", "player2");
+            var game = new TennisGame1();
             CheckAllScores(game);
         }
 
@@ -92,7 +93,7 @@ namespace Tennis
         [Test]
         public void CheckGame1()
         {
-            var game = new TennisGame1("player1", "player2");
+            var game = new TennisGame1();
             RealisticTennisGame(game);
         }
 
