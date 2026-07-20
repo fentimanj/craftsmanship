@@ -22,7 +22,9 @@ public class GameOfLifeShould
     [Fact]
     public void ReturnOne_WhenGettingNumberOfLivingCells_GivenOneCellInSeed()
     {
-        List<Cell> seed = [new(1)];
+        var cellOnePosition = new GridPosition(1);
+        List<Cell> seed = [new(cellOnePosition)];
+        
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);
 
@@ -34,7 +36,9 @@ public class GameOfLifeShould
     [Fact]
     public void ReturnOne_WhenNumberOfCellsRequested_GivenOneCellInSeedAndNoLifecycles()
     {
-        List<Cell> seed = [new(1)];
+        var cellOnePosition = new GridPosition(1);
+        List<Cell> seed = [new(cellOnePosition)];
+        
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);
         
@@ -44,8 +48,9 @@ public class GameOfLifeShould
     [Fact]
     public void ReturnZero_WhenNumberOfCellsRequested_GivenOneCellInSeedAndOneLifecycles()
     {
+        var cellOnePosition = new GridPosition(1);
+        List<Cell> seed = [new(cellOnePosition)];
         
-        List<Cell> seed = [new(1)];
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);
 
@@ -57,7 +62,13 @@ public class GameOfLifeShould
     [Fact]
     public void ReturnZero_WhenNumberOfCellsRequested_GivenTwoCellsInSeedAndOneLifecycles()
     {
-        List<Cell> seed = [new(1), new (2)];
+        var cellOnePosition = new GridPosition(1);
+        var cellTwoPosition = new GridPosition(2);
+        
+        var cellOne = new Cell(cellOnePosition);
+        var cellTwo = new Cell(cellTwoPosition);
+            
+        List<Cell> seed = [cellOne, cellTwo];
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);
 
@@ -69,9 +80,14 @@ public class GameOfLifeShould
     [Fact]
     public void ReturnOne_WhenNumberOfCellsRequested_GivenThreeCellsInARowInSeedAndOneLifecycles()
     {
-        var cellOne = new Cell(1);
-        var cellTwo = new Cell(2);
-        var cellThree = new Cell(3);
+        var cellOnePosition = new GridPosition(1);
+        var cellTwoPosition = new GridPosition(2);
+        var cellThreePosition = new GridPosition(3);
+        
+        var cellOne = new Cell(cellOnePosition);
+        var cellTwo = new Cell(cellTwoPosition);
+        var cellThree = new Cell(cellThreePosition);  
+            
         List<Cell> seed = [cellOne, cellTwo, cellThree];
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);

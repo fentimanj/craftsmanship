@@ -1,5 +1,7 @@
 namespace src.Models;
 
-public record Cell (int columnIndex)
+public record Cell (GridPosition position)
 {
 }
+
+public record GridPosition(int columnIndex){}
