@@ -23,6 +23,6 @@ public sealed class GameOfLife
 
     public void CompleteLifecycle()
     {
-        this.seed.RemoveCell();
+        this.seed.KillCell();
     }
 }

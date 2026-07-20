@@ -7,7 +7,7 @@ public class Cells(List<Cell> cells)
         return cells.Count > 0;
     }
 
-    public void RemoveCell()
+    public void KillCell()
     {
         cells.RemoveAt(0);
     }

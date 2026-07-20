@@ -8,27 +8,27 @@ namespace tests;
 public class GameOfLifeShould
 {
     [Fact]
-    public void ReturnFalse_WhenCheckIfGameShouldContinue_GivenAnEmptyListOfCellsAtStart()
+    public void ReturnZero_WhenGettingNumberOfLivingCells_GivenAnEmptyListOfCellsAtStart()
     {
         List<Cell> seed = [];
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);
         
-        var continueGenerating = gameOfLife.ContinueGenerating();
+        var numberOfLivingCells = gameOfLife.GetNumberOfLivingCells();
         
-        continueGenerating.Should().BeFalse();
+        numberOfLivingCells.Should().Be(0);
     }
 
     [Fact]
-    public void ReturnTrue_WhenCheckIfGameShouldContinue_GivenOneCellInSeed()
+    public void ReturnOne_WhenGettingNumberOfLivingCells_GivenOneCellInSeed()
     {
         List<Cell> seed = [new()];
         var seedingCells = new Cells(seed);
         var gameOfLife = new GameOfLife(seedingCells);
 
-        var continueGenerating = gameOfLife.ContinueGenerating();
-
-        continueGenerating.Should().BeTrue();
+        var numberOfLivingCells = gameOfLife.GetNumberOfLivingCells();
+        
+        numberOfLivingCells.Should().Be(1);
     }
 
     [Fact]
