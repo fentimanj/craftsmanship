@@ -7,7 +7,7 @@ public class EMCExampleShould
     {
         var emcService = new EmcService();
         
-        var result = emcService.Add(1, 2);
+        var result = emcService.AddOld(1, 2);
 
         result.Should().Be("12");
     }
@@ -15,7 +15,7 @@ public class EMCExampleShould
 
 public class EmcService
 {
-    public string Add(int i, int i1)
+    public string AddOld(int i, int i1)
     {
         var partOne = i.ToString();
         var partTwo = i1.ToString();
