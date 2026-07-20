@@ -31,8 +31,8 @@ public class EmcService
 
 public class Couple
 {
-    private readonly string iInteger;
-    private readonly string i1Integer;
+    public readonly string iInteger;
+    public readonly string i1Integer;
 
     public Couple(int i, int i1)
     {
