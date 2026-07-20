@@ -19,6 +19,11 @@ public class EmcService
     {
         var partOne = i.ToString();
         var partTwo = i1.ToString();
+        return AddNew(partOne, partTwo);
+    }
+
+    private static string AddNew(string partOne, string partTwo)
+    {
         return partOne + partTwo;
     }
 }
