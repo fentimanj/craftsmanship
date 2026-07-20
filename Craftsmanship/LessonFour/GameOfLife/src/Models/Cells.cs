@@ -11,19 +11,27 @@ public class Cells(List<Cell> cells)
 
         if (cells.Count == 3)
         {
-            cells.RemoveAt(0);
-            cells.RemoveAt(1);
+            var cellone = cells[0];
+            var celltwo = cells[1];
+            var cellthree = cells[2];
+            cells.Remove(cellone);
+            cells.Remove(cellthree);
             return;
         }
         
         if (cells.Count == 2)
         {
-            cells.RemoveAt(1);
+            var cellOne = cells[0];
+            var cellTwo = cells[1];
+            cells.Remove(cellOne);
+            cells.Remove(cellTwo);
+            return;
         }
         
         if (cells.Count == 1)
         {
-            cells.RemoveAt(0);
+            var cellOne = cells[0];
+            cells.Remove(cellOne);
         }
     }
 
