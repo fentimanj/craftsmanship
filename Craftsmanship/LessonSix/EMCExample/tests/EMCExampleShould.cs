@@ -17,6 +17,8 @@ public class EmcService
 {
     public string Add(int i, int i1)
     {
-        return "12";
+        var partOne = i.ToString();
+        var partTwo = i1.ToString();
+        return partOne + partTwo;
     }
 }
