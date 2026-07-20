@@ -2,14 +2,21 @@ namespace src.Models;
 
 public class Cells(List<Cell> cells)
 {
-    public bool HasLivingCells()
-    {
-        return cells.Count > 0;
-    }
-
     public void KillCell()
     {
-        cells.RemoveAt(0);
+        if(cells.Count == 0)
+        {
+            return;
+        }
+
+        if (cells.Count == 2)
+        {
+            cells.RemoveAt(0);
+        }
+        if (cells.Count == 1)
+        {
+            cells.RemoveAt(0);
+        }
     }
 
     public int GetLivingCells()

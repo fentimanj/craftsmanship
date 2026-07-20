@@ -42,7 +42,7 @@ public class GameOfLifeShould
     }
 
     [Fact]
-    public void ReturnFalse_WhenCheckIfGameShouldContinue_GivenOneCellInSeedAndOneLifecycles()
+    public void ReturnZero_WhenNumberOfCellsRequested_GivenOneCellInSeedAndOneLifecycles()
     {
         
         List<Cell> seed = [new()];
@@ -53,4 +53,17 @@ public class GameOfLifeShould
         
         gameOfLife.GetNumberOfLivingCells().Should().Be(0);
     }
+
+    [Fact]
+    public void ReturnZero_WhenNumberOfCellsRequested_GivenTwoCellsInSeedAndOneLifecycles()
+    {
+        List<Cell> seed = [new(), new ()];
+        var seedingCells = new Cells(seed);
+        var gameOfLife = new GameOfLife(seedingCells);
+
+        gameOfLife.CompleteLifecycle();
+        
+        gameOfLife.GetNumberOfLivingCells().Should().Be(0);
+    }
+        
 }
