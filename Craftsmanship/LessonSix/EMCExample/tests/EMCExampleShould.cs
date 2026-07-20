@@ -17,11 +17,6 @@ public class EmcService
 {
     public string Add(int i, int i1)
     {
-        return AddNew();
-    }
-
-    private static string AddNew()
-    {
         return "12";
     }
 }
