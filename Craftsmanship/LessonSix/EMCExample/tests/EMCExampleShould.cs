@@ -17,13 +17,11 @@ public class EmcService
 {
     public string AddOld(int i, int i1)
     {
-        var partOne = i.ToString();
-        var partTwo = i1.ToString();
         var couple = new Couple(i, i1);
-        return this.Add(partOne, partTwo, couple);
+        return this.Add(couple);
     }
 
-    public string Add(string partOne, string partTwo, Couple couple = null)
+    public string Add(Couple couple = null)
     {
         return couple.iInteger + couple.i1Integer;
     }
