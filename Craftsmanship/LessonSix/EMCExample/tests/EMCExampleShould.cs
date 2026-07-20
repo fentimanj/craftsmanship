@@ -20,12 +20,12 @@ public class EmcService
         var partOne = i.ToString();
         var partTwo = i1.ToString();
         var couple = new Couple(i, i1);
-        return this.Add(partOne, partTwo);
+        return this.Add(partOne, partTwo, couple);
     }
 
-    public string Add(string partOne, string partTwo)
+    public string Add(string partOne, string partTwo, Couple couple = null)
     {
-        return partOne + partTwo;
+        return couple.iInteger + couple.i1Integer;
     }
 }
 
