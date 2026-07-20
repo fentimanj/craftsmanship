@@ -17,7 +17,7 @@ public class Cells(List<Cell> cells)
             var cellInColumnFour = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 4);
             
             var cellInColumnOneHasCellToLeft = cells.Any(cell => cell.GetColumnIndex() == cellInColumnOne.GetColumnIndex() - 1);
-            var cellInColumnOneHasCellToRight = cells.Any(cell => cell.GetColumnIndex() == cellInColumnOne.GetColumnIndex() + 1);
+            var cellInColumnOneHasCellToRight = cells.Any(cell => cellInColumnOne.CellIsToLeftOf(cell));
 
             if (!(cellInColumnOneHasCellToLeft && cellInColumnOneHasCellToRight))
             {
