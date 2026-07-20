@@ -11,13 +11,13 @@ public class Cells(List<Cell> cells)
 
         if (cells.Count == 3)
         {
-            var cellInColumnOne = cells.FirstOrDefault(cell => cell.position.columnIndex == 1);
-            var cellInColumnTwo = cells.FirstOrDefault(cell => cell.position.columnIndex == 2);
-            var cellInColumnThree = cells.FirstOrDefault(cell => cell.position.columnIndex == 3);
-            var cellInColumnFour = cells.FirstOrDefault(cell => cell.position.columnIndex == 4);
+            var cellInColumnOne = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 1);
+            var cellInColumnTwo = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 2);
+            var cellInColumnThree = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 3);
+            var cellInColumnFour = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 4);
             
-            var cellInColumnOneHasCellToLeft = cells.Any(cell => cell.position.columnIndex == cellInColumnOne.position.columnIndex - 1);
-            var cellInColumnOneHasCellToRight = cells.Any(cell => cell.position.columnIndex == cellInColumnOne.position.columnIndex + 1);
+            var cellInColumnOneHasCellToLeft = cells.Any(cell => cell.GetColumnIndex() == cellInColumnOne.GetColumnIndex() - 1);
+            var cellInColumnOneHasCellToRight = cells.Any(cell => cell.GetColumnIndex() == cellInColumnOne.GetColumnIndex() + 1);
 
             if (!(cellInColumnOneHasCellToLeft && cellInColumnOneHasCellToRight))
             {
