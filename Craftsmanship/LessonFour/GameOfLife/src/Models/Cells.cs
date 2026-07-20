@@ -16,10 +16,15 @@ public class Cells(List<Cell> cells)
             var cellInColumnThree = cells.FirstOrDefault(cell => cell.position.columnIndex == 3);
             var cellInColumnFour = cells.FirstOrDefault(cell => cell.position.columnIndex == 4);
             
-            var firstCellWithOnlyOneNeighbour = cells[0];
-            var cellWithTwoNeightbours = cells[1];
-            var secondCellWithOnlyOneNeighbour = cells[2];
-            cells.Remove(cellInColumnOne);
+            var cellInColumnOneHasCellToLeft = cells.Any(cell => cell.position.columnIndex == cellInColumnOne.position.columnIndex - 1);
+            var cellInColumnOneHasCellToRight = cells.Any(cell => cell.position.columnIndex == cellInColumnOne.position.columnIndex + 1);
+
+            if (!(cellInColumnOneHasCellToLeft && cellInColumnOneHasCellToRight))
+            {
+                cells.Remove(cellInColumnOne);
+            }
+            
+       
             cells.Remove(cellInColumnTwo);
             if (cellInColumnThree == null)
             {
