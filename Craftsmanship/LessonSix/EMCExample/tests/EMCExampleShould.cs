@@ -21,7 +21,7 @@ public class EmcService
         return this.Add(couple);
     }
 
-    public string Add(Couple couple = null)
+    public string Add(Couple couple)
     {
         return couple.iInteger + couple.i1Integer;
     }
