@@ -96,5 +96,25 @@ public class GameOfLifeShould
         
         gameOfLife.GetNumberOfLivingCells().Should().Be(1);
     }
+    
+    [Fact]
+    public void ReturnZero_WhenNumberOfCellsRequested_GivenThreeCellsInARowWithDeadCellInbetweenInSeedAndOneLifecycles()
+    {
+        var cellOnePosition = new GridPosition(1);
+        var cellTwoPosition = new GridPosition(2);
+        var cellThreePosition = new GridPosition(4);
+        
+        var cellOne = new Cell(cellOnePosition);
+        var cellTwo = new Cell(cellTwoPosition);
+        var cellThree = new Cell(cellThreePosition);  
+            
+        List<Cell> seed = [cellOne, cellTwo, cellThree];
+        var seedingCells = new Cells(seed);
+        var gameOfLife = new GameOfLife(seedingCells);
+        
+        gameOfLife.CompleteLifecycle();
+        
+        gameOfLife.GetNumberOfLivingCells().Should().Be(0);
+    }
         
 }

@@ -11,11 +11,20 @@ public class Cells(List<Cell> cells)
 
         if (cells.Count == 3)
         {
-            var cellone = cells[0];
-            var celltwo = cells[1];
-            var cellthree = cells[2];
-            cells.Remove(cellone);
-            cells.Remove(cellthree);
+            var cellInColumnOne = cells.FirstOrDefault(cell => cell.position.columnIndex == 1);
+            var cellInColumnTwo = cells.FirstOrDefault(cell => cell.position.columnIndex == 2);
+            var cellInColumnThree = cells.FirstOrDefault(cell => cell.position.columnIndex == 3);
+            var cellInColumnFour = cells.FirstOrDefault(cell => cell.position.columnIndex == 4);
+            
+            var firstCellWithOnlyOneNeighbour = cells[0];
+            var cellWithTwoNeightbours = cells[1];
+            var secondCellWithOnlyOneNeighbour = cells[2];
+            cells.Remove(cellInColumnOne);
+            cells.Remove(cellInColumnTwo);
+            if (cellInColumnThree == null)
+            {
+                cells.Remove(cellInColumnFour);
+            }
             return;
         }
         
