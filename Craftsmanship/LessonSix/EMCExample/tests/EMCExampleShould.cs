@@ -31,7 +31,12 @@ public class EmcService
 
 public class Couple
 {
+    private readonly string iInteger;
+    private readonly string i1Integer;
+
     public Couple(int i, int i1)
     {
+        this.iInteger = i.ToString();
+        this.i1Integer = i1.ToString();
     }
 }
