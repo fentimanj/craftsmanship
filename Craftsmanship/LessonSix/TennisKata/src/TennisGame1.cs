@@ -33,23 +33,20 @@ public class TennisGame1 : ITennisGame
         ITennisScoringStrategy scoreStrategy;
 
 
-        if (this.IsATie()) // This is a tie
+        if (this.IsATie())
         {
             scoreStrategy = new TiedStrategy(this.playerOnePoints);
-            score = scoreStrategy.GetScore();
         }
         else if (this.PlayerHasAdvantage())
         {
             scoreStrategy = new AdvantageStrategy(this.playerOnePoints, this.playerTwoPoints);
-            score = scoreStrategy.GetScore();
         }
-        else // InProgress
+        else
         {
             scoreStrategy = new InProgress(this.playerOnePoints, this.playerTwoPoints);
-            score = scoreStrategy.GetScore();
         }
 
-        return score;
+        return scoreStrategy.GetScore();
     }
 
     private bool PlayerHasAdvantage()
@@ -60,23 +57,5 @@ public class TennisGame1 : ITennisGame
     private bool IsATie()
     {
         return this.playerOnePoints == this.playerTwoPoints;
-    }
-}
-
-public class InProgress(int playerOnePoints, int playerTwoPoints) : ITennisScoringStrategy
-{
-    public string GetScore()
-    {
-        var pointsToWin = new Dictionary<int, string>
-        {
-            { 0, "Love" },
-            { 1, "Fifteen" },
-            { 2, "Thirty" },
-            { 3, "Forty" }
-        };
-
-        var player1Score = pointsToWin[playerOnePoints];
-        var player2Score = pointsToWin[playerTwoPoints];
-        return player1Score + "-" + player2Score;
     }
 }
