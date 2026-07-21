@@ -43,35 +43,18 @@ public class TennisGame1 : ITennisGame
         }
         else // InProgress
         {
-            for (var playerIndex = 1; playerIndex <= 2; playerIndex++) //This goes around twice
+            Dictionary<int, string> pointsToWin = new Dictionary<int, string>
             {
-                var tempPoints = 0; //This looks wrong
-                if (playerIndex == 1)
-                {
-                    tempPoints = this.playerOnePoints;
-                }
-                else
-                {
-                    score += "-";
-                    tempPoints = this.playerTwoPoints;
-                }
-
-                switch (tempPoints)
-                {
-                    case 0:
-                        score += "Love";
-                        break;
-                    case 1:
-                        score += "Fifteen";
-                        break;
-                    case 2:
-                        score += "Thirty";
-                        break;
-                    case 3:
-                        score += "Forty";
-                        break;
-                }
-            }
+                { 0, "Love" },
+                { 1, "Fifteen" },
+                { 2, "Thirty" },
+                { 3, "Forty" }
+            };
+            
+            var player1Score = pointsToWin[this.playerOnePoints];
+            var player2Score = pointsToWin[this.playerTwoPoints];
+            score = player1Score + "-" + player2Score;
+            
         }
 
         return score;
