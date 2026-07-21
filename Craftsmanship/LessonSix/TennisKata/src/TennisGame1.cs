@@ -1,5 +1,7 @@
 namespace src;
 
+using Strategies;
+
 public class TennisGame1 : ITennisGame
 {
     private string player1Name;
@@ -43,17 +45,8 @@ public class TennisGame1 : ITennisGame
         }
         else // InProgress
         {
-            var pointsToWin = new Dictionary<int, string>
-            {
-                { 0, "Love" },
-                { 1, "Fifteen" },
-                { 2, "Thirty" },
-                { 3, "Forty" }
-            };
-
-            var player1Score = pointsToWin[this.playerOnePoints];
-            var player2Score = pointsToWin[this.playerTwoPoints];
-            score = player1Score + "-" + player2Score;
+            scoreStrategy = new InProgress(this.playerOnePoints, this.playerTwoPoints);
+            score = scoreStrategy.GetScore();
         }
 
         return score;
@@ -67,53 +60,6 @@ public class TennisGame1 : ITennisGame
     private bool IsATie()
     {
         return this.playerOnePoints == this.playerTwoPoints;
-    }
-}
-
-public interface ITennisScoringStrategy
-{
-    string GetScore();
-}
-
-public class TiedStrategy(int playerOnePoints) : ITennisScoringStrategy
-{
-    public string GetScore()
-    {
-        switch (playerOnePoints)
-        {
-            case 0:
-                return "Love-All";
-            case 1:
-                return "Fifteen-All";
-            case 2:
-                return "Thirty-All";
-            default:
-                return "Deuce";
-        }
-    }
-}
-
-public class AdvantageStrategy(int playerOnePoints, int playerTwoPoints) : ITennisScoringStrategy
-{
-    public string GetScore()
-    {
-        var differenceInPoints = playerOnePoints - playerTwoPoints;
-        if (differenceInPoints == 1)
-        {
-            return "Advantage player1";
-        }
-
-        if (differenceInPoints == -1)
-        {
-            return "Advantage player2";
-        }
-
-        if (differenceInPoints >= 2)
-        {
-            return "Win for player1";
-        }
-
-        return "Win for player2";
     }
 }
 
