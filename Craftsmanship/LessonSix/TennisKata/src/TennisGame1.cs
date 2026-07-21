@@ -28,48 +28,22 @@ public class TennisGame1 : ITennisGame
     public string GetScore()
     {
         var score = "";
-        
-        if (this.playerOnePoints == this.playerTwoPoints) // This is a tie
+        ITennisScoringStrategy scoreStrategy;
+
+
+        if (this.IsATie()) // This is a tie
         {
-            switch (this.playerOnePoints)
-            {
-                case 0:
-                    score = "Love-All";
-                    break;
-                case 1:
-                    score = "Fifteen-All";
-                    break;
-                case 2:
-                    score = "Thirty-All";
-                    break;
-                default: //Dodgy
-                    score = "Deuce";
-                    break;
-            }
+            scoreStrategy = new TiedStrategy(this.playerOnePoints);
+            score = scoreStrategy.GetScore();
         }
-        else if (this.playerOnePoints >= 4 || this.playerTwoPoints >= 4)
+        else if (this.PlayerHasAdvantage())
         {
-            var differenceInPoints = this.playerOnePoints - this.playerTwoPoints;
-            if (differenceInPoints == 1)
-            {
-                score = "Advantage player1";
-            }
-            else if (differenceInPoints == -1)
-            {
-                score = "Advantage player2";
-            }
-            else if (differenceInPoints >= 2)
-            {
-                score = "Win for player1";
-            }
-            else
-            {
-                score = "Win for player2";
-            }
+            scoreStrategy = new AdvantageStrategy(this.playerOnePoints, this.playerTwoPoints);
+            score = scoreStrategy.GetScore();
         }
-        else
+        else // InProgress
         {
-            for (var playerIndex = 1; playerIndex <= 2; playerIndex++)  //This goes around twice
+            for (var playerIndex = 1; playerIndex <= 2; playerIndex++) //This goes around twice
             {
                 var tempPoints = 0; //This looks wrong
                 if (playerIndex == 1)
@@ -101,5 +75,62 @@ public class TennisGame1 : ITennisGame
         }
 
         return score;
+    }
+
+    private bool PlayerHasAdvantage()
+    {
+        return this.playerOnePoints >= 4 || this.playerTwoPoints >= 4;
+    }
+
+    private bool IsATie()
+    {
+        return this.playerOnePoints == this.playerTwoPoints;
+    }
+}
+
+public interface ITennisScoringStrategy
+{
+    string GetScore();
+}
+
+public class TiedStrategy(int playerOnePoints) : ITennisScoringStrategy
+{
+    public string GetScore()
+    {
+        switch (playerOnePoints)
+        {
+            case 0:
+                return "Love-All";
+            case 1:
+                return "Fifteen-All";
+            case 2:
+                return "Thirty-All";
+            default:
+                return "Deuce";
+        }
+    }
+}
+
+public class AdvantageStrategy(int playerOnePoints, int playerTwoPoints) : ITennisScoringStrategy
+{
+    public string GetScore()
+    {
+        var differenceInPoints = playerOnePoints - playerTwoPoints;
+        if (differenceInPoints == 1)
+        {
+            return "Advantage player1";
+        }
+
+        if (differenceInPoints == -1)
+        {
+            return "Advantage player2";
+        }
+
+        if (differenceInPoints >= 2)
+        {
+            return "Win for player1";
+        }
+
+        return "Win for player2";
     }
 }
