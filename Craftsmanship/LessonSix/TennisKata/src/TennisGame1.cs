@@ -2,10 +2,10 @@ namespace src;
 
 public class TennisGame1 : ITennisGame
 {
-    private int playerOnePoints;
-    private int playerTwoPoints;
     private string player1Name;
     private string player2Name;
+    private int playerOnePoints;
+    private int playerTwoPoints;
 
     public TennisGame1(string player1Name, string player2Name)
     {
@@ -16,16 +16,20 @@ public class TennisGame1 : ITennisGame
     public void WonPoint(string playerName)
     {
         if (playerName == "player1")
+        {
             this.playerOnePoints += 1;
+        }
         else
+        {
             this.playerTwoPoints += 1;
+        }
     }
 
     public string GetScore()
     {
-        string score = "";
-        var tempScore = 0;  //This looks wrong
-        if (this.playerOnePoints == this.playerTwoPoints)  // This is a tie
+        var score = "";
+        
+        if (this.playerOnePoints == this.playerTwoPoints) // This is a tie
         {
             switch (this.playerOnePoints)
             {
@@ -43,26 +47,42 @@ public class TennisGame1 : ITennisGame
                     break;
             }
         }
-        else if (this.playerOnePoints >= 4 || this.playerTwoPoints >= 4)  // What is 4? 
+        else if (this.playerOnePoints >= 4 || this.playerTwoPoints >= 4)
         {
-            var playerOneHasAnAdvantageOf = this.playerOnePoints - this.playerTwoPoints; 
-            if (playerOneHasAnAdvantageOf == 1) score = "Advantage player1";
-            else if (playerOneHasAnAdvantageOf == -1) score = "Advantage player2";
-            else if (playerOneHasAnAdvantageOf >= 2) score = "Win for player1";
-            else score = "Win for player2";
+            var differenceInPoints = this.playerOnePoints - this.playerTwoPoints;
+            if (differenceInPoints == 1)
+            {
+                score = "Advantage player1";
+            }
+            else if (differenceInPoints == -1)
+            {
+                score = "Advantage player2";
+            }
+            else if (differenceInPoints >= 2)
+            {
+                score = "Win for player1";
+            }
+            else
+            {
+                score = "Win for player2";
+            }
         }
         else
         {
-            for (var i = 1; i < 3; i++)
+            for (var playerIndex = 1; playerIndex <= 2; playerIndex++)  //This goes around twice
             {
-                if (i == 1) tempScore = this.playerOnePoints;
+                var tempPoints = 0; //This looks wrong
+                if (playerIndex == 1)
+                {
+                    tempPoints = this.playerOnePoints;
+                }
                 else
                 {
                     score += "-";
-                    tempScore = this.playerTwoPoints;
+                    tempPoints = this.playerTwoPoints;
                 }
 
-                switch (tempScore)
+                switch (tempPoints)
                 {
                     case 0:
                         score += "Love";
