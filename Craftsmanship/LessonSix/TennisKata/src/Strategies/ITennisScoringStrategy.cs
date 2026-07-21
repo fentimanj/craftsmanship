@@ -2,5 +2,5 @@ namespace src.Strategies;
 
 public interface ITennisScoringStrategy
 {
-    string GetScore();
+    string GetScore(int playerOneScore, int playerTwoScore);
 }

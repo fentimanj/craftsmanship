@@ -1,8 +1,8 @@
 namespace src.Strategies;
 
-public class TiedStrategy(int playerOnePoints) : ITennisScoringStrategy
+public class TiedStrategy() : ITennisScoringStrategy
 {
-    public string GetScore()
+    public string GetScore(int playerOnePoints, int playerTwoPoints)
     {
         switch (playerOnePoints)
         {

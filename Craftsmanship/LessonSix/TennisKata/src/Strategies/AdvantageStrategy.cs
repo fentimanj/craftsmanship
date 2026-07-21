@@ -1,8 +1,8 @@
 namespace src.Strategies;
 
-public class AdvantageStrategy(int playerOnePoints, int playerTwoPoints) : ITennisScoringStrategy
+public class AdvantageStrategy() : ITennisScoringStrategy
 {
-    public string GetScore()
+    public string GetScore(int playerOnePoints, int playerTwoPoints)
     {
         var differenceInPoints = playerOnePoints - playerTwoPoints;
         if (differenceInPoints == 1)

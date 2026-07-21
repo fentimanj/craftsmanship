@@ -22,22 +22,31 @@ public class TennisGame1(string player1Name, string player2Name) : ITennisGame
     public string GetScore()
     {
         ITennisScoringStrategy scoreStrategy;
+        ScoringType scoreType;
+        TennisScoreStrategyFactory factory = new TennisScoreStrategyFactory();
 
         if (this.IsATie())
         {
-            scoreStrategy = new TiedStrategy(this.playerOnePoints);
+            scoreType = ScoringType.Tied;
+            
         }
         else if (this.PlayerHasAdvantage())
         {
-            scoreStrategy = new AdvantageStrategy(this.playerOnePoints, this.playerTwoPoints);
+            scoreType = ScoringType.Advantage;
         }
         else
         {
-            scoreStrategy = new InProgress(this.playerOnePoints, this.playerTwoPoints);
+            scoreType = ScoringType.InProgress;
         }
+        
+        scoreStrategy = factory.GetStrategy(scoreType);
 
-        return scoreStrategy.GetScore();
+        
+        
+        return scoreStrategy.GetScore(playerOnePoints, playerTwoPoints);
     }
+    
+    
 
     private bool PlayerHasAdvantage()
     {
@@ -48,4 +57,34 @@ public class TennisGame1(string player1Name, string player2Name) : ITennisGame
     {
         return this.playerOnePoints == this.playerTwoPoints;
     }
+}
+
+public class TennisScoreStrategyFactory
+{
+    public ITennisScoringStrategy GetStrategy(ScoringType scoreType)
+    {
+        if (scoreType == ScoringType.Advantage)
+        {
+            return new AdvantageStrategy();
+        }
+
+        if (scoreType == ScoringType.Tied)
+        {
+            return new InProgress();
+        }
+
+        if (scoreType == ScoringType.InProgress)
+        {
+            return new TiedStrategy();
+        }
+        
+        throw new ArgumentOutOfRangeException(nameof(scoreType));
+    }
+}
+
+public enum ScoringType
+{
+    Tied,
+    Advantage, 
+    InProgress
 }

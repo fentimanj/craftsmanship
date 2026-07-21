@@ -2,9 +2,9 @@ namespace src;
 
 using Strategies;
 
-public class InProgress(int playerOnePoints, int playerTwoPoints) : ITennisScoringStrategy
+public class InProgress() : ITennisScoringStrategy
 {
-    public string GetScore()
+    public string GetScore(int playerOnePoints, int playerTwoPoints)
     {
         var pointsToWin = new Dictionary<int, string>
         {
