@@ -2,18 +2,10 @@ namespace src;
 
 using Strategies;
 
-public class TennisGame1 : ITennisGame
+public class TennisGame1(string player1Name, string player2Name) : ITennisGame
 {
-    private string player1Name;
-    private string player2Name;
     private int playerOnePoints;
     private int playerTwoPoints;
-
-    public TennisGame1(string player1Name, string player2Name)
-    {
-        this.player1Name = player1Name;
-        this.player2Name = player2Name;
-    }
 
     public void WonPoint(string playerName)
     {
@@ -29,9 +21,7 @@ public class TennisGame1 : ITennisGame
 
     public string GetScore()
     {
-        var score = "";
         ITennisScoringStrategy scoreStrategy;
-
 
         if (this.IsATie())
         {
