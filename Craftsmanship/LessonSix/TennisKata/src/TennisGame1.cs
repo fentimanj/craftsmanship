@@ -43,18 +43,17 @@ public class TennisGame1 : ITennisGame
         }
         else // InProgress
         {
-            Dictionary<int, string> pointsToWin = new Dictionary<int, string>
+            var pointsToWin = new Dictionary<int, string>
             {
                 { 0, "Love" },
                 { 1, "Fifteen" },
                 { 2, "Thirty" },
                 { 3, "Forty" }
             };
-            
+
             var player1Score = pointsToWin[this.playerOnePoints];
             var player2Score = pointsToWin[this.playerTwoPoints];
             score = player1Score + "-" + player2Score;
-            
         }
 
         return score;
@@ -115,5 +114,23 @@ public class AdvantageStrategy(int playerOnePoints, int playerTwoPoints) : ITenn
         }
 
         return "Win for player2";
+    }
+}
+
+public class InProgress(int playerOnePoints, int playerTwoPoints) : ITennisScoringStrategy
+{
+    public string GetScore()
+    {
+        var pointsToWin = new Dictionary<int, string>
+        {
+            { 0, "Love" },
+            { 1, "Fifteen" },
+            { 2, "Thirty" },
+            { 3, "Forty" }
+        };
+
+        var player1Score = pointsToWin[playerOnePoints];
+        var player2Score = pointsToWin[playerTwoPoints];
+        return player1Score + "-" + player2Score;
     }
 }
