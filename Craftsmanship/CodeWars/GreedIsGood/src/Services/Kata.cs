@@ -23,7 +23,7 @@ public static class Kata
         {
             return 100;
         }
-        // Fill me in!
+        
         return 0;
     }
 }
