@@ -11,10 +11,10 @@ public class Cells(List<Cell> cells)
 
         if (cells.Count == 3)
         {
-            var cellInColumnOne = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 1);
-            var cellInColumnTwo = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 2);
-            var cellInColumnThree = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 3);
-            var cellInColumnFour = cells.FirstOrDefault(cell => cell.GetColumnIndex() == 4);
+            var cellInColumnOne = CellInColumn(1);
+            var cellInColumnTwo = CellInColumn(2);
+            var cellInColumnThree = CellInColumn(3);
+            var cellInColumnFour = CellInColumn(4);
             
             var cellInColumnOneHasCellToLeft = cells.Any(cell => cell.GetColumnIndex() == cellInColumnOne.GetColumnIndex() - 1);
             var cellInColumnOneHasCellToRight = cells.Any(cell => cellInColumnOne.CellIsToLeftOf(cell));
@@ -47,6 +47,11 @@ public class Cells(List<Cell> cells)
             var cellOne = cells[0];
             cells.Remove(cellOne);
         }
+    }
+
+    private Cell? CellInColumn(int columnIndex)
+    {
+        return cells.FirstOrDefault(cell => cell.GetColumnIndex() == columnIndex);
     }
 
     public int GetLivingCells()
