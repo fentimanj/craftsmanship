@@ -4,7 +4,7 @@ public static class Kata
 {
     public static int Score(int[] dice) {
 
-        if (dice.Count(die => die == 1) == 1)
+        if (dice.Count(die => die == 1) == 1 )
         {
             return 100 * dice.Count(die => die == 1);
         }    
