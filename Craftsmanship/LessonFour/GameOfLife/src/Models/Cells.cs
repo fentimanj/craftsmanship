@@ -16,10 +16,10 @@ public class Cells(List<Cell> cells)
             var cellInColumnThree = CellInColumn(3);
             var cellInColumnFour = CellInColumn(4);
             
-            var cellInColumnOneHasCellToLeft = cells.Any(cell => cell.GetColumnIndex() == cellInColumnOne.GetColumnIndex() - 1);
-            var cellInColumnOneHasCellToRight = cells.Any(cell => cellInColumnOne.CellIsToLeftOf(cell));
+            var cellToTheRightOfCellInColumnOne = GetCellToRight(cellInColumnOne);
+            var cellToTheLeftOfCellInColumnOne = GetCellToLeft(cellInColumnOne);
 
-            if (!(cellInColumnOneHasCellToLeft && cellInColumnOneHasCellToRight))
+            if (cellToTheRightOfCellInColumnOne == null || cellToTheLeftOfCellInColumnOne == null)
             {
                 cells.Remove(cellInColumnOne);
             }
@@ -47,6 +47,16 @@ public class Cells(List<Cell> cells)
             var cellOne = cells[0];
             cells.Remove(cellOne);
         }
+    }
+
+    private Cell? GetCellToLeft(Cell? cellInColumnOne)
+    {
+        return cells.FirstOrDefault(cell => cellInColumnOne != null && cellInColumnOne.HasCellToLeft(cell));
+    }
+
+    private Cell? GetCellToRight(Cell? cellInColumnOne)
+    {
+        return cells.FirstOrDefault(cell => cellInColumnOne != null && cellInColumnOne.HasCellToRight(cell));
     }
 
     private Cell? CellInColumn(int columnIndex)

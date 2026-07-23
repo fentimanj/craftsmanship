@@ -4,14 +4,19 @@ public class Cell (GridPosition position)
 {
     public GridPosition Position { get; } = position;
 
-    public bool CellIsToLeftOf(Cell cell)
+    public bool HasCellToLeft(Cell cell)
     {
-        return this.Position.columnIndex == cell.GetColumnIndex() - 1;
+        return Position.columnIndex == cell.GetColumnIndex() - 1;
+    }
+
+    public bool HasCellToRight(Cell cell)
+    {
+        return Position.columnIndex == cell.GetColumnIndex() + 1;
     }
 
     public int GetColumnIndex()
     {
-        return this.Position.columnIndex;
+        return Position.columnIndex;
     }
     
 }
