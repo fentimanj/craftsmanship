@@ -9,8 +9,8 @@ public class GreedIsGoodShould
     [InlineData(1,1,2,2,2,200)]
     [InlineData(5,2,2,2,2,50)]
     [InlineData(5,5,2,2,2,100)]
-    
-    public void ReturnCorrectScor_WhenScoreIsCalculated_GivenFiveValidDice(int diceOne, int diceTwo, int diceThree, int diceFour, int diceFive, int expectedScore)
+    //[InlineData(5,1, 1, 2, 2, 250)]
+    public void ReturnCorrectScore_WhenScoreIsCalculated_GivenFiveValidDice(int diceOne, int diceTwo, int diceThree, int diceFour, int diceFive, int expectedScore)
     {
        var dice = new [] {diceOne, diceTwo, diceThree, diceFour, diceFive};
        
