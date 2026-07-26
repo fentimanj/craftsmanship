@@ -52,7 +52,8 @@ public class TennisGame1(string player1Name, string player2Name) : ITennisGame
 
     private bool PlayerHasAdvantage()
     {
-        return this.playerOnePoints >= 4 || this.playerTwoPoints >= 4;
+        const int advantagePoints = 4;
+        return this.playerOnePoints >= advantagePoints || this.playerTwoPoints >= advantagePoints;
     }
 
     private bool IsATie()
