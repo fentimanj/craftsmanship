@@ -1,124 +1,124 @@
 ﻿namespace src;
 
+public class Tile
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+    public char Symbol { get; set; }
+}
+
+public class Board
+{
+    private readonly List<Tile> _plays = new();
+
+    public Board()
+    {
+        for (var i = 0; i < 3; i++)
+        {
+            for (var j = 0; j < 3; j++)
+            {
+                this._plays.Add(new Tile { X = i, Y = j, Symbol = ' ' });
+            }
+        }
+    }
+
+    public Tile TileAt(int x, int y)
+    {
+        return this._plays.Single(tile => tile.X == x && tile.Y == y);
+    }
+
+    public void AddTileAt(char symbol, int x, int y)
+    {
+        var newTile = new Tile
+        {
+            X = x,
+            Y = y,
+            Symbol = symbol
+        };
+
+        this._plays.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
+    }
+}
+
 public class Game
 {
-    private readonly Board board = new();
-    private char lastSymbol = ' ';  // TODO: Magic Char
+    private readonly Board _board = new();
+    private char _lastSymbol = ' ';
 
-    public void Play(char symbol, int x, int y)  // TODO: Data clump / Primitive Obsession / Long Method
+    public void Play(char symbol, int x, int y)
     {
-        if (this.IsFirstMove())
+        //if first move
+        if (this._lastSymbol == ' ')
         {
-            if (IsSymbolNaught(symbol))
+            //if player is X
+            if (symbol == 'O')
             {
                 throw new Exception("Invalid first player");
             }
         }
-        else if (this.IsInvalidNextPlayer(symbol))
+        //if not first move but player repeated
+        else if (symbol == this._lastSymbol)
         {
             throw new Exception("Invalid next player");
         }
-        else if (this.IsTileTaken(x, y))  // TODO:  Data clump
+        //if not first move but play on an already played tile
+        else if (this._board.TileAt(x, y).Symbol != ' ')
         {
             throw new Exception("Invalid position");
         }
 
-        this.lastSymbol = symbol;
-        this.board.AddTileAt(symbol, x, y); // TODO: Data clump
+        // update game state
+        this._lastSymbol = symbol;
+        this._board.AddTileAt(symbol, x, y);
     }
 
-    private bool IsTileTaken(int x, int y) // TODO:  data clump / primitive obsession
+    public char Winner()
     {
-        return this.board.TileAt(x, y).Symbol != ' ';  //TODO:  Message Chain / Magic Char / Feature Envy (abstract away .TileAt(x, y).Symbol != ' ')
-    }
-
-    private bool IsInvalidNextPlayer(char symbol)
-    {
-        return symbol == this.lastSymbol;
-    }
-
-    private static bool IsSymbolNaught(char symbol)
-    {
-        return symbol == 'O';  // TODO:  Magic Char
-    }
-
-    private bool IsFirstMove()
-    {
-        return this.lastSymbol == ' '; // TODO:  Magic char
-    }
-
-    public char Winner()  // TODO:  Long Method
-    {
-        if (this.IsFirstRowTaken())
+        //if the positions in first row are taken
+        if (this._board.TileAt(0, 0).Symbol != ' ' &&
+            this._board.TileAt(0, 1).Symbol != ' ' &&
+            this._board.TileAt(0, 2).Symbol != ' ')
         {
-            if (this.IsThereSameSymbolInFirstRow())
+            //if first row is full with same symbol
+            if (this._board.TileAt(0, 0).Symbol ==
+                this._board.TileAt(0, 1).Symbol &&
+                this._board.TileAt(0, 2).Symbol ==
+                this._board.TileAt(0, 1).Symbol)
             {
-                return this.board.TileAt(0, 0).Symbol;  // TODO:  Message Chain / Feature Envy / Magic Numbers
+                return this._board.TileAt(0, 0).Symbol;
             }
         }
 
-        if (this.IsSecondRowTaken())
+        //if the positions in first row are taken
+        if (this._board.TileAt(1, 0).Symbol != ' ' &&
+            this._board.TileAt(1, 1).Symbol != ' ' &&
+            this._board.TileAt(1, 2).Symbol != ' ')
         {
-            if (this.IsThereSameSymbolInSecondRow())
+            //if middle row is full with same symbol
+            if (this._board.TileAt(1, 0).Symbol ==
+                this._board.TileAt(1, 1).Symbol &&
+                this._board.TileAt(1, 2).Symbol ==
+                this._board.TileAt(1, 1).Symbol)
             {
-                return this.board.TileAt(1, 0).Symbol; // TODO:  Message Chain / Feature Envy / Magic Numbers
+                return this._board.TileAt(1, 0).Symbol;
             }
         }
 
-        if (this.IsThirdRowTaken())
+        //if the positions in first row are taken
+        if (this._board.TileAt(2, 0).Symbol != ' ' &&
+            this._board.TileAt(2, 1).Symbol != ' ' &&
+            this._board.TileAt(2, 2).Symbol != ' ')
         {
-            if (this.IsThereSameSymbolInThirdRow())
+            //if middle row is full with same symbol
+            if (this._board.TileAt(2, 0).Symbol ==
+                this._board.TileAt(2, 1).Symbol &&
+                this._board.TileAt(2, 2).Symbol ==
+                this._board.TileAt(2, 1).Symbol)
             {
-                return this.board.TileAt(2, 0).Symbol; // TODO:  Message Chain / Feature Envy / Magic Numbers
+                return this._board.TileAt(2, 0).Symbol;
             }
         }
 
-        return ' '; // TODO:  Magic String
-    }
-
-    // TODO:  Lots of duplication
-    private bool IsThereSameSymbolInThirdRow() // TODO:  Message Chain / Feature Envy / Magic Numbers
-    {
-        return this.board.TileAt(2, 0).Symbol ==
-               this.board.TileAt(2, 1).Symbol &&
-               this.board.TileAt(2, 2).Symbol ==
-               this.board.TileAt(2, 1).Symbol;
-    }
-
-    private bool IsThirdRowTaken() // TODO:  Message Chain / Feature Envy / Magic Numbers
-    {
-        return this.board.TileAt(2, 0).Symbol != ' ' &&
-               this.board.TileAt(2, 1).Symbol != ' ' &&
-               this.board.TileAt(2, 2).Symbol != ' ';
-    }
-
-    private bool IsThereSameSymbolInSecondRow() // TODO:  Message Chain / Feature Envy / Magic Numbers
-    {
-        return this.board.TileAt(1, 0).Symbol ==
-               this.board.TileAt(1, 1).Symbol &&
-               this.board.TileAt(1, 2).Symbol ==
-               this.board.TileAt(1, 1).Symbol;
-    }
-
-    private bool IsSecondRowTaken() // TODO:  Message Chain / Feature Envy / Magic Numbers
-    {
-        return this.board.TileAt(1, 0).Symbol != ' ' &&
-               this.board.TileAt(1, 1).Symbol != ' ' &&
-               this.board.TileAt(1, 2).Symbol != ' ';
-    }
-
-    private bool IsThereSameSymbolInFirstRow() // TODO:  Message Chain / Feature Envy / Magic Numbers
-    {
-        return this.board.TileAt(0, 0).Symbol ==
-               this.board.TileAt(0, 1).Symbol &&
-               this.board.TileAt(0, 2).Symbol ==
-               this.board.TileAt(0, 1).Symbol;
-    }
-
-    private bool IsFirstRowTaken() // TODO:  Message Chain / Feature Envy / Magic Numbers
-    {
-        return this.IsTileTaken(0,0) &&
-               this.IsTileTaken(0,1) &&
-               this.IsTileTaken(0,2);
+        return ' ';
     }
 }
