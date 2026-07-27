@@ -1,38 +1,5 @@
 ﻿namespace src;
 
-public class Tile
-{
-    public int X { get; set; }
-    public int Y { get; set; }
-    public char Symbol { get; set; }
-}
-
-public class Board
-{
-    private readonly List<Tile> tiles = [];
-
-    public Board()
-    {
-        for (var xAxis = 0; xAxis < 3; xAxis++)
-        {
-            for (var yAxis = 0; yAxis < 3; yAxis++)
-            {
-                this.tiles.Add(new Tile { X = xAxis, Y = yAxis, Symbol = ' ' });
-            }
-        }
-    }
-
-    public Tile TileAt(int x, int y)
-    {
-        return this.tiles.Single(tile => tile.X == x && tile.Y == y);
-    }
-
-    public void AddTileAt(char symbol, int x, int y)
-    {
-        this.tiles.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
-    }
-}
-
 public class Game
 {
     private readonly Board board = new();
