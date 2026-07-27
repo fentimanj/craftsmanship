@@ -14,12 +14,12 @@ public class TennisScoreStrategyFactory
 
         if (scoreType == GameState.Tied)
         {
-            return new InProgress();
+            return new TiedStrategy();
         }
 
         if (scoreType == GameState.InProgress)
         {
-            return new TiedStrategy();
+            return new InProgress();
         }
         
         throw new ArgumentOutOfRangeException(nameof(scoreType));
