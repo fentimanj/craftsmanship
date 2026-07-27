@@ -18,6 +18,7 @@ public class Board
     public Tile TileAt(int x, int y) // TODO:  Primitive Obsession / Data Clump
     {
         return this.tiles.Single(tile => tile.X == x && tile.Y == y); //TODO:  Duplicated code / Feature Envy
+        //Extract predicate, move to Tile class
     }
 
     public void AddTileAt(char symbol, int x, int y) // TODO:  Primitive Obsession / Data Clump
