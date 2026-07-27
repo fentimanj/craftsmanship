@@ -90,16 +90,9 @@ public class Game
             }
         }
 
-        //if the positions in first row are taken
-        if (this.board.TileAt(1, 0).Symbol != ' ' &&
-            this.board.TileAt(1, 1).Symbol != ' ' &&
-            this.board.TileAt(1, 2).Symbol != ' ')
+        if (this.IsThereSameSymbolInSecondRow())
         {
-            //if middle row is full with same symbol
-            if (this.board.TileAt(1, 0).Symbol ==
-                this.board.TileAt(1, 1).Symbol &&
-                this.board.TileAt(1, 2).Symbol ==
-                this.board.TileAt(1, 1).Symbol)
+            if (this.IsThereSameSymbolOnSecondRow())
             {
                 return this.board.TileAt(1, 0).Symbol;
             }
@@ -121,6 +114,21 @@ public class Game
         }
 
         return ' ';
+    }
+
+    private bool IsThereSameSymbolOnSecondRow()
+    {
+        return this.board.TileAt(1, 0).Symbol ==
+               this.board.TileAt(1, 1).Symbol &&
+               this.board.TileAt(1, 2).Symbol ==
+               this.board.TileAt(1, 1).Symbol;
+    }
+
+    private bool IsThereSameSymbolInSecondRow()
+    {
+        return this.board.TileAt(1, 0).Symbol != ' ' &&
+               this.board.TileAt(1, 1).Symbol != ' ' &&
+               this.board.TileAt(1, 2).Symbol != ' ';
     }
 
     private bool IsThereSameSymbolInFirstRow()
