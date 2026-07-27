@@ -84,11 +84,7 @@ public class Game
     {
         if (this.IsFirstRowTaken())
         {
-            //if first row is full with same symbol
-            if (this.board.TileAt(0, 0).Symbol ==
-                this.board.TileAt(0, 1).Symbol &&
-                this.board.TileAt(0, 2).Symbol ==
-                this.board.TileAt(0, 1).Symbol)
+            if (this.IsThereSameSymbolInFirstRow())
             {
                 return this.board.TileAt(0, 0).Symbol;
             }
@@ -125,6 +121,14 @@ public class Game
         }
 
         return ' ';
+    }
+
+    private bool IsThereSameSymbolInFirstRow()
+    {
+        return this.board.TileAt(0, 0).Symbol ==
+               this.board.TileAt(0, 1).Symbol &&
+               this.board.TileAt(0, 2).Symbol ==
+               this.board.TileAt(0, 1).Symbol;
     }
 
     private bool IsFirstRowTaken()
