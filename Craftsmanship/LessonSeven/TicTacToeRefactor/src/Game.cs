@@ -82,10 +82,7 @@ public class Game
 
     public char Winner()
     {
-        //if the positions in first row are taken
-        if (this.IsTileTaken(0,0) &&
-            this.IsTileTaken(0,1) &&
-            this.IsTileTaken(0,2))
+        if (this.IsFirstRowTaken())
         {
             //if first row is full with same symbol
             if (this.board.TileAt(0, 0).Symbol ==
@@ -128,5 +125,12 @@ public class Game
         }
 
         return ' ';
+    }
+
+    private bool IsFirstRowTaken()
+    {
+        return this.IsTileTaken(0,0) &&
+               this.IsTileTaken(0,1) &&
+               this.IsTileTaken(0,2);
     }
 }
