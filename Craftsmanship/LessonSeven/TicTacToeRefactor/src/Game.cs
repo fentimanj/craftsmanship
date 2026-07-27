@@ -90,24 +90,17 @@ public class Game
             }
         }
 
-        if (this.IsThereSameSymbolInSecondRow())
+        if (this.IsSecondRowTaken())
         {
-            if (this.IsThereSameSymbolOnSecondRow())
+            if (this.IsThereSameSymbolInSecondRow())
             {
                 return this.board.TileAt(1, 0).Symbol;
             }
         }
 
-        //if the positions in first row are taken
-        if (this.board.TileAt(2, 0).Symbol != ' ' &&
-            this.board.TileAt(2, 1).Symbol != ' ' &&
-            this.board.TileAt(2, 2).Symbol != ' ')
+        if (this.IsThirdRowTaken())
         {
-            //if middle row is full with same symbol
-            if (this.board.TileAt(2, 0).Symbol ==
-                this.board.TileAt(2, 1).Symbol &&
-                this.board.TileAt(2, 2).Symbol ==
-                this.board.TileAt(2, 1).Symbol)
+            if (this.IsThereSameSymbolInThirdRow())
             {
                 return this.board.TileAt(2, 0).Symbol;
             }
@@ -116,7 +109,22 @@ public class Game
         return ' ';
     }
 
-    private bool IsThereSameSymbolOnSecondRow()
+    private bool IsThereSameSymbolInThirdRow()
+    {
+        return this.board.TileAt(2, 0).Symbol ==
+               this.board.TileAt(2, 1).Symbol &&
+               this.board.TileAt(2, 2).Symbol ==
+               this.board.TileAt(2, 1).Symbol;
+    }
+
+    private bool IsThirdRowTaken()
+    {
+        return this.board.TileAt(2, 0).Symbol != ' ' &&
+               this.board.TileAt(2, 1).Symbol != ' ' &&
+               this.board.TileAt(2, 2).Symbol != ' ';
+    }
+
+    private bool IsThereSameSymbolInSecondRow()
     {
         return this.board.TileAt(1, 0).Symbol ==
                this.board.TileAt(1, 1).Symbol &&
@@ -124,7 +132,7 @@ public class Game
                this.board.TileAt(1, 1).Symbol;
     }
 
-    private bool IsThereSameSymbolInSecondRow()
+    private bool IsSecondRowTaken()
     {
         return this.board.TileAt(1, 0).Symbol != ' ' &&
                this.board.TileAt(1, 1).Symbol != ' ' &&
