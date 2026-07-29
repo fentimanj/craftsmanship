@@ -1,3 +1,3 @@
 namespace src.Models;
 
-public record GridPosition(int columnIndex){}
+public record GridPosition(int ColumnIndex){}

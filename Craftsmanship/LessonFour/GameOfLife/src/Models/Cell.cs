@@ -6,17 +6,17 @@ public class Cell (GridPosition position)
 
     public bool HasCellToLeft(Cell cell)
     {
-        return Position.columnIndex == cell.GetColumnIndex() - 1;
+        return Position.ColumnIndex == cell.GetColumnIndex() - 1;
     }
 
     public bool HasCellToRight(Cell cell)
     {
-        return Position.columnIndex == cell.GetColumnIndex() + 1;
+        return Position.ColumnIndex == cell.GetColumnIndex() + 1;
     }
 
     public int GetColumnIndex()
     {
-        return Position.columnIndex;
+        return Position.ColumnIndex;
     }
     
 }
