@@ -2,22 +2,23 @@ namespace src.Models;
 
 public class Cells(List<Cell> cells)
 {
-    public void KillCell()
+    public void ClearDeadCells()
     {
         var killList = new List<Cell>();
 
-        foreach (var cell in cells)
-        {
-            var killCell = false;
-
-            var cellToRight = GetCellToRight(cell);
-            var cellToLeft = GetCellToLeft(cell);
-
-            if (cellToLeft == null || cellToRight == null) killList.Add(cell);
-        }
-
+        foreach (var cell in cells) AddDeadCellsToKillList(cell, killList);
 
         foreach (var cell in killList) cells.Remove(cell);
+    }
+
+    private void AddDeadCellsToKillList(Cell cell, List<Cell> killList)
+    {
+        var cellToRight = GetCellToRight(cell);
+        var cellToLeft = GetCellToLeft(cell);
+
+        if (cellToLeft != null && cellToRight != null) return;
+
+        killList.Add(cell);
     }
 
     private Cell? GetCellToLeft(Cell? thisCell)
