@@ -11,6 +11,6 @@ public sealed class GameOfLife(Cells cells)
 
     public void CompleteLifecycle()
     {
-        cells.KillCell();
+        cells.KillCells();
     }
 }

@@ -2,7 +2,7 @@ namespace src.Models;
 
 public class Cells(List<Cell> cells)
 {
-    public void KillCell()
+    public void KillCells()
     {
         var deadCells = new List<Cell>();
 
@@ -10,8 +10,7 @@ public class Cells(List<Cell> cells)
         {
             return;
         }
-
-
+        
         foreach (var cell in cells)
         {
             this.IdentifyDeadCells(cell, deadCells);
