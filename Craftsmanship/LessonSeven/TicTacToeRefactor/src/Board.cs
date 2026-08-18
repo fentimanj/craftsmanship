@@ -6,23 +6,35 @@ public class Board
 
     public Board()
     {
-        for (var xAxis = 0; xAxis < 3; xAxis++) //TODO : Magic Numbers
+        // TODO : Magic Numbers
+        for (var xAxis = 0; xAxis < 3; xAxis++)
         {
-            for (var yAxis = 0; yAxis < 3; yAxis++) // TODO : Magic Numbers
+            // TODO : Magic Numbers
+            for (var yAxis = 0; yAxis < 3; yAxis++)
             {
-                this.tiles.Add(new Tile { X = xAxis, Y = yAxis, Symbol = ' ' }); // TODO: Magic Char
+                // TODO: Magic Char
+                this.tiles.Add(new Tile { X = xAxis, Y = yAxis, Symbol = ' ' });
             }
         }
     }
 
-    public Tile TileAt(int x, int y) // TODO:  Primitive Obsession / Data Clump
+    // TODO: Primitive Obsession
+    // TODO: Data Clump
+    public Tile TileAt(int x, int y)
     {
-        return this.tiles.Single(tile => tile.X == x && tile.Y == y); //TODO:  Duplicated code / Feature Envy
-        //Extract predicate, move to Tile class
+        // TODO:  Duplicated code
+        // TODO: Feature Envy
+        // Extract predicate, move to Tile class
+        return this.tiles.Single(tile => tile.X == x && tile.Y == y);
     }
 
-    public void AddTileAt(char symbol, int x, int y) // TODO:  Primitive Obsession / Data Clump
+    // TODO: Primitive Obsession
+    // TODO: Data Clump
+    public void AddTileAt(char symbol, int x, int y)
     {
-        this.tiles.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol; //TODO:  Message Chain / Duplicated Code / Feature Envy
+        // TODO: Message Chain
+        // TODO: Duplicated Code
+        // TODO: Feature Envy
+        this.tiles.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
     }
 }

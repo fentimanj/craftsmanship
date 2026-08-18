@@ -1,8 +1,12 @@
 namespace src;
 
-public class Tile  //TODO: Data Class 
+// TODO: Data Class
+public class Tile
 {
-    public int X { get; set; } // TODO: Shotgun Surgery
-    public int Y { get; set; } // TODO: Shotgun Surgery
+    // TODO: Shotgun Surgery
+    public int X { get; set; }
+
+    // TODO: Shotgun Surgery
+    public int Y { get; set; }
     public char Symbol { get; set; }
 }

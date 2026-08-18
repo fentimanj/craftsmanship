@@ -3,9 +3,14 @@
 public class Game
 {
     private readonly Board board = new();
-    private char lastSymbol = ' ';  // TODO: Magic Char
 
-    public void Play(char symbol, int x, int y)  // TODO: Data clump / Primitive Obsession / Long Method
+    // TODO: Magic Char
+    private char lastSymbol = ' ';
+
+    // TODO: Data clump
+    // TODO: Primitive Obsession
+    // TODO: Long Method
+    public void Play(char symbol, int x, int y)
     {
         if (this.IsFirstMove())
         {
@@ -18,18 +23,25 @@ public class Game
         {
             throw new Exception("Invalid next player");
         }
-        else if (this.IsTileTaken(x, y))  // TODO:  Data clump
+        // TODO:  Data clump
+        else if (this.IsTileTaken(x, y))
         {
             throw new Exception("Invalid position");
         }
 
         this.lastSymbol = symbol;
-        this.board.AddTileAt(symbol, x, y); // TODO: Data clump
+        // TODO: Data clump
+        this.board.AddTileAt(symbol, x, y);
     }
 
-    private bool IsTileTaken(int x, int y) // TODO:  data clump / primitive obsession
+    // TODO: data clump
+    // TODO: primitive obsession
+    private bool IsTileTaken(int x, int y)
     {
-        return this.board.TileAt(x, y).Symbol != ' ';  //TODO:  Message Chain / Magic Char / Feature Envy (abstract away .TileAt(x, y).Symbol != ' ')
+        // TODO:  Message Chain
+        // TODO: Magic Char
+        // TODO: Feature Envy (abstract away .TileAt(x, y).Symbol != ' ')
+        return this.board.TileAt(x, y).Symbol != ' ';
     }
 
     private bool IsInvalidNextPlayer(char symbol)
@@ -37,23 +49,29 @@ public class Game
         return symbol == this.lastSymbol;
     }
 
+    // TODO:  Magic Char
     private static bool IsSymbolNaught(char symbol)
     {
-        return symbol == 'O';  // TODO:  Magic Char
+        return symbol == 'O';
     }
 
     private bool IsFirstMove()
     {
-        return this.lastSymbol == ' '; // TODO:  Magic char
+        // TODO:  Magic char
+        return this.lastSymbol == ' ';
     }
 
-    public char Winner()  // TODO:  Long Method
+    // TODO:  Long Method
+    public char Winner()
     {
         if (this.IsFirstRowTaken())
         {
             if (this.IsThereSameSymbolInFirstRow())
             {
-                return this.board.TileAt(0, 0).Symbol;  // TODO:  Message Chain / Feature Envy / Magic Numbers
+                // TODO: Message Chain
+                // TODO: Feature Envy
+                // TODO: Magic Numbers
+                return this.board.TileAt(0, 0).Symbol;
             }
         }
 
@@ -61,7 +79,10 @@ public class Game
         {
             if (this.IsThereSameSymbolInSecondRow())
             {
-                return this.board.TileAt(1, 0).Symbol; // TODO:  Message Chain / Feature Envy / Magic Numbers
+                // TODO: Message Chain
+                // TODO: Feature Envy
+                // TODO: Magic Numbers
+                return this.board.TileAt(Column.Middle, 0).Symbol;
             }
         }
 
@@ -69,15 +90,22 @@ public class Game
         {
             if (this.IsThereSameSymbolInThirdRow())
             {
-                return this.board.TileAt(2, 0).Symbol; // TODO:  Message Chain / Feature Envy / Magic Numbers
+                // TODO: Message Chain
+                // TODO: Feature Envy
+                // TODO: Magic Numbers
+                return this.board.TileAt(2, 0).Symbol;
             }
         }
 
-        return ' '; // TODO:  Magic String
+        // TODO: Magic String
+        return ' ';
     }
 
-    // TODO:  Lots of duplication
-    private bool IsThereSameSymbolInThirdRow() // TODO:  Message Chain / Feature Envy / Magic Numbers
+    // TODO: Lots of duplication
+    // TODO: Message Chain
+    // TODO: Feature Envy
+    // TODO: Magic Numbers
+    private bool IsThereSameSymbolInThirdRow()
     {
         return this.board.TileAt(2, 0).Symbol ==
                this.board.TileAt(2, 1).Symbol &&
@@ -85,14 +113,20 @@ public class Game
                this.board.TileAt(2, 1).Symbol;
     }
 
-    private bool IsThirdRowTaken() // TODO:  Message Chain / Feature Envy / Magic Numbers
+    // TODO: Message Chain
+    // TODO: Feature Envy
+    // TODO: Magic Numbers
+    private bool IsThirdRowTaken()
     {
         return this.board.TileAt(2, 0).Symbol != ' ' &&
                this.board.TileAt(2, 1).Symbol != ' ' &&
                this.board.TileAt(2, 2).Symbol != ' ';
     }
 
-    private bool IsThereSameSymbolInSecondRow() // TODO:  Message Chain / Feature Envy / Magic Numbers
+    // TODO: Message Chain
+    // TODO: Feature Envy
+    // TODO: Magic Numbers
+    private bool IsThereSameSymbolInSecondRow()
     {
         return this.board.TileAt(1, 0).Symbol ==
                this.board.TileAt(1, 1).Symbol &&
@@ -100,14 +134,20 @@ public class Game
                this.board.TileAt(1, 1).Symbol;
     }
 
-    private bool IsSecondRowTaken() // TODO:  Message Chain / Feature Envy / Magic Numbers
+    // TODO: Message Chain
+    // TODO: Feature Envy
+    // TODO: Magic Numbers
+    private bool IsSecondRowTaken()
     {
         return this.board.TileAt(1, 0).Symbol != ' ' &&
                this.board.TileAt(1, 1).Symbol != ' ' &&
                this.board.TileAt(1, 2).Symbol != ' ';
     }
 
-    private bool IsThereSameSymbolInFirstRow() // TODO:  Message Chain / Feature Envy / Magic Numbers
+    // TODO: Message Chain
+    // TODO: Feature Envy
+    // TODO: Magic Numbers
+    private bool IsThereSameSymbolInFirstRow()
     {
         return this.board.TileAt(0, 0).Symbol ==
                this.board.TileAt(0, 1).Symbol &&
@@ -115,10 +155,13 @@ public class Game
                this.board.TileAt(0, 1).Symbol;
     }
 
-    private bool IsFirstRowTaken() // TODO:  Message Chain / Feature Envy / Magic Numbers
+    // TODO: Message Chain
+    // TODO: Feature Envy
+    // TODO: Magic Numbers
+    private bool IsFirstRowTaken()
     {
-        return this.IsTileTaken(0,0) &&
-               this.IsTileTaken(0,1) &&
-               this.IsTileTaken(0,2);
+        return this.IsTileTaken(0, 0) &&
+               this.IsTileTaken(0, 1) &&
+               this.IsTileTaken(0, 2);
     }
 }
