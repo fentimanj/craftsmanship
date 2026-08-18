@@ -1,18 +1,6 @@
 namespace src;
 
-public static class Column
-{
-    public const int Left = 0;
-    public const int Center = 1;
-    public const int Right = 2;
-}
-
-public static class Row
-{
-    public const int Top = 0;
-    public const int Center = 1;
-    public const int Bottom = 2;
-}
+using Constant;
 
 public class Board
 {
@@ -24,8 +12,7 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                // TODO: Magic Char
-                this.tiles.Add(new Tile { X = column, Y = row, Symbol = ' ' });
+                this.tiles.Add(new Tile { X = column, Y = row, Symbol = Symbol.Space });
             }
         }
     }

@@ -1,11 +1,12 @@
 ﻿namespace src;
 
+using Constant;
+
 public class Game
 {
     private readonly Board board = new();
 
-    // TODO: Magic Char
-    private char lastSymbol = ' ';
+    private char lastSymbol = Symbol.Space;
 
     // TODO: Data clump
     // TODO: Primitive Obsession
@@ -38,10 +39,9 @@ public class Game
     // TODO: primitive obsession
     private bool IsTileTaken(int x, int y)
     {
-        // TODO:  Message Chain
-        // TODO: Magic Char
+        // TODO: Message Chain
         // TODO: Feature Envy (abstract away .TileAt(x, y).Symbol != ' ')
-        return this.board.TileAt(x, y).Symbol != ' ';
+        return this.board.TileAt(x, y).Symbol != Symbol.Space;
     }
 
     private bool IsInvalidNextPlayer(char symbol)
@@ -49,16 +49,14 @@ public class Game
         return symbol == this.lastSymbol;
     }
 
-    // TODO:  Magic Char
     private static bool IsSymbolNaught(char symbol)
     {
-        return symbol == 'O';
+        return symbol == Symbol.O;
     }
 
     private bool IsFirstMove()
     {
-        // TODO:  Magic char
-        return this.lastSymbol == ' ';
+        return this.lastSymbol == Symbol.Space;
     }
 
     // TODO:  Long Method
@@ -70,8 +68,7 @@ public class Game
             {
                 // TODO: Message Chain
                 // TODO: Feature Envy
-                // TODO: Magic Numbers
-                return this.board.TileAt(0, 0).Symbol;
+                return this.board.TileAt(Column.Left, Row.Top).Symbol;
             }
         }
 
@@ -81,8 +78,7 @@ public class Game
             {
                 // TODO: Message Chain
                 // TODO: Feature Envy
-                // TODO: Magic Numbers
-                return this.board.TileAt(1, 0).Symbol;
+                return this.board.TileAt(Column.Center, Row.Top).Symbol;
             }
         }
 
@@ -92,13 +88,11 @@ public class Game
             {
                 // TODO: Message Chain
                 // TODO: Feature Envy
-                // TODO: Magic Numbers
-                return this.board.TileAt(2, 0).Symbol;
+                return this.board.TileAt(Column.Right, Row.Top).Symbol;
             }
         }
 
-        // TODO: Magic String
-        return ' ';
+        return Symbol.Space;
     }
 
     // TODO: Lots of duplication
@@ -107,10 +101,10 @@ public class Game
     // TODO: Magic Numbers
     private bool IsThereSameSymbolInThirdRow()
     {
-        return this.board.TileAt(2, 0).Symbol ==
-               this.board.TileAt(2, 1).Symbol &&
-               this.board.TileAt(2, 2).Symbol ==
-               this.board.TileAt(2, 1).Symbol;
+        return this.board.TileAt(Column.Right, Row.Top).Symbol ==
+               this.board.TileAt(Column.Right, Row.Center).Symbol &&
+               this.board.TileAt(Column.Right, Row.Bottom).Symbol ==
+               this.board.TileAt(Column.Right, Row.Center).Symbol;
     }
 
     // TODO: Message Chain
