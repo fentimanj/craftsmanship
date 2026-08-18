@@ -82,7 +82,7 @@ public class Game
                 // TODO: Message Chain
                 // TODO: Feature Envy
                 // TODO: Magic Numbers
-                return this.board.TileAt(Column.Middle, 0).Symbol;
+                return this.board.TileAt(1, 0).Symbol;
             }
         }
 
