@@ -1,19 +1,31 @@
 namespace src;
 
+public static class Column
+{
+    public const int Left = 0;
+    public const int Center = 1;
+    public const int Right = 2;
+}
+
+public static class Row
+{
+    public const int Top = 0;
+    public const int Center = 1;
+    public const int Bottom = 2;
+}
+
 public class Board
 {
     private readonly List<Tile> tiles = [];
 
     public Board()
     {
-        // TODO : Magic Numbers
-        for (var xAxis = 0; xAxis < 3; xAxis++)
+        for (var column = Column.Left; column <= Column.Right; column++)
         {
-            // TODO : Magic Numbers
-            for (var yAxis = 0; yAxis < 3; yAxis++)
+            for (var row = Row.Top; row <= Row.Bottom; row++)
             {
                 // TODO: Magic Char
-                this.tiles.Add(new Tile { X = xAxis, Y = yAxis, Symbol = ' ' });
+                this.tiles.Add(new Tile { X = column, Y = row, Symbol = ' ' });
             }
         }
     }
