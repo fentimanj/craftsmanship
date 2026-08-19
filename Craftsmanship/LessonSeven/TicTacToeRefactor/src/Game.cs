@@ -98,7 +98,6 @@ public class Game
     // TODO: Lots of duplication
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsThereSameSymbolInThirdRow()
     {
         return this.board.TileAt(Column.Right, Row.Top).Symbol ==
@@ -109,12 +108,11 @@ public class Game
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsThirdRowTaken()
     {
-        return this.board.TileAt(2, 0).Symbol != ' ' &&
-               this.board.TileAt(2, 1).Symbol != ' ' &&
-               this.board.TileAt(2, 2).Symbol != ' ';
+        return this.board.TileAt(Column.Right, Row.Top).Symbol != ' ' &&
+               this.board.TileAt(Column.Right, Row.Center).Symbol != ' ' &&
+               this.board.TileAt(Column.Right, Row.Bottom).Symbol != ' ';
     }
 
     // TODO: Message Chain
@@ -122,10 +120,10 @@ public class Game
     // TODO: Magic Numbers
     private bool IsThereSameSymbolInSecondRow()
     {
-        return this.board.TileAt(1, 0).Symbol ==
-               this.board.TileAt(1, 1).Symbol &&
-               this.board.TileAt(1, 2).Symbol ==
-               this.board.TileAt(1, 1).Symbol;
+        return this.board.TileAt(Column.Center, Row.Top).Symbol ==
+               this.board.TileAt(Column.Center, 1).Symbol &&
+               this.board.TileAt(Column.Center, 2).Symbol ==
+               this.board.TileAt(Column.Center, 1).Symbol;
     }
 
     // TODO: Message Chain
