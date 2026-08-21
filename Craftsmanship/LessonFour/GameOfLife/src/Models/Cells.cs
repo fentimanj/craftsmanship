@@ -2,20 +2,27 @@ namespace src.Models;
 
 public sealed class Cells(List<Cell> cells)
 {
-    public void ClearDeadCells()
+    public void KillCells()
     {
-        var killList = new List<Cell>();
+        var deadCells = new List<Cell>();
 
-        foreach (var cell in cells) AddDeadCellsToKillList(cell, killList);
-
-        foreach (var cell in killList) cells.Remove(cell);
-    }
+        if (cells.Count < 1)
+        {
+            return;
+        }
+        
+        foreach (var cell in cells)
+        {
+            this.IdentifyDeadCells(cell, deadCells);
+        }
 
     private void AddDeadCellsToKillList(Cell cell, List<Cell> killList)
     {
         if (cell.HasNeighbour(cells)) return;
 
-        killList.Add(cell);
+    private bool HasNeighbours(Cell cell)
+    {
+        return this.GetCellToLeft(cell) == null || GetCellToRight(cell, cells) == null;
     }
 
     public int GetLivingCells()
