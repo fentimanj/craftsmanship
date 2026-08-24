@@ -117,23 +117,21 @@ public class Game
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsThereSameSymbolInSecondRow()
     {
         return this.board.TileAt(Column.Center, Row.Top).Symbol ==
-               this.board.TileAt(Column.Center, 1).Symbol &&
-               this.board.TileAt(Column.Center, 2).Symbol ==
-               this.board.TileAt(Column.Center, 1).Symbol;
+               this.board.TileAt(Column.Center, Row.Center).Symbol &&
+               this.board.TileAt(Column.Center, Row.Bottom).Symbol ==
+               this.board.TileAt(Column.Center, Row.Center).Symbol;
     }
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsSecondRowTaken()
     {
-        return this.board.TileAt(1, 0).Symbol != ' ' &&
-               this.board.TileAt(1, 1).Symbol != ' ' &&
-               this.board.TileAt(1, 2).Symbol != ' ';
+        return this.board.TileAt(Column.Left, Row.Top).Symbol != ' ' &&
+               this.board.TileAt(Column.Center, Row.Center).Symbol != ' ' &&
+               this.board.TileAt(Column.Center, Row.Bottom).Symbol != ' ';
     }
 
     // TODO: Message Chain
