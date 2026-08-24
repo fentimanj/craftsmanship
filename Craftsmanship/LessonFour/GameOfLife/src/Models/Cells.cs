@@ -2,27 +2,35 @@ namespace src.Models;
 
 public sealed class Cells(List<Cell> cells)
 {
-    public void KillCells()
+    public void ClearDeadCells()
     {
-        var deadCells = new List<Cell>();
+        var killList = new List<Cell>();
 
-        if (cells.Count < 1)
-        {
-            return;
-        }
-        
-        foreach (var cell in cells)
-        {
-            this.IdentifyDeadCells(cell, deadCells);
-        }
+        foreach (var cell in cells) AddDeadCellsToKillList(cell, killList);
+
+        foreach (var cell in killList) cells.Remove(cell);
+    }
 
     private void AddDeadCellsToKillList(Cell cell, List<Cell> killList)
     {
         if (cell.HasNeighbour(cells)) return;
 
-    private bool HasNeighbours(Cell cell)
+        killList.Add(cell);
+    }
+
+    private Cell? GetCellToLeft(Cell? thisCell)
     {
-        return this.GetCellToLeft(cell) == null || GetCellToRight(cell, cells) == null;
+        return cells.FirstOrDefault(cell => thisCell != null && thisCell.HasCellToLeft(cell));
+    }
+
+    private Cell? GetCellToRight(Cell? cellInColumnOne)
+    {
+        return cells.FirstOrDefault(cell => cellInColumnOne != null && cellInColumnOne.HasCellToRight(cell));
+    }
+
+    private Cell? CellInColumn(int columnIndex)
+    {
+        return cells.FirstOrDefault(cell => cell.GetColumnIndex() == columnIndex);
     }
 
     public int GetLivingCells()
