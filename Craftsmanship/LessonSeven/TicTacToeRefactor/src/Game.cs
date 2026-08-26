@@ -114,43 +114,39 @@ public class Game
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsThereSameSymbolInSecondRow()
     {
         return this.board.TileAt(Column.Center, Row.Top).Symbol ==
-               this.board.TileAt(Column.Center, 1).Symbol &&
-               this.board.TileAt(Column.Center, 2).Symbol ==
-               this.board.TileAt(Column.Center, 1).Symbol;
+               this.board.TileAt(Column.Center, Row.Center).Symbol &&
+               this.board.TileAt(Column.Center, Row.Bottom).Symbol ==
+               this.board.TileAt(Column.Center, Row.Center).Symbol;
     }
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsSecondRowTaken()
     {
-        return this.board.TileAt(1, 0).Symbol != ' ' &&
-               this.board.TileAt(1, 1).Symbol != ' ' &&
-               this.board.TileAt(1, 2).Symbol != ' ';
+        return this.board.TileAt(Column.Left, Row.Top).Symbol != ' ' &&
+               this.board.TileAt(Column.Center, Row.Center).Symbol != ' ' &&
+               this.board.TileAt(Column.Center, Row.Bottom).Symbol != ' ';
     }
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsThereSameSymbolInFirstRow()
     {
-        return this.board.TileAt(0, 0).Symbol ==
-               this.board.TileAt(0, 1).Symbol &&
-               this.board.TileAt(0, 2).Symbol ==
-               this.board.TileAt(0, 1).Symbol;
+        return this.board.TileAt(Column.Left, Row.Top).Symbol ==
+               this.board.TileAt(Column.Left, Row.Center).Symbol &&
+               this.board.TileAt(Column.Left, Row.Bottom).Symbol ==
+               this.board.TileAt(Column.Left, Row.Center).Symbol;
     }
 
     // TODO: Message Chain
     // TODO: Feature Envy
-    // TODO: Magic Numbers
     private bool IsFirstRowTaken()
     {
-        return this.IsTileTaken(0, 0) &&
-               this.IsTileTaken(0, 1) &&
-               this.IsTileTaken(0, 2);
+        return this.IsTileTaken(Column.Left, Row.Top) &&
+               this.IsTileTaken(Column.Left, Row.Center) &&
+               this.IsTileTaken(Column.Left, Row.Bottom);
     }
 }
