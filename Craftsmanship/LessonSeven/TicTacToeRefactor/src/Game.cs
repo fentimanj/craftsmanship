@@ -87,13 +87,12 @@ public class Game
     }
 
     // TODO: Message Chain
-    // TODO: Feature Envy
     private bool IsThereSameSymbolInColumn(int columnRight)
     {
-        return this.board.TileAt(columnRight, Row.Top).Symbol ==
-               this.board.TileAt(columnRight, Row.Center).Symbol &&
-               this.board.TileAt(columnRight, Row.Bottom).Symbol ==
-               this.board.TileAt(columnRight, Row.Center).Symbol;
+        return this.board.SymbolAt(columnRight, Row.Top) ==
+               this.board.SymbolAt(columnRight, Row.Center) &&
+               this.board.SymbolAt(columnRight, Row.Bottom) ==
+               this.board.SymbolAt(columnRight, Row.Center);
     }
 
 
