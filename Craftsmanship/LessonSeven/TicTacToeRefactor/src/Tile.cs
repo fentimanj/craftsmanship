@@ -9,4 +9,9 @@ public class Tile
     // TODO: Shotgun Surgery
     public int Y { get; set; }
     public char Symbol { get; set; }
+    
+    public static Func<Tile, bool> IsAt(int x, int y)
+    {
+        return tile => tile.X == x && tile.Y == y;
+    }
 }

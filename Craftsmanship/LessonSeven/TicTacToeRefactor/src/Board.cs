@@ -2,6 +2,8 @@ namespace src;
 
 using Constant;
 
+
+
 public class Board
 {
     private readonly List<Tile> tiles = [];
@@ -17,23 +19,23 @@ public class Board
         }
     }
 
-    // TODO: Primitive Obsession
     // TODO: Data Clump
     public Tile TileAt(int x, int y)
     {
-        // TODO:  Duplicated code
-        // TODO: Feature Envy
-        // Extract predicate, move to Tile class
-        return this.tiles.Single(tile => tile.X == x && tile.Y == y);
+        return this.tiles.Single(Tile.IsAt(x, y));
     }
 
-    // TODO: Primitive Obsession
+    public char SymbolAt(int x, int y)
+    {
+        return this.tiles.Single(Tile.IsAt(x, y)).Symbol;
+    }
+
     // TODO: Data Clump
     public void AddTileAt(char symbol, int x, int y)
     {
         // TODO: Message Chain
-        // TODO: Duplicated Code
-        // TODO: Feature Envy
-        this.tiles.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
+        this.tiles.Single(Tile.IsAt(x, y)).Symbol = symbol;
     }
+    
+
 }

@@ -68,21 +68,21 @@ public class Game
 
     public char Winner()
     {
-        if (this.IsFirstRowTaken() && this.IsThereSameSymbolInFirstRow())
+        if (this.IsColumnTaken(Column.Left) && this.IsThereSameSymbolInColumn(Column.Left))
         {
             // TODO: Message Chain
             // TODO: Feature Envy
             return this.board.TileAt(Column.Left, Row.Top).Symbol;
         }
 
-        if (this.IsSecondRowTaken() && this.IsThereSameSymbolInSecondRow())
+        if (this.IsColumnTaken(Column.Center) && this.IsThereSameSymbolInColumn(Column.Center))
         {
             // TODO: Message Chain
             // TODO: Feature Envy
             return this.board.TileAt(Column.Center, Row.Top).Symbol;
         }
 
-        if (this.IsThirdRowTaken() && this.IsThereSameSymbolInThirdRow())
+        if (this.IsColumnTaken(Column.Right) && this.IsThereSameSymbolInColumn(Column.Right))
         {
             // TODO: Message Chain
             // TODO: Feature Envy
@@ -92,61 +92,23 @@ public class Game
         return Symbol.Space;
     }
 
-    // TODO: Lots of duplication
     // TODO: Message Chain
     // TODO: Feature Envy
-    private bool IsThereSameSymbolInThirdRow()
+    private bool IsThereSameSymbolInColumn(int columnRight)
     {
-        return this.board.TileAt(Column.Right, Row.Top).Symbol ==
-               this.board.TileAt(Column.Right, Row.Center).Symbol &&
-               this.board.TileAt(Column.Right, Row.Bottom).Symbol ==
-               this.board.TileAt(Column.Right, Row.Center).Symbol;
+        return this.board.TileAt(columnRight, Row.Top).Symbol ==
+               this.board.TileAt(columnRight, Row.Center).Symbol &&
+               this.board.TileAt(columnRight, Row.Bottom).Symbol ==
+               this.board.TileAt(columnRight, Row.Center).Symbol;
     }
 
+    
     // TODO: Message Chain
     // TODO: Feature Envy
-    private bool IsThirdRowTaken()
+    private bool IsColumnTaken(int columnLeft)
     {
-        return this.board.TileAt(Column.Right, Row.Top).Symbol != ' ' &&
-               this.board.TileAt(Column.Right, Row.Center).Symbol != ' ' &&
-               this.board.TileAt(Column.Right, Row.Bottom).Symbol != ' ';
-    }
-
-    // TODO: Message Chain
-    // TODO: Feature Envy
-    private bool IsThereSameSymbolInSecondRow()
-    {
-        return this.board.TileAt(Column.Center, Row.Top).Symbol ==
-               this.board.TileAt(Column.Center, Row.Center).Symbol &&
-               this.board.TileAt(Column.Center, Row.Bottom).Symbol ==
-               this.board.TileAt(Column.Center, Row.Center).Symbol;
-    }
-
-    // TODO: Message Chain
-    // TODO: Feature Envy
-    private bool IsSecondRowTaken()
-    {
-        return this.board.TileAt(Column.Left, Row.Top).Symbol != ' ' &&
-               this.board.TileAt(Column.Center, Row.Center).Symbol != ' ' &&
-               this.board.TileAt(Column.Center, Row.Bottom).Symbol != ' ';
-    }
-
-    // TODO: Message Chain
-    // TODO: Feature Envy
-    private bool IsThereSameSymbolInFirstRow()
-    {
-        return this.board.TileAt(Column.Left, Row.Top).Symbol ==
-               this.board.TileAt(Column.Left, Row.Center).Symbol &&
-               this.board.TileAt(Column.Left, Row.Bottom).Symbol ==
-               this.board.TileAt(Column.Left, Row.Center).Symbol;
-    }
-
-    // TODO: Message Chain
-    // TODO: Feature Envy
-    private bool IsFirstRowTaken()
-    {
-        return this.IsTileTaken(Column.Left, Row.Top) &&
-               this.IsTileTaken(Column.Left, Row.Center) &&
-               this.IsTileTaken(Column.Left, Row.Bottom);
+        return this.IsTileTaken(columnLeft, Row.Top) &&
+               this.IsTileTaken(columnLeft, Row.Center) &&
+               this.IsTileTaken(columnLeft, Row.Bottom);
     }
 }
