@@ -2,8 +2,6 @@ namespace src;
 
 using Constant;
 
-
-
 public class Board
 {
     private readonly List<Tile> tiles = [];
@@ -27,7 +25,8 @@ public class Board
 
     public char SymbolAt(int x, int y)
     {
-        return this.tiles.Single(Tile.IsAt(x, y)).Symbol;
+        var tile = this.tiles.Single(Tile.IsAt(x, y));
+        return tile.Symbol;
     }
 
     // TODO: Data Clump
@@ -36,6 +35,4 @@ public class Board
         // TODO: Message Chain
         this.tiles.Single(Tile.IsAt(x, y)).Symbol = symbol;
     }
-    
-
 }
