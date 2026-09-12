@@ -36,15 +36,6 @@ public class Game
         }
     }
 
-    // TODO: data clump
-    // TODO: primitive obsession
-    // TODO:  Feature Envy
-    private bool IsTileTaken(int x, int y)
-    {
-        var symbol = this.board.SymbolAt(x, y);
-        return symbol != Symbol.Space;
-    }
-
     private bool IsInvalidNextPlayer(char symbol)
     {
         return symbol == this.lastSymbol;

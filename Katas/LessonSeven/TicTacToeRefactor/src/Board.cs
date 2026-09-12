@@ -31,7 +31,7 @@ public class Board
         return Symbol.Space;
     }
 
-    public char ColumnTakenBy(int columnIndex)
+    private char ColumnTakenBy(int columnIndex)
     {
         var topRowSymbol = this.SymbolAt(columnIndex, Row.Top);
         var middleRowSymbol = this.SymbolAt(columnIndex, Row.Middle);
