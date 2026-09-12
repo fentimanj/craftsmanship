@@ -44,9 +44,9 @@ public class Game
 
     // TODO: data clump
     // TODO: primitive obsession
+    // TODO:  Feature Envy
     private bool IsTileTaken(int x, int y)
     {
-        // TODO: Message Chain
         var symbol = this.board.SymbolAt(x, y);
         return symbol != Symbol.Space;
     }
@@ -68,16 +68,19 @@ public class Game
 
     public char Winner()
     {
+        //TODO:  Feature Envy
         if (this.IsColumnTaken(Column.Left) && this.IsThereSameSymbolInColumn(Column.Left))
         {
             return this.board.SymbolAt(Column.Left, Row.Top);
         }
 
+        //TODO:  Feature Envy
         if (this.IsColumnTaken(Column.Center) && this.IsThereSameSymbolInColumn(Column.Center))
         {
             return this.board.SymbolAt(Column.Center, Row.Top);
         }
 
+        //TODO:  Feature Envy
         if (this.IsColumnTaken(Column.Right) && this.IsThereSameSymbolInColumn(Column.Right))
         {
             return this.board.SymbolAt(Column.Right, Row.Top);
@@ -86,20 +89,18 @@ public class Game
         return Symbol.Space;
     }
 
-    // TODO: Message Chain
     private bool IsThereSameSymbolInColumn(int columnRight)
     {
+        //TODO:  Feature Envy
         return this.board.SymbolAt(columnRight, Row.Top) ==
                this.board.SymbolAt(columnRight, Row.Center) &&
                this.board.SymbolAt(columnRight, Row.Bottom) ==
                this.board.SymbolAt(columnRight, Row.Center);
     }
 
-
-    // TODO: Message Chain
-    // TODO: Feature Envy
     private bool IsColumnTaken(int columnLeft)
     {
+        //TODO:  Feature Envy
         return this.IsTileTaken(columnLeft, Row.Top) &&
                this.IsTileTaken(columnLeft, Row.Center) &&
                this.IsTileTaken(columnLeft, Row.Bottom);

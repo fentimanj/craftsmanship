@@ -18,11 +18,6 @@ public class Board
     }
 
     // TODO: Data Clump
-    public Tile TileAt(int x, int y)
-    {
-        return this.tiles.Single(Tile.IsAt(x, y));
-    }
-
     public char SymbolAt(int x, int y)
     {
         var tile = this.tiles.Single(Tile.IsAt(x, y));
@@ -32,7 +27,7 @@ public class Board
     // TODO: Data Clump
     public void AddTileAt(char symbol, int x, int y)
     {
-        // TODO: Message Chain
-        this.tiles.Single(Tile.IsAt(x, y)).Symbol = symbol;
+        var currentTile = this.tiles.Single(Tile.IsAt(x, y));
+        currentTile.Symbol = symbol;
     }
 }
