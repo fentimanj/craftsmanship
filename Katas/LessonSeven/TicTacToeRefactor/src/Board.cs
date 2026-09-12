@@ -17,14 +17,28 @@ public class Board
         }
     }
 
+    public char HasWinner()
+    {
+        for (var index = Column.Left; index <= Column.Right; index++)
+        {
+            var winner = this.ColumnTakenBy(index);
+            if (winner != Symbol.Space)
+            {
+                return winner;
+            }
+        }
+
+        return Symbol.Space;
+    }
+
     public char ColumnTakenBy(int columnIndex)
     {
         var topRowSymbol = this.SymbolAt(columnIndex, Row.Top);
         var middleRowSymbol = this.SymbolAt(columnIndex, Row.Middle);
         var bottomRowSymbol = this.SymbolAt(columnIndex, Row.Bottom);
-        
+
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
-        
+
         return columnTaken ? topRowSymbol : Symbol.Space;
     }
 
@@ -42,10 +56,11 @@ public class Board
         {
             throw new Exception("Invalid position");
         }
+
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));
         currentTile.Symbol = symbol;
     }
-    
+
     // TODO: data clump
     // TODO: primitive obsession
     private bool IsTileTaken(int x, int y)

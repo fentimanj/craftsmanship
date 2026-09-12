@@ -62,32 +62,7 @@ public class Game
 
     public char Winner()
     {
-        //TODO:  Feature Envy
-        if (this.board.ColumnTakenBy(Column.Left) != Symbol.Space)
-        {
-            return this.board.SymbolAt(Column.Left, Row.Top);
-        }
-
-        //TODO:  Feature Envy
-        if (this.IsColumnTaken(Column.Center) && this.board.ColumnTakenBy(Column.Center) != Symbol.Space)
-        {
-            return this.board.SymbolAt(Column.Center, Row.Top);
-        }
-
-        //TODO:  Feature Envy
-        if (this.IsColumnTaken(Column.Right) && this.board.ColumnTakenBy(Column.Right) != Symbol.Space)
-        {
-            return this.board.SymbolAt(Column.Right, Row.Top);
-        }
-
-        return Symbol.Space;
+        return this.board.HasWinner();
     }
 
-    private bool IsColumnTaken(int columnLeft)
-    {
-        //TODO:  Feature Envy
-        return this.IsTileTaken(columnLeft, Row.Top) &&
-               this.IsTileTaken(columnLeft, Row.Middle) &&
-               this.IsTileTaken(columnLeft, Row.Bottom);
-    }
 }
