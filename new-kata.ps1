@@ -9,6 +9,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$katasDir = Join-Path $scriptDir 'Katas'
 $rootSln = Join-Path $scriptDir 'Craftsmanship.sln'
 
 function Invoke-Step {
@@ -36,7 +37,7 @@ function Write-FileUtf8NoBom {
 }
 
 Write-Host ''
-$lessons = @(Get-ChildItem -Path $scriptDir -Directory |
+$lessons = @(Get-ChildItem -Path $katasDir -Directory |
     Where-Object { -not $_.Attributes.HasFlag([IO.FileAttributes]::Hidden) } |
     Where-Object { $_.Name -notin @('.idea', '.claude') } |
     Sort-Object Name |
@@ -83,7 +84,7 @@ if ([string]::IsNullOrWhiteSpace($Description)) {
     $Description = Read-Host 'Short description'
 }
 
-$kataDir = Join-Path (Join-Path $scriptDir $Lesson) $Kata
+$kataDir = Join-Path (Join-Path $katasDir $Lesson) $Kata
 $srcDir = Join-Path $kataDir 'src'
 $testsDir = Join-Path $kataDir 'tests'
 $kataSln = Join-Path $kataDir ("{0}.slnx" -f $Kata)
@@ -171,10 +172,10 @@ Invoke-Step "Write ReadMe.md" {
     Write-FileUtf8NoBom -Path (Join-Path $kataDir 'ReadMe.md') -Content $readme
 }
 
-$rootGitIgnore = Join-Path $scriptDir '.gitignore'
-if (Test-Path $rootGitIgnore) {
+$kataGitIgnore = Join-Path $katasDir '.gitignore'
+if (Test-Path $kataGitIgnore) {
     Invoke-Step "Copy .gitignore" {
-        Copy-Item -Path $rootGitIgnore -Destination (Join-Path $kataDir '.gitignore') -Force
+        Copy-Item -Path $kataGitIgnore -Destination (Join-Path $kataDir '.gitignore') -Force
     }
 }
 
