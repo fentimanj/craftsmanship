@@ -34,12 +34,6 @@ public class Game
         {
             throw new Exception("Invalid next player");
         }
-
-        // TODO:  Data clump
-        if (this.IsTileTaken(x, y))
-        {
-            throw new Exception("Invalid position");
-        }
     }
 
     // TODO: data clump
@@ -69,7 +63,7 @@ public class Game
     public char Winner()
     {
         //TODO:  Feature Envy
-        if (this.IsColumnTaken(Column.Left) && this.IsThereSameSymbolInColumn(Column.Left))
+        if (this.IsColumnTaken(Column.Left) && this.board.ColumnTakenBy(Column.Left) != Symbol.Space)
         {
             return this.board.SymbolAt(Column.Left, Row.Top);
         }
@@ -89,20 +83,20 @@ public class Game
         return Symbol.Space;
     }
 
-    private bool IsThereSameSymbolInColumn(int columnRight)
+    private bool IsThereSameSymbolInColumn(int columnIndex)
     {
-        //TODO:  Feature Envy
-        return this.board.SymbolAt(columnRight, Row.Top) ==
-               this.board.SymbolAt(columnRight, Row.Center) &&
-               this.board.SymbolAt(columnRight, Row.Bottom) ==
-               this.board.SymbolAt(columnRight, Row.Center);
+        var topRowSymbol = this.board.SymbolAt(columnIndex, Row.Top);
+        var middleRowSymbol = this.board.SymbolAt(columnIndex, Row.Middle);
+        var bottomRowSymbol = this.board.SymbolAt(columnIndex, Row.Bottom);
+
+        return topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
     }
 
     private bool IsColumnTaken(int columnLeft)
     {
         //TODO:  Feature Envy
         return this.IsTileTaken(columnLeft, Row.Top) &&
-               this.IsTileTaken(columnLeft, Row.Center) &&
+               this.IsTileTaken(columnLeft, Row.Middle) &&
                this.IsTileTaken(columnLeft, Row.Bottom);
     }
 }
