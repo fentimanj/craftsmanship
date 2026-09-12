@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Before responding to anything else this session, invoke the letsGo skill (via the Skill tool) to orient on the current kata state recorded in CLAUDE.md, then continue normally with whatever John asks.\"}}'"
+            "command": "bash .claude/hooks/session-start-banner.sh"
           }
         ]
       }

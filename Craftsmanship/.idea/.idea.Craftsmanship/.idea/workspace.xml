@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="756183d7-a462-45b5-a8e2-d97a3a0d6833" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="6d5e02c2-3718-4827-ad56-32f589386122" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="da52c562-0a3a-49a5-93a5-8cca1caec518" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Stopped" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="459228d5-fa91-4ecd-9491-7728ec7d5972" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="be1ed66c-57a7-4d61-bcdb-69dab5baecf6" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="63efd193-b611-4202-a317-0407e3f00ebf" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Stopped" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="f3db3c99-73a7-452e-8bba-d597d8a2c9d4" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="be28cdca-5a81-4c52-9a55-cdecfbf8eee6" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Completed" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="30f3747a-caef-476b-93fd-a349f2649809" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="b301a29e-1a74-44a8-99b4-f30687689bbb" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="b906584c-2b7f-4508-9e7f-77f4ce649db1" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="status" value="Stopped" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="a464c898-5da7-48d8-a253-2906670efaea" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="a719688e-8a01-4e03-9f31-24d6a942a9f6" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="c23e7fe4-3908-468f-ab73-7237f5143959" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="db4db1c1-2f7e-4a5a-8143-c77a79dc308b" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="6d5e02c2-3718-4827-ad56-32f589386122" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/johnfentiman/Development/Craftsmanship/Katas" value="3JEK5X49DGmoW3R7kxYSbgxlQB4" />
+      <entry key="_/Users/johnfentiman/Development/Craftsmanship/craftsmanship" value="3JENfomtVw2lJiqufk93Lahflu3" />
+      <entry key="_/Users/johnfentiman/Development/craftsmanship/Craftsmanship" value="3EY2wUnLnjdbtNYODJb3PIbbwuY" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="agent-panel" value="Auto" />
+      <entry key="chat-panel" value="Auto" />
+    </selectedModels>
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/.." source="main" />
+                <branch-info repo="$PROJECT_DIR$/LessonOne/FizzBuzzKata" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="smellyTicTacToe/FirstAttemptInLesson" />
+      </map>
+    </option>
+    <option name="RECENT_COMMON_BRANCH" value="main" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fentimanj&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:fentimanj/craftsmanship.git&quot;,
+    &quot;accountId&quot;: &quot;e07a9cbc-de5f-44b6-8345-6265a326fb5f&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CodeWars/CaffineScriptKata/tests/CaffeineBuzzShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/CogsebisGearNetwork/src/Cogsebis.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/EnumerableMagic/src/Kata.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/EnumerableMagic/tests/OneShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/KnightVsRook/src/KnightRock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/KnightVsRook/tests/KnightRookShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/TitleCase/tests/TitleCaseShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/ValidParentheses/src/Kata.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CodeWars/ValidParentheses/tests/KataShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonFive/TicTacToe2/tests/TicTacToe2Should.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonFour/LessonFour/src/Services/TicTacToeGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonOne/LeapYearKata/tests/LeapYearServiceShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonOne/NthFibonacci/tests/FibonacciServiceShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonThree/RomanNumbersKata/tests/RomanNumbersServiceShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonTwo/BowlingGameKata/tests/BowlingScoreKataShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LessonTwo/StringCalculatorKata/tests/StringCalculatorServiceShould.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/195672332dabe555580baaf682491569dc3f825502d33d38978864d4679d/String.Manipulation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b4992783078d7e4b19c3a2451a3156ebb1ea9e5ca26acc3fa3fdbcd71d618/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/344932e3a75911b8cabf3f77c583f5927ced24b21c873939d9acead319aba1/MethodBaseInvoker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3b92f859131bde25d0f7a63de08963e995d1e1426e584dfd4b8e833d2d3dba/ExecutionTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5c9618319c8bb992a410d754c6fd33435b7db8e22e7bdf7763a9b3490c28a/Number.Parsing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5e14a4e27990972fa4ae94975603bd298aaf328ee083c03b10569ee4724d57/TestInvoker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b6567780652ae94629e44d984cbf8eaac34e41671846cc7b98805cfad2f972af/Assert.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cffa676d9bfc6c7a1c9d0d25ead15b3b0c9e12e3187bf397eaa52260e5fd91/LateBoundTestFramework.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e462784e2f7c719eb9fcb54d0d3adb9c3e65c9e987c7fedffa3e5f219883385/SpanHelpers.ByteMemOps.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3EY2wUnLnjdbtNYODJb3PIbbwuY" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="LOCAL" />
+      </template>
+    </option>
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "056df190-b176-42d9-bc3b-16cd629e856e.executor": "Debug",
+    "12d1c17d-d7e9-447c-a8ab-aeba57bab533.executor": "Debug",
+    "41c992bf-a7b1-43c9-8c1e-ef8cfc9517a9.executor": "Debug",
+    "480970cf-424b-45de-b70e-e9050cb8f69c.executor": "Debug",
+    "7516a8d7-7b4d-4323-a218-18f90c1dd103.executor": "Debug",
+    "8a58fdd9-87bc-4491-b60e-19048e4164c2.executor": "Debug",
+    "92433657-23dd-4350-b773-a1ff62ca776a.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "b7130cc5-7546-4a9a-b1a8-4f5171c9557e.executor": "Debug",
+    "c590b2cf-9bdd-449b-9a35-68f3932301a3.executor": "Debug",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "d72155d4-a317-4a32-a42a-f290d962b736.executor": "Debug",
+    "git-widget-placeholder": "main",
+    "git.auto.fetch.suggestion.counter": "3",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rider.code.cleanup.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="39769b96-9573-4358-87df-17abaf111b44" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="756183d7-a462-45b5-a8e2-d97a3a0d6833" name="Changes" comment="" />
+      <created>1780341421158</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780341421158</updated>
+      <workItem from="1780341423273" duration="4812000" />
+      <workItem from="1780412241524" duration="6961000" />
+      <workItem from="1780559874368" duration="6226000" />
+      <workItem from="1780937553077" duration="25787000" />
+      <workItem from="1781180405139" duration="2103000" />
+      <workItem from="1781277267838" duration="53167000" />
+      <workItem from="1783338534277" duration="1436000" />
+      <workItem from="1783358333820" duration="7078000" />
+      <workItem from="1783366338673" duration="3822000" />
+      <workItem from="1783448465947" duration="15464000" />
+      <workItem from="1784459221198" duration="19808000" />
+      <workItem from="1784648344492" duration="14444000" />
+      <workItem from="1785349935556" duration="21348000" />
+      <workItem from="1787769890908" duration="6366000" />
+      <workItem from="1789220606187" duration="422000" />
+      <workItem from="1789222376708" duration="3708000" />
+    </task>
+    <task id="LOCAL-00245" summary="4">
+      <option name="closed" value="true" />
+      <created>1784569961943</created>
+      <option name="number" value="00245" />
+      <option name="presentableId" value="LOCAL-00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1784569961943</updated>
+    </task>
+    <task id="LOCAL-00246" summary="5">
+      <option name="closed" value="true" />
+      <created>1784569987081</created>
+      <option name="number" value="00246" />
+      <option name="presentableId" value="LOCAL-00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1784569987081</updated>
+    </task>
+    <task id="LOCAL-00247" summary="6">
+      <option name="closed" value="true" />
+      <created>1784570004705</created>
+      <option name="number" value="00247" />
+      <option name="presentableId" value="LOCAL-00247" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570004705</updated>
+    </task>
+    <task id="LOCAL-00248" summary="r">
+      <option name="closed" value="true" />
+      <created>1784570025736</created>
+      <option name="number" value="00248" />
+      <option name="presentableId" value="LOCAL-00248" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570025736</updated>
+    </task>
+    <task id="LOCAL-00249" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570047747</created>
+      <option name="number" value="00249" />
+      <option name="presentableId" value="LOCAL-00249" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570047747</updated>
+    </task>
+    <task id="LOCAL-00250" summary="Rollback 1">
+      <option name="closed" value="true" />
+      <created>1784570120877</created>
+      <option name="number" value="00250" />
+      <option name="presentableId" value="LOCAL-00250" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570120877</updated>
+    </task>
+    <task id="LOCAL-00251" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570190586</created>
+      <option name="number" value="00251" />
+      <option name="presentableId" value="LOCAL-00251" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570190586</updated>
+    </task>
+    <task id="LOCAL-00252" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570256959</created>
+      <option name="number" value="00252" />
+      <option name="presentableId" value="LOCAL-00252" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570256959</updated>
+    </task>
+    <task id="LOCAL-00253" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570319576</created>
+      <option name="number" value="00253" />
+      <option name="presentableId" value="LOCAL-00253" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570319576</updated>
+    </task>
+    <task id="LOCAL-00254" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570429634</created>
+      <option name="number" value="00254" />
+      <option name="presentableId" value="LOCAL-00254" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570429634</updated>
+    </task>
+    <task id="LOCAL-00255" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570447420</created>
+      <option name="number" value="00255" />
+      <option name="presentableId" value="LOCAL-00255" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570447420</updated>
+    </task>
+    <task id="LOCAL-00256" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570476528</created>
+      <option name="number" value="00256" />
+      <option name="presentableId" value="LOCAL-00256" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570476528</updated>
+    </task>
+    <task id="LOCAL-00257" summary="R">
+      <option name="closed" value="true" />
+      <created>1784570524406</created>
+      <option name="number" value="00257" />
+      <option name="presentableId" value="LOCAL-00257" />
+      <option name="project" value="LOCAL" />
+      <updated>1784570524406</updated>
+    </task>
+    <task id="LOCAL-00258" summary="Setup">
+      <option name="closed" value="true" />
+      <created>1784571796848</created>
+      <option name="number" value="00258" />
+      <option name="presentableId" value="LOCAL-00258" />
+      <option name="project" value="LOCAL" />
+      <updated>1784571796848</updated>
+    </task>
+    <task id="LOCAL-00259" summary="G">
+      <option name="closed" value="true" />
+      <created>1784572208476</created>
+      <option name="number" value="00259" />
+      <option name="presentableId" value="LOCAL-00259" />
+      <option name="project" value="LOCAL" />
+      <updated>1784572208476</updated>
+    </task>
+    <task id="LOCAL-00260" summary="R">
+      <option name="closed" value="true" />
+      <created>1784573429185</created>
+      <option name="number" value="00260" />
+      <option name="presentableId" value="LOCAL-00260" />
+      <option name="project" value="LOCAL" />
+      <updated>1784573429185</updated>
+    </task>
+    <task id="LOCAL-00261" summary="G">
+      <option name="closed" value="true" />
+      <created>1784648374536</created>
+      <option name="number" value="00261" />
+      <option name="presentableId" value="LOCAL-00261" />
+      <option name="project" value="LOCAL" />
+      <updated>1784648374536</updated>
+    </task>
+    <task id="LOCAL-00262" summary="R">
+      <option name="closed" value="true" />
+      <created>1784649891503</created>
+      <option name="number" value="00262" />
+      <option name="presentableId" value="LOCAL-00262" />
+      <option name="project" value="LOCAL" />
+      <updated>1784649891503</updated>
+    </task>
+    <task id="LOCAL-00263" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650001500</created>
+      <option name="number" value="00263" />
+      <option name="presentableId" value="LOCAL-00263" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650001500</updated>
+    </task>
+    <task id="LOCAL-00264" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650090905</created>
+      <option name="number" value="00264" />
+      <option name="presentableId" value="LOCAL-00264" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650090905</updated>
+    </task>
+    <task id="LOCAL-00265" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650151586</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650151586</updated>
+    </task>
+    <task id="LOCAL-00266" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650199838</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650199838</updated>
+    </task>
+    <task id="LOCAL-00267" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650330141</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650330141</updated>
+    </task>
+    <task id="LOCAL-00268" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650688960</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650688960</updated>
+    </task>
+    <task id="LOCAL-00269" summary="R">
+      <option name="closed" value="true" />
+      <created>1784650788694</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
+      <option name="project" value="LOCAL" />
+      <updated>1784650788694</updated>
+    </task>
+    <task id="LOCAL-00270" summary="R">
+      <option name="closed" value="true" />
+      <created>1785058918832</created>
+      <option name="number" value="00270" />
+      <option name="presentableId" value="LOCAL-00270" />
+      <option name="project" value="LOCAL" />
+      <updated>1785058918832</updated>
+    </task>
+    <task id="LOCAL-00271" summary="R">
+      <option name="closed" value="true" />
+      <created>1785176539832</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
+      <option name="project" value="LOCAL" />
+      <updated>1785176539832</updated>
+    </task>
+    <task id="LOCAL-00272" summary="G">
+      <option name="closed" value="true" />
+      <created>1785176691865</created>
+      <option name="number" value="00272" />
+      <option name="presentableId" value="LOCAL-00272" />
+      <option name="project" value="LOCAL" />
+      <updated>1785176691865</updated>
+    </task>
+    <task id="LOCAL-00273" summary="R">
+      <option name="closed" value="true" />
+      <created>1785176737229</created>
+      <option name="number" value="00273" />
+      <option name="presentableId" value="LOCAL-00273" />
+      <option name="project" value="LOCAL" />
+      <updated>1785176737229</updated>
+    </task>
+    <task id="LOCAL-00274" summary="R">
+      <option name="closed" value="true" />
+      <created>1785176869881</created>
+      <option name="number" value="00274" />
+      <option name="presentableId" value="LOCAL-00274" />
+      <option name="project" value="LOCAL" />
+      <updated>1785176869881</updated>
+    </task>
+    <task id="LOCAL-00275" summary="R">
+      <option name="closed" value="true" />
+      <created>1785176959099</created>
+      <option name="number" value="00275" />
+      <option name="presentableId" value="LOCAL-00275" />
+      <option name="project" value="LOCAL" />
+      <updated>1785176959099</updated>
+    </task>
+    <task id="LOCAL-00276" summary="R">
+      <option name="closed" value="true" />
+      <created>1785177036693</created>
+      <option name="number" value="00276" />
+      <option name="presentableId" value="LOCAL-00276" />
+      <option name="project" value="LOCAL" />
+      <updated>1785177036693</updated>
+    </task>
+    <task id="LOCAL-00277" summary="R">
+      <option name="closed" value="true" />
+      <created>1785178099618</created>
+      <option name="number" value="00277" />
+      <option name="presentableId" value="LOCAL-00277" />
+      <option name="project" value="LOCAL" />
+      <updated>1785178099618</updated>
+    </task>
+    <task id="LOCAL-00278" summary="R">
+      <option name="closed" value="true" />
+      <created>1785180071013</created>
+      <option name="number" value="00278" />
+      <option name="presentableId" value="LOCAL-00278" />
+      <option name="project" value="LOCAL" />
+      <updated>1785180071013</updated>
+    </task>
+    <task id="LOCAL-00279" summary="R">
+      <option name="closed" value="true" />
+      <created>1785180326102</created>
+      <option name="number" value="00279" />
+      <option name="presentableId" value="LOCAL-00279" />
+      <option name="project" value="LOCAL" />
+      <updated>1785180326102</updated>
+    </task>
+    <task id="LOCAL-00280" summary="R">
+      <option name="closed" value="true" />
+      <created>1785181221608</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1785181221608</updated>
+    </task>
+    <task id="LOCAL-00281" summary="G">
+      <option name="closed" value="true" />
+      <created>1785351100384</created>
+      <option name="number" value="00281" />
+      <option name="presentableId" value="LOCAL-00281" />
+      <option name="project" value="LOCAL" />
+      <updated>1785351100384</updated>
+    </task>
+    <task id="LOCAL-00282" summary="G">
+      <option name="closed" value="true" />
+      <created>1786989568108</created>
+      <option name="number" value="00282" />
+      <option name="presentableId" value="LOCAL-00282" />
+      <option name="project" value="LOCAL" />
+      <updated>1786989568108</updated>
+    </task>
+    <task id="LOCAL-00283" summary="R">
+      <option name="closed" value="true" />
+      <created>1786989680986</created>
+      <option name="number" value="00283" />
+      <option name="presentableId" value="LOCAL-00283" />
+      <option name="project" value="LOCAL" />
+      <updated>1786989680986</updated>
+    </task>
+    <task id="LOCAL-00284" summary="R">
+      <option name="closed" value="true" />
+      <created>1787072106232</created>
+      <option name="number" value="00284" />
+      <option name="presentableId" value="LOCAL-00284" />
+      <option name="project" value="LOCAL" />
+      <updated>1787072106232</updated>
+    </task>
+    <task id="LOCAL-00285" summary="R">
+      <option name="closed" value="true" />
+      <created>1787074134270</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1787074134270</updated>
+    </task>
+    <task id="LOCAL-00286" summary="R">
+      <option name="closed" value="true" />
+      <created>1787074217836</created>
+      <option name="number" value="00286" />
+      <option name="presentableId" value="LOCAL-00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1787074217836</updated>
+    </task>
+    <task id="LOCAL-00287" summary="Comments fixed">
+      <option name="closed" value="true" />
+      <created>1787078640398</created>
+      <option name="number" value="00287" />
+      <option name="presentableId" value="LOCAL-00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1787078640398</updated>
+    </task>
+    <task id="LOCAL-00288" summary="Ready for refactoring (AGAIN)">
+      <option name="closed" value="true" />
+      <created>1787078681156</created>
+      <option name="number" value="00288" />
+      <option name="presentableId" value="LOCAL-00288" />
+      <option name="project" value="LOCAL" />
+      <updated>1787078681156</updated>
+    </task>
+    <task id="LOCAL-00289" summary="R">
+      <option name="closed" value="true" />
+      <created>1787078847339</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1787078847339</updated>
+    </task>
+    <task id="LOCAL-00290" summary="R">
+      <option name="closed" value="true" />
+      <created>1787079380559</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1787079380559</updated>
+    </task>
+    <task id="LOCAL-00291" summary="R">
+      <option name="closed" value="true" />
+      <created>1787118870838</created>
+      <option name="number" value="00291" />
+      <option name="presentableId" value="LOCAL-00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1787118870838</updated>
+    </task>
+    <task id="LOCAL-00292" summary="R">
+      <option name="closed" value="true" />
+      <created>1787774966972</created>
+      <option name="number" value="00292" />
+      <option name="presentableId" value="LOCAL-00292" />
+      <option name="project" value="LOCAL" />
+      <updated>1787774966972</updated>
+    </task>
+    <task id="LOCAL-00293" summary="Small changes to directory">
+      <option name="closed" value="true" />
+      <created>1789222823086</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1789222823086</updated>
+    </task>
+    <option name="localTasksCounter" value="294" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="75" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="75" />
+    <coverage-tree-state>
+      <expand />
+      <select />
+    </coverage-tree-state>
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="smellyTicTacToe/FirstAttemptInLesson" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Initial Commit" />
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Initial test passed" />
+    <MESSAGE value="Solved" />
+    <MESSAGE value="Initial commit and passing test" />
+    <MESSAGE value="First green" />
+    <MESSAGE value="Ga" />
+    <MESSAGE value="Setup for lesson 4" />
+    <MESSAGE value="Rollback" />
+    <MESSAGE value="RR" />
+    <MESSAGE value="1" />
+    <MESSAGE value="2" />
+    <MESSAGE value="r2" />
+    <MESSAGE value="3" />
+    <MESSAGE value="4" />
+    <MESSAGE value="5" />
+    <MESSAGE value="6" />
+    <MESSAGE value="r" />
+    <MESSAGE value="Rollback 1" />
+    <MESSAGE value="Setup" />
+    <MESSAGE value="G" />
+    <MESSAGE value="Comments fixed" />
+    <MESSAGE value="Ready for refactoring (AGAIN)" />
+    <MESSAGE value="R" />
+    <MESSAGE value="Small changes to directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes to directory" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CodeWars/TitleCase/src/Services/Kata.cs</url>
+          <line>8</line>
+          <properties documentPath="$PROJECT_DIR$/CodeWars/TitleCase/src/Services/Kata.cs" containingFunctionPresentation="Method 'TitleCase'">
+            <startOffsets>
+              <option value="156" />
+            </startOffsets>
+            <endOffsets>
+              <option value="190" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LessonFive/TicTacToe2/src/Models/Board.cs</url>
+          <line>50</line>
+          <properties documentPath="$PROJECT_DIR$/LessonFive/TicTacToe2/src/Models/Board.cs" containingFunctionPresentation="Method 'WinningSymbol'">
+            <startOffsets>
+              <option value="1340" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1370" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LessonFive/TicTacToe2/src/Models/Board.cs</url>
+          <line>31</line>
+          <properties documentPath="$PROJECT_DIR$/LessonFive/TicTacToe2/src/Models/Board.cs" containingFunctionPresentation="Method 'WinningSymbol'">
+            <startOffsets>
+              <option value="914" />
+            </startOffsets>
+            <endOffsets>
+              <option value="915" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LessonFive/TicTacToe2/src/Models/Board.cs</url>
+          <line>30</line>
+          <properties documentPath="$PROJECT_DIR$/LessonFive/TicTacToe2/src/Models/Board.cs" containingFunctionPresentation="Method 'WinningSymbol'">
+            <startOffsets>
+              <option value="876" />
+            </startOffsets>
+            <endOffsets>
+              <option value="905" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

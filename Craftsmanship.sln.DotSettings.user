@@ -1,0 +1,64 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fb6567780652ae94629e44d984cbf8eaac34e41671846cc7b98805cfad2f972af_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExecutionTimer_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F3b92f859131bde25d0f7a63de08963e995d1e1426e584dfd4b8e833d2d3dba_003FExecutionTimer_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ALateBoundTestFramework_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fcffa676d9bfc6c7a1c9d0d25ead15b3b0c9e12e3187bf397eaa52260e5fd91_003FLateBoundTestFramework_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMethodBaseInvoker_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F344932e3a75911b8cabf3f77c583f5927ced24b21c873939d9acead319aba1_003FMethodBaseInvoker_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ANumber_002EParsing_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F5c9618319c8bb992a410d754c6fd33435b7db8e22e7bdf7763a9b3490c28a_003FNumber_002EParsing_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ASpanHelpers_002EByteMemOps_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fe462784e2f7c719eb9fcb54d0d3adb9c3e65c9e987c7fedffa3e5f219883385_003FSpanHelpers_002EByteMemOps_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AString_002EManipulation_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F195672332dabe555580baaf682491569dc3f825502d33d38978864d4679d_003FString_002EManipulation_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ATestInvoker_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F5e14a4e27990972fa4ae94975603bd298aaf328ee083c03b10569ee4724d57_003FTestInvoker_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThrowHelper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F1b4992783078d7e4b19c3a2451a3156ebb1ea9e5ca26acc3fa3fdbcd71d618_003FThrowHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=39769b96_002D9573_002D4358_002D87df_002D17abaf111b44/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GameShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::4548DEE4-D96D-4552-84D7-234973B60AB1::net10.0::tests.GameShould&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5f93cedf_002D8ffb_002D4e2e_002Dbd53_002D275955e2fd69/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GameOfLifeShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::83265B71-059D-4668-99CB-81D66AAD72BF::net10.0::tests.GameOfLifeShould&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d72155d4_002Da317_002D4a32_002Da42a_002Df290d962b736/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GameOfLifeShould #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;And&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;xUnit::83265B71-059D-4668-99CB-81D66AAD72BF::net10.0::tests.GameOfLifeShould&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4548DEE4-D96D-4552-84D7-234973B60AB1::net10.0::tests.GameShould&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+    &lt;Not&gt;
+      &lt;Project Location="/Users/johnfentiman/Development/craftsmanship/Craftsmanship" Presentation="&amp;lt;LessonFour&amp;gt;" /&gt;
+    &lt;/Not&gt;
+  &lt;/And&gt;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Rpms/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>
