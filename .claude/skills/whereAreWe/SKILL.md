@@ -30,6 +30,7 @@ the fix.
      specificity to be useful, e.g. naming the smell that was addressed.
    - What's outstanding — remaining smells, untested paths, anything
      half-finished.
+   - Any unresolved **Open items** in `CLAUDE.md` tied to this kata.
    - Any discrepancy between what `CLAUDE.md` says and what the code/git
      history actually shows.
 

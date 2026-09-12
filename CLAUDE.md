@@ -93,22 +93,31 @@ recognize the smells and remove them without changing behavior.
   checklist markers for smells not yet fixed, not an instance of the
   "Comments" smell itself — they get deleted as each one is resolved.
 
-**Observation flagged, not yet resolved**: `Winner()` only detects column
-wins (fixed X, varying Y) — there's no row or diagonal win detection. The
-tests are also named e.g. `DeclarePlayerXAsAWinnerIfThreeInTopRow` but the
-moves they play actually test a column win, not a row. Worth checking
-with Alex or the Lesson 7 material whether that's in scope for this
-exercise or a separate, unrelated gap.
-
 **Next step**: keep working through Feature Envy (phase 3) — don't jump
 ahead to Data Clump/Primitive Obsession (phase 4) until phase 3 (Feature
 Envy, then Data Class) is clean, per the RPP.
 
+## Open items
+
+The running notepad — anything noticed that shouldn't be allowed to slip
+off the radar (bugs, questions for Alex, loose ends, things to check
+later) goes here as soon as it's noticed, whether or not it's related to
+the current kata. Check `[x]` when resolved rather than deleting the
+line, so there's a record of it — move genuinely stale/no-longer-relevant
+items to the Progress log instead of leaving them cluttering this list.
+
+- [ ] `Katas/LessonSeven/TicTacToeRefactor`: `Winner()` only detects
+  column wins (fixed X, varying Y) — no row or diagonal win detection.
+  The tests are also named e.g. `DeclarePlayerXAsAWinnerIfThreeInTopRow`
+  but the moves they play actually test a column win, not a row. Need to
+  check with Alex or the Lesson 7 material whether this is in scope for
+  the refactor exercise or a separate gap to fix. (flagged 2026-09-12)
+
 ## Progress log
 
-Update this log, and the Current-kata section above, at the end of every
-working session — the skills in `.claude/skills/` rely on both staying
-accurate. Add a new dated entry; don't rewrite history.
+Update this log, the Current-kata section, and Open items above at the
+end of every working session — the skills in `.claude/skills/` rely on
+all three staying accurate. Add a new dated entry; don't rewrite history.
 
 - **2026-09-12** — Repo reorganisation: renamed the inner `craftsmanship/`
   folder to `Katas/`, lifted `Craftsmanship.sln` and both `new-kata`
@@ -127,3 +136,8 @@ accurate. Add a new dated entry; don't rewrite history.
   Responsibilities), working through Feature Envy. Added the RPP order
   itself to "How we work" as a standing reference so future "next step"
   guidance is read off it rather than invented.
+- **2026-09-12** — Added an **Open items** section as a running notepad
+  so flagged issues (like the `Winner()` row/column mismatch below)
+  don't get lost once a session ends. Updated the standing
+  end-of-session instruction to cover it alongside the Progress log and
+  Current-kata section.

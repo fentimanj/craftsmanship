@@ -16,8 +16,8 @@ don't write it.
 
 ## What to do
 
-1. Read the **Current kata** and most recent **Progress log** entry in
-   `CLAUDE.md` at the repo root.
+1. Read the **Current kata**, most recent **Progress log** entry, and
+   **Open items** in `CLAUDE.md` at the repo root.
 2. Check recent git activity for the current kata's path (e.g.
    `git log --oneline -10 -- Katas/<Lesson>/<Kata>` and `git status` for
    uncommitted changes) to see if anything has moved since the log was
@@ -26,7 +26,8 @@ don't write it.
    - The kata: name and path.
    - The last thing done (from the Progress log / recent commits).
    - The immediate next step (don't solve it — name it).
-   - Any open question left hanging from last time, if one exists.
+   - Any unresolved (`[ ]`) Open items — especially ones tied to the
+     current kata — so nothing flagged in a past session gets forgotten.
 
 ## Keep it short
 
