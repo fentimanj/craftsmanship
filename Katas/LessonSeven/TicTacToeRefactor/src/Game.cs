@@ -63,7 +63,7 @@ public class Game
     public char Winner()
     {
         //TODO:  Feature Envy
-        if (this.IsColumnTaken(Column.Left) && this.board.ColumnTakenBy(Column.Left) != Symbol.Space)
+        if (this.board.ColumnTakenBy(Column.Left) != Symbol.Space)
         {
             return this.board.SymbolAt(Column.Left, Row.Top);
         }
@@ -81,15 +81,6 @@ public class Game
         }
 
         return Symbol.Space;
-    }
-
-    private bool IsThereSameSymbolInColumn(int columnIndex)
-    {
-        var topRowSymbol = this.board.SymbolAt(columnIndex, Row.Top);
-        var middleRowSymbol = this.board.SymbolAt(columnIndex, Row.Middle);
-        var bottomRowSymbol = this.board.SymbolAt(columnIndex, Row.Bottom);
-
-        return topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
     }
 
     private bool IsColumnTaken(int columnLeft)
