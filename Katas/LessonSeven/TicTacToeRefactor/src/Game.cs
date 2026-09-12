@@ -69,13 +69,13 @@ public class Game
         }
 
         //TODO:  Feature Envy
-        if (this.IsColumnTaken(Column.Center) && this.IsThereSameSymbolInColumn(Column.Center))
+        if (this.IsColumnTaken(Column.Center) && this.board.ColumnTakenBy(Column.Center) != Symbol.Space)
         {
             return this.board.SymbolAt(Column.Center, Row.Top);
         }
 
         //TODO:  Feature Envy
-        if (this.IsColumnTaken(Column.Right) && this.IsThereSameSymbolInColumn(Column.Right))
+        if (this.IsColumnTaken(Column.Right) && this.board.ColumnTakenBy(Column.Right) != Symbol.Space)
         {
             return this.board.SymbolAt(Column.Right, Row.Top);
         }
