@@ -4,143 +4,149 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonOne", "LessonOne", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KizzBuzzKata", "KizzBuzzKata", "{28BC5198-E725-41A5-921F-1CF119A52488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonOne\FizzBuzzKata\src\src.csproj", "{539345AF-DE45-460F-A26B-3322680453A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonOne\FizzBuzzKata\src\src.csproj", "{539345AF-DE45-460F-A26B-3322680453A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonOne\FizzBuzzKata\tests\tests.csproj", "{799C4C59-085D-4489-BA70-5434A335C3B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonOne\FizzBuzzKata\tests\tests.csproj", "{799C4C59-085D-4489-BA70-5434A335C3B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LeapYearKata", "LeapYearKata", "{EF84FC8C-AB90-09E0-6811-A399A66A0C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonOne\LeapYearKata\src\src.csproj", "{C78EDE39-17EE-48D2-8FFD-61A08E9E14CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonOne\LeapYearKata\src\src.csproj", "{C78EDE39-17EE-48D2-8FFD-61A08E9E14CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonOne\LeapYearKata\tests\tests.csproj", "{C1B844E1-FE4E-4195-9001-91BC48D5C8D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonOne\LeapYearKata\tests\tests.csproj", "{C1B844E1-FE4E-4195-9001-91BC48D5C8D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeWars", "CodeWars", "{30FC3232-6477-CCD6-94A9-BA7CFF9E93A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ValidParentheses", "ValidParentheses", "{0CEB9FF1-5F51-F247-67CD-090CA9F52E47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\ValidParentheses\src\src.csproj", "{AC66CABC-5FB7-49B9-B30E-3BDB171EDD26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\ValidParentheses\src\src.csproj", "{AC66CABC-5FB7-49B9-B30E-3BDB171EDD26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\ValidParentheses\tests\tests.csproj", "{642AEDBC-97C4-4DC0-B635-2D521CFC986C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\ValidParentheses\tests\tests.csproj", "{642AEDBC-97C4-4DC0-B635-2D521CFC986C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NthFibonacci", "NthFibonacci", "{3F96A609-288E-63EB-EC4B-2EBED5811170}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonOne\NthFibonacci\src\src.csproj", "{947EF8AF-09CE-403A-9263-84D52EB2CDA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonOne\NthFibonacci\src\src.csproj", "{947EF8AF-09CE-403A-9263-84D52EB2CDA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonOne\NthFibonacci\tests\tests.csproj", "{88739322-A8B7-4F21-91DE-0A82510CEB45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonOne\NthFibonacci\tests\tests.csproj", "{88739322-A8B7-4F21-91DE-0A82510CEB45}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonTwo", "LessonTwo", "{B7F0FD74-D10E-4DAC-15B0-2CB13D629525}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StringCalculatorKata", "StringCalculatorKata", "{B472A0AB-7796-BDA5-135C-C62B788F91F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonTwo\StringCalculatorKata\src\src.csproj", "{B8EC8F3E-6A26-4359-8F57-1DC3B98E3E93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonTwo\StringCalculatorKata\src\src.csproj", "{B8EC8F3E-6A26-4359-8F57-1DC3B98E3E93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonTwo\StringCalculatorKata\tests\tests.csproj", "{2AECD9CB-7616-4B0A-B86F-6B16CCBB80F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonTwo\StringCalculatorKata\tests\tests.csproj", "{2AECD9CB-7616-4B0A-B86F-6B16CCBB80F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CogsebisGearNetwork", "CogsebisGearNetwork", "{CC397BF5-226B-3826-BE11-7BFA7E3F5B1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\CogsebisGearNetwork\src\src.csproj", "{5D9ED92D-D238-4CA8-A3F2-B9F98DF87284}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\CogsebisGearNetwork\src\src.csproj", "{5D9ED92D-D238-4CA8-A3F2-B9F98DF87284}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\CogsebisGearNetwork\tests\tests.csproj", "{536D1B40-340F-4AAE-9FEB-156180347DDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\CogsebisGearNetwork\tests\tests.csproj", "{536D1B40-340F-4AAE-9FEB-156180347DDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BowlingGameKata", "BowlingGameKata", "{CD60C9B3-4270-F7B0-BB63-A62E0600FD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonTwo\BowlingGameKata\src\src.csproj", "{5C16EA5E-042A-4581-9400-151577A309A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonTwo\BowlingGameKata\src\src.csproj", "{5C16EA5E-042A-4581-9400-151577A309A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonTwo\BowlingGameKata\tests\tests.csproj", "{4A8485A4-B69F-4B71-AA1C-06A84251C029}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonTwo\BowlingGameKata\tests\tests.csproj", "{4A8485A4-B69F-4B71-AA1C-06A84251C029}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnumerableMagic", "EnumerableMagic", "{25B9708A-B2BB-CA91-5FFE-676A6EAE51E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\EnumerableMagic\src\src.csproj", "{5D09A9D4-F3C5-45C5-9C5D-DDEBC316581A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\EnumerableMagic\src\src.csproj", "{5D09A9D4-F3C5-45C5-9C5D-DDEBC316581A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\EnumerableMagic\tests\tests.csproj", "{E2EC2718-00B3-4333-8A19-8C8F4BD1926E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\EnumerableMagic\tests\tests.csproj", "{E2EC2718-00B3-4333-8A19-8C8F4BD1926E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaffineScriptKata", "CaffineScriptKata", "{59284318-7911-E097-F0B4-FB199064F136}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\CaffineScriptKata\src\src.csproj", "{86D9B896-D34F-4B9A-BFC5-336C271479BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\CaffineScriptKata\src\src.csproj", "{86D9B896-D34F-4B9A-BFC5-336C271479BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\CaffineScriptKata\tests\tests.csproj", "{19A80589-2E8E-49CB-8558-B3A3EB4052BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\CaffineScriptKata\tests\tests.csproj", "{19A80589-2E8E-49CB-8558-B3A3EB4052BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KnightVsRook", "KnightVsRook", "{DD29013A-7283-3CFC-1B29-AEAD313B2D6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\KnightVsRook\src\src.csproj", "{6D85B70C-2B2B-4F2D-9C78-F309E9C6C7D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\KnightVsRook\src\src.csproj", "{6D85B70C-2B2B-4F2D-9C78-F309E9C6C7D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\KnightVsRook\tests\tests.csproj", "{45C06773-07A9-4378-A333-D86490BC771B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\KnightVsRook\tests\tests.csproj", "{45C06773-07A9-4378-A333-D86490BC771B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonThree", "LessonThree", "{B84763AB-2C0A-15F6-85D9-5C63AF1F83B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RomanNumbersKata", "RomanNumbersKata", "{315DA31C-FFFA-F521-25F8-91D878ED3D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonThree\RomanNumbersKata\src\src.csproj", "{86F305E0-19AE-4C36-8A8A-E7096BE4E740}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonThree\RomanNumbersKata\src\src.csproj", "{86F305E0-19AE-4C36-8A8A-E7096BE4E740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonThree\RomanNumbersKata\tests\tests.csproj", "{CEF83676-CE02-41E8-8B81-1EF20FE63E9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonThree\RomanNumbersKata\tests\tests.csproj", "{CEF83676-CE02-41E8-8B81-1EF20FE63E9B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TitleCase", "TitleCase", "{B58AB4CE-137A-39B2-563D-5251A1F37346}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\TitleCase\src\src.csproj", "{79D30A8E-ACFD-41E9-B494-3F43D9818BB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\TitleCase\src\src.csproj", "{79D30A8E-ACFD-41E9-B494-3F43D9818BB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\TitleCase\tests\tests.csproj", "{F95B0FB4-2EF5-41B1-8B0F-9E711823A89E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\TitleCase\tests\tests.csproj", "{F95B0FB4-2EF5-41B1-8B0F-9E711823A89E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BreakCamelCase", "BreakCamelCase", "{435B8F76-864E-8864-424E-2089FDE2E195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\BreakCamelCase\src\src.csproj", "{0EC56521-F2D7-4507-ADBB-1E66537D2EBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\BreakCamelCase\src\src.csproj", "{0EC56521-F2D7-4507-ADBB-1E66537D2EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\BreakCamelCase\tests\tests.csproj", "{4C50E8CE-51E6-416C-9E87-7B0DC5DE7370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\BreakCamelCase\tests\tests.csproj", "{4C50E8CE-51E6-416C-9E87-7B0DC5DE7370}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ROT13", "ROT13", "{530DE880-3135-1E0E-A97B-BF5668889A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\ROT13\src\src.csproj", "{7AFC51C8-29EA-4674-9FCA-D4F46607D48E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\ROT13\src\src.csproj", "{7AFC51C8-29EA-4674-9FCA-D4F46607D48E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\ROT13\tests\tests.csproj", "{D61DFFF7-AB53-4449-A1C9-929005ED3975}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\ROT13\tests\tests.csproj", "{D61DFFF7-AB53-4449-A1C9-929005ED3975}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonFour", "LessonFour", "{EB21DE35-177B-7925-85FC-490A0361D823}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonFour", "LessonFour", "{4F6D711F-6405-F7C7-ED36-33721678DD06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonFour\LessonFour\src\src.csproj", "{B1ADA0CC-785E-4DFA-A21E-1E8C0D9AA1E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonFour\LessonFour\src\src.csproj", "{B1ADA0CC-785E-4DFA-A21E-1E8C0D9AA1E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonFour\LessonFour\tests\tests.csproj", "{28429BA0-9ABA-4A9D-8F12-0974A9CC0CC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonFour\LessonFour\tests\tests.csproj", "{28429BA0-9ABA-4A9D-8F12-0974A9CC0CC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonFive", "LessonFive", "{44D44398-2A6E-0B55-6EAB-C346F2DBF547}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TicTacToe2", "TicTacToe2", "{91DD48A2-5787-26DF-8CB7-337B8FA836B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonFive\TicTacToe2\src\src.csproj", "{9E7F4EBE-D77E-475E-928E-C96CAFB43698}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonFive\TicTacToe2\src\src.csproj", "{9E7F4EBE-D77E-475E-928E-C96CAFB43698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonFive\TicTacToe2\tests\tests.csproj", "{5ED84691-F140-4461-86F5-CDD2CFE46818}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonFive\TicTacToe2\tests\tests.csproj", "{5ED84691-F140-4461-86F5-CDD2CFE46818}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GreedIsGood", "GreedIsGood", "{2984D5A6-4DD1-C1AC-118D-C01B925B6098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "CodeWars\GreedIsGood\src\src.csproj", "{9B7F79D9-4F8C-4887-B068-FAE9B017B2FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\GreedIsGood\src\src.csproj", "{9B7F79D9-4F8C-4887-B068-FAE9B017B2FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "CodeWars\GreedIsGood\tests\tests.csproj", "{80C95627-75C9-45EA-8C98-5A1764CF61D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\GreedIsGood\tests\tests.csproj", "{80C95627-75C9-45EA-8C98-5A1764CF61D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameOfLife", "GameOfLife", "{5D9A6631-3479-C63C-3457-4C7EF3B0128E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonFour\GameOfLife\src\src.csproj", "{B35561B1-0782-4A5A-BEA2-2F848D3193B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonFour\GameOfLife\src\src.csproj", "{B35561B1-0782-4A5A-BEA2-2F848D3193B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonFour\GameOfLife\tests\tests.csproj", "{83265B71-059D-4668-99CB-81D66AAD72BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonFour\GameOfLife\tests\tests.csproj", "{83265B71-059D-4668-99CB-81D66AAD72BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonSix", "LessonSix", "{BD47C9E8-60F2-0553-4DA4-4A9A47969597}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EMCExample", "EMCExample", "{573144C3-EC83-B9FF-3818-9843165462E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonSix\EMCExample\src\src.csproj", "{3A6C91E1-9C1E-4C89-8D6B-E4DF60A19E8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonSix\EMCExample\src\src.csproj", "{3A6C91E1-9C1E-4C89-8D6B-E4DF60A19E8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonSix\EMCExample\tests\tests.csproj", "{E62665F1-F0E5-4610-A84B-3830F58C38FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonSix\EMCExample\tests\tests.csproj", "{E62665F1-F0E5-4610-A84B-3830F58C38FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TennisKata", "TennisKata", "{AFF8A48E-7BA0-4176-5A95-0F07675764C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonSix\TennisKata\src\src.csproj", "{DF104121-41E6-4938-A039-406EF95CB1ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonSix\TennisKata\src\src.csproj", "{DF104121-41E6-4938-A039-406EF95CB1ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonSix\TennisKata\tests\tests.csproj", "{C4533760-05CE-4D14-ADEB-FC12E168C6FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonSix\TennisKata\tests\tests.csproj", "{C4533760-05CE-4D14-ADEB-FC12E168C6FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonSeven", "LessonSeven", "{06F6B858-CEA8-53DB-D9EC-7DD0DE4ACC01}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TicTacToeRefactor", "TicTacToeRefactor", "{7C452611-E0EE-D87C-521C-ECF7111F0D33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "LessonSeven\TicTacToeRefactor\src\src.csproj", "{E15B2F6E-1D57-4246-98CA-CAA9ADF2D319}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\LessonSeven\TicTacToeRefactor\src\src.csproj", "{E15B2F6E-1D57-4246-98CA-CAA9ADF2D319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "LessonSeven\TicTacToeRefactor\tests\tests.csproj", "{4548DEE4-D96D-4552-84D7-234973B60AB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\LessonSeven\TicTacToeRefactor\tests\tests.csproj", "{4548DEE4-D96D-4552-84D7-234973B60AB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RemoveStringSpace", "RemoveStringSpace", "{8DAA1F4E-FC7F-1BA0-131F-01A69E8E4A31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "Katas\CodeWars\RemoveStringSpace\src\src.csproj", "{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "Katas\CodeWars\RemoveStringSpace\tests\tests.csproj", "{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -656,6 +662,30 @@ Global
 		{4548DEE4-D96D-4552-84D7-234973B60AB1}.Release|x64.Build.0 = Release|Any CPU
 		{4548DEE4-D96D-4552-84D7-234973B60AB1}.Release|x86.ActiveCfg = Release|Any CPU
 		{4548DEE4-D96D-4552-84D7-234973B60AB1}.Release|x86.Build.0 = Release|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Debug|x64.Build.0 = Debug|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Debug|x86.Build.0 = Debug|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Release|x64.ActiveCfg = Release|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Release|x64.Build.0 = Release|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Release|x86.ActiveCfg = Release|Any CPU
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D}.Release|x86.Build.0 = Release|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Debug|x64.Build.0 = Debug|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Release|x64.ActiveCfg = Release|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Release|x64.Build.0 = Release|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -724,5 +754,8 @@ Global
 		{7C452611-E0EE-D87C-521C-ECF7111F0D33} = {06F6B858-CEA8-53DB-D9EC-7DD0DE4ACC01}
 		{E15B2F6E-1D57-4246-98CA-CAA9ADF2D319} = {7C452611-E0EE-D87C-521C-ECF7111F0D33}
 		{4548DEE4-D96D-4552-84D7-234973B60AB1} = {7C452611-E0EE-D87C-521C-ECF7111F0D33}
+		{8DAA1F4E-FC7F-1BA0-131F-01A69E8E4A31} = {30FC3232-6477-CCD6-94A9-BA7CFF9E93A0}
+		{377E9723-AE8A-482D-A33E-F7DCF0B2EF0D} = {8DAA1F4E-FC7F-1BA0-131F-01A69E8E4A31}
+		{96B16ADF-F3EF-4F5C-92BE-9FCB8C8144BB} = {8DAA1F4E-FC7F-1BA0-131F-01A69E8E4A31}
 	EndGlobalSection
 EndGlobal

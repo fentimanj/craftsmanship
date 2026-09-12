@@ -2,6 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+KATAS_DIR="$SCRIPT_DIR/Katas"
 ROOT_SLN="$SCRIPT_DIR/Craftsmanship.sln"
 
 # --- Lesson selection ---
@@ -9,7 +10,7 @@ echo ""
 LESSONS=()
 while IFS= read -r dir; do
     LESSONS+=("$(basename "$dir")")
-done < <(find "$SCRIPT_DIR" -mindepth 1 -maxdepth 1 -type d \
+done < <(find "$KATAS_DIR" -mindepth 1 -maxdepth 1 -type d \
     ! -name '.*' ! -name '.idea' ! -name '.claude' | sort)
 
 if [[ ${#LESSONS[@]} -eq 0 ]]; then
@@ -43,7 +44,7 @@ echo ""
 read -rp "Short description: " DESCRIPTION
 
 # --- Scaffold ---
-KATA_DIR="$SCRIPT_DIR/$LESSON/$KATA"
+KATA_DIR="$KATAS_DIR/$LESSON/$KATA"
 SRC_DIR="$KATA_DIR/src"
 TESTS_DIR="$KATA_DIR/tests"
 KATA_SLN="$KATA_DIR/$KATA.slnx"
@@ -113,7 +114,7 @@ cat > "$KATA_DIR/ReadMe.md" << README
 $DESCRIPTION
 README
 
-cp "$SCRIPT_DIR/.gitignore" "$KATA_DIR/.gitignore"
+cp "$KATAS_DIR/.gitignore" "$KATA_DIR/.gitignore"
 
 dotnet new sln -n "$KATA" -o "$KATA_DIR"
 dotnet sln "$KATA_SLN" add "$SRC_DIR/src.csproj" "$TESTS_DIR/tests.csproj"
