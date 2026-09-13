@@ -6,7 +6,7 @@ public class Game
 {
     private readonly Board board = new();
 
-    private char lastSymbol = Symbol.Space;
+    private char lastSymbol = SymbolOptions.Space;
 
     // TODO: Data clump
     // TODO: Primitive Obsession
@@ -43,12 +43,12 @@ public class Game
 
     private static bool IsSymbolNaught(char symbol)
     {
-        return symbol == Symbol.O;
+        return symbol == SymbolOptions.O;
     }
 
     private bool IsFirstMove()
     {
-        return this.lastSymbol == Symbol.Space;
+        return this.lastSymbol == SymbolOptions.Space;
     }
 
     public char Winner()

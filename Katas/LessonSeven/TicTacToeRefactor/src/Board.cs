@@ -12,7 +12,7 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                this.tiles.Add(new Tile { X = column, Y = row, Symbol = Symbol.Space });
+                this.tiles.Add(new Tile(column, row, SymbolOptions.Space));
             }
         }
     }
@@ -22,13 +22,13 @@ public class Board
         for (var index = Column.Left; index <= Column.Right; index++)
         {
             var winner = this.ColumnTakenBy(index);
-            if (winner != Symbol.Space)
+            if (winner != SymbolOptions.Space)
             {
                 return winner;
             }
         }
 
-        return Symbol.Space;
+        return SymbolOptions.Space;
     }
 
     private char ColumnTakenBy(int columnIndex)
@@ -39,33 +39,22 @@ public class Board
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 
-        return columnTaken ? topRowSymbol : Symbol.Space;
+        return columnTaken ? topRowSymbol : SymbolOptions.Space;
     }
 
     // TODO: Data Clump
+    // TODO:  Feature Envy
     private char SymbolAt(int x, int y)
     {
         var tile = this.tiles.Single(Tile.IsAt(x, y));
-        return tile.Symbol;
+        return tile.GetSymbol();
     }
 
     // TODO: Data Clump
+    // TODO: Feature Envy
     public void AddTileAt(char symbol, int x, int y)
     {
-        if (this.IsTileTaken(x, y))
-        {
-            throw new Exception("Invalid position");
-        }
-
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));
-        currentTile.Symbol = symbol;
-    }
-
-    // TODO: data clump
-    // TODO: primitive obsession
-    private bool IsTileTaken(int x, int y)
-    {
-        var symbol = this.SymbolAt(x, y);
-        return symbol != Symbol.Space;
+        currentTile.AddSymbol(symbol);
     }
 }

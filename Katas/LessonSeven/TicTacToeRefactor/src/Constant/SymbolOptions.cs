@@ -1,6 +1,6 @@
 namespace src.Constant;
 
-public static class Symbol
+public static class SymbolOptions
 {
     public const char X = 'X';
     public const char O = 'O';
