@@ -43,7 +43,6 @@ public class Board
     }
 
     // TODO: Data Clump
-    // TODO:  Feature Envy
     private char SymbolAt(int x, int y)
     {
         var tile = this.tiles.Single(Tile.IsAt(x, y));
@@ -51,7 +50,6 @@ public class Board
     }
 
     // TODO: Data Clump
-    // TODO: Feature Envy
     public void AddTileAt(char symbol, int x, int y)
     {
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));

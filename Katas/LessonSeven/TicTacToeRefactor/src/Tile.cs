@@ -1,23 +1,16 @@
 namespace src;
 
-using System.Drawing;
 using Constant;
 
-// TODO: Data Class
-public class Tile
+//TODO:  Primitive Obsession
+public class Tile(int x, int y, char symbol)
 {
-    public Tile(int x, int y, char symbol)
-    {
-        this.X = x;
-        this.Y = y;
-        this.symbol = symbol;
-    }
     // TODO: Shotgun Surgery
-    public int X { get; set; }
+    public int X { get; set; } = x;
 
     // TODO: Shotgun Surgery
-    public int Y { get; set; }
-    private char symbol;
+    public int Y { get; set; } = y;
+    private char symbol = symbol;
 
     public char GetSymbol() => this.symbol;
     public void AddSymbol(char newSymbol)
