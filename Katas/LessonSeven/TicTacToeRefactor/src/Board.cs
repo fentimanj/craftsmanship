@@ -43,7 +43,7 @@ public class Board
     }
 
     // TODO: Data Clump
-    public char SymbolAt(int x, int y)
+    private char SymbolAt(int x, int y)
     {
         var tile = this.tiles.Single(Tile.IsAt(x, y));
         return tile.Symbol;

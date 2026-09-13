@@ -76,26 +76,41 @@ recognize the smells and remove them without changing behavior.
   strings/numbers, and variable/method scope have been cleaned up.
 - **Phase 2 (Reduce Complexity)** — done: long methods and duplicated
   code addressed.
-- **Phase 3 (Reorder Responsibilities)** — in progress: currently working
-  through **Feature Envy** — `Game.Winner()`, `IsColumnTaken`, and
-  `IsThereSameSymbolInColumn` all reach repeatedly into `Board`. Found
-  this one genuinely confusing to resolve cleanly, which is what prompted
-  setting up this mentoring memory system in the first place. **Data
-  Class** (`Tile` is a bare property bag) is also phase 3 and hasn't been
-  started yet.
+- **Phase 3 (Reorder Responsibilities)** — Feature Envy is done: the
+  `Board`-reaching logic that used to sit in `Game` (`Winner()`,
+  `IsColumnTaken`, `IsThereSameSymbolInColumn`, and the tile-taken check
+  in `ValidateMove`) has been moved into `Board` itself. `Game.Winner()`
+  now just delegates to `Board.HasWinner()`; `Board` gained a private
+  `ColumnTakenBy()` (replacing the old `IsColumnTaken`/
+  `IsThereSameSymbolInColumn` pair) and a private `IsTileTaken()` used by
+  `AddTileAt`, which now validates and throws "Invalid position" itself
+  instead of `Game` doing it. All 10 tests stayed green throughout.
+  **Data Class** (`Tile` is a bare property bag) is the remaining phase-3
+  item and **hasn't been started yet**.
+- Along the way, two unrelated readability nits were also fixed: the
+  classes in `Constant/Column.cs` and `Constant/Row.cs` had been
+  physically swapped (file `Column.cs` contained `class Row` and vice
+  versa — same behaviour, since C# resolves by type name not filename,
+  but confusing to navigate); and `Row.Center` was renamed to
+  `Row.Middle`.
 - **Not yet reached**: Phase 4 Refine Abstractions (Data Clump —
   `symbol`/`x`/`y` traveling together through `Play`/`ValidateMove`/
   `Board`; Primitive Obsession — raw `char`/`int` instead of value
-  types), and Phase 6 SOLID++ (Shotgun Surgery on `Tile.X`/`Tile.Y` →
-  Single Responsibility). These come after Feature Envy and Data Class
-  are resolved, not before.
+  types), Phase 5 (check whether any Switch Statements apply here), and
+  Phase 6 SOLID++ (Shotgun Surgery on `Tile.X`/`Tile.Y` → Single
+  Responsibility — John intends to use the **Mikado Method** when this
+  phase is reached, rather than ad hoc refactoring, given it likely
+  touches several call sites). These come after Data Class is resolved,
+  not before.
 - The remaining `// TODO:` comments in the code are intentional
   checklist markers for smells not yet fixed, not an instance of the
   "Comments" smell itself — they get deleted as each one is resolved.
 
-**Next step**: keep working through Feature Envy (phase 3) — don't jump
-ahead to Data Clump/Primitive Obsession (phase 4) until phase 3 (Feature
-Envy, then Data Class) is clean, per the RPP.
+**Next step**: **Data Class** (`Tile`) — the last unclean phase-3 item —
+confirmed 2026-09-12 as next session's starting point, ahead of Phase 4
+(Data Clump/Primitive Obsession). John had initially planned to jump
+straight to phase 4 next session but agreed, once flagged, that Data
+Class comes first per the RPP.
 
 ## Open items
 
@@ -106,12 +121,16 @@ the current kata. Check `[x]` when resolved rather than deleting the
 line, so there's a record of it — move genuinely stale/no-longer-relevant
 items to the Progress log instead of leaving them cluttering this list.
 
-- [ ] `Katas/LessonSeven/TicTacToeRefactor`: `Winner()` only detects
-  column wins (fixed X, varying Y) — no row or diagonal win detection.
-  The tests are also named e.g. `DeclarePlayerXAsAWinnerIfThreeInTopRow`
-  but the moves they play actually test a column win, not a row. Need to
-  check with Alex or the Lesson 7 material whether this is in scope for
-  the refactor exercise or a separate gap to fix. (flagged 2026-09-12)
+- [ ] `Katas/LessonSeven/TicTacToeRefactor`: `Winner()` (now
+  `Board.HasWinner()`/`ColumnTakenBy()`) only detects column wins (fixed
+  X, varying Y) — no row or diagonal win detection. The tests are also
+  named e.g. `DeclarePlayerXAsAWinnerIfThreeInTopRow` but the moves they
+  play actually test a column win, not a row. John has **permanently
+  parked** this for the current refactor pass (2026-09-12) — it's scope,
+  not a smell to clean, so it's explicitly out of bounds for the RPP
+  work here. Still unresolved as a functional gap; check with Alex or
+  the Lesson 7 material separately if it turns out to matter. (flagged
+  2026-09-12, parked 2026-09-12)
 
 ## Progress log
 
@@ -141,3 +160,19 @@ all three staying accurate. Add a new dated entry; don't rewrite history.
   don't get lost once a session ends. Updated the standing
   end-of-session instruction to cover it alongside the Progress log and
   Current-kata section.
+- **2026-09-12** — Worked through all six Feature Envy cases in
+  `TicTacToeRefactor` via a rubber-duck review (John reasoning through
+  each case unprompted; Claude confirming/reviewing only, per the
+  Coaching contract). Moved the tile-taken check and its exception into
+  `Board.AddTileAt`; consolidated the column-win detection that used to
+  live in `Game` (`Winner()`, `IsColumnTaken`,
+  `IsThereSameSymbolInColumn`) into `Board` as `HasWinner()`/
+  `ColumnTakenBy()`. `Game` now only calls `board.AddTileAt(...)` and
+  `board.HasWinner()` — no more reaching into `Board`'s data. Also fixed
+  the swapped `Column`/`Row` class names and renamed `Row.Center` to
+  `Row.Middle`. All 10 tests stayed green throughout. Decided to
+  permanently park the `Winner()` row/column scope question (see Open
+  items) rather than fix it as part of this refactor pass. Plan going
+  forward: keep clearing phases in RPP order; when Phase 6's Shotgun
+  Surgery is reached, use the **Mikado Method** rather than ad hoc
+  changes.
