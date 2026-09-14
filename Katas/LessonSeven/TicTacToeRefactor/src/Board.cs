@@ -42,8 +42,7 @@ public class Board
 
         return columnTaken ? topRowSymbol : SymbolOptions.Space;
     }
-
-
+    
     private char SymbolAt(Position position)
     {
         var tile = this.tiles.Single(Tile.IsAt(position));
@@ -53,6 +52,12 @@ public class Board
     public void AddTileAt(char symbol, int x, int y)
     {
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));
+        currentTile.AddSymbol(symbol);
+    }
+
+    public void AddTileAt(char symbol, Position position)
+    {
+        var currentTile = this.tiles.Single(Tile.IsAt(position));
         currentTile.AddSymbol(symbol);
     }
 }

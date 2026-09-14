@@ -18,7 +18,7 @@ public class Game
         this.lastSymbol = symbol;
 
         // TODO: Data clump
-        this.board.AddTileAt(symbol, x, y);
+        this.board.AddTileAt(symbol, new Position(x, y));
     }
 
     private void ValidateMove(char symbol, int x, int y)
