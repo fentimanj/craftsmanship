@@ -16,12 +16,5 @@ public enum RowNew
 
 public static class RowMapper
 {
-    public static RowNew RowToRowNew(int row)
-    {
-        if (row == Row.Top) return RowNew.Top;
-        if (row == Row.Middle) return RowNew.Middle;
-        if (row == Row.Bottom) return RowNew.Bottom;
-        
-        throw new ArgumentOutOfRangeException(nameof(row));
-    }
+    
 }

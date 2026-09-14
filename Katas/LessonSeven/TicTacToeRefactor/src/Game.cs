@@ -11,14 +11,13 @@ public class Game
     // TODO: Primitive Obsession
     public void Play(char symbol, int x, int y) // We can't change this signature as it's the main public method
     {
-        var position = new Position(x, y);
-        var positionNew = new PositionNew(ColumnMapper.ColumnToColumnNew(x), RowMapper.RowToRowNew(y));
+        var position= new Position(x,y);
 
         this.ValidateMove(symbol);
 
         this.lastSymbol = symbol;
 
-        this.board.AddTileAt(symbol, positionNew);
+        this.board.AddTileAt(symbol, position);
     }
 
     private void ValidateMove(char symbol)

@@ -8,20 +8,19 @@ public class Board
 
     public Board()
     {
-        for (var column = Column.Left; column <= Column.Right; column++)
+        for (var column = ColumnNew.Left; column <= ColumnNew.Right; column++)
         {
-            for (var row = Row.Top; row <= Row.Bottom; row++)
+            for (var row = RowNew.Top; row <= RowNew.Bottom; row++)
             {
-                var position = new Position(column, row);
-                var positionNew = new PositionNew(ColumnMapper.ColumnToColumnNew(column), RowMapper.RowToRowNew(row));
-                this.tiles.Add(new Tile(SymbolOptions.Space, position, positionNew));
+                var positionNew = new Position(column, row);
+                this.tiles.Add(new Tile(SymbolOptions.Space, positionNew));
             }
         }
     }
 
     public char HasWinner()
     {
-        for (var index = Column.Left; index <= Column.Right; index++)
+        for (var index = ColumnNew.Left; index <= ColumnNew.Right; index++)
         {
             var winner = this.ColumnTakenBy(index);
             if (winner != SymbolOptions.Space)
@@ -33,27 +32,26 @@ public class Board
         return SymbolOptions.Space;
     }
 
-    private char ColumnTakenBy(int columnIndex)
+    private char ColumnTakenBy(ColumnNew columnIndex)
     {
-        var column = ColumnMapper.ColumnToColumnNew(columnIndex);
-        var topRowSymbol = this.SymbolAt(new PositionNew(column, RowNew.Top));
-        var middleRowSymbol = this.SymbolAt(new PositionNew(column, RowNew.Middle));
-        var bottomRowSymbol = this.SymbolAt(new PositionNew(column, RowNew.Bottom));
+        var topRowSymbol = this.SymbolAt(new Position(columnIndex, RowNew.Top));
+        var middleRowSymbol = this.SymbolAt(new Position(columnIndex, RowNew.Middle));
+        var bottomRowSymbol = this.SymbolAt(new Position(columnIndex, RowNew.Bottom));
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 
         return columnTaken ? topRowSymbol : SymbolOptions.Space;
     }
     
-    private char SymbolAt(PositionNew positionNew)
+    private char SymbolAt(Position position)
     {
-        var tile = this.tiles.Single(Tile.IsAt(positionNew));
+        var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.GetSymbol();
     }
 
-    public void AddTileAt(char symbol, PositionNew positionNew)
+    public void AddTileAt(char symbol, Position position)
     {
-        var currentTile = this.tiles.Single(Tile.IsAt(positionNew));
+        var currentTile = this.tiles.Single(Tile.IsAt(position));
         currentTile.AddSymbol(symbol);
     }
 }
