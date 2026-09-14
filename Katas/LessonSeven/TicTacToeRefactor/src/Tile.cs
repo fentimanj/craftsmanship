@@ -1,15 +1,18 @@
 namespace src;
 
 using Constant;
-
+//TODO:  Data Class
 //TODO:  Primitive Obsession
-public class Tile(int x, int y, char symbol)
+public class Tile(int column, int row, char symbol, Position? position = null)
 {
+    
+    
     // TODO: Shotgun Surgery
-    public int X { get; set; } = x;
+    private int Column { get; set; } = position?.Column ?? column;
 
     // TODO: Shotgun Surgery
-    public int Y { get; set; } = y;
+    private int Row { get; set; } = position?.Row ?? row;
+    
     private char symbol = symbol;
 
     public char GetSymbol() => this.symbol;
@@ -24,7 +27,7 @@ public class Tile(int x, int y, char symbol)
     
     public static Func<Tile, bool> IsAt(int x, int y)
     {
-        return tile => tile.X == x && tile.Y == y;
+        return tile => tile.Column == x && tile.Row == y;
     }
     
    

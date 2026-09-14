@@ -12,7 +12,8 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                this.tiles.Add(new Tile(column, row, SymbolOptions.Space));
+                var position = new Position(){Column = column, Row = row};
+                this.tiles.Add(new Tile(column, row, SymbolOptions.Space, position));
             }
         }
     }
