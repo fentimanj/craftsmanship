@@ -4,42 +4,40 @@ using Constant;
 
 public class Position
 {
-   
-    public Position(ColumnNew column, RowNew row)
+    public Position(Column column, Row row)
     {
-        this.column = column;
-        this.row = row;
+        this.Column = column;
+        this.Row = row;
     }
+
     public Position(int columnAsInt, int rowAsInt)
     {
-        this.column = this.ColumnToColumnNew(columnAsInt);
-        this.row = this.RowToRowNew(rowAsInt);
-    }
-    public ColumnNew column { get; }
-    public RowNew row { get; }
-    
-    public ColumnNew ColumnToColumnNew(int column)
-    {
-        if(column == Column.Left) return ColumnNew.Left;
-        if(column == Column.Center) return ColumnNew.Center;
-        if(column == Column.Right) return ColumnNew.Right;
-        
-        throw new ArgumentOutOfRangeException(nameof(column), column, null);
-            
-    }
-    
-    public RowNew RowToRowNew(int row)
-    {
-        if (row == Row.Top) return RowNew.Top;
-        if (row == Row.Middle) return RowNew.Middle;
-        if (row == Row.Bottom) return RowNew.Bottom;
-        
-        throw new ArgumentOutOfRangeException(nameof(row));
+        this.Column = ColumnToColumnNew(columnAsInt);
+        this.Row = RowToRowNew(rowAsInt);
     }
 
-}
+    public Column Column { get; }
+    public Row Row { get; }
 
-public static class ColumnMapper
-{
-    
+    private static Column ColumnToColumnNew(int columnAsInt)
+    {
+        return columnAsInt switch
+        {
+            Constant.ColumnAsInt.Left => Column.Left,
+            Constant.ColumnAsInt.Center => Column.Center,
+            Constant.ColumnAsInt.Right => Column.Right,
+            _ => throw new ArgumentOutOfRangeException(nameof(columnAsInt), columnAsInt, null)
+        };
+    }
+
+    private static Row RowToRowNew(int rowAsInt)
+    {
+        return rowAsInt switch
+        {
+            Constant.RowAsInt.Top => Row.Top,
+            Constant.RowAsInt.Middle => Row.Middle,
+            Constant.RowAsInt.Bottom => Row.Bottom,
+            _ => throw new ArgumentOutOfRangeException(nameof(rowAsInt))
+        };
+    }
 }

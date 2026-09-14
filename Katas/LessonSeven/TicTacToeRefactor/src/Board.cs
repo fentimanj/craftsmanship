@@ -8,9 +8,9 @@ public class Board
 
     public Board()
     {
-        for (var column = ColumnNew.Left; column <= ColumnNew.Right; column++)
+        for (var column = Column.Left; column <= Column.Right; column++)
         {
-            for (var row = RowNew.Top; row <= RowNew.Bottom; row++)
+            for (var row = Row.Top; row <= Row.Bottom; row++)
             {
                 var positionNew = new Position(column, row);
                 this.tiles.Add(new Tile(SymbolOptions.Space, positionNew));
@@ -20,7 +20,7 @@ public class Board
 
     public char HasWinner()
     {
-        for (var index = ColumnNew.Left; index <= ColumnNew.Right; index++)
+        for (var index = Column.Left; index <= Column.Right; index++)
         {
             var winner = this.ColumnTakenBy(index);
             if (winner != SymbolOptions.Space)
@@ -32,11 +32,11 @@ public class Board
         return SymbolOptions.Space;
     }
 
-    private char ColumnTakenBy(ColumnNew columnIndex)
+    private char ColumnTakenBy(Column columnIndex)
     {
-        var topRowSymbol = this.SymbolAt(new Position(columnIndex, RowNew.Top));
-        var middleRowSymbol = this.SymbolAt(new Position(columnIndex, RowNew.Middle));
-        var bottomRowSymbol = this.SymbolAt(new Position(columnIndex, RowNew.Bottom));
+        var topRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Top));
+        var middleRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Middle));
+        var bottomRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Bottom));
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 

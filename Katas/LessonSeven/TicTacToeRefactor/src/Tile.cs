@@ -20,6 +20,6 @@ public class Tile(char symbol, Position position)
 
     public static Func<Tile, bool> IsAt(Position position)
     {
-        return tile => tile.positionLocal.column == position.column && tile.positionLocal.row == position.row;
+        return tile => tile.positionLocal.Column == position.Column && tile.positionLocal.Row == position.Row;
     }
 }
