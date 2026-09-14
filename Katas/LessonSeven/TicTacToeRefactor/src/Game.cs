@@ -12,12 +12,13 @@ public class Game
     public void Play(char symbol, int x, int y) // We can't change this signature as it's the main public method
     {
         var position = new Position(x, y);
+        var positionNew = new PositionNew(ColumnMapper.ColumnToColumnNew(x), RowMapper.RowToRowNew(y));
 
         this.ValidateMove(symbol);
 
         this.lastSymbol = symbol;
 
-        this.board.AddTileAt(symbol, position);
+        this.board.AddTileAt(symbol, positionNew);
     }
 
     private void ValidateMove(char symbol)

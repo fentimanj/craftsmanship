@@ -2,13 +2,13 @@ namespace src;
 
 using Constant;
 //TODO:  Primitive Obsession
-public class Tile(char symbol, Position position, PositionNew? positionNew = null)
+public class Tile(char symbol, Position position, PositionNew? positionNew)
 {
-    private readonly int column = position.Column;
-    
-    private readonly int row = position.Row;
-    
     private char symbol = symbol;
+    
+    private readonly Position position = position;
+    
+    private readonly PositionNew positionNewLocal = positionNew ?? new PositionNew(ColumnMapper.ColumnToColumnNew(position.Column), RowMapper.RowToRowNew(position.Row));
 
     public char GetSymbol() => this.symbol;
     public void AddSymbol(char newSymbol)
@@ -20,9 +20,14 @@ public class Tile(char symbol, Position position, PositionNew? positionNew = nul
         this.symbol = newSymbol;
     }
 
-    public static Func<Tile, bool> IsAt(Position position)
+    public static Func<Tile, bool> IsAt(PositionNew positionNew)
     {
-        return tile => tile.column == position.Column && tile.row == position.Row;
+        return tile => tile.positionNewLocal.column == positionNew.column && tile.positionNewLocal.row == positionNew.row;
+    }
+
+    public static Func<Tile, bool> xIsAt(Position position)
+    {
+        return tile => tile.position.Column == position.Column && tile.position.Row == position.Row;
     }
     
    

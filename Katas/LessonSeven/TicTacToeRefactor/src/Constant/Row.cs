@@ -14,9 +14,9 @@ public enum RowNew
     Bottom = 2
 }
 
-public class RowMapper
+public static class RowMapper
 {
-    public RowNew RowToRowNew(char row)
+    public static RowNew RowToRowNew(int row)
     {
         if (row == Row.Top) return RowNew.Top;
         if (row == Row.Middle) return RowNew.Middle;
