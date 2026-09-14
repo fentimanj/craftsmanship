@@ -29,6 +29,11 @@ public class Tile(int column, int row, char symbol, Position? position = null)
     {
         return tile => tile.Column == x && tile.Row == y;
     }
+
+    public static Func<Tile, bool> IsAt(Position position)
+    {
+        return tile => tile.Column == position.Column && tile.Row == position.Row;
+    }
     
    
 }

@@ -34,22 +34,21 @@ public class Board
 
     private char ColumnTakenBy(int columnIndex)
     {
-        var topRowSymbol = this.SymbolAt(columnIndex, Row.Top);
-        var middleRowSymbol = this.SymbolAt(columnIndex, Row.Middle);
-        var bottomRowSymbol = this.SymbolAt(columnIndex, Row.Bottom);
+        var topRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Top));
+        var middleRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Middle));
+        var bottomRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Bottom));
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 
         return columnTaken ? topRowSymbol : SymbolOptions.Space;
     }
 
-    // TODO: Data Clump
-    private char SymbolAt(int x, int y)
+
+    private char SymbolAt(Position position)
     {
-        var tile = this.tiles.Single(Tile.IsAt(x, y));
+        var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.GetSymbol();
     }
-
     // TODO: Data Clump
     public void AddTileAt(char symbol, int x, int y)
     {
