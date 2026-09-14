@@ -2,15 +2,11 @@ namespace src;
 
 using Constant;
 //TODO:  Primitive Obsession
-public class Tile(int column, int row, char symbol, Position? position = null)
+public class Tile(char symbol, Position position)
 {
+    private readonly int column = position.Column;
     
-    
-    // TODO: Shotgun Surgery
-    private int Column { get; set; } = position?.Column ?? column;
-
-    // TODO: Shotgun Surgery
-    private int Row { get; set; } = position?.Row ?? row;
+    private readonly int row = position.Row;
     
     private char symbol = symbol;
 
@@ -23,15 +19,10 @@ public class Tile(int column, int row, char symbol, Position? position = null)
         }
         this.symbol = newSymbol;
     }
-    
-    public static Func<Tile, bool> IsAt(int x, int y)
-    {
-        return tile => tile.Column == x && tile.Row == y;
-    }
 
     public static Func<Tile, bool> IsAt(Position position)
     {
-        return tile => tile.Column == position.Column && tile.Row == position.Row;
+        return tile => tile.column == position.Column && tile.row == position.Row;
     }
     
    
