@@ -23,9 +23,9 @@ public class Position
     {
         return columnAsInt switch
         {
-            Constant.ColumnAsInt.Left => Column.Left,
-            Constant.ColumnAsInt.Center => Column.Center,
-            Constant.ColumnAsInt.Right => Column.Right,
+            ColumnAsInt.Left => Column.Left,
+            ColumnAsInt.Center => Column.Center,
+            ColumnAsInt.Right => Column.Right,
             _ => throw new ArgumentOutOfRangeException(nameof(columnAsInt), columnAsInt, null)
         };
     }
@@ -34,9 +34,9 @@ public class Position
     {
         return rowAsInt switch
         {
-            Constant.RowAsInt.Top => Row.Top,
-            Constant.RowAsInt.Middle => Row.Middle,
-            Constant.RowAsInt.Bottom => Row.Bottom,
+            RowAsInt.Top => Row.Top,
+            RowAsInt.Middle => Row.Middle,
+            RowAsInt.Bottom => Row.Bottom,
             _ => throw new ArgumentOutOfRangeException(nameof(rowAsInt))
         };
     }
