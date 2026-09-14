@@ -2,7 +2,7 @@ namespace src;
 
 using Constant;
 //TODO:  Primitive Obsession
-public class Tile(char symbol, Position position)
+public class Tile(char symbol, Position position, PositionNew? positionNew = null)
 {
     private readonly int column = position.Column;
     
