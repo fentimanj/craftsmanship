@@ -8,20 +8,19 @@ public class Game
 
     private char lastSymbol = SymbolOptions.Space;
 
-    // TODO: Data clump
     // TODO: Primitive Obsession
-    public void Play(char symbol, int x, int y)
+    public void Play(char symbol, int x, int y) // We can't change this signature as it's the main public method
     {
-        // TODO : Data clump
-        this.ValidateMove(symbol, x, y);
+        var position = new Position(x, y);
+
+        this.ValidateMove(symbol);
 
         this.lastSymbol = symbol;
 
-        // TODO: Data clump
-        this.board.AddTileAt(symbol, new Position(x, y));
+        this.board.AddTileAt(symbol, position);
     }
 
-    private void ValidateMove(char symbol, int x, int y)
+    private void ValidateMove(char symbol)
     {
         if (this.IsFirstMove() && IsSymbolNaught(symbol))
         {

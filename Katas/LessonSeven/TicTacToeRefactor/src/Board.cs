@@ -48,13 +48,6 @@ public class Board
         var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.GetSymbol();
     }
-    // TODO: Data Clump
-    public void AddTileAt(char symbol, int x, int y)
-    {
-        var currentTile = this.tiles.Single(Tile.IsAt(x, y));
-        currentTile.AddSymbol(symbol);
-    }
-
     public void AddTileAt(char symbol, Position position)
     {
         var currentTile = this.tiles.Single(Tile.IsAt(position));

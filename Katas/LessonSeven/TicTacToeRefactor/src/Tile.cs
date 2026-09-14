@@ -1,7 +1,6 @@
 namespace src;
 
 using Constant;
-//TODO:  Data Class
 //TODO:  Primitive Obsession
 public class Tile(int column, int row, char symbol, Position? position = null)
 {
