@@ -17,6 +17,33 @@ katas.
   Socratic understanding-check (`revise`) and the status/orientation skills
   — none of them should hand over solutions to open problems, even when
   summarizing.
+- **When John has a list of candidate smells/prerequisites and wants to
+  rubber-duck through them**, the process is three questions per
+  candidate, in order: (1) is it still valid — re-check against the
+  current code, it may already be stale; (2) if so, why — what makes it
+  a smell here, tying back to the RPP phase and underlying principle;
+  (3) how do we fix it. **Don't even offer guiding or Socratic questions
+  unprompted while he works through step 1 or 2 himself** — he wants to
+  reason out loud, unaided. Only step in once he explicitly says he has
+  no idea, or he's visibly gone down a wrong track — and even then, guide
+  minimally rather than answering outright. This is a stricter reading
+  than plain "ask questions, nudge": here even the questions themselves
+  must not steer him. (Corrected 2026-09-12 after opening a rubber-duck
+  pass with leading questions before John had said anything himself.)
+- **For Shotgun Surgery, and more generally any refactor with a wide or
+  uncertain blast radius** (touching many call sites, where the full
+  extent isn't knowable upfront), John's preferred technique is the
+  **Mikado Method** rather than ad hoc refactoring — see the Primitive
+  Obsession work in the Current kata section for the mechanics in
+  practice. For a large but *already-mapped* change (scope known, just
+  big), **Parallel Change** (expand/migrate/contract, see the Part 2
+  Lesson 1 slide deck) is usually the better fit — Mikado's specific
+  value is for undiscovered scope, not size alone.
+- Explaining *concepts* (why a smell is a problem, what a technique is,
+  how the RPP/Mikado Method/etc. work) is not the same as solving the
+  kata, and is fair game to answer directly and fully when asked — the
+  restriction is on handing over the fix to John's own code, not on
+  discussing theory or mechanics.
 
 **The Refactoring Priority Premise (RPP) always drives which smell to
 tackle next — never invent a priority order.** It's the diagram in
@@ -57,6 +84,13 @@ easier or more interesting.
 - **New kata scripts**: `new-kata.ps1` / `new-kata.sh` at the repo root —
   scaffold a new kata under `Katas/<Lesson>/<Kata>/` and register it with
   both the per-kata `.slnx` and the root `Craftsmanship.sln`.
+- **Per-exercise working notes**: when a specific technique needs its own
+  live scratch space (e.g. a Mikado Method graph's text summary), it
+  lives as a `.md`/script alongside that kata's own files rather than in
+  this top-level file — e.g. `Katas/LessonSeven/TicTacToeRefactor/
+  MikadoNotes.md` and `mikado-build.sh`. This file (`CLAUDE.md`) links to
+  them from the relevant Current-kata section rather than duplicating
+  their detail.
 
 ## Current kata
 
@@ -93,24 +127,56 @@ recognize the smells and remove them without changing behavior.
   versa — same behaviour, since C# resolves by type name not filename,
   but confusing to navigate); and `Row.Center` was renamed to
   `Row.Middle`.
-- **Not yet reached**: Phase 4 Refine Abstractions (Data Clump —
-  `symbol`/`x`/`y` traveling together through `Play`/`ValidateMove`/
-  `Board`; Primitive Obsession — raw `char`/`int` instead of value
-  types), Phase 5 (check whether any Switch Statements apply here), and
-  Phase 6 SOLID++ (Shotgun Surgery on `Tile.X`/`Tile.Y` → Single
-  Responsibility — John intends to use the **Mikado Method** when this
-  phase is reached, rather than ad hoc refactoring, given it likely
-  touches several call sites). These come after Data Class is resolved,
-  not before.
+- **Phase 3 (Reorder Responsibilities)** is now fully clean: **Data
+  Class** was resolved in the 2026-09-13 session — `Tile` gained real
+  behaviour (`AddSymbol` enforces its own "already taken" invariant and
+  throws; `GetSymbol` replaced the public settable `Symbol` property).
+- **Phase 4 (Refine Abstractions)** — Data Clump is done: a `Position`
+  record (`Column`, `Row`) now travels through `Play`/`Board`/`Tile`
+  instead of loose `x`/`y` ints, added via expand/migrate/contract
+  (`Play(char, int, int)`'s public signature was kept — it's the tested
+  contract — and converts to `Position` on entry). Along the way,
+  `Column`/`Row` in `Constant/` were also converted from int constants to
+  real C# `enum`s, which incidentally resolved the `Tile.X`/`Tile.Y`
+  Shotgun Surgery concern flagged back in phase 3 — that TODO is stale
+  now and can be removed when next touching `Tile.cs`.
+  **Primitive Obsession** (`char` → Enum for the player symbol) is
+  **in progress**, using the **Mikado Method** — see below.
+- **Not yet reached**: Phase 5 (check whether any Switch Statements
+  apply here), and Phase 6 SOLID++ (nothing currently flagged there
+  beyond what Phase 4's `Column`/`Row` work already resolved — recheck
+  once Primitive Obsession is done).
 - The remaining `// TODO:` comments in the code are intentional
   checklist markers for smells not yet fixed, not an instance of the
   "Comments" smell itself — they get deleted as each one is resolved.
 
-**Next step**: **Data Class** (`Tile`) — the last unclean phase-3 item —
-confirmed 2026-09-12 as next session's starting point, ahead of Phase 4
-(Data Clump/Primitive Obsession). John had initially planned to jump
-straight to phase 4 next session but agreed, once flagged, that Data
-Class comes first per the RPP.
+### Primitive Obsession (char → Enum) — Mikado Method in progress
+
+John is deliberately practising a **strict** Mikado Method pass on this
+one (originally the plan was to reserve Mikado for Phase 6's Shotgun
+Surgery, but a first ad hoc attempt at this char→Enum conversion turned
+out messier than expected, so Mikado is being used here too — partly to
+build a feel for the method before hitting a genuinely large system).
+
+- **Goal**: the player symbol is represented as an Enum rather than a
+  `char`.
+- The graph itself is being drawn on paper — **the live text summary of
+  where it stands, plus process insights learned along the way, is kept
+  in `Katas/LessonSeven/TicTacToeRefactor/MikadoNotes.md`**. Read that
+  file for the actual current state before resuming this work; don't
+  rely on this summary being current.
+- `Katas/LessonSeven/TicTacToeRefactor/mikado-build.sh` is a helper
+  script John uses to capture `dotnet build` error output to timestamped
+  files (`mikado-errors/`) for diffing between naive attempts.
+- As of 2026-09-16: four sibling prerequisite nodes have been identified
+  under the goal (Game.cs comparisons, Tile's space-check, `lastSymbol`,
+  Board.cs), one (`lastSymbol`) has been explored one layer deep and
+  fully reverted again since the branch couldn't reach a committable
+  green state alone. Code is currently back at the clean, fully-green
+  baseline — see `MikadoNotes.md` for detail.
+
+**Next step**: resume the Primitive Obsession Mikado graph — see
+`MikadoNotes.md` in the kata folder for exactly where it was left off.
 
 ## Open items
 
@@ -176,3 +242,57 @@ all three staying accurate. Add a new dated entry; don't rewrite history.
   forward: keep clearing phases in RPP order; when Phase 6's Shotgun
   Surgery is reached, use the **Mikado Method** rather than ad hoc
   changes.
+- **2026-09-13** — Fixed a stray git index issue on `Column.cs` (index
+  had reverted to the pre-Feature-Envy-fix state while `HEAD` and the
+  working tree already agreed on the correct version — resolved with
+  `git restore --staged`, nothing was actually lost). Discussed the Data
+  Class smell conceptually (DTOs as the legitimate exception; why it
+  violates Tell-Don't-Ask, invites Feature Envy, loses invariants, risks
+  duplication) before touching code. Found and resolved three more
+  Feature Envy cases, this time in `Board.cs` (`SymbolAt`, `AddTileAt`,
+  `IsTileTaken` were all reaching into `Tile.Symbol` directly): `Symbol`
+  became a private field on `Tile`, which gained `GetSymbol()` and
+  `AddSymbol()` — the latter enforcing the "already taken" invariant
+  itself and throwing "Invalid position" (message text deliberately kept
+  as-is, since it's pinned by an existing test). `IsTileTaken` disappeared
+  from `Board` entirely. Confirmed via review that `Tile` is no longer a
+  Data Class — Phase 3 fully clean. Committed and pushed.
+- **2026-09-14** — Discussed Mikado Method vs. classic small-step
+  refactoring as a general technique-selection question: landed on
+  **Parallel Change** (expand/migrate/contract) for the Data Clump work,
+  since that blast radius was large but already mapped, not uncertain —
+  Mikado's value is specifically for undiscovered scope. Resolved Data
+  Clump: introduced a `Position` record (`Column`, `Row`) threaded
+  through `Play`/`Board`/`Tile`, keeping `Play(char, int, int)`'s public
+  signature intact (tested contract) and converting to `Position` on
+  entry. `Column`/`Row` were also converted from int constants to real
+  `enum`s as part of this, incidentally resolving the `Tile.X`/`Tile.Y`
+  Shotgun Surgery flag from phase 3. Moved to Primitive Obsession
+  (`char` → Enum for the player symbol); a first ad hoc attempt got
+  complicated fast, so decided to practise a **strict Mikado Method**
+  pass on it instead — partly to build a feel for the method before
+  hitting a genuinely large system, even though Mikado was originally
+  earmarked only for phase 6's Shotgun Surgery. First real walkthrough of
+  Mikado mechanics (goal → naive attempt → log discovered prerequisites
+  as siblings → revert to green → recurse → only implement for real once
+  a leaf is found *and* the whole build is committable). Hit and resolved
+  a process snag along the way: `HEAD` was green but not clean — it
+  contained leftover scaffolding (`SymbolNew`/`charToSymbol`) from an
+  earlier abandoned ad hoc attempt at this same conversion, which muddied
+  the first naive attempt's error signal until swept clean. Built
+  `mikado-build.sh` and started `MikadoNotes.md` (both in the kata
+  folder) to support this work — see the "Primitive Obsession" section
+  above for where the graph currently stands.
+- **2026-09-16** — John asked for a portable, git-tracked way to resume
+  "Claude/me" work seamlessly across computers, without needing to
+  re-explain anything. The mentoring-style refinements that had only
+  been living in Claude's local, per-machine session memory (the strict
+  no-leading-questions rubber-duck rule; that explaining concepts is fair
+  game even though handing over kata solutions isn't) have been folded
+  into this file's Coaching contract above, since that local memory
+  won't travel between machines — this file, being git-tracked, will.
+  Brought the Current-kata section fully up to date to cover the 9/13
+  and 9/14 work, and pointed it at `MikadoNotes.md` for the Primitive
+  Obsession graph's live state. **Reminder for future sessions**: this
+  file only travels between machines once it's committed and pushed —
+  local edits alone won't be there on a different computer.
