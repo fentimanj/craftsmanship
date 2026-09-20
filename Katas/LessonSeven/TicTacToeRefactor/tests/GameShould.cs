@@ -1,6 +1,7 @@
 namespace tests
 {
     using src;
+    using src.Models;
 
     public class GameShould
     {

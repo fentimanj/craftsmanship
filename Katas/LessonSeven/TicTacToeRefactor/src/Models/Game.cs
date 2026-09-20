@@ -1,7 +1,7 @@
-﻿namespace src;
+namespace src.Models;
 
 using Constant;
-using Models;
+using Extensions;
 
 public class Game
 {
@@ -10,15 +10,16 @@ public class Game
     private char lastSymbol = SymbolAsChar.Space;
 
     // TODO: Primitive Obsession
-    public void Play(char symbol, int x, int y) // We can't change this signature as it's the main public method
+    public void Play(char symbolAsChar, int x, int y) // We can't change this signature as it's the main public method
     {
         var position= new Position(x,y);
 
-        this.ValidateMove(symbol);
+        var symbol = symbolAsChar.CharToSymbol();
+        this.ValidateMove(symbolAsChar);
 
-        this.lastSymbol = symbol;
+        this.lastSymbol = symbolAsChar;
 
-        this.board.AddCharTileAt(symbol, position);
+        this.board.AddTileAt(symbol, position);
     }
 
     private void ValidateMove(char symbol)
@@ -53,7 +54,7 @@ public class Game
 
     public char Winner()
     {
-        return this.board.HasWinnerAsChar();
+        return this.board.HasWinner();
     }
 
 }
