@@ -21,7 +21,7 @@ public class Tile
 
     public void AddSymbol(char newSymbol)
     {
-        if (this.symbol != SymbolOptions.Space)
+        if (this.symbol != SymbolAsChar.Space)
         {
             throw new Exception("Invalid position");
         }

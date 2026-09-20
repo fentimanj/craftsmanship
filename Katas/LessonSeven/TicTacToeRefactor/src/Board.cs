@@ -13,7 +13,7 @@ public class Board
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
                 var positionNew = new Position(column, row);
-                this.tiles.Add(new Tile(SymbolOptions.Space, positionNew));
+                this.tiles.Add(new Tile(SymbolAsChar.Space, positionNew));
             }
         }
     }
@@ -23,13 +23,13 @@ public class Board
         for (var index = Column.Left; index <= Column.Right; index++)
         {
             var winner = this.ColumnTakenBy(index);
-            if (winner != SymbolOptions.Space)
+            if (winner != SymbolAsChar.Space)
             {
                 return winner;
             }
         }
 
-        return SymbolOptions.Space;
+        return SymbolAsChar.Space;
     }
 
     private char ColumnTakenBy(Column columnIndex)
@@ -40,7 +40,7 @@ public class Board
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 
-        return columnTaken ? topRowSymbol : SymbolOptions.Space;
+        return columnTaken ? topRowSymbol : SymbolAsChar.Space;
     }
     
     private char SymbolAt(Position position)

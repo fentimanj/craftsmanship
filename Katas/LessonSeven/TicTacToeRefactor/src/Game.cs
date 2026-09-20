@@ -6,7 +6,7 @@ public class Game
 {
     private readonly Board board = new();
 
-    private char lastSymbol = SymbolOptions.Space;
+    private char lastSymbol = SymbolAsChar.Space;
 
     // TODO: Primitive Obsession
     public void Play(char symbol, int x, int y) // We can't change this signature as it's the main public method
@@ -42,12 +42,12 @@ public class Game
 
     private static bool IsSymbolNaught(char symbol)
     {
-        return symbol == SymbolOptions.O;
+        return symbol == SymbolAsChar.O;
     }
 
     private bool IsFirstMove()
     {
-        return this.lastSymbol == SymbolOptions.Space;
+        return this.lastSymbol == SymbolAsChar.Space;
     }
 
     public char Winner()
