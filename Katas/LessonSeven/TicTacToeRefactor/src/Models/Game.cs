@@ -9,7 +9,6 @@ public class Game
 
     private char lastSymbol = SymbolAsChar.Space;
 
-    // TODO: Primitive Obsession
     public void Play(char symbolAsChar, int x, int y) // We can't change this signature as it's the main public method
     {
         var position= new Position(x,y);

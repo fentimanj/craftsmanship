@@ -1,51 +1,18 @@
 namespace src.Models;
 
-using Constant;
 using Enums;
-using Extensions;
 
-//TODO:  Primitive Obsession
-public class Tile
+public class Tile(Symbol symbol, Position position)
 {
-    private readonly Position position;
-    private Symbol symbol;
-    private char symbolAsChar;
-
-    public Tile(char symbolAsChar, Position position)
-    {
-        this.symbolAsChar = symbolAsChar;
-        this.position = position;
-        this.symbol = symbolAsChar.CharToSymbol();
-    }
-
-    public Tile(Symbol symbol, Position position)
-    {
-        this.symbol = symbol;
-        this.position = position;
-        this.symbolAsChar = symbol.SymbolToChar();
-    }
-
-    public char GetSymbolAsChar()
-    {
-        return this.symbolAsChar;
-    }
+    private readonly Position position = position;
+    private Symbol symbol = symbol;
 
     public Symbol GetSymbol()
     {
         return this.symbol;
     }
 
-    public void AddSymbol(char newSymbol)
-    {
-        if (this.symbolAsChar != SymbolAsChar.Space)
-        {
-            throw new Exception("Invalid position");
-        }
-
-        this.symbolAsChar = newSymbol;
-    }
-
-    public void AddSymbo(Symbol newSymbol)
+    public void AddSymbol(Symbol newSymbol)
     {
         if (this.symbol != Symbol.Space)
         {

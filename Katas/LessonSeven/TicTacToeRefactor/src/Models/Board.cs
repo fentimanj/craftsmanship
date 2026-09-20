@@ -54,6 +54,6 @@ public class Board
     public void AddTileAt(Symbol symbol, Position position)
     {
         var currentTile = this.tiles.Single(Tile.IsAt(position));
-        currentTile.AddSymbo(symbol);;
+        currentTile.AddSymbol(symbol);;
     }
 }
