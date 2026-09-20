@@ -18,6 +18,13 @@ public class Tile
         this.symbol = symbolAsChar.CharToSymbol();
     }
 
+    public Tile(Symbol symbol, Position position)
+    {
+        this.symbol = symbol;
+        this.position = position;
+        this.symbolAsChar = symbol.SymbolToChar();
+    }
+
     public char GetSymbolAsChar()
     {
         return this.symbolAsChar;

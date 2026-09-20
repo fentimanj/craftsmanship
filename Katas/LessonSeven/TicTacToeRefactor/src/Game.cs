@@ -1,6 +1,7 @@
 ﻿namespace src;
 
 using Constant;
+using Models;
 
 public class Game
 {
@@ -17,7 +18,7 @@ public class Game
 
         this.lastSymbol = symbol;
 
-        this.board.AddTileAt(symbol, position);
+        this.board.AddCharTileAt(symbol, position);
     }
 
     private void ValidateMove(char symbol)
@@ -52,7 +53,7 @@ public class Game
 
     public char Winner()
     {
-        return this.board.HasWinner();
+        return this.board.HasWinnerAsChar();
     }
 
 }
