@@ -1,6 +1,7 @@
 namespace src;
 
 using Constant;
+using Models;
 
 public class Board
 {
@@ -46,7 +47,7 @@ public class Board
     private char SymbolAt(Position position)
     {
         var tile = this.tiles.Single(Tile.IsAt(position));
-        return tile.GetSymbol();
+        return tile.GetSymbolAsChar();
     }
 
     public void AddTileAt(char symbol, Position position)

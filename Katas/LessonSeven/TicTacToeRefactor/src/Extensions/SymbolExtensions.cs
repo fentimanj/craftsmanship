@@ -3,9 +3,9 @@ namespace src.Extensions;
 using Constant;
 using Enums;
 
-public class SymbolExtensions
+public static class SymbolExtensions
 {
-    public static char SymbolToChar(Symbol symbol)
+    public static char SymbolToChar(this Symbol symbol)
     {
         return symbol switch
         {
