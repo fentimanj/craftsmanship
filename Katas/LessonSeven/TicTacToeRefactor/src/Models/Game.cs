@@ -1,27 +1,27 @@
 namespace src.Models;
 
-using Constant;
+using Enums;
 using Extensions;
 
 public class Game
 {
     private readonly Board board = new();
 
-    private char lastSymbol = SymbolAsChar.Space;
+    private Symbol lastSymbol = Symbol.Space;
 
     public void Play(char symbolAsChar, int x, int y) // We can't change this signature as it's the main public method
     {
         var position= new Position(x,y);
 
         var symbol = symbolAsChar.CharToSymbol();
-        this.ValidateMove(symbolAsChar);
+        this.ValidateMove(symbol);
 
-        this.lastSymbol = symbolAsChar;
+        this.lastSymbol = symbolAsChar.CharToSymbol();
 
         this.board.AddTileAt(symbol, position);
     }
 
-    private void ValidateMove(char symbol)
+    private void ValidateMove(Symbol symbol)
     {
         if (this.IsFirstMove() && IsSymbolNaught(symbol))
         {
@@ -36,19 +36,19 @@ public class Game
         }
     }
 
-    private bool IsInvalidNextPlayer(char symbol)
+    private bool IsInvalidNextPlayer(Symbol symbol)
     {
         return symbol == this.lastSymbol;
     }
 
-    private static bool IsSymbolNaught(char symbol)
+    private static bool IsSymbolNaught(Symbol symbol)
     {
-        return symbol == SymbolAsChar.O;
+        return symbol == Symbol.O;
     }
 
     private bool IsFirstMove()
     {
-        return this.lastSymbol == SymbolAsChar.Space;
+        return this.lastSymbol == Symbol.Space;
     }
 
     public char Winner() //Public interface
