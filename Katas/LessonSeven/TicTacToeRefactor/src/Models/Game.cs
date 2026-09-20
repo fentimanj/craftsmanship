@@ -52,9 +52,10 @@ public class Game
         return this.lastSymbol == SymbolAsChar.Space;
     }
 
-    public char Winner()
+    public char Winner() //Public interface
     {
-        return this.board.HasWinner();
+        var winner = this.board.HasWinner();
+        return winner.SymbolToChar();
     }
 
 }

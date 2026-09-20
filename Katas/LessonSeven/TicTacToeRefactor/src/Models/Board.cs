@@ -20,18 +20,18 @@ public class Board
         }
     }
 
-    public char HasWinner() //Public interface so can't be changed
+    public Symbol HasWinner()
     {
         for (var index = Column.Left; index <= Column.Right; index++)
         {
             var winner = this.ColumnTakenBy(index);
             if (winner != Symbol.Space)
             {
-                return winner.SymbolToChar();
+                return winner;
             }
         }
 
-        return SymbolAsChar.Space;
+        return Symbol.Space;
     }
 
     private Symbol ColumnTakenBy(Column columnIndex)
@@ -49,12 +49,6 @@ public class Board
     {
         var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.GetSymbol();
-    }
-
-    public void AddCharTileAt(char symbol, Position position)
-    {
-        var currentTile = this.tiles.Single(Tile.IsAt(position));
-        currentTile.AddSymbol(symbol);
     }
 
     public void AddTileAt(Symbol symbol, Position position)
