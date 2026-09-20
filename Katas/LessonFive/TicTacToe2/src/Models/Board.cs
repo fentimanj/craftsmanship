@@ -6,17 +6,17 @@ internal class Board
 {
     private readonly Dictionary<Position, Symbol> moves = new()
     {
-        { Position.TopRowLeftColumn, Symbol.Unknown },
-        { Position.TopRowCentreColumn, Symbol.Unknown },
-        { Position.TopRowRightColumn, Symbol.Unknown },
+        { Position.TopRowLeftColumn, Symbol.Space },
+        { Position.TopRowCentreColumn, Symbol.Space },
+        { Position.TopRowRightColumn, Symbol.Space },
 
-        { Position.MiddleRowLeftColumn, Symbol.Unknown },
-        { Position.MiddleRowRightColumn, Symbol.Unknown },
-        { Position.MiddleRowCentreColumn, Symbol.Unknown },
+        { Position.MiddleRowLeftColumn, Symbol.Space },
+        { Position.MiddleRowRightColumn, Symbol.Space },
+        { Position.MiddleRowCentreColumn, Symbol.Space },
 
-        { Position.BottomRowLeftColumn, Symbol.Unknown },
-        { Position.BottomRowCentreColumn, Symbol.Unknown },
-        { Position.BottomRowRightColumn, Symbol.Unknown }
+        { Position.BottomRowLeftColumn, Symbol.Space },
+        { Position.BottomRowCentreColumn, Symbol.Space },
+        { Position.BottomRowRightColumn, Symbol.Space }
     };
     
     public void AddMove(Position position, Symbol symbol)
@@ -26,14 +26,14 @@ internal class Board
 
     public Symbol WinningSymbol()
     {
-        var winningSymbol = Symbol.Unknown;
+        var winningSymbol = Symbol.Space;
         
         if (this.ThreeInLeftColumn())
         {
             winningSymbol = this.moves[Position.TopRowLeftColumn];
         }
 
-        if (winningSymbol != Symbol.Unknown)
+        if (winningSymbol != Symbol.Space)
         {
             return winningSymbol;
         }
@@ -43,7 +43,7 @@ internal class Board
             winningSymbol = this.moves[Position.TopRowCentreColumn];
         }
         
-        if (winningSymbol != Symbol.Unknown)
+        if (winningSymbol != Symbol.Space)
         {
             return winningSymbol;
         }
@@ -53,7 +53,7 @@ internal class Board
             winningSymbol = this.moves[Position.TopRowRightColumn];
         }
         
-        if (winningSymbol != Symbol.Unknown)
+        if (winningSymbol != Symbol.Space)
         {
             return winningSymbol;
         }

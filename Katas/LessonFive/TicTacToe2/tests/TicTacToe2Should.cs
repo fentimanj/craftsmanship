@@ -46,7 +46,7 @@ public class TicTacToe2Should
 
         var currentWinner = ticTacToe.GetWinningSymbol();
 
-        currentWinner.Should().Be(Symbol.Unknown);
+        currentWinner.Should().Be(Symbol.Space);
     }
 
     [Fact]
@@ -96,7 +96,7 @@ public class TicTacToe2Should
         
         var currentWinner = ticTacToe.GetWinningSymbol();
     
-        currentWinner.Should().Be(Symbol.Unknown);
+        currentWinner.Should().Be(Symbol.Space);
     }
     
     [Fact]

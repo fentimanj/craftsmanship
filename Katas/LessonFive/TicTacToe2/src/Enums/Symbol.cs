@@ -4,5 +4,5 @@ public enum Symbol
 {
     X,
     O,
-    Unknown
+    Space
 }
