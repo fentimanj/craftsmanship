@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using System;
 
-// TODO: Replace examples and use TDD by writing your own tests
 
 [TestFixture]
 public class SampleTests
