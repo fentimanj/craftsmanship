@@ -43,7 +43,7 @@ public class Board
     }
 
     // TODO: Data Clump
-    public char SymbolAt(Position position)
+    private char SymbolAt(Position position)
     {
         var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.GetSymbol().ToChar();
@@ -53,7 +53,7 @@ public class Board
     // TODO: Primitive Obsession
     public void AddTileAt(Symbol symbol, int x, int y)
     {
-        if (this.IsTileTaken(x, y))
+        if (this.IsTileTaken(PositionMapper.Map(x, y)))
         {
             throw new Exception("Invalid position");
         }
@@ -64,9 +64,9 @@ public class Board
 
     // TODO: data clump
     // TODO: primitive obsession
-    private bool IsTileTaken(int x, int y)
+    private bool IsTileTaken(Position position)
     {
-        var symbol = this.SymbolAt(PositionMapper.Map(x, y));
+        var symbol = this.SymbolAt(position);
         return symbol != SymbolAsChar.Space;
     }
 }
