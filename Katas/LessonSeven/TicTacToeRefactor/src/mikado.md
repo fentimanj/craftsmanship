@@ -24,8 +24,12 @@
             [x] Create a Symbol mapper extension method        
                 [x] Create Symbol Enum **
           
-##Goal 3:  Remove primitive obsession for for Symbol in Tile.cs
-    [x] Remove ToChar from GetSymbol return
-    [x] SymbolAt needs a ToChar() on return
-    [x] Remove ToSymbol from MarkWith
-    [x] Use mapper on symbol in MarkWith() return on AddTileAt
+##Goal 3:  Remove primitive obsession for Symbol from code
+    [] Introduce a new Play method in Game.cs that takes a Symbol enum
+        [x]  Invoke mapper to symbol for PlayNew
+        []  Game.ValidateMove needs to accept a Symbol enum
+        []  Game.lastSymbol should be Symbol enum  
+        []  board.AddTileAt needs to take in a symbol
+        
+
+        

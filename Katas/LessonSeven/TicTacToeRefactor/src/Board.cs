@@ -60,7 +60,7 @@ public class Board
         }
 
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));
-        currentTile.MarkWith(symbol.ToSymbol());
+        currentTile.MarkWith(symbol);
     }
 
     // TODO: data clump
