@@ -14,9 +14,15 @@ public class Game
         var position= new Position(x,y);
 
         var symbol = symbolAsChar.CharToSymbol();
+        
+        this.Play(symbol, position);
+    }
+
+    public void Play(Symbol symbol, Position position)
+    {
         this.ValidateMove(symbol);
 
-        this.lastSymbol = symbolAsChar.CharToSymbol();
+        this.lastSymbol = symbol;
 
         this.board.AddTileAt(symbol, position);
     }

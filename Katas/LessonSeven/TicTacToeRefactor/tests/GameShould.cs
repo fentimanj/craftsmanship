@@ -1,6 +1,8 @@
 namespace tests
 {
     using src;
+    using src.Constant;
+    using src.Enums;
     using src.Models;
 
     public class GameShould
@@ -85,7 +87,7 @@ namespace tests
         }
 
         [Fact]
-        public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow()
+        public void DeclarePlayerXAsAWinnerIfThreeInCenterColumn()
         {
             this.game.Play('X', 1, 0);
             this.game.Play('O', 0, 0);
@@ -99,7 +101,7 @@ namespace tests
         }
 
         [Fact]
-        public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow()
+        public void DeclarePlayerOAsAWinnerIfThreeInCenterRow()
         {
             this.game.Play('X', 0, 0);
             this.game.Play('O', 1, 0);
@@ -128,7 +130,7 @@ namespace tests
         }
 
         [Fact]
-        public void DeclarePlayerOAsAWinnerIfThreeInBottomRow()
+        public void DeclarePlayerOAsAWinnerIfThreeInRightColumn()
         {
             this.game.Play('X', 0, 0);
             this.game.Play('O', 2, 0);
@@ -140,6 +142,20 @@ namespace tests
             var winner = this.game.Winner();
 
             Assert.Equal('O', winner);
+        }
+
+        [Fact]
+        public void DeclasePlayerXAsAWinnerIfThreeInTopRow()
+        {
+            this.game.Play(Symbol.X, new Position(Column.Left, Row.Top));
+            this.game.Play(Symbol.O, new Position(Column.Left, Row.Middle));
+            this.game.Play(Symbol.X, new Position(Column.Center, Row.Top));
+            this.game.Play(Symbol.O, new Position(Column.Center, Row.Middle));
+            this.game.Play(Symbol.X, new Position(Column.Right, Row.Top));
+            
+            var winner = this.game.Winner();
+
+            Assert.Equal('X', winner);
         }
     }
 }
