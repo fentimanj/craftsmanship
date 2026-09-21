@@ -51,6 +51,7 @@ public class Board
     }
 
     // TODO: Data Clump
+    // TODO: Primitive Obsession
     public void AddTileAt(char symbol, int x, int y)
     {
         if (this.IsTileTaken(x, y))
@@ -59,7 +60,7 @@ public class Board
         }
 
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));
-        currentTile.MarkWith(symbol);
+        currentTile.MarkWith(symbol.ToSymbol());
     }
 
     // TODO: data clump

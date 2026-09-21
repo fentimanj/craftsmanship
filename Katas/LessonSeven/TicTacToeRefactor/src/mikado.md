@@ -27,3 +27,5 @@
 ##Goal 3:  Remove primitive obsession for for Symbol in Tile.cs
     [x] Remove ToChar from GetSymbol return
     [x] SymbolAt needs a ToChar() on return
+    [x] Remove ToSymbol from MarkWith
+    [x] Use mapper on symbol in MarkWith() return on AddTileAt
