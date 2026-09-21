@@ -40,7 +40,14 @@
     [x] Make X Private in Tile.cs
         [x] Move X to constructor of Tile.cs
 ## Goal 5 : Y is private
-## Goal 6: Replace X and Y with  a Position enum 
+    [x] Make Y Private in Tile.cs
+        [x] Move Y to constructor of Tile.cs
+## Goal 6: Replace X and Y with a Position enum 
+    [] Change AddTileAt to accept a Position enum
+    [] Change IsTileTaken to accept a Position enum
+    []Change IsAt to accept a Position enum
+        [] Create a positions mapper
+            [x] Create a positions enum
 
 ```
 public enum Position
