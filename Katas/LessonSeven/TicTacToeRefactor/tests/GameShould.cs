@@ -14,7 +14,13 @@ namespace tests
         [Fact]
         public void NotAllowPlayerOToPlayFirst()
         {
-            Action wrongPlay = () => this.game.Play('O'.ToSymbol(), 0, 0);
+            Action wrongPlay = () =>
+            {
+                Symbol symbol = 'O'.ToSymbol();
+                var position = PositionMapper.Map(0, 0);
+        
+                this.game.Play(symbol, position);
+            };
 
             var exception = Assert.Throws<Exception>(wrongPlay);
             Assert.Equal("Invalid first player", exception.Message);
@@ -23,9 +29,18 @@ namespace tests
         [Fact]
         public void NotAllowPlayerXToPlayTwiceInARow()
         {
-            this.game.Play('X'.ToSymbol(), 0, 0);
-            
-            Action wrongPlay = () => this.game.Play('X'.ToSymbol(), 1, 0);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol, position);
+
+            Action wrongPlay = () =>
+            {
+                Symbol symbol1 = 'X'.ToSymbol();
+                var position1 = PositionMapper.Map(1, 0);
+        
+                this.game.Play(symbol1, position1);
+            };
 
             var exception = Assert.Throws<Exception>(wrongPlay);
             Assert.Equal("Invalid next player", exception.Message);
@@ -34,9 +49,18 @@ namespace tests
         [Fact]
         public void NotAllowPlayerToPlayInLastPlayedPosition()
         {
-            this.game.Play('X'.ToSymbol(), 0, 0);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol, position);
 
-            Action wrongPlay = () => this.game.Play('O'.ToSymbol(), 0, 0);
+            Action wrongPlay = () =>
+            {
+                Symbol symbol1 = 'O'.ToSymbol();
+                var position1 = PositionMapper.Map(0, 0);
+        
+                this.game.Play(symbol1, position1);
+            };
 
             var exception = Assert.Throws<Exception>(wrongPlay);
             Assert.Equal("Invalid position", exception.Message);
@@ -45,10 +69,22 @@ namespace tests
         [Fact]
         public void NotAllowPlayerToPlayInAnyPlayedPosition()
         {
-            this.game.Play('X'.ToSymbol(), 0, 0);
-            this.game.Play('O'.ToSymbol(), 1, 0);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(1, 0);
+        
+            this.game.Play(symbol1, position1);
 
-            Action wrongPlay = () => this.game.Play('X'.ToSymbol(), 0, 0);
+            Action wrongPlay = () =>
+            {
+                Symbol symbol2 = 'X'.ToSymbol();
+                var position2 = PositionMapper.Map(0, 0);
+        
+                this.game.Play(symbol2, position2);
+            };
 
             var exception = Assert.Throws<Exception>(wrongPlay);
             Assert.Equal("Invalid position", exception.Message);
@@ -57,11 +93,26 @@ namespace tests
         [Fact]
         public void DeclarePlayerXAsAWinnerIfThreeInTopRow()
         {
-            this.game.Play('X'.ToSymbol(), 0, 0);
-            this.game.Play('O'.ToSymbol(), 1, 0);
-            this.game.Play('X'.ToSymbol(), 0, 1);
-            this.game.Play('O'.ToSymbol(), 1, 1);
-            this.game.Play('X'.ToSymbol(), 0, 2);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(1, 0);
+        
+            this.game.Play(symbol1, position1);
+            Symbol symbol2 = 'X'.ToSymbol();
+            var position2 = PositionMapper.Map(0, 1);
+        
+            this.game.Play(symbol2, position2);
+            Symbol symbol3 = 'O'.ToSymbol();
+            var position3 = PositionMapper.Map(1, 1);
+        
+            this.game.Play(symbol3, position3);
+            Symbol symbol4 = 'X'.ToSymbol();
+            var position4 = PositionMapper.Map(0, 2);
+        
+            this.game.Play(symbol4, position4);
 
             var winner = this.game.Winner();
 
@@ -71,12 +122,30 @@ namespace tests
         [Fact]
         public void DeclarePlayerOAsAWinnerIfThreeInTopRow()
         {
-            this.game.Play('X'.ToSymbol(), 2, 2);
-            this.game.Play('O'.ToSymbol(), 0, 0);
-            this.game.Play('X'.ToSymbol(), 1, 0);
-            this.game.Play('O'.ToSymbol(), 0, 1);
-            this.game.Play('X'.ToSymbol(), 1, 1);
-            this.game.Play('O'.ToSymbol(), 0, 2);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(2, 2);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol1, position1);
+            Symbol symbol2 = 'X'.ToSymbol();
+            var position2 = PositionMapper.Map(1, 0);
+        
+            this.game.Play(symbol2, position2);
+            Symbol symbol3 = 'O'.ToSymbol();
+            var position3 = PositionMapper.Map(0, 1);
+        
+            this.game.Play(symbol3, position3);
+            Symbol symbol4 = 'X'.ToSymbol();
+            var position4 = PositionMapper.Map(1, 1);
+        
+            this.game.Play(symbol4, position4);
+            Symbol symbol5 = 'O'.ToSymbol();
+            var position5 = PositionMapper.Map(0, 2);
+        
+            this.game.Play(symbol5, position5);
 
             var winner = this.game.Winner();
 
@@ -86,11 +155,26 @@ namespace tests
         [Fact]
         public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow()
         {
-            this.game.Play('X'.ToSymbol(), 1, 0);
-            this.game.Play('O'.ToSymbol(), 0, 0);
-            this.game.Play('X'.ToSymbol(), 1, 1);
-            this.game.Play('O'.ToSymbol(), 0, 1);
-            this.game.Play('X'.ToSymbol(), 1, 2);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(1, 0);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol1, position1);
+            Symbol symbol2 = 'X'.ToSymbol();
+            var position2 = PositionMapper.Map(1, 1);
+        
+            this.game.Play(symbol2, position2);
+            Symbol symbol3 = 'O'.ToSymbol();
+            var position3 = PositionMapper.Map(0, 1);
+        
+            this.game.Play(symbol3, position3);
+            Symbol symbol4 = 'X'.ToSymbol();
+            var position4 = PositionMapper.Map(1, 2);
+        
+            this.game.Play(symbol4, position4);
 
             var winner = this.game.Winner();
 
@@ -100,12 +184,30 @@ namespace tests
         [Fact]
         public void DeclarePlayerOAsAWinnerIfThreeInMiddleRow()
         {
-            this.game.Play('X'.ToSymbol(), 0, 0);
-            this.game.Play('O'.ToSymbol(), 1, 0);
-            this.game.Play('X'.ToSymbol(), 2, 0);
-            this.game.Play('O'.ToSymbol(), 1, 1);
-            this.game.Play('X'.ToSymbol(), 2, 1);
-            this.game.Play('O'.ToSymbol(), 1, 2);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(1, 0);
+        
+            this.game.Play(symbol1, position1);
+            Symbol symbol2 = 'X'.ToSymbol();
+            var position2 = PositionMapper.Map(2, 0);
+        
+            this.game.Play(symbol2, position2);
+            Symbol symbol3 = 'O'.ToSymbol();
+            var position3 = PositionMapper.Map(1, 1);
+        
+            this.game.Play(symbol3, position3);
+            Symbol symbol4 = 'X'.ToSymbol();
+            var position4 = PositionMapper.Map(2, 1);
+        
+            this.game.Play(symbol4, position4);
+            Symbol symbol5 = 'O'.ToSymbol();
+            var position5 = PositionMapper.Map(1, 2);
+        
+            this.game.Play(symbol5, position5);
 
             var winner = this.game.Winner();
 
@@ -115,11 +217,26 @@ namespace tests
         [Fact]
         public void DeclarePlayerXAsAWinnerIfThreeInBottomRow()
         {
-            this.game.Play('X'.ToSymbol(), 2, 0);
-            this.game.Play('O'.ToSymbol(), 0, 0);
-            this.game.Play('X'.ToSymbol(), 2, 1);
-            this.game.Play('O'.ToSymbol(), 0, 1);
-            this.game.Play('X'.ToSymbol(), 2, 2);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(2, 0);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol1, position1);
+            Symbol symbol2 = 'X'.ToSymbol();
+            var position2 = PositionMapper.Map(2, 1);
+        
+            this.game.Play(symbol2, position2);
+            Symbol symbol3 = 'O'.ToSymbol();
+            var position3 = PositionMapper.Map(0, 1);
+        
+            this.game.Play(symbol3, position3);
+            Symbol symbol4 = 'X'.ToSymbol();
+            var position4 = PositionMapper.Map(2, 2);
+        
+            this.game.Play(symbol4, position4);
 
             var winner = this.game.Winner();
 
@@ -129,12 +246,30 @@ namespace tests
         [Fact]
         public void DeclarePlayerOAsAWinnerIfThreeInBottomRow()
         {
-            this.game.Play('X'.ToSymbol(), 0, 0);
-            this.game.Play('O'.ToSymbol(), 2, 0);
-            this.game.Play('X'.ToSymbol(), 1, 0);
-            this.game.Play('O'.ToSymbol(), 2, 1);
-            this.game.Play('X'.ToSymbol(), 1, 1);
-            this.game.Play('O'.ToSymbol(), 2, 2);
+            Symbol symbol = 'X'.ToSymbol();
+            var position = PositionMapper.Map(0, 0);
+        
+            this.game.Play(symbol, position);
+            Symbol symbol1 = 'O'.ToSymbol();
+            var position1 = PositionMapper.Map(2, 0);
+        
+            this.game.Play(symbol1, position1);
+            Symbol symbol2 = 'X'.ToSymbol();
+            var position2 = PositionMapper.Map(1, 0);
+        
+            this.game.Play(symbol2, position2);
+            Symbol symbol3 = 'O'.ToSymbol();
+            var position3 = PositionMapper.Map(2, 1);
+        
+            this.game.Play(symbol3, position3);
+            Symbol symbol4 = 'X'.ToSymbol();
+            var position4 = PositionMapper.Map(1, 1);
+        
+            this.game.Play(symbol4, position4);
+            Symbol symbol5 = 'O'.ToSymbol();
+            var position5 = PositionMapper.Map(2, 2);
+        
+            this.game.Play(symbol5, position5);
 
             var winner = this.game.Winner();
 

@@ -43,7 +43,7 @@
     [x] Make Y Private in Tile.cs
         [x] Move Y to constructor of Tile.cs
 ## Goal 6: Replace X and Y with a Position enum 
-    [] Change AddTileAt to accept a Position enum
+    [x] Change AddTileAt to accept a Position enum
     [x] Change IsTileTaken to accept a Position enum
     [x] ColumnTakenBy needs to use a PositionMapper to convert xy to position
             [x] SymbolAt needs to accept a position
