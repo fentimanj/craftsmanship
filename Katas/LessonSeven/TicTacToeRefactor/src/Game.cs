@@ -29,27 +29,27 @@ public class Game
 
     private void ValidateMove(Symbol symbol, int x, int y)
     {
-        if (this.IsFirstMove() && IsSymbolNaught(symbol.ToChar()))
+        if (this.IsFirstMove() && IsSymbolNaught(symbol))
         {
             {
                 throw new Exception("Invalid first player");
             }
         }
 
-        if (this.IsInvalidNextPlayer(symbol.ToChar()))
+        if (this.IsInvalidNextPlayer(symbol))
         {
             throw new Exception("Invalid next player");
         }
     }
 
-    private bool IsInvalidNextPlayer(char symbol)
+    private bool IsInvalidNextPlayer(Symbol symbol)
     {
-        return symbol == this.lastSymbol;
+        return symbol == this.lastSymbol.ToSymbol();
     }
 
-    private static bool IsSymbolNaught(char symbol)
+    private static bool IsSymbolNaught(Symbol symbol)
     {
-        return symbol == SymbolAsChar.O;
+        return symbol == Symbol.O;
     }
 
     private bool IsFirstMove()

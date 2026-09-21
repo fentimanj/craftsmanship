@@ -28,8 +28,10 @@
     [] Introduce a new Play method in Game.cs that takes a Symbol enum
         [x]  Invoke mapper to symbol for PlayNew
         []  Game.ValidateMove needs to accept a Symbol enum
-            [] Game.IsSymbolNaught should take a Symbol enum
+            [x] Game.IsSymbolNaught should take a Symbol enum
+                [x] Use Symbol.O instead as SymbolAsChar on return
             [] Game.IsInvalidNextPlayer should take a Symbol enum
+                [] lastSymbol needs to be Enum on the return
         []  Game.lastSymbol should be Symbol enum  
         []  board.AddTileAt needs to take in a symbol
         
