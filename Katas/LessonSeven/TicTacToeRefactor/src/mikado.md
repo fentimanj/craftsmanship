@@ -27,13 +27,16 @@
 ##Goal 3:  Remove primitive obsession for Symbol from code
     [] Introduce a new Play method in Game.cs that takes a Symbol enum
         [x]  Invoke mapper to symbol for PlayNew
-        []  Game.ValidateMove needs to accept a Symbol enum
+        [x]  Game.ValidateMove needs to accept a Symbol enum
             [x] Game.IsSymbolNaught should take a Symbol enum
                 [x] Use Symbol.O instead as SymbolAsChar on return
-            [] Game.IsInvalidNextPlayer should take a Symbol enum
-                [] lastSymbol needs to be Enum on the return
-        []  Game.lastSymbol should be Symbol enum  
-        []  board.AddTileAt needs to take in a symbol
+            [x] Game.IsInvalidNextPlayer should take a Symbol enum
+                [x] lastSymbol needs to be Enum on the return
+                    [x] Change symbol as char to Symbol enum
+        [x]  board.AddTileAt needs to take in a symbol
+            [x] MarkWith needs to take in a Symbol
+               
+            
         
 
         

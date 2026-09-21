@@ -51,8 +51,7 @@ public class Board
     }
 
     // TODO: Data Clump
-    // TODO: Primitive Obsession
-    public void AddTileAt(char symbol, int x, int y)
+    public void AddTileAt(Symbol symbol, int x, int y)
     {
         if (this.IsTileTaken(x, y))
         {

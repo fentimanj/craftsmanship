@@ -18,9 +18,9 @@ public class Tile(char symbolAsChar)
         return this.symbol;
     }
 
-    public void MarkWith(char symbol)
+    public void MarkWith(Symbol symbol)
     {
-        this.symbol = symbol.ToSymbol();
+        this.symbol = symbol;
     }
     
     public static Func<Tile, bool> IsAt(int x, int y)

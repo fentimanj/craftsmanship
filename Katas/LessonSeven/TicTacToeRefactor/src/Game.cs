@@ -6,28 +6,28 @@ public class Game
 {
     private readonly Board board = new();
 
-    private char lastSymbol = SymbolAsChar.Space;
+    private Symbol lastSymbol = Symbol.Space;
 
     // TODO: Data clump
-    // TODO: Primitive Obsession
-    public void Play(char symbol, int x, int y)
+    // TODO: Primitive Obsession - Part of public interface
+    public void PlayOld(char symbol, int x, int y)
     {
-        this.PlayNew(symbol.ToSymbol(), x, y);
+        this.Play(symbol.ToSymbol(), x, y);
     }
 
-    public void PlayNew(Symbol symbol, int x, int y)
+    public void Play(Symbol symbol, int x, int y)
     {
         // TODO : Data clump
-        this.ValidateMove(symbol, x, y);
+        this.ValidateMove(symbol);
 
-        this.lastSymbol = symbol.ToChar();
+        this.lastSymbol = symbol;
 
         // TODO: Data clump
-        this.board.AddTileAt(symbol.ToChar(), x, y);
+        this.board.AddTileAt(symbol, x, y);
     }
 
 
-    private void ValidateMove(Symbol symbol, int x, int y)
+    private void ValidateMove(Symbol symbol)
     {
         if (this.IsFirstMove() && IsSymbolNaught(symbol))
         {
@@ -44,7 +44,7 @@ public class Game
 
     private bool IsInvalidNextPlayer(Symbol symbol)
     {
-        return symbol == this.lastSymbol.ToSymbol();
+        return symbol == this.lastSymbol;
     }
 
     private static bool IsSymbolNaught(Symbol symbol)
@@ -54,7 +54,7 @@ public class Game
 
     private bool IsFirstMove()
     {
-        return this.lastSymbol == SymbolAsChar.Space;
+        return this.lastSymbol == Symbol.Space;
     }
 
     public char Winner()
