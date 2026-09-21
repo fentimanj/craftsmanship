@@ -13,27 +13,27 @@ public enum Position
     BottomRight
 }
 
-public static class PositionExtensions
+public static class PositionMapper
 {
-    public static Position ToPosition(this (int column, int row) position)
+    public static Position Map(int column, int row)
     {
-        switch (position.row)
+        switch (row)
         {
-            case 0 when position.column == 0:
+            case 0 when column == 0:
                 return Position.TopLeft;
-            case 0 when position.column == 1:
+            case 0 when column == 1:
                 return Position.TopCenter;
             case 0:
                 return Position.TopRight;
-            case 1 when position.column == 0:
+            case 1 when column == 0:
                 return Position.MiddleLeft;
-            case 1 when position.column == 1:
+            case 1 when column == 1:
                 return Position.MiddleCenter;
             case 1:
                 return Position.MiddleRight;
         }
 
-        return position.column switch
+        return column switch
         {
             0 => Position.BottomLeft,
             1 => Position.BottomCenter,
