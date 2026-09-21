@@ -45,9 +45,12 @@
 ## Goal 6: Replace X and Y with a Position enum 
     [] Change AddTileAt to accept a Position enum
     [] Change IsTileTaken to accept a Position enum
-    []Change IsAt to accept a Position enum
-        [x] Create a positions mapper
-            [x] Create a positions enum
+    [] ColumnTakenBy needs to use a PositionMapper to convert xy to position
+            [] SymbolAt needs to accept a position
+                [] Change IsAt to accept a Position enum
+                    [] Tile needs a positions property
+                        [x] We need to build a Position mapper to convert xy to position
+                        [x] Create a positions enum
 
 ```
 public enum Position

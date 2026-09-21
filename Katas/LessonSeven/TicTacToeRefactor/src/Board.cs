@@ -46,11 +46,12 @@ public class Board
     // TODO:  Primitive Obsession
     public char SymbolAt(int x, int y)
     {
-        var tile = this.tiles.Single(Tile.IsAt(x, y));
+        var tile = this.tiles.Single(Tile.IsAt(PositionMapper.Map(x, y)));
         return tile.GetSymbol().ToChar();
     }
 
     // TODO: Data Clump
+    // TODO: Primitive Obsession
     public void AddTileAt(Symbol symbol, int x, int y)
     {
         if (this.IsTileTaken(x, y))
@@ -58,7 +59,7 @@ public class Board
             throw new Exception("Invalid position");
         }
 
-        var currentTile = this.tiles.Single(Tile.IsAt(x, y));
+        var currentTile = this.tiles.Single(Tile.IsAt(PositionMapper.Map(x, y)));
         currentTile.MarkWith(symbol);
     }
 

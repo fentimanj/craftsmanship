@@ -10,6 +10,8 @@ public class Tile(char symbolAsChar, int column, int row)
     // TODO: Primitive Obsession
     private readonly int row = row;
     
+    public Position Position = PositionMapper.Map(column, row);
+    
     private Symbol symbol = symbolAsChar.ToSymbol();
 
     public Symbol GetSymbol()
@@ -22,8 +24,9 @@ public class Tile(char symbolAsChar, int column, int row)
         this.symbol = symbol;
     }
     
-    public static Func<Tile, bool> IsAt(int x, int y)
+    //TODO:  Primitive Obsession
+    public static Func<Tile, bool> IsAt(Position position)
     {
-        return tile => tile.column == x && tile.row == y;
+        return tile => tile.Position == position;
     }
 }
