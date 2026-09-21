@@ -43,10 +43,11 @@ public class Board
     }
 
     // TODO: Data Clump
+    // TODO:  Primitive Obsession
     public char SymbolAt(int x, int y)
     {
         var tile = this.tiles.Single(Tile.IsAt(x, y));
-        return tile.GetSymbol();
+        return tile.GetSymbol().ToChar();
     }
 
     // TODO: Data Clump

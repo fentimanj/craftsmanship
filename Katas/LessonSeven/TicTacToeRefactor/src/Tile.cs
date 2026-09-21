@@ -4,20 +4,24 @@ namespace src;
 public class Tile(char symbolAsChar)
 {
     // TODO: Shotgun Surgery
+    // TODO: Primitive Obsession
     public int X { get; set; }
 
     // TODO: Shotgun Surgery
+    // TODO: Primitive Obsession
     public int Y { get; set; }
-    private Symbol _symbol = symbolAsChar.ToSymbol();
+    
+    private Symbol symbol = symbolAsChar.ToSymbol();
 
-    public char GetSymbol()
+    public Symbol GetSymbol()
     {
-        return this._symbol.ToChar();
+        return this.symbol;
     }
 
+    // TODO: Primitive Obsession
     public void MarkWith(char symbol)
     {
-        this._symbol = symbol.ToSymbol();
+        this.symbol = symbol.ToSymbol();
     }
     
     public static Func<Tile, bool> IsAt(int x, int y)

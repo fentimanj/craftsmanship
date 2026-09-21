@@ -15,7 +15,7 @@
                 []   Board.cs(49, 16): [CS0266] Cannot implicitly convert type 'src.Symbol' to 'char'. An explicit conversion exists (are you missing a cast?)
 
 ##Goal 2B: Make Symbol As Enum (using Alex's special method)
-    [] Make Tile.Symbol an Enum 
+    [x] Make Tile.Symbol an Enum 
         [x] Use symbol to char mapper on line 15 of Tile.cs
             [x] Create a Symbol to char mapper
                 [x] Create Symbol Enum **
@@ -24,3 +24,6 @@
             [x] Create a Symbol mapper extension method        
                 [x] Create Symbol Enum **
           
+##Goal 3:  Remove primitive obsession for for Symbol in Tile.cs
+    [x] Remove ToChar from GetSymbol return
+    [x] SymbolAt needs a ToChar() on return
