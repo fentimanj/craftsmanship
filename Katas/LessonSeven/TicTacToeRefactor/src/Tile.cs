@@ -1,11 +1,10 @@
 namespace src;
 
 // TODO: Data Class
-public class Tile(char symbolAsChar)
+public class Tile(char symbolAsChar, int column)
 {
-    // TODO: Shotgun Surgery
     // TODO: Primitive Obsession
-    public int X { get; set; }
+    private readonly int column = column;
 
     // TODO: Shotgun Surgery
     // TODO: Primitive Obsession
@@ -25,6 +24,6 @@ public class Tile(char symbolAsChar)
     
     public static Func<Tile, bool> IsAt(int x, int y)
     {
-        return tile => tile.X == x && tile.Y == y;
+        return tile => tile.column == x && tile.Y == y;
     }
 }

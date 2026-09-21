@@ -12,7 +12,7 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                this.tiles.Add(new Tile(SymbolAsChar.Space) { X = column, Y = row });
+                this.tiles.Add(new Tile(SymbolAsChar.Space, column) { Y = row });
             }
         }
     }

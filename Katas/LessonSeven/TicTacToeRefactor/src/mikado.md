@@ -36,7 +36,9 @@
         [x]  board.AddTileAt needs to take in a symbol
             [x] MarkWith needs to take in a Symbol
                
-## Goal 4 :  X is private
+## Goal 4 : X is private
+    [x] Make X Private in Tile.cs
+        [x] Move X to constructor of Tile.cs
 ## Goal 5 : Y is private
 ## Goal 6: Replace X and Y with  a Position enum 
 
