@@ -1,6 +1,5 @@
-##Goal:  Symbol Should Be Enum
-    - If we make symbol private
-        - Use constructor to set symbol
-            - Create a symbol enum
-        - Board.cs(49, 21): [CS0122] 'Tile.Symbol' is inaccessible due to its protection level
-        - Board.cs(61, 21): [CS0122] 'Tile.Symbol' is inaccessible due to its protection level
+##Goal:  Solve short gun surgery by making Symbol private
+    [x] Make Tile.Symbol private
+        [x] Use constructor to set Tile.Symbol as symbolAsChar
+        [x] Create a getter for Tile.Symbol
+        [x] Create a MarkWith method to set Tile.Symbol
