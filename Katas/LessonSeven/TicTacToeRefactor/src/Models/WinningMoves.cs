@@ -1,6 +1,5 @@
 namespace src.Models;
 
-using Constant;
 using Enums;
 
 public class WinningMoves
@@ -21,7 +20,7 @@ public class WinningMoves
             Positions.MiddleRight,
             Positions.BottomRight
         };
-            
+
 
         var centerColumn = new List<Position>
         {
@@ -35,45 +34,46 @@ public class WinningMoves
             Positions.TopLeft,
             Positions.TopCenter,
             Positions.TopRight
-        };  
-        
+        };
+
         var middleRow = new List<Position>
         {
-            new(Column.Left, Row.Middle),
-            new(Column.Center, Row.Middle),
-            new(Column.Right, Row.Middle)
-        };  
-        
+            Positions.MiddleLeft,
+            Positions.MiddleCenter,
+            Positions.MiddleRight
+        };
+
         var bottomRow = new List<Position>
         {
-            new(Column.Left, Row.Bottom),
-            new(Column.Center, Row.Bottom),
-            new(Column.Right, Row.Bottom)
+            Positions.BottomLeft,
+            Positions.BottomCenter,
+            Positions.BottomRight
         };
-        
-        var diagnolTopLeftToBottomRight = new List<Position>
+
+
+        var diagonalTopLeftToBottomRight = new List<Position>
         {
-            new(Column.Left, Row.Top),
-            new(Column.Center, Row.Middle),
-            new(Column.Right, Row.Bottom)
+            Positions.TopLeft,
+            Positions.MiddleCenter,
+            Positions.BottomRight
         };
-        
-        var diagnolTopRightToBottomLeft = new List<Position>
+
+        var diagonalTopRightToBottomLeft = new List<Position>
         {
-            new(Column.Right, Row.Top),
-            new(Column.Center, Row.Middle),
-            new(Column.Left, Row.Bottom)
+            Positions.TopRight,
+            Positions.MiddleCenter,
+            Positions.BottomLeft
         };
 
         this.winningMoves = new List<List<Position>>
         {
-            leftColumn, rightColumn, centerColumn, topRow,  middleRow, bottomRow, diagnolTopLeftToBottomRight,diagnolTopRightToBottomLeft
+            leftColumn, rightColumn, centerColumn, topRow, middleRow, bottomRow, diagonalTopLeftToBottomRight,
+            diagonalTopRightToBottomLeft
         };
     }
 
     public Symbol CheckForWinningSymbol(List<Tile> tiles)
     {
-        
         foreach (var winningMove in this.winningMoves)
         {
             if (winningMove.All(col => this.SymbolAt(col, tiles) == Symbol.X))
@@ -86,10 +86,10 @@ public class WinningMoves
                 return Symbol.O;
             }
         }
-        
+
         return Symbol.Space;
     }
-    
+
     private Symbol SymbolAt(Position position, List<Tile> tiles)
     {
         var tile = tiles.Single(Tile.IsAt(position));
