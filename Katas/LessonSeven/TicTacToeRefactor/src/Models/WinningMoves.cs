@@ -67,7 +67,13 @@ public class WinningMoves
 
         this.winningMoves = new List<List<Position>>
         {
-            leftColumn, rightColumn, centerColumn, topRow, middleRow, bottomRow, diagonalTopLeftToBottomRight,
+            leftColumn,
+            rightColumn,
+            centerColumn,
+            topRow,
+            middleRow,
+            bottomRow,
+            diagonalTopLeftToBottomRight,
             diagonalTopRightToBottomLeft
         };
     }
