@@ -21,7 +21,7 @@ public class Board
     {
         for (var index = Column.Left; index <= Column.Right; index++)
         {
-            var winner = this.ColumnTakenBy(index);
+            var winner = this.RowTakenBy(index);
             if (winner != SymbolAsChar.Space)
             {
                 return winner;
@@ -31,26 +31,50 @@ public class Board
         return SymbolAsChar.Space;
     }
 
-    private char ColumnTakenBy(int columnIndex)
+    private char RowTakenBy(int columnIndex)
     {
-        var topRowSymbol = this.SymbolAt(PositionMapper.Map(columnIndex, Row.Top));
-        var middleRowSymbol = this.SymbolAt(PositionMapper.Map(columnIndex, Row.Middle));
-        var bottomRowSymbol = this.SymbolAt(PositionMapper.Map(columnIndex, Row.Bottom));
+        if (columnIndex == Column.Left)
+        {
+            var topLeftSymbol = this.SymbolAt(Position.TopLeft);
+            var middleLeftSymbol = this.SymbolAt(Position.MiddleLeft);
+            var bottomLeftSymbol = this.SymbolAt(Position.BottomLeft);
 
-        var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
+            var rowTaken = topLeftSymbol == middleLeftSymbol && middleLeftSymbol == bottomLeftSymbol;
 
-        return columnTaken ? topRowSymbol : SymbolAsChar.Space;
+            return rowTaken ? topLeftSymbol : SymbolAsChar.Space;
+        }
+
+        if (columnIndex == Column.Center)
+        {
+            var topCenterSymbol = this.SymbolAt(Position.TopCenter);
+            var middleCenterSymbol = this.SymbolAt(Position.MiddleCenter);
+            var bottomCenterSymbol = this.SymbolAt(Position.BottomCenter);
+            
+            var rowTaken = topCenterSymbol == middleCenterSymbol && middleCenterSymbol == bottomCenterSymbol;
+            
+            return rowTaken ? topCenterSymbol : SymbolAsChar.Space;
+        }
+
+        if (columnIndex == Column.Right)
+        {
+            var topRightSymbol = this.SymbolAt(Position.TopRight);
+            var middleRightSymbol = this.SymbolAt(Position.MiddleRight);
+            var bottomRightSymbol = this.SymbolAt(Position.BottomRight);
+            
+            var rowTaken = topRightSymbol == middleRightSymbol && middleRightSymbol == bottomRightSymbol;
+            
+            return rowTaken ? topRightSymbol : SymbolAsChar.Space;
+        }
+
+        return  SymbolAsChar.Space;
     }
 
-    // TODO: Data Clump
     private char SymbolAt(Position position)
     {
         var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.GetSymbol().ToChar();
     }
 
-    // TODO: Data Clump
-    // TODO: Primitive Obsession
     public void AddTileAt(Symbol symbol, Position position)
     {
         if (this.IsTileTaken(position))
@@ -62,7 +86,6 @@ public class Board
         currentTile.MarkWith(symbol);
     }
 
-    // TODO: data clump
     private bool IsTileTaken(Position position)
     {
         var symbol = this.SymbolAt(position);
