@@ -34,11 +34,25 @@ public class WinningMoves
             new(Column.Left, Row.Top),
             new(Column.Center, Row.Top),
             new(Column.Right, Row.Top)
+        };  
+        
+        var middleRow = new List<Position>
+        {
+            new(Column.Left, Row.Middle),
+            new(Column.Center, Row.Middle),
+            new(Column.Right, Row.Middle)
+        };  
+        
+        var bottomRow = new List<Position>
+        {
+            new(Column.Left, Row.Bottom),
+            new(Column.Center, Row.Bottom),
+            new(Column.Right, Row.Bottom)
         };
 
         this.winningMoves = new List<List<Position>>
         {
-            leftColumn, rightColumn, centerColumn, topRow
+            leftColumn, rightColumn, centerColumn, topRow,  middleRow, bottomRow
         };
     }
 
