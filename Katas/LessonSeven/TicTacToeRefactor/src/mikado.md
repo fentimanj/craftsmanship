@@ -46,7 +46,7 @@
     [] Change AddTileAt to accept a Position enum
     [] Change IsTileTaken to accept a Position enum
     []Change IsAt to accept a Position enum
-        [] Create a positions mapper
+        [x] Create a positions mapper
             [x] Create a positions enum
 
 ```
