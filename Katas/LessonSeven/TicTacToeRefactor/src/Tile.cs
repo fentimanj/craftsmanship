@@ -8,16 +8,16 @@ public class Tile(char symbolAsChar)
 
     // TODO: Shotgun Surgery
     public int Y { get; set; }
-    private char _symbol = symbolAsChar;
+    private Symbol _symbol = symbolAsChar.ToSymbol();
 
     public char GetSymbol()
     {
-        return this._symbol;
+        return this._symbol.ToChar();
     }
 
     public void MarkWith(char symbol)
     {
-        this._symbol = symbol;
+        this._symbol = symbol.ToSymbol();
     }
     
     public static Func<Tile, bool> IsAt(int x, int y)
@@ -25,4 +25,3 @@ public class Tile(char symbolAsChar)
         return tile => tile.X == x && tile.Y == y;
     }
 }
-
