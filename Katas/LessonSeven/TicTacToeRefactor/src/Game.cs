@@ -18,8 +18,9 @@ public class Game
 
         this.lastSymbol = symbol;
 
+        var position = PositionMapper.Map(x, y);
         // TODO: Data clump
-        this.board.AddTileAt(symbol, x, y);
+        this.board.AddTileAt(symbol,position);
     }
 
 

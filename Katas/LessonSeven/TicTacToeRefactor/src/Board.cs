@@ -51,19 +51,18 @@ public class Board
 
     // TODO: Data Clump
     // TODO: Primitive Obsession
-    public void AddTileAt(Symbol symbol, int x, int y)
+    public void AddTileAt(Symbol symbol, Position position)
     {
-        if (this.IsTileTaken(PositionMapper.Map(x, y)))
+        if (this.IsTileTaken(position))
         {
             throw new Exception("Invalid position");
         }
 
-        var currentTile = this.tiles.Single(Tile.IsAt(PositionMapper.Map(x, y)));
+        var currentTile = this.tiles.Single(Tile.IsAt(position));
         currentTile.MarkWith(symbol);
     }
 
     // TODO: data clump
-    // TODO: primitive obsession
     private bool IsTileTaken(Position position)
     {
         var symbol = this.SymbolAt(position);
