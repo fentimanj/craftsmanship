@@ -2,7 +2,6 @@ namespace src.Models;
 
 using Constant;
 using Enums;
-using Extensions;
 
 public class Board
 {
@@ -36,6 +35,21 @@ public class Board
 
     private Symbol ColumnTakenBy(Column columnIndex)
     {
+        if (columnIndex == Column.Left)
+        {
+            var leftColumn = new[]
+            {
+                new Position(Column.Left, Row.Top),
+                new Position(Column.Left, Row.Middle),
+                new Position(Column.Left, Row.Bottom)
+            };
+            
+            if(leftColumn.All(col => SymbolAt(col) == Symbol.X)) return Symbol.X;
+            if(leftColumn.All(col => SymbolAt(col) == Symbol.O)) return Symbol.O;
+            if(leftColumn.All(col => SymbolAt(col) == Symbol.Space)) return Symbol.Space;
+        }
+
+
         var topRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Top));
         var middleRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Middle));
         var bottomRowSymbol = this.SymbolAt(new Position(columnIndex, Row.Bottom));
@@ -54,6 +68,7 @@ public class Board
     public void AddTileAt(Symbol symbol, Position position)
     {
         var currentTile = this.tiles.Single(Tile.IsAt(position));
-        currentTile.AddSymbol(symbol);;
+        currentTile.AddSymbol(symbol);
+        ;
     }
 }
