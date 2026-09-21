@@ -185,13 +185,27 @@ public class GameShould
     }
     
     [Fact]
-    public void DeclarePlayerXAsAWinnerIfThreeInDiagnolTopLeftDown()
+    public void DeclarePlayerXAsAWinnerIfThreeInDiagTopLeftDown()
     {
         this.game.Play(Symbol.X, Positions.TopLeft);
         this.game.Play(Symbol.O, Positions.MiddleLeft);
         this.game.Play(Symbol.X, Positions.MiddleCenter);
         this.game.Play(Symbol.O, Positions.TopCenter);
         this.game.Play(Symbol.X, Positions.BottomRight);
+
+        var winner = this.game.Winner();
+
+        Assert.Equal('X', winner);
+    }
+    
+    [Fact]
+    public void DeclarePlayerXAsAWinnerIfThreeInDiagTopRightDown()
+    {
+        this.game.Play(Symbol.X, Positions.TopRight);
+        this.game.Play(Symbol.O, Positions.MiddleLeft);
+        this.game.Play(Symbol.X, Positions.MiddleCenter);
+        this.game.Play(Symbol.O, Positions.TopCenter);
+        this.game.Play(Symbol.X, Positions.BottomLeft);
 
         var winner = this.game.Winner();
 
