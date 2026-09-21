@@ -49,10 +49,17 @@ public class WinningMoves
             new(Column.Center, Row.Bottom),
             new(Column.Right, Row.Bottom)
         };
+        
+        var diagnolTopLeftToBottomRight = new List<Position>
+        {
+            new(Column.Left, Row.Top),
+            new(Column.Center, Row.Middle),
+            new(Column.Right, Row.Bottom)
+        };
 
         this.winningMoves = new List<List<Position>>
         {
-            leftColumn, rightColumn, centerColumn, topRow,  middleRow, bottomRow
+            leftColumn, rightColumn, centerColumn, topRow,  middleRow, bottomRow, diagnolTopLeftToBottomRight
         };
     }
 
