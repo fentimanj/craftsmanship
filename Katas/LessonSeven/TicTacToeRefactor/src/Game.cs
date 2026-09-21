@@ -18,7 +18,7 @@ public class Game
     public void PlayNew(Symbol symbol, int x, int y)
     {
         // TODO : Data clump
-        this.ValidateMove(symbol.ToChar(), x, y);
+        this.ValidateMove(symbol, x, y);
 
         this.lastSymbol = symbol.ToChar();
 
@@ -27,16 +27,16 @@ public class Game
     }
 
 
-    private void ValidateMove(char symbol, int x, int y)
+    private void ValidateMove(Symbol symbol, int x, int y)
     {
-        if (this.IsFirstMove() && IsSymbolNaught(symbol))
+        if (this.IsFirstMove() && IsSymbolNaught(symbol.ToChar()))
         {
             {
                 throw new Exception("Invalid first player");
             }
         }
 
-        if (this.IsInvalidNextPlayer(symbol))
+        if (this.IsInvalidNextPlayer(symbol.ToChar()))
         {
             throw new Exception("Invalid next player");
         }
