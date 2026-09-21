@@ -47,8 +47,8 @@
     [] Change IsTileTaken to accept a Position enum
     [] ColumnTakenBy needs to use a PositionMapper to convert xy to position
             [] SymbolAt needs to accept a position
-                [] Change IsAt to accept a Position enum
-                    [] Tile needs a positions property
+                [x] Change IsAt to accept a Position enum
+                    [x] Tile needs a positions property
                         [x] We need to build a Position mapper to convert xy to position
                         [x] Create a positions enum
 
