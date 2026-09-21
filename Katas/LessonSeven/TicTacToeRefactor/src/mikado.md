@@ -1,10 +1,10 @@
-##Goal 1:  Solve short gun surgery by making Symbol private
+## Goal 1:  Solve short gun surgery by making Symbol private
     [x] Make Tile.Symbol private
         [x] Use constructor to set Tile.Symbol as symbolAsChar
         [x] Create a getter for Tile.Symbol
         [x] Create a MarkWith method to set Tile.Symbol
 
-##Goal 2A:  Make symbol as an Enum
+## Goal 2A:  Make symbol as an Enum
     []   Tile.cs(11, 13): [CS0246] The type or namespace name 'Symbol' could not be found (are you missing a using directive or an assembly reference?)
         [] Create Symbol Enum
             [] Constructor should take a Symbol enum
@@ -14,7 +14,7 @@
             [] GetSymbol should return a Symbol enum
                 []   Board.cs(49, 16): [CS0266] Cannot implicitly convert type 'src.Symbol' to 'char'. An explicit conversion exists (are you missing a cast?)
 
-##Goal 2B: Make Symbol As Enum (using Alex's special method)
+## Goal 2B: Make Symbol As Enum (using Alex's special method)
     [x] Make Tile.Symbol an Enum 
         [x] Use symbol to char mapper on line 15 of Tile.cs
             [x] Create a Symbol to char mapper
@@ -24,7 +24,7 @@
             [x] Create a Symbol mapper extension method        
                 [x] Create Symbol Enum **
           
-##Goal 3:  Remove primitive obsession for Symbol from code
+## Goal 3:  Remove primitive obsession for Symbol from code
     [] Introduce a new Play method in Game.cs that takes a Symbol enum
         [x]  Invoke mapper to symbol for PlayNew
         [x]  Game.ValidateMove needs to accept a Symbol enum
@@ -36,7 +36,22 @@
         [x]  board.AddTileAt needs to take in a symbol
             [x] MarkWith needs to take in a Symbol
                
-            
-        
+## Goal 4 :  X is private
+## Goal 5 : Y is private
+## Goal 6: Replace X and Y with  a Position enum 
 
-        
+```
+public enum Position
+{
+    TopLeft,
+    TopCenter,
+    TopRight,
+    MiddleLeft,
+    MiddleCenter,
+    MiddleRight,
+    BottomLeft,
+    BottomCenter,
+    BottomRight
+}
+```
+## Goal 7:  Replace X & Y with a Coordinate class (convert Row and Column into enums)

@@ -10,10 +10,6 @@ public class Game
 
     // TODO: Data clump
     // TODO: Primitive Obsession - Part of public interface
-    public void PlayOld(char symbol, int x, int y)
-    {
-        this.Play(symbol.ToSymbol(), x, y);
-    }
 
     public void Play(Symbol symbol, int x, int y)
     {
