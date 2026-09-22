@@ -10,11 +10,11 @@ public class Board
 
     public Board()
     {
-        for (var column = Column.Left; column <= Column.Right; column++)
+        for (var columnIndex = 0; columnIndex < this.numberOfColumns; columnIndex++)
         {
-            for (var row = Row.Top; row <= Row.Bottom; row++)
+            for (var rowIndex = 0; rowIndex <this. numberOfColumns; rowIndex++)
             {
-                this.tiles.Add(new Tile(SymbolAsChar.Space, PositionMapper.Map(column, row)));
+                this.tiles.Add(new Tile(SymbolAsChar.Space, PositionMapper.Map(columnIndex, rowIndex)));
             }
         }
     }
