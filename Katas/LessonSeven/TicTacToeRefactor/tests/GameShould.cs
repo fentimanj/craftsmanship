@@ -114,7 +114,7 @@ namespace tests
         
             this.game.Play(symbol4, position4);
 
-            var winner = this.game.Winner();
+            var winner = this.game.Winner().ToChar();
 
             Assert.Equal('X', winner);
         }
@@ -147,7 +147,7 @@ namespace tests
         
             this.game.Play(symbol5, position5);
 
-            var winner = this.game.Winner();
+            var winner = this.game.Winner().ToChar();
 
             Assert.Equal('O', winner);
         }
@@ -176,7 +176,7 @@ namespace tests
         
             this.game.Play(symbol4, position4);
 
-            var winner = this.game.Winner();
+            var winner = this.game.Winner().ToChar();
 
             Assert.Equal('X', winner);
         }
@@ -209,7 +209,7 @@ namespace tests
         
             this.game.Play(symbol5, position5);
 
-            var winner = this.game.Winner();
+            var winner = this.game.Winner().ToChar();
 
             Assert.Equal('O', winner);
         }
@@ -238,7 +238,7 @@ namespace tests
         
             this.game.Play(symbol4, position4);
 
-            var winner = this.game.Winner();
+            var winner = this.game.Winner().ToChar();
 
             Assert.Equal('X', winner);
         }
@@ -271,7 +271,7 @@ namespace tests
         
             this.game.Play(symbol5, position5);
 
-            var winner = this.game.Winner();
+            var winner = this.game.Winner().ToChar();
 
             Assert.Equal('O', winner);
         }

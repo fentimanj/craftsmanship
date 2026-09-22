@@ -14,18 +14,18 @@ public class Board
         }
     }
 
-    public char HasWinner()
+    public Symbol HasWinner()
     {
         var winner = this.ColumnTaken();
-        if (winner != SymbolAsChar.Space)
+        if (winner != Symbol.Space)
         {
             return winner;
         }
 
-        return SymbolAsChar.Space;
+        return Symbol.Space;
     }
 
-    private char ColumnTaken()
+    private Symbol ColumnTaken()
     {
         var topLeftSymbol = this.SymbolAt(Position.TopLeft);
         var middleLeftSymbol = this.SymbolAt(Position.MiddleLeft);
@@ -35,7 +35,7 @@ public class Board
 
         if (leftColumnTaken && topLeftSymbol != Symbol.Space)
         {
-            return topLeftSymbol.ToChar();
+            return topLeftSymbol;
         }
 
 
@@ -47,7 +47,7 @@ public class Board
 
         if (centreColumnTaken && topCenterSymbol != Symbol.Space)
         {
-            return topCenterSymbol.ToChar();
+            return topCenterSymbol;
         }
 
 
@@ -57,7 +57,7 @@ public class Board
 
         var rightColumnTaken = topRightSymbol == middleRightSymbol && middleRightSymbol == bottomRightSymbol;
 
-        return rightColumnTaken ? topRightSymbol.ToChar() : Symbol.Space.ToChar();
+        return rightColumnTaken ? topRightSymbol : Symbol.Space;
     }
 
     private Symbol SymbolAt(Position position)

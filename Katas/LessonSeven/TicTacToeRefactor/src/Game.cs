@@ -1,7 +1,5 @@
 ﻿namespace src;
 
-using Constant;
-
 public class Game
 {
     private readonly Board board = new();
@@ -17,9 +15,9 @@ public class Game
         this.ValidateMove(symbol);
 
         this.lastSymbol = symbol;
-        
+
         // TODO: Data clump
-        this.board.AddTileAt(symbol,position);
+        this.board.AddTileAt(symbol, position);
     }
 
 
@@ -53,7 +51,7 @@ public class Game
         return this.lastSymbol == Symbol.Space;
     }
 
-    public char Winner()
+    public Symbol Winner()
     {
         return this.board.HasWinner();
     }
