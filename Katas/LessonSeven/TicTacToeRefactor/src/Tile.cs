@@ -3,14 +3,7 @@ namespace src;
 // TODO: Data Class
 public class Tile(char symbolAsChar, Position position)
 {
-    // TODO: Primitive Obsession
-   // private readonly int column = column;
-
-    // TODO: Shotgun Surgery
-    // TODO: Primitive Obsession
-    //private readonly int row = row;
-
-    public Position Position = position;
+   public Position Position = position;
     
     private Symbol symbol = symbolAsChar.ToSymbol();
 

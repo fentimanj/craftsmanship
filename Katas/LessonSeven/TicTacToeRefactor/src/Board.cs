@@ -10,13 +10,11 @@ public class Board
 
     public Board()
     {
-        for (var columnIndex = 0; columnIndex < this.numberOfColumns; columnIndex++)
+        foreach (var postition in Enum.GetValues<Position>())
         {
-            for (var rowIndex = 0; rowIndex <this. numberOfColumns; rowIndex++)
-            {
-                this.tiles.Add(new Tile(SymbolAsChar.Space, PositionMapper.Map(columnIndex, rowIndex)));
-            }
+            this.tiles.Add(new(SymbolAsChar.Space, postition));
         }
+        
     }
 
     public char HasWinner()
