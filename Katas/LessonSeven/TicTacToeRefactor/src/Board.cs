@@ -5,74 +5,65 @@ using Constant;
 public class Board
 {
     private readonly List<Tile> tiles = [];
-    private readonly int numberOfRows = 3;
-    private readonly int numberOfColumns = 3;
 
     public Board()
     {
         foreach (var postition in Enum.GetValues<Position>())
         {
-            this.tiles.Add(new(SymbolAsChar.Space, postition));
+            this.tiles.Add(new Tile(Symbol.Space, postition));
         }
-        
     }
 
     public char HasWinner()
     {
-        for (var index = Column.Left; index <= Column.Right; index++)
+        var winner = this.ColumnTaken();
+        if (winner != SymbolAsChar.Space)
         {
-            var winner = this.RowTakenBy(index);
-            if (winner != SymbolAsChar.Space)
-            {
-                return winner;
-            }
+            return winner;
         }
 
         return SymbolAsChar.Space;
     }
 
-    private char RowTakenBy(int columnIndex)
+    private char ColumnTaken()
     {
-        if (columnIndex == Column.Left)
+        var topLeftSymbol = this.SymbolAt(Position.TopLeft);
+        var middleLeftSymbol = this.SymbolAt(Position.MiddleLeft);
+        var bottomLeftSymbol = this.SymbolAt(Position.BottomLeft);
+
+        var leftColumnTaken = topLeftSymbol == middleLeftSymbol && middleLeftSymbol == bottomLeftSymbol;
+
+        if (leftColumnTaken && topLeftSymbol != Symbol.Space)
         {
-            var topLeftSymbol = this.SymbolAt(Position.TopLeft);
-            var middleLeftSymbol = this.SymbolAt(Position.MiddleLeft);
-            var bottomLeftSymbol = this.SymbolAt(Position.BottomLeft);
-
-            var rowTaken = topLeftSymbol == middleLeftSymbol && middleLeftSymbol == bottomLeftSymbol;
-
-            return rowTaken ? topLeftSymbol : SymbolAsChar.Space;
+            return topLeftSymbol.ToChar();
         }
 
-        if (columnIndex == Column.Center)
+
+        var topCenterSymbol = this.SymbolAt(Position.TopCenter);
+        var middleCenterSymbol = this.SymbolAt(Position.MiddleCenter);
+        var bottomCenterSymbol = this.SymbolAt(Position.BottomCenter);
+
+        var centreColumnTaken = topCenterSymbol == middleCenterSymbol && middleCenterSymbol == bottomCenterSymbol;
+
+        if (centreColumnTaken && topCenterSymbol != Symbol.Space)
         {
-            var topCenterSymbol = this.SymbolAt(Position.TopCenter);
-            var middleCenterSymbol = this.SymbolAt(Position.MiddleCenter);
-            var bottomCenterSymbol = this.SymbolAt(Position.BottomCenter);
-            
-            var rowTaken = topCenterSymbol == middleCenterSymbol && middleCenterSymbol == bottomCenterSymbol;
-            
-            return rowTaken ? topCenterSymbol : SymbolAsChar.Space;
+            return topCenterSymbol.ToChar();
         }
 
-        if (columnIndex == Column.Right)
-        {
-            var topRightSymbol = this.SymbolAt(Position.TopRight);
-            var middleRightSymbol = this.SymbolAt(Position.MiddleRight);
-            var bottomRightSymbol = this.SymbolAt(Position.BottomRight);
-            
-            var rowTaken = topRightSymbol == middleRightSymbol && middleRightSymbol == bottomRightSymbol;
-            
-            return rowTaken ? topRightSymbol : SymbolAsChar.Space;
-        }
 
-        return  SymbolAsChar.Space;
+        var topRightSymbol = this.SymbolAt(Position.TopRight);
+        var middleRightSymbol = this.SymbolAt(Position.MiddleRight);
+        var bottomRightSymbol = this.SymbolAt(Position.BottomRight);
+
+        var rightColumnTaken = topRightSymbol == middleRightSymbol && middleRightSymbol == bottomRightSymbol;
+
+        return rightColumnTaken ? topRightSymbol.ToChar() : Symbol.Space.ToChar();
     }
 
-    private char SymbolAt(Position position)
+    private Symbol SymbolAt(Position position)
     {
         var tile = this.tiles.Single(Tile.IsAt(position));
-        return tile.GetSymbol().ToChar();
+        return tile.GetSymbol();
     }
 
     public void AddTileAt(Symbol symbol, Position position)
@@ -89,6 +80,6 @@ public class Board
     private bool IsTileTaken(Position position)
     {
         var symbol = this.SymbolAt(position);
-        return symbol != SymbolAsChar.Space;
+        return symbol != Symbol.Space;
     }
 }

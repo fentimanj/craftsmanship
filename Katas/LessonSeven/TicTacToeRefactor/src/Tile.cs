@@ -1,11 +1,11 @@
 namespace src;
 
-// TODO: Data Class
-public class Tile(char symbolAsChar, Position position)
+// TODO: Primitive Obsession
+public class Tile(Symbol symbolAsChar, Position position)
 {
    public Position Position = position;
     
-    private Symbol symbol = symbolAsChar.ToSymbol();
+    private Symbol symbol = symbolAsChar;
 
     public Symbol GetSymbol()
     {

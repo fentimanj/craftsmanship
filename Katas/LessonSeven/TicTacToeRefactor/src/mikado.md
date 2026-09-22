@@ -51,22 +51,11 @@
                     [x] Tile needs a positions property
                         [x] We need to build a Position mapper to convert xy to position
                         [x] Create a positions enum
-    [] Tile should take in Position in ctor
-        [] Board ctor should iterate through enum values and populate 3x3 grid with space
-    
+    [x] Tile should take in Position in ctor
+        [x] Board ctor should iterate through enum values and populate 3x3 grid with space
+## Goal 7:  Remove primitive obsession from Tile
+    [x] Change ctor to Symbol
+        [x]Fix Board ctor
 
-```
-public enum Position
-{
-    TopLeft,
-    TopCenter,
-    TopRight,
-    MiddleLeft,
-    MiddleCenter,
-    MiddleRight,
-    BottomLeft,
-    BottomCenter,
-    BottomRight
-}
-```
+
 ## Goal 7:  Replace X & Y with a Coordinate class (convert Row and Column into enums)
