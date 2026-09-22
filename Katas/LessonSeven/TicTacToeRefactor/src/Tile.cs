@@ -1,16 +1,16 @@
 namespace src;
 
 // TODO: Data Class
-public class Tile(char symbolAsChar, int column, int row)
+public class Tile(char symbolAsChar, Position position)
 {
     // TODO: Primitive Obsession
-    private readonly int column = column;
+   // private readonly int column = column;
 
     // TODO: Shotgun Surgery
     // TODO: Primitive Obsession
-    private readonly int row = row;
-    
-    public Position Position = PositionMapper.Map(column, row);
+    //private readonly int row = row;
+
+    public Position Position = position;
     
     private Symbol symbol = symbolAsChar.ToSymbol();
 

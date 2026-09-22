@@ -51,6 +51,9 @@
                     [x] Tile needs a positions property
                         [x] We need to build a Position mapper to convert xy to position
                         [x] Create a positions enum
+    [] Tile should take in Position in ctor
+        [] Board ctor should iterate through enum values and populate 3x3 grid with space
+    
 
 ```
 public enum Position

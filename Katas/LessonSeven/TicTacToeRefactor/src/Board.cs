@@ -5,6 +5,8 @@ using Constant;
 public class Board
 {
     private readonly List<Tile> tiles = [];
+    private readonly int numberOfRows = 3;
+    private readonly int numberOfColumns = 3;
 
     public Board()
     {
@@ -12,7 +14,7 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                this.tiles.Add(new Tile(SymbolAsChar.Space, column, row));
+                this.tiles.Add(new Tile(SymbolAsChar.Space, PositionMapper.Map(column, row)));
             }
         }
     }
