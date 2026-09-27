@@ -6,17 +6,12 @@ public class Game
 
     private Symbol lastSymbol = Symbol.Space;
 
-    // TODO: Data clump
-    // TODO: Primitive Obsession - Part of public interface
-
     public void Play(Symbol symbol, Position position)
     {
-        // TODO : Data clump
         this.ValidateMove(symbol);
 
         this.lastSymbol = symbol;
 
-        // TODO: Data clump
         this.board.AddTileAt(symbol, position);
     }
 
