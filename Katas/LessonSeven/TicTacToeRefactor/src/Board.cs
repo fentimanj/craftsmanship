@@ -9,12 +9,9 @@ public class Board
 
     public Board()
     {
-        for (var column = Column.Left; column <= Column.Right; column++)
+        foreach (var position in Enum.GetValues<Position>())
         {
-            for (var row = Row.Top; row <= Row.Bottom; row++)
-            {
-                this.tiles.Add(new Tile (PositionExtentions.From(column, row)));
-            }
+            this.tiles.Add(new Tile(position));
         }
     }
 
