@@ -57,5 +57,3 @@
     [x] Change ctor to Symbol
         [x]Fix Board ctor
 
-
-## Goal 7:  Replace X & Y with a Coordinate class (convert Row and Column into enums)
