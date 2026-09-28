@@ -12,6 +12,11 @@ public class Game
     // TODO: Primitive Obsession
     public void Play(char symbol, int x, int y)
     {
+        this.PlayNew(symbol, x, y);
+    }
+
+    private void PlayNew(char symbol, int x, int y)
+    {
         // TODO : Data clump
         this.ValidateMove(symbol, x, y);
 
@@ -20,6 +25,7 @@ public class Game
         // TODO: Data clump
         this.board.AddTileAt(symbol, x, y);
     }
+
 
     private void ValidateMove(char symbol, int x, int y)
     {
