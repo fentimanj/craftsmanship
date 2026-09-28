@@ -50,8 +50,7 @@ public class Board
     // TODO: Data Clump
     public char SymbolAt(Position position)
     {
-        var (x,y) = position.ToCoordinate();
-        var tile = this.tiles.Single(Tile.IsAt(x, y));
+        var tile = this.tiles.Single(Tile.IsAt(position));
         return tile.Symbol;
     }
 
@@ -62,8 +61,7 @@ public class Board
         {
             throw new Exception("Invalid position");
         }
-        var (x, y) = position.ToCoordinate();   
-        var currentTile = this.tiles.Single(Tile.IsAt(x, y));
+        var currentTile = this.tiles.Single(Tile.IsAt(position));
         currentTile.Symbol = symbol;
     }
 
