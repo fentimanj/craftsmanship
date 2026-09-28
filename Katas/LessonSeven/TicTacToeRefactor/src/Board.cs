@@ -1,6 +1,7 @@
 namespace src;
 
 using Constant;
+using Enums;
 
 public class Board
 {
@@ -50,22 +51,23 @@ public class Board
     }
 
     // TODO: Data Clump
-    public void AddTileAt(char symbol, int x, int y)
+    public void AddTileAt(char symbol, Position position)
     {
-        if (this.IsTileTaken(x, y))
+        if (this.IsTileTaken(position))
         {
             throw new Exception("Invalid position");
         }
-
+        var (x, y) = position.ToCoordinate();   
         var currentTile = this.tiles.Single(Tile.IsAt(x, y));
         currentTile.Symbol = symbol;
     }
 
     // TODO: data clump
     // TODO: primitive obsession
-    private bool IsTileTaken(int x, int y)
+    private bool IsTileTaken(Position position)
     {
-        var symbol = this.SymbolAt(x, y);
+        var (x, y) = position.ToCoordinate();
+        var symbol = this.SymbolAt(x,y);
         return symbol != Symbol.Space;
     }
 }

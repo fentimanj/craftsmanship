@@ -3,7 +3,7 @@ namespace src.Enums;
 public static class PositionExtentions
 {
     private static readonly Dictionary<(int, int), Position> CoordinateToPosition =
-        new Dictionary<(int, int), Position>()
+        new()
         {
             { (0, 0), Position.TopLeft },
             { (0, 1), Position.TopCenter },
@@ -13,12 +13,16 @@ public static class PositionExtentions
             { (1, 2), Position.MiddleRight },
             { (2, 0), Position.BottomLeft },
             { (2, 1), Position.BottomCenter },
-            { (2, 2), Position.BottomRight },
-
+            { (2, 2), Position.BottomRight }
         };
-    
+
     public static Position From(int x, int y)
     {
-        return CoordinateToPosition[(y, x)];
+        return CoordinateToPosition[(x, y)];
+    }
+
+    public static (int, int) ToCoordinate(this Position position)
+    {
+        return CoordinateToPosition.First(kvp => kvp.Value == position).Key;
     }
 }

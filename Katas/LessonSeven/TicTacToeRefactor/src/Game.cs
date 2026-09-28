@@ -14,10 +14,10 @@ public class Game
     public void Play(char symbol, int x, int y)
     {
         var position = PositionExtentions.From(x, y);
-        this.PlayNew(symbol, x, y);
+        this.PlayNew(symbol, position);
     }
 
-    private void PlayNew(char symbol, int x, int y)
+    private void PlayNew(char symbol, Position position)
     {
         // TODO : Data clump
         this.ValidateMove(symbol);
@@ -25,7 +25,7 @@ public class Game
         this.lastSymbol = symbol;
 
         // TODO: Data clump
-        this.board.AddTileAt(symbol, x, y);
+        this.board.AddTileAt(symbol, position);
     }
 
 
