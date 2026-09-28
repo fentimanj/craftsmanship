@@ -20,7 +20,7 @@ public class Game
     private void PlayNew(char symbol, int x, int y)
     {
         // TODO : Data clump
-        this.ValidateMove(symbol, x, y);
+        this.ValidateMove(symbol);
 
         this.lastSymbol = symbol;
 
@@ -29,7 +29,7 @@ public class Game
     }
 
 
-    private void ValidateMove(char symbol, int x, int y)
+    private void ValidateMove(char symbol)
     {
         if (this.IsFirstMove() && IsSymbolNaught(symbol))
         {
