@@ -7,6 +7,22 @@ public class Board
 {
     private readonly List<Tile> tiles = [];
 
+    private readonly List<(Position firstPosition, Position secondPosition, Position thirdPosition)> winningLines =
+        new()
+        {
+            new ValueTuple<Position, Position, Position>(Position.TopLeft, Position.TopCenter, Position.TopRight),
+            new ValueTuple<Position, Position, Position>(Position.MiddleLeft, Position.MiddleCenter,
+                Position.MiddleRight),
+            new ValueTuple<Position, Position, Position>(Position.BottomLeft, Position.BottomCenter,
+                Position.BottomRight),
+            new ValueTuple<Position, Position, Position>(Position.TopLeft, Position.MiddleCenter, Position.BottomRight),
+            new ValueTuple<Position, Position, Position>(Position.TopRight, Position.MiddleCenter, Position.BottomLeft),
+            new ValueTuple<Position, Position, Position>(Position.TopLeft, Position.MiddleLeft, Position.BottomLeft),
+            new ValueTuple<Position, Position, Position>(Position.TopRight, Position.MiddleRight, Position.BottomRight),
+            new ValueTuple<Position, Position, Position>(Position.TopCenter, Position.MiddleCenter,
+                Position.BottomCenter)
+        };
+
     public Board()
     {
         foreach (var position in Enum.GetValues<Position>())
@@ -17,9 +33,10 @@ public class Board
 
     public char HasWinner()
     {
-        for (var index = Column.Left; index <= Column.Right; index++)
+        foreach (var winningLine in this.winningLines)
         {
-            var winner = this.LineTaken(index);
+            var winner = this.LineTaken(winningLine.firstPosition, winningLine.secondPosition,
+                winningLine.thirdPosition);
             if (winner != SymbolAsChar.Space)
             {
                 return winner;
@@ -29,26 +46,21 @@ public class Board
         return SymbolAsChar.Space;
     }
 
-    private char LineTaken(int columnIndex)
+
+    private char LineTaken(Position firstPosition, Position secondPosition, Position thirdPosition)
     {
-        var topRow = PositionExtentions.From(columnIndex, Row.Top);
-        var middleRow = PositionExtentions.From(columnIndex, Row.Middle);
-        var bottomRow = PositionExtentions.From(columnIndex, Row.Bottom);
-        
-        var topRowSymbol = this.SymbolAt(topRow);
-        var middleRowSymbol = this.SymbolAt(middleRow);
-        var bottomRowSymbol = this.SymbolAt(bottomRow);
+        var firstSymbol = this.SymbolAt(firstPosition);
+        var secondSymbol = this.SymbolAt(secondPosition);
+        var thirdSymbol = this.SymbolAt(thirdPosition);
 
-        var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
+        var columnTaken = firstSymbol == secondSymbol && secondSymbol == thirdSymbol;
 
-        return columnTaken ? topRowSymbol : SymbolAsChar.Space;
+        return columnTaken ? firstSymbol : SymbolAsChar.Space;
     }
 
-    // TODO: Data Clump
-    public char SymbolAt(Position position)
+    private char SymbolAt(Position position)
     {
-        var tile = this.tiles.Single(Tile.IsAt(position));
-        return tile.Symbol;
+        return this.tiles.Single(Tile.IsAt(position)).Symbol;
     }
 
     // TODO: Data Clump
@@ -58,6 +70,7 @@ public class Board
         {
             throw new Exception("Invalid position");
         }
+
         var currentTile = this.tiles.Single(Tile.IsAt(position));
         currentTile.Symbol = symbol;
     }
