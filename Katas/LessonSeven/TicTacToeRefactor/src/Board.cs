@@ -13,7 +13,7 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                this.tiles.Add(new Tile (column, row, PositionExtentions.From(column, row)));
+                this.tiles.Add(new Tile (PositionExtentions.From(column, row)));
             }
         }
     }
