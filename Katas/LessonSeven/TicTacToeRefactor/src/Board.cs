@@ -13,7 +13,7 @@ public class Board
         {
             for (var row = Row.Top; row <= Row.Bottom; row++)
             {
-                this.tiles.Add(new Tile { X = column, Y = row, Symbol = Symbol.Space, Position = PositionExtentions.From(column, row) });
+                this.tiles.Add(new Tile (column, row, PositionExtentions.From(column, row)));
             }
         }
     }
@@ -23,13 +23,13 @@ public class Board
         for (var index = Column.Left; index <= Column.Right; index++)
         {
             var winner = this.ColumnTakenBy(index);
-            if (winner != Symbol.Space)
+            if (winner != SymbolAsChar.Space)
             {
                 return winner;
             }
         }
 
-        return Symbol.Space;
+        return SymbolAsChar.Space;
     }
 
     private char ColumnTakenBy(int columnIndex)
@@ -44,7 +44,7 @@ public class Board
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 
-        return columnTaken ? topRowSymbol : Symbol.Space;
+        return columnTaken ? topRowSymbol : SymbolAsChar.Space;
     }
 
     // TODO: Data Clump
@@ -70,6 +70,6 @@ public class Board
     private bool IsTileTaken(Position position)
     {
         var symbol = this.SymbolAt(position);
-        return symbol != Symbol.Space;
+        return symbol != SymbolAsChar.Space;
     }
 }
