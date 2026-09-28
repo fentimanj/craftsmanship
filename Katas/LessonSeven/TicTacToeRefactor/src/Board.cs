@@ -19,7 +19,7 @@ public class Board
     {
         for (var index = Column.Left; index <= Column.Right; index++)
         {
-            var winner = this.ColumnTakenBy(index);
+            var winner = this.LineTaken(index);
             if (winner != SymbolAsChar.Space)
             {
                 return winner;
@@ -29,7 +29,7 @@ public class Board
         return SymbolAsChar.Space;
     }
 
-    private char ColumnTakenBy(int columnIndex)
+    private char LineTaken(int columnIndex)
     {
         var topRow = PositionExtentions.From(columnIndex, Row.Top);
         var middleRow = PositionExtentions.From(columnIndex, Row.Middle);

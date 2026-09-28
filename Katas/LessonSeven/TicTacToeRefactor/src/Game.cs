@@ -9,15 +9,7 @@ public class Game
 
     private char lastSymbol = SymbolAsChar.Space;
 
-    // TODO: Data clump
-    // TODO: Primitive Obsession
-    public void Play(char symbol, int x, int y)
-    {
-        var position = PositionExtentions.From(x, y);
-        this.PlayNew(symbol, position);
-    }
-
-    private void PlayNew(char symbol, Position position)
+    public void Play(char symbol, Position position)
     {
         // TODO : Data clump
         this.ValidateMove(symbol);

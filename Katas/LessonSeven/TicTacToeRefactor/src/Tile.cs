@@ -3,16 +3,11 @@ namespace src;
 using Constant;
 using Enums;
 
-// TODO: Data Class
-public class Tile
+public class Tile(Position position)
 {
-    public Tile(Position position)
-    {
-        this.position = position;
-    }
     public char Symbol { get; set; } = SymbolAsChar.Space;
     
-    private readonly Position position;
+    private readonly Position position = position;
 
     public static Func<Tile, bool> IsAt(Position position)
     {

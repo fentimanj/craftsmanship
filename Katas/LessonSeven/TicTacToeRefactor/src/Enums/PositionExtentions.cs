@@ -20,9 +20,4 @@ public static class PositionExtentions
     {
         return CoordinateToPosition[(x, y)];
     }
-
-    public static (int, int) ToCoordinate(this Position position)
-    {
-        return CoordinateToPosition.First(kvp => kvp.Value == position).Key;
-    }
 }
