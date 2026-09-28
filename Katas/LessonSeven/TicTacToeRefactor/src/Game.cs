@@ -63,5 +63,3 @@ public class Game
     }
 
 }
-
-public enum Position {}
