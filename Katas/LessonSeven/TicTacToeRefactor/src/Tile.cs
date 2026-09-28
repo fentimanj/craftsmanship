@@ -13,16 +13,16 @@ public class Tile
         this.Position = position;
     }
     // TODO: Shotgun Surgery
-    public int X { get; set; }
+    public int X { get; }
 
     // TODO: Shotgun Surgery
-    public int Y { get; set; }
+    public int Y { get; }
     public char Symbol { get; set; } = SymbolAsChar.Space;
     public Position Position { get; set; }
 
     public static Func<Tile, bool> IsAt(Position position)
     {
         var (x, y) = position.ToCoordinate();
-        return tile => tile.X == x && tile.Y == y;
+        return tile => tile.Position == position;
     }
 }
