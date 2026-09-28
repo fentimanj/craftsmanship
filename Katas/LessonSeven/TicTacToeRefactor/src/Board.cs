@@ -34,9 +34,13 @@ public class Board
 
     private char ColumnTakenBy(int columnIndex)
     {
-        var topRowSymbol = this.SymbolAt(columnIndex, Row.Top);
-        var middleRowSymbol = this.SymbolAt(columnIndex, Row.Middle);
-        var bottomRowSymbol = this.SymbolAt(columnIndex, Row.Bottom);
+        var topRow = PositionExtentions.From(columnIndex, Row.Top);
+        var middleRow = PositionExtentions.From(columnIndex, Row.Middle);
+        var bottomRow = PositionExtentions.From(columnIndex, Row.Bottom);
+        
+        var topRowSymbol = this.SymbolAt(topRow);
+        var middleRowSymbol = this.SymbolAt(middleRow);
+        var bottomRowSymbol = this.SymbolAt(bottomRow);
 
         var columnTaken = topRowSymbol == middleRowSymbol && middleRowSymbol == bottomRowSymbol;
 
@@ -44,8 +48,9 @@ public class Board
     }
 
     // TODO: Data Clump
-    public char SymbolAt(int x, int y)
+    public char SymbolAt(Position position)
     {
+        var (x,y) = position.ToCoordinate();
         var tile = this.tiles.Single(Tile.IsAt(x, y));
         return tile.Symbol;
     }
@@ -66,8 +71,7 @@ public class Board
     // TODO: primitive obsession
     private bool IsTileTaken(Position position)
     {
-        var (x, y) = position.ToCoordinate();
-        var symbol = this.SymbolAt(x,y);
+        var symbol = this.SymbolAt(position);
         return symbol != Symbol.Space;
     }
 }
