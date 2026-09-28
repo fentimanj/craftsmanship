@@ -1,3 +1,14 @@
-namespace src.Enums_;
+namespace src.Enums;
 
-public enum Position {}
+public enum Position
+{
+    TopLeft,
+    TopCenter,
+    TopRight,
+    MiddleLeft,
+    MiddleCenter,
+    MiddleRight,
+    BottomLeft,
+    BottomCenter,
+    BottomRight,
+}

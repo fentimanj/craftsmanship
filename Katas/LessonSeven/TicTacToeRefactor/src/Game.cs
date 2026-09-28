@@ -1,6 +1,7 @@
 ﻿namespace src;
 
 using Constant;
+using Enums;
 
 public class Game
 {
@@ -12,6 +13,7 @@ public class Game
     // TODO: Primitive Obsession
     public void Play(char symbol, int x, int y)
     {
+        var position = PositionExtentions.From(x, y);
         this.PlayNew(symbol, x, y);
     }
 
