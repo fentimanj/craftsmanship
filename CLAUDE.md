@@ -94,6 +94,36 @@ easier or more interesting.
 
 ## Current kata
 
+**Kata**: `Katas/LessonNine/GameOfLife2`
+
+**Objective**: implement Conway's Game of Life, test-first. John
+previously attempted a Game of Life kata (`Katas/LessonFour/GameOfLife`)
+and got lost partway through — this is a fresh attempt. Not using strict
+object calisthenics here; the goal is a fully working solution first, with
+a **Mikado Method** refactoring pass planned afterwards to clean up
+whatever smells the TDD process introduces along the way.
+
+**Coaching note specific to this kata**: John writes each test himself.
+Claude's role is to ask questions about test design (representation,
+what's being called, what's being asserted) before he writes one, and
+review it afterwards — not to write or suggest test content. This is the
+same Coaching contract as above, applied to TDD test selection rather
+than refactor-candidate selection. John confirmed (2026-09-30) that the
+guided, question-first approach from the TicTacToeRefactor sessions is
+exactly what he wants continued here.
+
+**Status**: just started, scaffold only (`new-kata` output, placeholder
+test). First candidate test under discussion: given an empty universe (no
+live cells anywhere), ticking should still produce an empty universe —
+not yet written.
+
+**Next step**: John writes that first test; review it together once it's
+down, then keep working outward test-by-test.
+
+---
+
+### Previous kata: TicTacToeRefactor — complete
+
 **Kata**: `Katas/LessonSeven/TicTacToeRefactor`
 
 **Objective**: identify and unwind code smells in a working TicTacToe
@@ -177,6 +207,18 @@ build a feel for the method before hitting a genuinely large system).
 
 **Next step**: resume the Primitive Obsession Mikado graph — see
 `MikadoNotes.md` in the kata folder for exactly where it was left off.
+
+**Completion note (2026-09-30)**: John confirmed this kata is finished.
+The remaining work recorded above (finishing the Primitive Obsession
+Mikado graph, and apparently the row/diagonal win-detection gap flagged
+in Open items below — `main` now has `WinningMoves.cs`/`Positions.cs`
+that weren't there when this section was last written) happened on
+separate branches not merged into `main`. `main`'s working tree was
+checked during this session and is red (13 failing / 5 passing, all in
+`BoardShould`) — per John, that's expected and not a concern, since the
+finished work lives elsewhere. Not independently verified beyond that;
+flagging here so a future session doesn't mistake `main`'s red suite for
+unfinished work without this context.
 
 ## Open items
 
@@ -296,3 +338,17 @@ all three staying accurate. Add a new dated entry; don't rewrite history.
   Obsession graph's live state. **Reminder for future sessions**: this
   file only travels between machines once it's committed and pushed —
   local edits alone won't be there on a different computer.
+- **2026-09-30** — John confirmed `TicTacToeRefactor` is finished; the
+  remaining work from the last recorded state (Primitive Obsession
+  Mikado, apparently row/diagonal win detection too) happened on
+  separate branches not merged into `main`, which is why `main` itself
+  is currently red — see the completion note under the kata's own
+  section above. Started `Katas/LessonNine/GameOfLife2`: a fresh,
+  from-scratch Game of Life attempt (an earlier one stalled partway
+  through in `Katas/LessonFour/GameOfLife`). Working test-first, no
+  object calisthenics constraint, with a Mikado Method cleanup pass
+  planned once a working solution exists. John confirmed the
+  guided/question-first coaching style from the TicTacToeRefactor
+  sessions worked well and should continue for this kata's TDD test
+  selection too. First candidate test identified in discussion: empty
+  universe → tick → still empty; not yet written.

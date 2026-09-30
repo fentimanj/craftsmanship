@@ -98,7 +98,7 @@ public class GameOfLifeShould
     }
     
     [Fact]
-    public void ReturnZero_WhenNumberOfCellsRequested_GivenThreeCellsInARowWithDeadCellInbetweenInSeedAndOneLifecycles()
+    public void ReturnZero_WhenNumberOfCellsRequested_GivenThreeCellsInARowWithDeadCellInBetweenInSeedAndOneLifecycles()
     {
         var cellOnePosition = new GridPosition(1);
         var cellTwoPosition = new GridPosition(2);

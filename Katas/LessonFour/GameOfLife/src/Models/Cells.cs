@@ -18,21 +18,6 @@ public sealed class Cells(List<Cell> cells)
         killList.Add(cell);
     }
 
-    private Cell? GetCellToLeft(Cell? thisCell)
-    {
-        return cells.FirstOrDefault(cell => thisCell != null && thisCell.HasCellToLeft(cell));
-    }
-
-    private Cell? GetCellToRight(Cell? cellInColumnOne)
-    {
-        return cells.FirstOrDefault(cell => cellInColumnOne != null && cellInColumnOne.HasCellToRight(cell));
-    }
-
-    private Cell? CellInColumn(int columnIndex)
-    {
-        return cells.FirstOrDefault(cell => cell.GetColumnIndex() == columnIndex);
-    }
-
     public int GetLivingCells()
     {
         return cells.Count;
