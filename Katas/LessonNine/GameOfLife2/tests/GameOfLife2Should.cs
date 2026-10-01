@@ -29,8 +29,8 @@ public class GameOfLife2Should
         var cellOne = new Cell();
         var cellTwo = new Cell();
         
-        cellOne.NeighbouringCells.Add(cellTwo);
-        cellTwo.NeighbouringCells.Add(cellOne);
+        cellOne.AddNeighbourCell(cellTwo);
+        cellTwo.AddNeighbourCell(cellOne);
         
         Cell[] seed = [cellOne, cellTwo];
         var universe = new Universe(seed);
@@ -57,8 +57,8 @@ public class CellShould
         Cell cellTwo = new Cell();
         Cell cellThree = new Cell();
         
-        cellOne.NeighbouringCells.Add(cellTwo);
-        cellOne.NeighbouringCells.Add(cellThree);
+        cellOne.AddNeighbourCell(cellTwo);
+        cellOne.AddNeighbourCell(cellThree);
         
         cellOne.GetState().Should().Be(CellState.NextGeneration);
     }
@@ -69,7 +69,7 @@ public class CellShould
         Cell cellOne = new Cell();
         Cell cellTwo = new Cell();
         
-        cellOne.NeighbouringCells.Add(cellTwo);
+        cellOne.AddNeighbourCell(cellTwo);
         
         cellOne.GetState().Should().Be(CellState.UnderPopulated);
     }
@@ -77,17 +77,31 @@ public class CellShould
     [Fact]
     public void ReturnsOverPopulated_WhenGetStateInvoked_GivenThreeNeighbouringCells()
     {
-        Cell cellOne = new Cell();
-        Cell cellTwo = new Cell();
-        Cell cellThree = new Cell();
-        Cell cellFour = new Cell();
-        Cell cellFive = new Cell();
+        var cellOne = new Cell();
+        var cellTwo = new Cell();
+        var cellThree = new Cell();
+        var cellFour = new Cell();
+        var cellFive = new Cell();
         
-        cellOne.NeighbouringCells.Add(cellTwo);
-        cellOne.NeighbouringCells.Add(cellThree);
-        cellOne.NeighbouringCells.Add(cellFour);
-        cellOne.NeighbouringCells.Add(cellFive);
+        cellOne.AddNeighbourCell(cellTwo);
+        cellOne.AddNeighbourCell(cellThree);
+        cellOne.AddNeighbourCell(cellFour);
+        cellOne.AddNeighbourCell(cellFive);
         
         cellOne.GetState().Should().Be(CellState.OverPopulated);
     }
+
+    [Fact]
+    public void ReturnsUnderPopulated_WhenGetStateInvoked_GivenTwoNeighbouringCellsAddedAndOneIsItself()
+    {
+        var cellOne = new Cell();
+        var cellTwo = new Cell();
+
+        cellOne.AddNeighbourCell(cellOne);
+        cellOne.AddNeighbourCell(cellTwo);
+
+        cellOne.GetState().Should().Be(CellState.UnderPopulated);
+    }
+
+
 }

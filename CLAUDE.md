@@ -112,13 +112,35 @@ than refactor-candidate selection. John confirmed (2026-09-30) that the
 guided, question-first approach from the TicTacToeRefactor sessions is
 exactly what he wants continued here.
 
-**Status**: just started, scaffold only (`new-kata` output, placeholder
-test). First candidate test under discussion: given an empty universe (no
-live cells anywhere), ticking should still produce an empty universe —
-not yet written.
+**Status (2026-10-01)**: past the scaffold stage, building test-first.
+Current files: `Cell` (a plain class, not yet a record — has a
+`NeighbouringCells` HashSet and `GetState()` returning
+`CellState.UnderPopulated`/`NextGeneration`/`OverPopulated` based on
+neighbour count) and `Universe` (holds a `Cell[]` seed; `LiveCells()`
+returns its length; `Tick()` currently just hard-resets to an empty
+array — not real tick logic yet, only enough to satisfy the tests
+written so far). 8 tests total: `GameOfLife2Should` covers the universe
+(empty stays empty; one live cell counted; two live cells with no real
+neighbour concept both die on tick) and `CellShould` covers
+`GetState()` directly via manually-wired `NeighbouringCells` sets (no
+position/spatial calculation exists yet — that's deliberately deferred).
 
-**Next step**: John writes that first test; review it together once it's
-down, then keep working outward test-by-test.
+**1 test is currently, deliberately, red** —
+`CellShould.ReturnsUnderPopulated_WhenGetStateInvoked_GivenTwoNeighbouringCellsAddedAndOneIsItself`
+expects `UnderPopulated` but gets `NextGeneration` (a cell that adds
+itself to its own `NeighbouringCells`). John left it broken on purpose
+as a resume breadcrumb rather than reverting it — knowingly against
+strict TDD discipline, as a deliberate choice for picking this back up
+later.
+
+**Next step** (John's own framing, 2026-10-01): either (a) introduce the
+concept of whether a `Cell` is dead or alive, or (b) tackle how a cell's
+*real* neighbours get calculated — his instinct is this should be the
+`Universe`'s job, not the `Cell`'s, since a cell shouldn't need to know
+about the rest of the universe to answer that (a responsibility question
+he flagged himself and chose to defer rather than solve perfectly right
+now). Resume by looking at the red test above and deciding between (a)
+and (b).
 
 ---
 
@@ -352,3 +374,20 @@ all three staying accurate. Add a new dated entry; don't rewrite history.
   sessions worked well and should continue for this kata's TDD test
   selection too. First candidate test identified in discussion: empty
   universe → tick → still empty; not yet written.
+- **2026-10-01** — Continued `GameOfLife2` test-by-test, guided
+  (questions only, no solutions given, per the coaching contract):
+  wrote empty-universe, one-live-cell, and two-live-cells-die tests on
+  `Universe`; recognised two-live-cells couldn't be made position-aware
+  yet without a bigger design leap, and deliberately kept it
+  position-agnostic (any 2 live cells die, since both are necessarily
+  under-populated) as a known, temporary simplification rather than
+  solving positions prematurely. Started building neighbour-detection
+  as its own isolated concept on `Cell` (`NeighbouringCells` +
+  `GetState()`), hand-wiring neighbour sets in tests rather than
+  deriving them from position — spotted and explicitly parked a real
+  design question along the way (a `Cell` shouldn't need to know about
+  the rest of the universe to find its neighbours; that's the
+  `Universe`'s job) in favour of "get it working first." Session ended
+  with 7 green / 1 deliberately red test (self-as-neighbour case) left
+  as a resume breadcrumb. See the Current-kata section above for the
+  exact next-step framing in John's own words.
