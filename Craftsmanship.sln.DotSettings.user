@@ -12,6 +12,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=20db40f0_002Da420_002D4d87_002Dacfb_002Dba0ba4d30634/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GameOfLife2Should" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::C49977A1-543D-46FD-8780-9A28F90332BD::net10.0::tests.GameOfLife2Should&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::C49977A1-543D-46FD-8780-9A28F90332BD::net10.0::tests.CellShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2e746597_002Df20f_002D46f4_002Dbb50_002Db4decf50028a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GameShould #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
