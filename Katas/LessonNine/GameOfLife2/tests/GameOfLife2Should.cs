@@ -1,7 +1,7 @@
 namespace tests;
 
-using System.Runtime.InteropServices.JavaScript;
 using FluentAssertions;
+using src.Models;
 
 public class GameOfLife2Should
 {
@@ -9,7 +9,7 @@ public class GameOfLife2Should
     public void ReturnZero_WhenLiveCellsInokved_GivenEmptyUniverseAndNoTick()
     {
         Cell[] seed = [];
-        Universe universe = new Universe(seed);
+        var universe = new Universe(seed);
         
         universe.LiveCells().Should().Be(0);
     }
@@ -18,20 +18,8 @@ public class GameOfLife2Should
     public void ReturnOne_WhenLiveCellsInokved_GivenOneLiveSellInUniverseAnNoTick()
     {
         Cell[] seed = [new()];
-        Universe universe = new Universe(seed);
+        var universe = new Universe(seed);
 
         universe.LiveCells().Should().Be(1);
-    }
-}
-
-public class Cell
-{
-}
-
-public class Universe(Cell[] seed)
-{
-    public int LiveCells()
-    {
-        return seed.Length;
     }
 }
