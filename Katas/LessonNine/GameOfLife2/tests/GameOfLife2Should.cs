@@ -6,24 +6,32 @@ using FluentAssertions;
 public class GameOfLife2Should
 {
     [Fact]
-    public void ReturnEmptyUniverse_WhenTick_GivenEmptyUniverse()
+    public void ReturnZero_WhenLiveCellsInokved_GivenEmptyUniverseAndNoTick()
     {
-        object[] seed = [];
+        Cell[] seed = [];
         Universe universe = new Universe(seed);
         
         universe.LiveCells().Should().Be(0);
     }
+
+    [Fact]
+    public void ReturnOne_WhenLiveCellsInokved_GivenOneLiveSellInUniverseAnNoTick()
+    {
+        Cell[] seed = [new()];
+        Universe universe = new Universe(seed);
+
+        universe.LiveCells().Should().Be(1);
+    }
 }
 
-public class Universe
+public class Cell
 {
-    public Universe(object[] seed)
-    {
-       
-    }
+}
 
+public class Universe(Cell[] seed)
+{
     public int LiveCells()
     {
-        return 0;
+        return seed.Length;
     }
 }
