@@ -2,14 +2,21 @@ namespace src.Models;
 
 public class Universe
 {
-    public Universe(Cell[] seed)
+    public Universe(Cell[] seedingCells)
     {
-        this.seed = seed;
+        this.cells = BuildUniverse(seedingCells);
+    }
 
-        foreach (var cell in seed)
+    private static Cell[] BuildUniverse(Cell[] cells)
+    {
+        var builtCells = cells.Where(cell => cell.GetState() != CellState.Dead).ToList();
+
+        foreach (var cell in builtCells)
         {
+            cell.ResetNeighbours();
+            
             var otherCells = new List<Cell>();
-            foreach (var otherSeed in seed)
+            foreach (var otherSeed in cells)
             {
                 if (!Equals(cell, otherSeed))
                 {
@@ -24,17 +31,37 @@ public class Universe
                     cell.AddNeighbourCell(otherCell);
                 }
             }
+
+            if (cell.GetState() != CellState.NextGeneration)
+            {
+                cell.KillCell();
+            }
         }
+
+        return builtCells.ToArray();
     }
-    private Cell[] seed;
+
+    private Cell[] cells;
 
     public int LiveCells()
     {
-        return this.seed.Length;
+        return this.cells.Length;
     }
 
     public void Tick()
     {
-        this.seed = [];
+        var newCells = new List<Cell>();
+        
+        var rebuiltCells = BuildUniverse(this.cells.ToArray());
+        
+        foreach (var cell in rebuiltCells)
+        {
+            if (cell.GetState() == CellState.NextGeneration)
+            {
+                newCells.Add(cell);
+            }
+        }
+        
+        this.cells = newCells.ToArray();
     }
 }

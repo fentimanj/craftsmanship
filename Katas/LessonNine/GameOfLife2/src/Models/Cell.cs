@@ -28,6 +28,11 @@ public class Cell
     
     public CellState GetState()
     {
+        if (IsDead)
+        {
+            return CellState.Dead;
+        }
+        
         if (NeighbouringCells.Count < 2)
         {
             return CellState.UnderPopulated;
@@ -56,12 +61,16 @@ public class Cell
 
         return true;
     }
-}
 
-public enum CellState
-{ 
-    Unknown = 0,
-    UnderPopulated = 1,
-    NextGeneration = 2,
-    OverPopulated
+    public void KillCell()
+    {
+        this.IsDead = true;
+    }
+
+    private bool IsDead { get; set; }
+
+    public void ResetNeighbours()
+    {
+        this.NeighbouringCells = [];
+    }
 }
