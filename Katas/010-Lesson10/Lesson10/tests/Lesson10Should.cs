@@ -30,4 +30,17 @@ public class Lesson10Should
         var expectedPosition = new Position(0, 1, Direction.North);
         finalPosition.Should().Be(expectedPosition);
     }
+
+    [Fact]
+    public void ReturnPositionEast_GivenOneTurnRight_WhenCheckingCurrentPosition()
+    {
+        var startingPosition = new Position(0, 0, Direction.North);
+        var rover = new Rover(startingPosition);
+        
+        rover.TakeInstruction(Command.TurnRight);
+        
+        var finalPosition = rover.CurrentPosition();
+        var expectedPosition = new Position(0, 0, Direction.East);
+        finalPosition.Should().Be(expectedPosition);
+    }
 }

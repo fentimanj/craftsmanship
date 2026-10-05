@@ -2,5 +2,6 @@ namespace src.Enums;
 
 public enum Command
 {
-    Move
+    Move,
+    TurnRight
 }

@@ -18,6 +18,12 @@ public class Rover
 
     public void TakeInstruction(Command move)
     {
+        if (move == Command.TurnRight)
+        {
+            this.currentPosition.TurnRight();
+            return;
+        }
+        
         this.currentPosition.Move();
     }
 }

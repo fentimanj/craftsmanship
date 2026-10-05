@@ -6,7 +6,7 @@ public struct Position(int x, int y, Direction direction)
 {
     private int x = x;
     private int y = y;
-    private readonly Direction direction = direction;
+    private Direction direction = direction;
 
     public void Move()
     {
@@ -16,5 +16,10 @@ public struct Position(int x, int y, Direction direction)
     public override string ToString()
     {
         return $"{this.x}:{this.y}:{this.direction}";
+    }
+
+    public void TurnRight()
+    {
+        this.direction = Direction.East;
     }
 }
