@@ -1,48 +1,29 @@
 namespace tests;
 
-using System.Data;
 using FluentAssertions;
 using src.Enums;
 using src.Models;
 
 public class Lesson10Should
 {
-    [Fact]
-    public void ReturnSameStaringPosition_GivenNoMoves()
+    public static TheoryData<Command[], Position> RoverMoveData =>
+        new()
+        {
+            { [], new Position(0, 0, Direction.North) },
+            { [Command.Move], new Position(0, 1, Direction.North) },
+            { [Command.TurnRight], new Position(0, 0, Direction.East) }
+        };
+
+    [Theory]
+    [MemberData(nameof(RoverMoveData))]
+    public void ReturnPosition_GivenMoves_WhenCheckingCurrentPosition(Command[] moves, Position expectedPosition)
     {
         var startingPosition = new Position(0, 0, Direction.North);
         var rover = new Rover(startingPosition);
 
-        rover.TakeInstruction([]);
-        
-        var finalPosition = rover.CurrentPosition();
-        var expectedPosition = new Position(0, 0, Direction.North);
-        finalPosition.Should().Be(expectedPosition);
-    }
+        rover.TakeInstruction(moves);
 
-    [Fact]
-    public void ReturnOnePositionNorth_GivenOneMoveNorth_WhenCheckingCurrentPosition()
-    {
-        var startingPosition = new Position(0, 0, Direction.North);
-        var rover = new Rover(startingPosition);
-
-        rover.TakeInstruction([Command.Move]);
-        
         var finalPosition = rover.CurrentPosition();
-        var expectedPosition = new Position(0, 1, Direction.North);
-        finalPosition.Should().Be(expectedPosition);
-    }
-
-    [Fact]
-    public void ReturnPositionEast_GivenOneTurnRight_WhenCheckingCurrentPosition()
-    {
-        var startingPosition = new Position(0, 0, Direction.North);
-        var rover = new Rover(startingPosition);
-        
-        rover.TakeInstruction([Command.TurnRight]);
-        
-        var finalPosition = rover.CurrentPosition();
-        var expectedPosition = new Position(0, 0, Direction.East);
         finalPosition.Should().Be(expectedPosition);
     }
 }
