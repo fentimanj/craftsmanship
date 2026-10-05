@@ -20,4 +20,6 @@ public static class CellExtensions
         if (cellToLeft != null && cellToRight != null) return true;
         return false;
     }
+
+    
 }

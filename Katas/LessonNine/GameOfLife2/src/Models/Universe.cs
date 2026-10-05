@@ -1,47 +1,26 @@
 namespace src.Models;
 
-public class Universe
+public class Universe(Cell[] seedingCells)
 {
-    public Universe(Cell[] seedingCells)
-    {
-        this.cells = BuildUniverse(seedingCells);
-    }
-
     private static Cell[] BuildUniverse(Cell[] cells)
     {
-        var builtCells = cells.Where(cell => cell.GetState() != CellState.Dead).ToList();
+        var livingCells = cells.Where(cell => cell.GetState() != CellState.Dead).ToList();
 
-        foreach (var cell in builtCells)
+        foreach (var cell in livingCells)
         {
             cell.ResetNeighbours();
             
-            var otherCells = new List<Cell>();
-            foreach (var otherSeed in cells)
-            {
-                if (!Equals(cell, otherSeed))
-                {
-                    otherCells.Add(otherSeed);
-                }
-            }
+            var otherCells = cell.BuildOtherCells(cells);
 
-            foreach (var otherCell in otherCells)
-            {
-                if (cell.IsNeighbourOf(otherCell))
-                {
-                    cell.AddNeighbourCell(otherCell);
-                }
-            }
+            cell.BuildNeighbours(otherCells);
 
-            if (cell.GetState() != CellState.NextGeneration)
-            {
-                cell.KillCell();
-            }
+            cell.KillIfUnderpopulated();
         }
 
-        return builtCells.ToArray();
+        return livingCells.ToArray();
     }
-
-    private Cell[] cells;
+    
+    private Cell[] cells = BuildUniverse(seedingCells);
 
     public int LiveCells()
     {
@@ -50,18 +29,8 @@ public class Universe
 
     public void Tick()
     {
-        var newCells = new List<Cell>();
-        
         var rebuiltCells = BuildUniverse(this.cells.ToArray());
-        
-        foreach (var cell in rebuiltCells)
-        {
-            if (cell.GetState() == CellState.NextGeneration)
-            {
-                newCells.Add(cell);
-            }
-        }
-        
-        this.cells = newCells.ToArray();
+
+        this.cells = rebuiltCells.Where(cell => cell.GetState() == CellState.NextGeneration).ToArray();
     }
 }
