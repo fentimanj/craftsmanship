@@ -18,6 +18,6 @@ public class Rover
 
     public void TakeInstruction(Command move)
     {
-        this.currentPosition.MoveNorth();
+        this.currentPosition.Move();
     }
 }

@@ -8,7 +8,7 @@ public struct Position(int x, int y, Direction direction)
     private int y = y;
     private readonly Direction direction = direction;
 
-    public void MoveNorth()
+    public void Move()
     {
         this.y++;
     }
