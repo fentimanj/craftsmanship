@@ -12,6 +12,8 @@ public class Lesson10Should
     {
         var startingPosition = new Position(0, 0, Direction.North);
         var rover = new Rover(startingPosition);
+
+        rover.TakeInstruction([]);
         
         var finalPosition = rover.CurrentPosition();
         var expectedPosition = new Position(0, 0, Direction.North);
@@ -24,7 +26,7 @@ public class Lesson10Should
         var startingPosition = new Position(0, 0, Direction.North);
         var rover = new Rover(startingPosition);
 
-        rover.TakeInstruction(Command.Move);
+        rover.TakeInstruction([Command.Move]);
         
         var finalPosition = rover.CurrentPosition();
         var expectedPosition = new Position(0, 1, Direction.North);
@@ -37,7 +39,7 @@ public class Lesson10Should
         var startingPosition = new Position(0, 0, Direction.North);
         var rover = new Rover(startingPosition);
         
-        rover.TakeInstruction(Command.TurnRight);
+        rover.TakeInstruction([Command.TurnRight]);
         
         var finalPosition = rover.CurrentPosition();
         var expectedPosition = new Position(0, 0, Direction.East);

@@ -13,13 +13,13 @@ public struct Position(int x, int y, Direction direction)
         this.y++;
     }
 
-    public override string ToString()
-    {
-        return $"{this.x}:{this.y}:{this.direction}";
-    }
-
     public void TurnRight()
     {
         this.direction = Direction.East;
+    }
+
+    public override string ToString()
+    {
+        return $"{this.x}:{this.y}:{this.direction}";
     }
 }

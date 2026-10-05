@@ -16,9 +16,14 @@ public class Rover
         return this.currentPosition;
     }
 
-    public void TakeInstruction(Command move)
+    public void TakeInstruction(Command[] moves)
     {
-        if (move == Command.TurnRight)
+        if(moves.Length == 0)
+        {
+            return;
+        }
+        
+        if (moves[0] == Command.TurnRight)
         {
             this.currentPosition.TurnRight();
             return;
