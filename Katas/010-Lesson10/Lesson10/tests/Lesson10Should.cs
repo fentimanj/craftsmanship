@@ -7,12 +7,13 @@ using src.Models;
 public class Lesson10Should
 {
     [Fact]
-    public void Return_When_Given()
+    public void ReturnSameStaringPosition_GivenNoMoves()
     {
         var startingPosition = new Position(0, 0, Direction.North);
-        Rover rover = new Rover(startingPosition );
+        Rover rover = new Rover(startingPosition);
         
         var finalPosition = rover.CurrentPosition();
-        finalPosition.Should().Be(startingPosition);
+        var expectedPosition = new Position(0, 0, Direction.North);
+        finalPosition.Should().Be(expectedPosition);
     }
 }
