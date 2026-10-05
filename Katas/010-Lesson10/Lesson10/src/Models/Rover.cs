@@ -1,8 +1,10 @@
 namespace src.Models;
 
+using Enums;
+
 public class Rover
 {
-    private readonly Position currentPosition;
+    private Position currentPosition;
 
     public Rover(Position startingPosition)
     {
@@ -12,5 +14,10 @@ public class Rover
     public Position CurrentPosition()
     {
         return this.currentPosition;
+    }
+
+    public void TakeInstruction(Command move)
+    {
+        this.currentPosition.MoveNorth();
     }
 }
