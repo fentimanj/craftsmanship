@@ -10,24 +10,21 @@ public struct Position(int x, int y, Direction direction)
 
     public void Move()
     {
-        if (this.direction == Direction.East)
+        switch (this.direction)
         {
-            this.x++;
-            return;
+            case Direction.East:
+                this.x++;
+                break;
+            case Direction.South:
+                this.y--;
+                break;
+            case Direction.West:
+                this.x--;
+                break;
+            case Direction.North:
+                this.y++;
+                break;
         }
-
-        if (this.direction == Direction.South)
-        {
-            this.y--;
-            return;
-        }
-
-        if (this.direction == Direction.West)
-        {
-            this.x--;
-            return;
-        }
-        this.y++;
     }
 
     public void TurnRight()
