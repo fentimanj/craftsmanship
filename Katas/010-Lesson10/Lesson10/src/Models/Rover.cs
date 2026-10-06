@@ -2,14 +2,9 @@ namespace src.Models;
 
 using Enums;
 
-public class Rover
+public class Rover(Position startingPosition)
 {
-    private Position currentPosition;
-
-    public Rover(Position startingPosition)
-    {
-        this.currentPosition = startingPosition;
-    }
+    private Position currentPosition = startingPosition;
 
     public Position CurrentPosition()
     {
@@ -37,8 +32,6 @@ public class Rover
             case Command.Move:
                 this.currentPosition.Move();
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
     }
 }

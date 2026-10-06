@@ -16,11 +16,13 @@ public class RoverShould
             { [Command.TurnRight, Command.TurnRight, Command.TurnRight, Command.TurnRight], new Position(0, 0, Direction.North) },
             { [Command.TurnLeft],  new Position(0, 0, Direction.West) },
             { [Command.TurnLeft, Command.TurnLeft],  new Position(0, 0, Direction.South) },
+            { [Command.TurnRight, Command.Move],  new Position(1, 0, Direction.East) },
+            { [Command.TurnRight, Command.TurnRight, Command.Move],  new Position(0, -1, Direction.South) },
         };
 
     [Theory]
     [MemberData(nameof(RoverMoveData))]
-    public void ReturnPosition_GivenMoves_WhenCheckingCurrentPosition(Command[] moves, Position expectedPosition)
+    public void ReturnCorrectPosition_GivenMoves_WhenCheckingCurrentPosition(Command[] moves, Position expectedPosition)
     {
         var startingPosition = new Position(0, 0, Direction.North);
         var rover = new Rover(startingPosition);
