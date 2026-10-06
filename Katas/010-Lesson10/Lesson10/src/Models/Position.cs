@@ -27,4 +27,15 @@ public struct Position(int x, int y, Direction direction)
     {
         return $"{this.x}:{this.y}:{this.direction}";
     }
+
+    public void TurnLeft()
+    {
+        if (this.direction == Direction.North)
+        {
+            this.direction = Direction.West;
+            return;
+        }
+        
+        this.direction--;
+    }
 }

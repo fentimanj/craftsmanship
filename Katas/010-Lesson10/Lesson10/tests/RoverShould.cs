@@ -14,6 +14,8 @@ public class RoverShould
             { [Command.TurnRight], new Position(0, 0, Direction.East) },
             { [Command.TurnRight, Command.TurnRight], new Position(0, 0, Direction.South) },
             { [Command.TurnRight, Command.TurnRight, Command.TurnRight, Command.TurnRight], new Position(0, 0, Direction.North) },
+            { [Command.TurnLeft],  new Position(0, 0, Direction.West) },
+            { [Command.TurnLeft, Command.TurnLeft],  new Position(0, 0, Direction.South) },
         };
 
     [Theory]
