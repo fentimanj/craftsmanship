@@ -21,6 +21,12 @@ public struct Position(int x, int y, Direction direction)
             this.y--;
             return;
         }
+
+        if (this.direction == Direction.West)
+        {
+            this.x--;
+            return;
+        }
         this.y++;
     }
 
