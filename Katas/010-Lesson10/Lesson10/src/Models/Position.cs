@@ -34,14 +34,10 @@ public struct Position(int x, int y, Direction direction)
             this.direction = Direction.North;
             return;
         }
+
         this.direction++;
     }
-
-    public override string ToString()
-    {
-        return $"{this.x}:{this.y}:{this.direction}";
-    }
-
+    
     public void TurnLeft()
     {
         if (this.direction == Direction.North)
@@ -49,7 +45,12 @@ public struct Position(int x, int y, Direction direction)
             this.direction = Direction.West;
             return;
         }
-        
+
         this.direction--;
+    }
+
+    public override string ToString()
+    {
+        return $"{this.x}:{this.y}:{this.direction}";
     }
 }
