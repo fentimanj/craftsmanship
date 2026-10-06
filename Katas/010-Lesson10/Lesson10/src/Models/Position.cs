@@ -53,4 +53,9 @@ public struct Position(int x, int y, Direction direction)
     {
         return $"{this.x}:{this.y}:{this.direction}";
     }
+
+    public bool WithinRange(int width, int height)
+    {
+        return this.x > width || this.y > height;
+    }
 }

@@ -1,6 +1,3 @@
----
-![](../../kata.png)
-
 ## Mars Rover
 
 Research suggests that the original version of this problem was part of the Thoughtworks interview loop as far back as

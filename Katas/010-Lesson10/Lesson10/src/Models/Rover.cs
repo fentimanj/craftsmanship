@@ -2,7 +2,7 @@ namespace src.Models;
 
 using Enums;
 
-public class Rover(Position startingPosition)
+public class Rover(Position startingPosition, Map? map = null)
 {
     private Position currentPosition = startingPosition;
 
@@ -30,7 +30,13 @@ public class Rover(Position startingPosition)
                 this.currentPosition.TurnLeft();
                 break;
             case Command.Move:
+                var previousPosition = this.currentPosition;
                 this.currentPosition.Move();
+                if (map == null) break;
+                if (map.PositionOutRange(this.currentPosition))
+                {
+                    this.currentPosition = previousPosition;
+                }
                 break;
         }
     }
