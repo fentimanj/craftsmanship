@@ -30,14 +30,25 @@ public class Rover(Position startingPosition, Map? map = null)
                 this.currentPosition.TurnLeft();
                 break;
             case Command.Move:
-                var previousPosition = this.currentPosition;
-                this.currentPosition.Move();
-                if (map == null) break;
-                if (map.PositionOutRange(this.currentPosition))
-                {
-                    this.currentPosition = previousPosition;
-                }
+                this.ProcessMove();
                 break;
+        }
+    }
+
+    private void ProcessMove()
+    {
+        var stagedPosition = this.currentPosition;
+        
+        this.currentPosition.Move();
+        
+        if (map == null)
+        {
+            return;
+        }
+
+        if (map.PositionOutRange(this.currentPosition))
+        {
+            this.currentPosition = stagedPosition;
         }
     }
 }
