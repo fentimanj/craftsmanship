@@ -21,7 +21,7 @@ public class RomanNumbersServiceShould
         var romanNumbersService = new RomanNumbersService();
 
         var actualRomanNumeral = romanNumbersService.Convert(inputNumber);
-        
+
         actualRomanNumeral.Should().Be(expectedRomanNumeral);
     }
 }

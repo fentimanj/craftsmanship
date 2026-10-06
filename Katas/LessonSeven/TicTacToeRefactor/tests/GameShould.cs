@@ -154,8 +154,8 @@ public class GameShould
         var winner = this.game.Winner();
 
         Assert.Equal('X', winner);
-    } 
-    
+    }
+
     [Fact]
     public void DeclarePlayerXAsAWinnerIfThreeInMiddleRow()
     {
@@ -168,8 +168,8 @@ public class GameShould
         var winner = this.game.Winner();
 
         Assert.Equal('X', winner);
-    } 
-    
+    }
+
     [Fact]
     public void DeclarePlayerXAsAWinnerIfThreeInBottomRow()
     {
@@ -183,7 +183,7 @@ public class GameShould
 
         Assert.Equal('X', winner);
     }
-    
+
     [Fact]
     public void DeclarePlayerXAsAWinnerIfThreeInDiagTopLeftDown()
     {
@@ -197,7 +197,7 @@ public class GameShould
 
         Assert.Equal('X', winner);
     }
-    
+
     [Fact]
     public void DeclarePlayerXAsAWinnerIfThreeInDiagTopRightDown()
     {

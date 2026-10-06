@@ -81,7 +81,7 @@ public class WinningMoves
     public Symbol CheckForWinningSymbol(List<Tile> tiles)
     {
         var winningSymbol = Symbol.Space;
-        
+
         foreach (var winningMove in this.winningMoves)
         {
             winningSymbol = this.GetPossibleWinningSymbol(tiles, winningMove);
@@ -92,8 +92,8 @@ public class WinningMoves
 
     private Symbol GetPossibleWinningSymbol(List<Tile> tiles, List<Position> winningMove)
     {
-        var winningSymbol = Symbol.Space; 
-        
+        var winningSymbol = Symbol.Space;
+
         if (winningMove.All(col => this.SymbolAt(col, tiles) == Symbol.X))
         {
             winningSymbol = Symbol.X;

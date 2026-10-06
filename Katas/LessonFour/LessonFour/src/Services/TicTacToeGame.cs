@@ -6,9 +6,9 @@ using Records;
 
 public class TicTacToeGame
 {
-    private bool isXSymbolNext = true;
     private readonly Board board = new();
-    
+    private bool isXSymbolNext = true;
+
     public Symbol NextSymbolIs()
     {
         return this.isXSymbolNext ? Symbol.X : Symbol.O;
@@ -22,7 +22,7 @@ public class TicTacToeGame
         {
             return;
         }
-        
+
         this.board.AddMove(lastestMove);
 
         this.isXSymbolNext = !this.isXSymbolNext;

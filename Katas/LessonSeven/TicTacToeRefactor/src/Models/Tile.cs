@@ -18,14 +18,12 @@ public class Tile(Symbol symbol, Position position)
         {
             throw new Exception("Invalid position");
         }
-        
+
         this.symbol = newSymbol;
-        
     }
+
     public static Func<Tile, bool> IsAt(Position position)
     {
         return tile => tile.position.Column == position.Column && tile.position.Row == position.Row;
     }
-    
-    
 }

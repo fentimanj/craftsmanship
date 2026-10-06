@@ -2,6 +2,8 @@ namespace src.Models;
 
 public class Universe(Cell[] seedingCells)
 {
+    private Cell[] cells = BuildUniverse(seedingCells);
+
     private static Cell[] BuildUniverse(Cell[] cells)
     {
         var livingCells = cells.Where(cell => cell.GetState() != CellState.Dead).ToList();
@@ -9,7 +11,7 @@ public class Universe(Cell[] seedingCells)
         foreach (var cell in livingCells)
         {
             cell.ResetNeighbours();
-            
+
             var otherCells = cell.BuildOtherCells(cells);
 
             cell.BuildNeighbours(otherCells);
@@ -19,8 +21,6 @@ public class Universe(Cell[] seedingCells)
 
         return livingCells.ToArray();
     }
-    
-    private Cell[] cells = BuildUniverse(seedingCells);
 
     public int LiveCells()
     {

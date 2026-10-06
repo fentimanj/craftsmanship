@@ -10,13 +10,22 @@ public static class StringCalculatorService
 
     public static int Add(this string inputString)
     {
-        if (inputString.Contains(",\n")) throw new InvalidExpressionException();
+        if (inputString.Contains(",\n"))
+        {
+            throw new InvalidExpressionException();
+        }
 
-        if (string.IsNullOrEmpty(inputString)) return 0;
+        if (string.IsNullOrEmpty(inputString))
+        {
+            return 0;
+        }
 
         var deliminator = ",";
 
-        if (inputString.Contains(DeliminatorPrefix)) deliminator = inputString.ExtractDeliminator();
+        if (inputString.Contains(DeliminatorPrefix))
+        {
+            deliminator = inputString.ExtractDeliminator();
+        }
 
         var digits = inputString
             .RemoveDeliminatorIdentifiers(deliminator)
@@ -25,7 +34,10 @@ public static class StringCalculatorService
 
         var sumOfDigits = 0;
 
-        foreach (var digit in digits) sumOfDigits += digit.ToPositiveInt();
+        foreach (var digit in digits)
+        {
+            sumOfDigits += digit.ToPositiveInt();
+        }
 
         return sumOfDigits;
     }

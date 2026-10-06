@@ -4,7 +4,7 @@ using Enums;
 
 public struct Position(int x, int y, Direction direction)
 {
-    private int x = x;
+    private readonly int x = x;
     private int y = y;
     private Direction direction = direction;
 
@@ -15,7 +15,12 @@ public struct Position(int x, int y, Direction direction)
 
     public void TurnRight()
     {
-        this.direction = Direction.East;
+        if (this.direction == Direction.West)
+        {
+            this.direction = Direction.North;
+            return;
+        }
+        this.direction++;
     }
 
     public override string ToString()

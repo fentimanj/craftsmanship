@@ -2,7 +2,7 @@ namespace src.Services;
 
 public class RomanNumbersService
 {
-    private readonly Dictionary<int, string> arabicToRoman = new Dictionary<int, string>
+    private readonly Dictionary<int, string> arabicToRoman = new()
     {
         { 1, "I" },
         { 4, "IV" },
@@ -21,11 +21,11 @@ public class RomanNumbersService
             {
                 continue;
             }
-            
-            output += this.arabicToRoman[arabic] + Convert(inputNumber - arabic);
+
+            output += this.arabicToRoman[arabic] + this.Convert(inputNumber - arabic);
             return output;
         }
-        
+
         return output;
     }
 }

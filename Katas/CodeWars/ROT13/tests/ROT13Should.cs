@@ -62,8 +62,8 @@ public static class Kata
         if (input.Length == 1)
         {
             var firstChar = input[0];
-            
-            if(char.IsNumber(firstChar) || !char.IsLetter(firstChar))
+
+            if (char.IsNumber(firstChar) || !char.IsLetter(firstChar))
             {
                 return firstChar.ToString();
             }

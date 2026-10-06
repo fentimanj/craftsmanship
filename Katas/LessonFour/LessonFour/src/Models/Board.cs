@@ -62,7 +62,7 @@ public class Board : IBoard
 
         return "Unknown";
     }
-    
+
     private bool SymbolHasDiagonalTopLeftToBottomRight(Symbol symbol)
     {
         var topLeft =

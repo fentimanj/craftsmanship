@@ -17,12 +17,12 @@ internal static class StringArrayExtensions
             {
                 const int firstBall = 1;
                 const char spare = '/';
-                
+
                 return scoreCard[firstBall] == spare
                     ? new BowlingSet(10, 0)
                     : new BowlingSet(int.Parse($"{scoreCard[0]}"), int.Parse($"{scoreCard[1]}"));
             });
-        
+
         return singleBallScoreCards.Concat(twoBallScoreCards);
     }
 

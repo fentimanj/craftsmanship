@@ -1,6 +1,6 @@
 namespace src.Enums;
 
-public enum Position 
+public enum Position
 {
     TopRowLeftColumn,
     MiddleRowLeftColumn,

@@ -13,5 +13,5 @@ public static class SymbolExtensions
             Symbol.X => SymbolAsChar.X,
             _ => SymbolAsChar.Space
         };
-    } 
+    }
 }

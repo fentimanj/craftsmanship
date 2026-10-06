@@ -32,8 +32,8 @@ public class BoardShould
         var winner = board.HasWinner();
 
         winner.Should().Be(Symbol.O);
-    } 
-    
+    }
+
     [Fact]
     public void ReturnO_WhenHasWinnerInvoked_GivenCenterColumnIsTakenByO()
     {

@@ -15,7 +15,7 @@ public class Position
     {
         { RowAsInt.Top, Row.Top },
         { RowAsInt.Middle, Row.Middle },
-        { RowAsInt.Bottom, Row.Bottom },
+        { RowAsInt.Bottom, Row.Bottom }
     };
 
     public Position(Column column, Row row)
@@ -28,7 +28,8 @@ public class Position
     {
         this.Column = this.intToColumn[columnAsInt];
         ;
-        this.Row = this.intToRow[rowAsInt];;
+        this.Row = this.intToRow[rowAsInt];
+        ;
     }
 
     public Column Column { get; }

@@ -6,14 +6,23 @@ public sealed class Cells(List<Cell> cells)
     {
         var killList = new List<Cell>();
 
-        foreach (var cell in cells) AddDeadCellsToKillList(cell, killList);
+        foreach (var cell in cells)
+        {
+            this.AddDeadCellsToKillList(cell, killList);
+        }
 
-        foreach (var cell in killList) cells.Remove(cell);
+        foreach (var cell in killList)
+        {
+            cells.Remove(cell);
+        }
     }
 
     private void AddDeadCellsToKillList(Cell cell, List<Cell> killList)
     {
-        if (cell.HasNeighbour(cells)) return;
+        if (cell.HasNeighbour(cells))
+        {
+            return;
+        }
 
         killList.Add(cell);
     }

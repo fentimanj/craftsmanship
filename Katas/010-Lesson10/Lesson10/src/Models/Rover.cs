@@ -18,17 +18,24 @@ public class Rover
 
     public void TakeInstruction(Command[] moves)
     {
-        if(moves.Length == 0)
+        if (moves.Length == 0)
         {
             return;
         }
-        
-        if (moves[0] == Command.TurnRight)
+
+        foreach (var command in moves)
         {
-            this.currentPosition.TurnRight();
-            return;
+            switch (command)
+            {
+                case Command.TurnRight:
+                    this.currentPosition.TurnRight();
+                    break;
+                case Command.Move:
+                    this.currentPosition.Move();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
-        
-        this.currentPosition.Move();
     }
 }

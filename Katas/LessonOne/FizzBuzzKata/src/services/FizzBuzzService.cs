@@ -9,11 +9,20 @@ public class FizzBuzzService
     {
         var convertedNumber = string.Empty;
 
-        if (number.IsDivisibleBy(3)) convertedNumber += Fizz;
+        if (number.IsDivisibleBy(3))
+        {
+            convertedNumber += Fizz;
+        }
 
-        if (number.IsDivisibleBy(5)) convertedNumber += Buzz;
+        if (number.IsDivisibleBy(5))
+        {
+            convertedNumber += Buzz;
+        }
 
-        if (string.IsNullOrEmpty(convertedNumber)) convertedNumber = number.ToString();
+        if (string.IsNullOrEmpty(convertedNumber))
+        {
+            convertedNumber = number.ToString();
+        }
 
         return convertedNumber;
     }

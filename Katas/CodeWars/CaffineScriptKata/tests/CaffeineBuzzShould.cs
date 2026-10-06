@@ -9,7 +9,7 @@ public class CaffeineBuzzShould
     public void ReturnMochaMissing_WhenInvoked_GivenIntergerOfOne()
     {
         var result = Kata.CaffeineBuzz(1);
-        
+
         result.Should().Be("mocha_missing!");
     }
 
@@ -30,7 +30,7 @@ public class CaffeineBuzzShould
 
         result.Should().Be("CoffeeScript");
     }
-    
+
     [Theory]
     [InlineData(6)]
     [InlineData(18)]

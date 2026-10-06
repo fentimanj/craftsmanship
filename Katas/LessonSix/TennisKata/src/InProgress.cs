@@ -2,7 +2,7 @@ namespace src;
 
 using Strategies;
 
-public class InProgress() : ITennisScoringStrategy
+public class InProgress : ITennisScoringStrategy
 {
     public string GetScore(int playerOnePoints, int playerTwoPoints)
     {

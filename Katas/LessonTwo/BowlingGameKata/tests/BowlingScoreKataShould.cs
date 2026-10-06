@@ -10,7 +10,7 @@ public class BowlingScoreKataShould
     [InlineData("1-|0|0|0|0|0|0|0|0|0||", 1)]
     [InlineData("2-|0|0|0|0|0|0|0|0|0||", 2)]
     [InlineData("3-|0|0|0|0|0|0|0|0|0||", 3)]
-    [InlineData("01|0|0|0|0|0|0|0|0|0||", 1)] 
+    [InlineData("01|0|0|0|0|0|0|0|0|0||", 1)]
     [InlineData("03|0|0|0|0|0|0|0|0|0||", 3)]
     [InlineData("03|02|0|0|0|0|0|0|0|0||", 5)]
     [InlineData("03|03|0|0|0|0|0|0|0|0||", 6)]
@@ -28,6 +28,5 @@ public class BowlingScoreKataShould
         var calculatedScore = BowlingScoreService.CalculateScore(scoreCard);
 
         calculatedScore.Should().Be(expectedScore);
-    } 
-    
+    }
 }

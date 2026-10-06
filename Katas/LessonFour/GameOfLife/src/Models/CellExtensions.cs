@@ -17,9 +17,11 @@ public static class CellExtensions
         var cellToRight = cell.GetCellToRight(cells);
         var cellToLeft = cell.GetCellToLeft(cells);
 
-        if (cellToLeft != null && cellToRight != null) return true;
+        if (cellToLeft != null && cellToRight != null)
+        {
+            return true;
+        }
+
         return false;
     }
-
-    
 }

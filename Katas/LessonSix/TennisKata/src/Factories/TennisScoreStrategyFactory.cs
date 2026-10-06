@@ -21,7 +21,7 @@ public class TennisScoreStrategyFactory
         {
             return new InProgress();
         }
-        
+
         throw new ArgumentOutOfRangeException(nameof(scoreType));
     }
 }

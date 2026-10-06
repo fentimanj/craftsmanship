@@ -4,17 +4,15 @@ public static class Kata
 {
     public static string TitleCase(string title, string minorWords = "")
     {
-       
-        
         var titleSplit = title.Split(' ');
-        
+
         if (title == "harry potter and dobby")
         {
             var firstWord = ConvertedWord(titleSplit[0]);
             var secondWord = ConvertedWord(titleSplit[1]);
             var thirdWord = titleSplit[2];
             var fourthWord = ConvertedWord(titleSplit[3]);
-            
+
             return $"{firstWord} {secondWord} {thirdWord} {fourthWord}";
         }
 
@@ -27,18 +25,17 @@ public static class Kata
         {
             return "Jenny Groover in Dark";
         }
-        
-        if(titleSplit.Length > 1)
+
+        if (titleSplit.Length > 1)
         {
-            string output = string.Empty;
-            
+            var output = string.Empty;
+
             foreach (var word in titleSplit)
             {
                 output += TitleCase(word) + " ";
             }
 
             return output.Trim();
-            
         }
 
         var convertedWord = ConvertedWord(title);

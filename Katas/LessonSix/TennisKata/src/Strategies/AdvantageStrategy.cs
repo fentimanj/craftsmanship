@@ -1,6 +1,6 @@
 namespace src.Strategies;
 
-public class AdvantageStrategy() : ITennisScoringStrategy
+public class AdvantageStrategy : ITennisScoringStrategy
 {
     public string GetScore(int playerOnePoints, int playerTwoPoints)
     {

@@ -6,7 +6,7 @@ public static class StringExtensions
     {
         return !str.Substring(1).DoesNotCapitalLetters();
     }
-    
+
     public static int IndexOfStartOfSecondWord(this string str)
     {
         var indexOfStartOfSecondWord = 1;
@@ -14,7 +14,7 @@ public static class StringExtensions
         for (var i = 1; i < str.Length; i++)
         {
             var currentChar = str[i];
-            if(currentChar.IsCapitalLetter())
+            if (currentChar.IsCapitalLetter())
             {
                 indexOfStartOfSecondWord = i;
                 break;

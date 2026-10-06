@@ -1,6 +1,6 @@
 namespace src.Strategies;
 
-public class TiedStrategy() : ITennisScoringStrategy
+public class TiedStrategy : ITennisScoringStrategy
 {
     public string GetScore(int playerOnePoints, int playerTwoPoints)
     {

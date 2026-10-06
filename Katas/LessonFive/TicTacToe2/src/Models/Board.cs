@@ -18,7 +18,7 @@ internal class Board
         { Position.BottomRowCentreColumn, Symbol.Space },
         { Position.BottomRowRightColumn, Symbol.Space }
     };
-    
+
     public void AddMove(Position position, Symbol symbol)
     {
         this.moves[position] = symbol;
@@ -27,7 +27,7 @@ internal class Board
     public Symbol WinningSymbol()
     {
         var winningSymbol = Symbol.Space;
-        
+
         if (this.ThreeInLeftColumn())
         {
             winningSymbol = this.moves[Position.TopRowLeftColumn];
@@ -42,7 +42,7 @@ internal class Board
         {
             winningSymbol = this.moves[Position.TopRowCentreColumn];
         }
-        
+
         if (winningSymbol != Symbol.Space)
         {
             return winningSymbol;
@@ -52,7 +52,7 @@ internal class Board
         {
             winningSymbol = this.moves[Position.TopRowRightColumn];
         }
-        
+
         if (winningSymbol != Symbol.Space)
         {
             return winningSymbol;
@@ -69,13 +69,13 @@ internal class Board
 
     private bool ThreeInCentreColumn()
     {
-        return this.moves[Position.TopRowCentreColumn] == this.moves[Position.MiddleRowCentreColumn] 
+        return this.moves[Position.TopRowCentreColumn] == this.moves[Position.MiddleRowCentreColumn]
                && this.moves[Position.TopRowCentreColumn] == this.moves[Position.BottomRowCentreColumn];
     }
-    
+
     private bool ThreeInLeftColumn()
     {
-        return this.moves[Position.TopRowLeftColumn] == this.moves[Position.MiddleRowLeftColumn] 
+        return this.moves[Position.TopRowLeftColumn] == this.moves[Position.MiddleRowLeftColumn]
                && this.moves[Position.TopRowLeftColumn] == this.moves[Position.BottomRowLeftColumn];
     }
 }

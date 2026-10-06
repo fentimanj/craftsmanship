@@ -3,6 +3,6 @@ namespace src.Enums;
 public enum GameState
 {
     Tied,
-    Advantage, 
+    Advantage,
     InProgress
 }

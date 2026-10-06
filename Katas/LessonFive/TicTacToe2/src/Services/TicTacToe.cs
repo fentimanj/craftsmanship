@@ -5,18 +5,18 @@ using Models;
 
 public class TicTacToe
 {
-    private Symbol currentSymbol = Symbol.X;
     private readonly Board board = new();
-    
+    private Symbol currentSymbol = Symbol.X;
+
     public Symbol CurrentSymbol()
     {
         return this.currentSymbol;
     }
-    
+
     public void TakeTurn(Position position)
     {
         this.board.AddMove(position, this.currentSymbol);
-        
+
         if (this.currentSymbol == Symbol.X)
         {
             this.currentSymbol = Symbol.O;

@@ -12,8 +12,8 @@ public class BreakCamelCaseShould
     {
         var splitWord = Kata.BreakCamelCase(input);
         splitWord.Should().Be(expected);
-    }  
-    
+    }
+
     [Theory]
     [InlineData("helloWorld", "hello World")]
     [InlineData("niceDay", "nice Day")]
@@ -23,7 +23,7 @@ public class BreakCamelCaseShould
         var splitWord = Kata.BreakCamelCase(input);
         splitWord.Should().Be(expected);
     }
-    
+
     [Theory]
     [InlineData("helloWorldEveryone", "hello World Everyone")]
     public void ReturnThreeWords_WhenWordIsSplit_GivenThreeWords(string input, string expected)

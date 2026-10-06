@@ -30,7 +30,12 @@
     &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10Should&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f698c3b7_002D3a31_002D48d2_002D848d_002D1b1c78e7bedd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Lesson10Should #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ecba1329_002D55cd_002D4196_002Db924_002D8db623da202f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RoverShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::tests.RoverShould&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f698c3b7_002D3a31_002D48d2_002D848d_002D1b1c78e7bedd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Lesson10Should #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::tests.Lesson10Should&lt;/TestId&gt;
   &lt;/TestAncestor&gt;

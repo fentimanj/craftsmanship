@@ -11,10 +11,10 @@ public class Game
 
     public void Play(char symbolAsChar, int x, int y) // We can't change this signature as it's the main public method
     {
-        var position= new Position(x,y);
+        var position = new Position(x, y);
 
         var symbol = symbolAsChar.CharToSymbol();
-        
+
         this.Play(symbol, position);
     }
 
@@ -62,5 +62,4 @@ public class Game
         var winner = this.board.HasWinner();
         return winner.SymbolToChar();
     }
-
 }

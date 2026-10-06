@@ -10,25 +10,25 @@ public class GameOfLife2Should
     {
         Cell[] seed = [];
         var universe = new Universe(seed);
-        
+
         universe.LiveCells().Should().Be(0);
     }
 
     [Fact]
     public void ReturnOne_WhenLiveCellsInvoked_GivenOneLiveCellInUniverseAndNoTick()
     {
-        Cell[] seed = [new Cell()];
+        Cell[] seed = [new()];
         var universe = new Universe(seed);
 
         universe.LiveCells().Should().Be(1);
     }
-    
+
     [Fact]
     public void ReturnZero_WhenLiveCellsInvoked_GivenTwoDeadCellInUniverseAndOneTick()
     {
         var cellOne = new Cell();
         var cellTwo = new Cell();
-        
+
         Cell[] seed = [cellOne, cellTwo];
         var universe = new Universe(seed);
 
@@ -49,12 +49,12 @@ public class GameOfLife2Should
         middleCell.Row = 1;
         rightCell.Column = 2;
         rightCell.Row = 1;
-        
+
         new Universe([leftCell, middleCell, rightCell]);
-        
+
         middleCell.GetState().Should().Be(CellState.NextGeneration);
     }
-    
+
     [Fact]
     public void ReturnUnderPopulated_WhenGetCellStateInvokedOnMiddleCell_GivenThreeCellsInARowAndNoTick()
     {
@@ -68,9 +68,9 @@ public class GameOfLife2Should
         middleCell.Row = 1;
         rightCell.Column = 2;
         rightCell.Row = 1;
-        
+
         new Universe([leftCell, middleCell, rightCell]);
-        
+
         leftCell.GetState().Should().Be(CellState.Dead);
     }
 
@@ -87,13 +87,13 @@ public class GameOfLife2Should
         middleCell.Row = 1;
         rightCell.Column = 2;
         rightCell.Row = 1;
-        
+
         var universe = new Universe([leftCell, middleCell, rightCell]);
         universe.Tick();
-        
+
         universe.LiveCells().Should().Be(1);
     }
-    
+
     [Fact]
     public void ReturnDead_WhenLiveCellsInvokedAfterOneTick_GivenThreeCellsInARow()
     {
@@ -107,13 +107,13 @@ public class GameOfLife2Should
         middleCell.Row = 1;
         rightCell.Column = 2;
         rightCell.Row = 1;
-        
+
         var universe = new Universe([leftCell, middleCell, rightCell]);
         universe.Tick();
-        
+
         leftCell.GetState().Should().Be(CellState.Dead);
     }
-    
+
     [Fact]
     public void ReturnZero_WhenLiveCellsInvokedAfterTwoTick_GivenThreeCellsInARow()
     {
@@ -127,7 +127,7 @@ public class GameOfLife2Should
         middleCell.Row = 1;
         rightCell.Column = 2;
         rightCell.Row = 1;
-        
+
         var universe = new Universe([leftCell, middleCell, rightCell]);
         universe.Tick();
         universe.Tick();

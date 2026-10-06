@@ -5,7 +5,9 @@ public static class Kata
     public static bool ValidParentheses(string input)
     {
         while (input.ContainsOpenAndCloseBrackets() && input.CanStillBeProcessed() && input.StartsCorrectly())
+        {
             input = input.RemoveMatchedPairs();
+        }
 
         return string.IsNullOrEmpty(input);
     }

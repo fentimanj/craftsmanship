@@ -21,28 +21,28 @@ public class KataShould
     [Fact]
     public void TestValidParentheses()
     {
-        DoTest(true, "()");
-        DoTest(true, "((()))");
-        DoTest(true, "()()()");
-        DoTest(true, "(()())()");
-        DoTest(true, "()(())((()))(())()");
+        this.DoTest(true, "()");
+        this.DoTest(true, "((()))");
+        this.DoTest(true, "()()()");
+        this.DoTest(true, "(()())()");
+        this.DoTest(true, "()(())((()))(())()");
     }
 
     [Fact]
     public void TestInvalidParentheses()
     {
-        DoTest(false, ")(");
-        DoTest(false, "()()(");
-        DoTest(false, "((())");
-        DoTest(false, "())(()");
-        DoTest(false, ")()");
-        DoTest(false, ")");
+        this.DoTest(false, ")(");
+        this.DoTest(false, "()()(");
+        this.DoTest(false, "((())");
+        this.DoTest(false, "())(()");
+        this.DoTest(false, ")()");
+        this.DoTest(false, ")");
     }
 
     [Fact]
     public void TestEmptyString()
     {
-        DoTest(true, "");
+        this.DoTest(true, "");
     }
 
 
