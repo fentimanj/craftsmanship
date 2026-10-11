@@ -7,24 +7,21 @@ public struct Position(int x, int y, Direction direction)
     private int x = x;
     private int y = y;
     private Direction direction = direction;
-
+    
     public void Move()
     {
-        switch (this.direction)
-        {
-            case Direction.East:
-                this.x++;
-                break;
-            case Direction.South:
-                this.y--;
-                break;
-            case Direction.West:
-                this.x--;
-                break;
-            case Direction.North:
-                this.y++;
-                break;
-        }
+        var movements = new Dictionary<Direction, Movement>()
+         {
+          { Direction.East, new Movement { XAxisAdjustment = 1, YAxisAdjustment = 0 } },
+          { Direction.South, new Movement { XAxisAdjustment = 0, YAxisAdjustment = -1 } },
+          { Direction.West, new Movement { XAxisAdjustment = -1, YAxisAdjustment = 0 } },
+          { Direction.North, new Movement { XAxisAdjustment = 0, YAxisAdjustment = 1 } },
+         };
+        
+        var movement = movements[this.direction];
+        
+        this.x += movement.XAxisAdjustment;
+        this.y += movement.YAxisAdjustment;
     }
 
     public void TurnClockwise()
