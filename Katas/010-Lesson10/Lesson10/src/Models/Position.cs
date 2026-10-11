@@ -27,26 +27,15 @@ public struct Position(int x, int y, Direction direction)
         }
     }
 
-    public void TurnRight()
+    public void TurnClockwise()
     {
-        if (this.direction == Direction.West)
-        {
-            this.direction = Direction.North;
-            return;
-        }
-
-        this.direction++;
+        this.direction = this.direction.TurnClockwise();
     }
-    
-    public void TurnLeft()
-    {
-        if (this.direction == Direction.North)
-        {
-            this.direction = Direction.West;
-            return;
-        }
 
-        this.direction--;
+
+    public void TurnAnticlockwise()
+    {
+        this.direction = this.direction.TurnAntiClockwise();
     }
 
     public override string ToString()

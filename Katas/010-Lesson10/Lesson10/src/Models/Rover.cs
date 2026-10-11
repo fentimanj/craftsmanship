@@ -24,10 +24,10 @@ public class Rover(Position startingPosition, Map? map = null)
         switch (command)
         {
             case Command.TurnRight:
-                this.currentPosition.TurnRight();
+                this.currentPosition.TurnClockwise();
                 break;
             case Command.TurnLeft:
-                this.currentPosition.TurnLeft();
+                this.currentPosition.TurnAnticlockwise();
                 break;
             case Command.Move:
                 this.ProcessMove();
