@@ -47,4 +47,18 @@ public class RoverShould
         var finalPosition = rover.CurrentPosition();
         finalPosition.Should().Be(expectedPosition);
     }
+
+    [Fact]
+    public void ReturnSamePostion_GivenMovesAndMap_WhenInstructionsTakeRoverOffMap()
+    {
+        var startingPosition = new Position(0, 0, Direction.South);
+        var rover = new Rover(startingPosition, new Map(10, 10));
+        
+        rover.TakeInstructions([Command.Move]);
+        
+        var expectedPosition = new Position(0, 0, Direction.South);
+        var finalPosition = rover.CurrentPosition();
+        
+        finalPosition.Should().Be(expectedPosition);
+    }
 }
