@@ -30,7 +30,7 @@ public struct Position(int x, int y, Direction direction)
     }
 
 
-    public void TurnAnticlockwise()
+    public void TurnAntiClockwise()
     {
         this.direction = this.direction.TurnAntiClockwise();
     }

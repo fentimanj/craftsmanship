@@ -2,7 +2,8 @@ namespace src.Models;
 
 using Enums;
 
-public class Rover(Position startingPosition, Map? map = null)
+
+public class Rover(Position startingPosition, Map map)
 {
     private Position currentPosition = startingPosition;
 
@@ -21,18 +22,15 @@ public class Rover(Position startingPosition, Map? map = null)
 
     private void ProcessCommand(Command command)
     {
-        switch (command)
+        var commands = new Dictionary<Command, Action>
         {
-            case Command.TurnRight:
-                this.currentPosition.TurnClockwise();
-                break;
-            case Command.TurnLeft:
-                this.currentPosition.TurnAnticlockwise();
-                break;
-            case Command.Move:
-                this.ProcessMove();
-                break;
-        }
+            { Command.TurnRight, () => this.currentPosition.TurnClockwise() },
+            { Command.TurnLeft, () => this.currentPosition.TurnAntiClockwise() },
+            { Command.Move, this.ProcessMove }
+        };
+
+        var executable = commands[command];
+        executable.Invoke();
     }
 
     private void ProcessMove()
@@ -40,11 +38,6 @@ public class Rover(Position startingPosition, Map? map = null)
         var stagedPosition = this.currentPosition;
         
         this.currentPosition.Move();
-        
-        if (map == null)
-        {
-            return;
-        }
 
         if (map.PositionOutRange(this.currentPosition))
         {

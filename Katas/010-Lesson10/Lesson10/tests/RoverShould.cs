@@ -26,7 +26,7 @@ public class RoverShould
     public void ReturnCorrectPosition_GivenMoves_WhenCheckingCurrentPosition(Command[] moves, Position expectedPosition)
     {
         var startingPosition = new Position(0, 0, Direction.North);
-        var rover = new Rover(startingPosition);
+        var rover = new Rover(startingPosition, new Map(10,10));
 
         rover.TakeInstruction(moves);
 
