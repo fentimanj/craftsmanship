@@ -7,6 +7,6 @@ public class Map(int width, int height)
 
     public bool PositionOutRange(Position currentPosition)
     {
-        return currentPosition.WithinRange(this.indexAdjustedWidth, this.indexAdjustedHeight);
+        return currentPosition.OutsideRange(this.indexAdjustedWidth, this.indexAdjustedHeight);
     }
 }

@@ -40,8 +40,10 @@ public struct Position(int x, int y, Direction direction)
         return $"{this.x}:{this.y}:{this.direction}";
     }
 
-    public bool WithinRange(int width, int height)
+    public bool OutsideRange(int width, int height)
     {
+        if (this.x < 0 || this.y < 0) return true;
+        
         return this.x > width || this.y > height;
     }
 }

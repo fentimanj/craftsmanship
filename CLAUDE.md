@@ -94,6 +94,52 @@ easier or more interesting.
 
 ## Current kata
 
+**Kata**: `Katas/010-Lesson10/Lesson10` — **Mars Rover** (problem
+statement in `src/README.md`; the top-level `ReadMe.md` is just a stub).
+
+**Objective**: John built a working rover test-first, then asked for a
+guided review against SOLID, the code-smell list and Object
+Calisthenics, and is now refactoring in RPP order. Same coaching
+contract as always: Claude asks questions and points at locations, and
+does not hand over fixes.
+
+**Status (2026-10-11)**: 11/11 tests green; working tree committed and
+clean. Files: `Rover` (takes a `Position` and a required `Map`; runs a
+`Command[]` through a `Dictionary<Command, Action>`; `ProcessMove`
+moves and then rolls back if the map says it's out of range), `Position`
+(a mutable `struct` holding `x`, `y` and a `Direction`; `Move()` looks
+up a `Movement` in a dictionary), `Movement` (two public get/set ints),
+`Map` (width/height), `Direction`/`Command` enums, and
+`DirectionExtensions` (C# 14 `extension` members `TurnClockwise`/
+`TurnAntiClockwise`, each a switch expression with a `_ =>` default arm).
+
+Done so far: Phase 1: `ToString()` was moved to the bottom of
+`Position`, and `Direction` no longer has explicit `0..3` values, because
+the turn logic moved out of enum arithmetic into the extension. Phase 5:
+both `switch` statements were replaced with dictionaries. `Map` went
+from optional to required, and the turn methods' naming is now
+consistent.
+
+**Open review questions** (raised as questions in the 2026-10-11
+review; no answers given; John to reason through them): the
+`Map.PositionOutRange` → `Position.WithinRange` names vs. what the
+expression returns, and which edges are checked; theory tests that now
+pass a `Map(10,10)` yet still expect negative coordinates; whether
+`Movement` is a Data Class or breaks the no-getters/setters rule; the
+dictionaries being rebuilt on every call; how many places hold
+knowledge about a `Direction` (Shotgun Surgery if a heading is added);
+the extension's two inverse tables and `_` arms; `Position` still being
+a mutable struct with three instance variables; `CurrentPosition()` as a
+getter; the scope gaps vs. the README (input parsing, multiple rovers,
+`"1 3 N"` output format); and small whitespace nits.
+
+**Next step**: John picks the earliest unclean RPP phase from the
+questions above and works through it.
+
+---
+
+### Previous kata: GameOfLife2 — paused (completion status not yet confirmed by John)
+
 **Kata**: `Katas/LessonNine/GameOfLife2`
 
 **Objective**: implement Conway's Game of Life, test-first. John
@@ -391,3 +437,15 @@ all three staying accurate. Add a new dated entry; don't rewrite history.
   with 7 green / 1 deliberately red test (self-as-neighbour case) left
   as a resume breadcrumb. See the Current-kata section above for the
   exact next-step framing in John's own words.
+- **2026-10-06 → 2026-10-11** — Moved on to Lesson 10, the **Mars
+  Rover** kata (`Katas/010-Lesson10/Lesson10`). The current kata in this
+  file still said GameOfLife2, so it was stale; GameOfLife2 is now
+  listed as previous, and whether it's finished or just paused still
+  needs John to confirm. John asked for a guided review against SOLID,
+  smells and Object Calisthenics, and got it as RPP-ordered questions
+  only. He then worked through it: moved `ToString()`; replaced enum
+  arithmetic turning with a C# 14 extension (`DirectionExtensions`),
+  which removed the explicit `Direction` values; replaced both `switch`
+  statements with dictionaries (adding `Movement`); and added a `Map`
+  with an edge test (now required by `Rover`). 11/11 green. See the
+  Current-kata section for the open review questions.

@@ -12,7 +12,7 @@ public class Rover(Position startingPosition, Map map)
         return this.currentPosition;
     }
 
-    public void TakeInstruction(Command[] moves)
+    public void TakeInstructions(Command[] moves)
     {
         foreach (var command in moves)
         {

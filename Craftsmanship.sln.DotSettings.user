@@ -8,6 +8,7 @@
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ANumber_002EParsing_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F5c9618319c8bb992a410d754c6fd33435b7db8e22e7bdf7763a9b3490c28a_003FNumber_002EParsing_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ASpanHelpers_002EByteMemOps_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fe462784e2f7c719eb9fcb54d0d3adb9c3e65c9e987c7fedffa3e5f219883385_003FSpanHelpers_002EByteMemOps_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AString_002EManipulation_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F195672332dabe555580baaf682491569dc3f825502d33d38978864d4679d_003FString_002EManipulation_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ATestInvoker_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F5e14a4e27990972fa4ae94975603bd298aaf328ee083c03b10569ee4724d57_003FTestInvoker_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ATestInvoker_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F5e14a4e27990972fa4ae94975603bd298aaf328ee083c03b10569ee4724d57_003FTestInvoker_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThrowHelper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2026_002E1_003Fresharper_002Dhost_003FSourcesCache_003F1b4992783078d7e4b19c3a2451a3156ebb1ea9e5ca26acc3fa3fdbcd71d618_003FThrowHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	
@@ -25,12 +26,12 @@
     &lt;TestId&gt;xUnit::4548DEE4-D96D-4552-84D7-234973B60AB1::net10.0::tests.GameShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ba2413f0_002D0fbd_002D4bee_002Dbe5d_002Db0f44e8cba5b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Lesson10Should" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ba2413f0_002D0fbd_002D4bee_002Dbe5d_002Db0f44e8cba5b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Lesson10Should" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10Should&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::tests.RoverShould.ReturnCorrectPosition_GivenMoves_WhenCheckingCurrentPosition&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ecba1329_002D55cd_002D4196_002Db924_002D8db623da202f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RoverShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ecba1329_002D55cd_002D4196_002Db924_002D8db623da202f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RoverShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::tests.RoverShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
