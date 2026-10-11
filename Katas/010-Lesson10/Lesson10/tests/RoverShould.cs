@@ -23,7 +23,7 @@ public class RoverShould
 
     [Theory]
     [MemberData(nameof(RoverMoveData))]
-    public void ReturnCorrectPosition_GivenMoves_WhenCheckingCurrentPosition(Command[] moves, Position expectedPosition)
+    public void ReturnCorrectPosition_GivenCommands_WhenCheckingCurrentPosition(Command[] moves, Position expectedPosition)
     {
         var startingPosition = new Position(5, 5, Direction.North);
         var rover = new Rover(startingPosition, new Map(10, 10));
@@ -35,7 +35,7 @@ public class RoverShould
     }
 
     [Fact]
-    public void ReturnCorrectPosition_GivenMovesAndMap_WhenCheckingCurrentPosition()
+    public void ReturnCorrectPosition_GivenCommandsToMoveOffMap_WhenCheckingCurrentPosition()
     {
         var startingPosition = new Position(0, 0, Direction.North);
         var map = new Map(1, 1);
@@ -49,7 +49,7 @@ public class RoverShould
     }
 
     [Fact]
-    public void ReturnSamePostion_GivenMovesAndMap_WhenInstructionsTakeRoverOffMap()
+    public void ReturnSamePostion_GivenCommands_WhenInstructionsTakeRoverOffMap()
     {
         var startingPosition = new Position(0, 0, Direction.South);
         var rover = new Rover(startingPosition, new Map(10, 10));

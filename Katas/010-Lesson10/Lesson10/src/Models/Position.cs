@@ -40,13 +40,19 @@ public struct Position(int x, int y, Direction direction)
         return $"{this.x}:{this.y}:{this.direction}";
     }
 
-    public bool OutsideRange(int width, int height)
+    public bool OutsideRange(int xAxisLimit, int yAxisLimit)
     {
-        if (this.x < 0 || this.y < 0)
-        {
-            return true;
-        }
+        return this.PositionDroppedOffBottomOfMap() || 
+               this.PositionExceededMapLimits(xAxisLimit, yAxisLimit);
+    }
 
-        return this.x > width || this.y > height;
+    private bool PositionExceededMapLimits(int xAxisLimit, int yAxisLimit)
+    {
+        return this.x > xAxisLimit || this.y > yAxisLimit;
+    }
+
+    private bool PositionDroppedOffBottomOfMap()
+    {
+        return this.x < 0 || this.y < 0;
     }
 }
