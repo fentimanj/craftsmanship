@@ -42,7 +42,7 @@ public struct Position(int x, int y, Direction direction)
 
     public bool OutsideRange(int xAxisLimit, int yAxisLimit)
     {
-        return this.PositionDroppedOffBottomOfMap() || 
+        return this.AxisPositionsLessThanZero() || 
                this.PositionExceededMapLimits(xAxisLimit, yAxisLimit);
     }
 
@@ -51,7 +51,7 @@ public struct Position(int x, int y, Direction direction)
         return this.x > xAxisLimit || this.y > yAxisLimit;
     }
 
-    private bool PositionDroppedOffBottomOfMap()
+    private bool AxisPositionsLessThanZero()
     {
         return this.x < 0 || this.y < 0;
     }
