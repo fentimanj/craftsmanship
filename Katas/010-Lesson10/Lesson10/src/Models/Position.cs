@@ -3,11 +3,25 @@ namespace Lesson10.src.Models;
 using Enums;
 using Extensions;
 
-public struct Position(int x, int y, Direction direction)
+public struct Position
 {
-    private int x = x;
-    private int y = y;
-    private Direction direction = direction;
+    public Position(int x, int y, Direction direction)
+    {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+    }
+    
+    public Position(Coordinates coordinates, Direction direction)
+    {
+        this.x = coordinates.X;
+        this.y = coordinates.Y;
+        this.direction = direction;
+    }
+    
+    private int x;
+    private int y;
+    private Direction direction;
 
     public void Move(Map map)
     {
