@@ -9,7 +9,19 @@ public struct Position(int x, int y, Direction direction)
     private int y = y;
     private Direction direction = direction;
 
-    public void Move()
+    public void Move(Map map)
+    {
+        var stagedPosition = this;
+        
+        this.StepForward();
+
+        if (map.PositionOutRange(this))
+        {
+            this = stagedPosition;
+        }
+    }
+
+    private void StepForward()
     {
         var movements = new Dictionary<Direction, Movement>
         {
@@ -55,17 +67,5 @@ public struct Position(int x, int y, Direction direction)
     private bool AxisPositionsLessThanZero()
     {
         return this.x < 0 || this.y < 0;
-    }
-    
-    public void ProcessMove(Map map)
-    {
-        var stagedPosition = this;
-        
-        this.Move();
-
-        if (map.PositionOutRange(this))
-        {
-            this = stagedPosition;
-        }
     }
 }

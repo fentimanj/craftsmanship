@@ -22,17 +22,20 @@ public class Rover(Position startingPosition, Map map)
 
     private void ProcessCommand(Command command)
     {
+        
+        //Factory Pattern here
+        
+        //Then
+        
+        //Strategy
         var commands = new Dictionary<Command, Action>
         {
             { Command.TurnRight, () => this.currentPosition.TurnClockwise() },
             { Command.TurnLeft, () => this.currentPosition.TurnAntiClockwise() },
-            { Command.Move, () => this.currentPosition.ProcessMove(map) },
-           
+            { Command.Move, () => this.currentPosition.Move(map) },
         };
 
         var executable = commands[command];
         executable.Invoke();
     }
-
- 
 }
