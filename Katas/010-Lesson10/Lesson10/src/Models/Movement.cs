@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace Lesson10.src.Models;
 
 internal sealed class Movement
 {

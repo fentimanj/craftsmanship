@@ -1,7 +1,7 @@
-namespace tests;
+namespace ValidParentheses.tests;
 
 using FluentAssertions;
-using src;
+using ValidParentheses.src;
 
 public class KataShould
 {

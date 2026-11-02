@@ -1,7 +1,7 @@
-namespace tests;
+namespace CaffineScriptKata.tests;
 
 using FluentAssertions;
-using src;
+using CaffineScriptKata.src;
 
 public class CaffeineBuzzShould
 {

@@ -1,3 +1,5 @@
+namespace EMCExample.tests;
+
 using FluentAssertions;
 
 public class EMCExampleShould

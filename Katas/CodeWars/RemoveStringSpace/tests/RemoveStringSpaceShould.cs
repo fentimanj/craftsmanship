@@ -1,3 +1,5 @@
+namespace RemoveStringSpace.tests;
+
 public class RemoveStringSpaceShould
 {
     [Fact]

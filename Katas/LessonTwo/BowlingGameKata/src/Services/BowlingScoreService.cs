@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace BowlingGameKata.src.Services;
 
 using Extensions;
 

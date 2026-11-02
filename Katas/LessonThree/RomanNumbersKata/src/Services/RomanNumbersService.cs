@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace RomanNumbersKata.src.Services;
 
 public class RomanNumbersService
 {

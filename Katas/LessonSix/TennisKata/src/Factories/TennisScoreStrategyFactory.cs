@@ -1,4 +1,4 @@
-namespace src.Factories;
+namespace TennisKata.src.Factories;
 
 using Enums;
 using Strategies;

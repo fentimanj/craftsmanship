@@ -1,7 +1,7 @@
-namespace tests;
+namespace BreakCamelCase.tests;
 
 using FluentAssertions;
-using src.Services;
+using BreakCamelCase.src.Services;
 
 public class BreakCamelCaseShould
 {

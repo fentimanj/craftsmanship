@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace GameOfLife2.src.Models;
 
 public class Universe(Cell[] seedingCells)
 {

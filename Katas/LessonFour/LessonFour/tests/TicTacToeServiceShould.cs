@@ -1,8 +1,8 @@
-namespace tests;
+namespace LessonFour.tests;
 
 using FluentAssertions;
-using src.Enums;
-using src.Services;
+using LessonFour.src.Enums;
+using LessonFour.src.Services;
 
 public class TicTacToeServiceShould
 {

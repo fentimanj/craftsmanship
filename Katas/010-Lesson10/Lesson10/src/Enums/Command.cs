@@ -1,4 +1,4 @@
-namespace src.Enums;
+namespace Lesson10.src.Enums;
 
 public enum Command
 {

@@ -1,4 +1,4 @@
-namespace src.Extensions;
+namespace TicTacToe2.src.Extensions;
 
 using Enums;
 

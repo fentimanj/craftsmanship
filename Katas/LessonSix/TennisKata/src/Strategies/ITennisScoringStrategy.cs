@@ -1,4 +1,4 @@
-namespace src.Strategies;
+namespace TennisKata.src.Strategies;
 
 public interface ITennisScoringStrategy
 {

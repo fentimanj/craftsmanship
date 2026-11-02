@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace TicTacToe2.src.Models;
 
 using Enums;
 

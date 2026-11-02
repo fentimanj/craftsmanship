@@ -1,4 +1,4 @@
-namespace src.Enums;
+namespace TennisKata.src.Enums;
 
 public enum GameState
 {

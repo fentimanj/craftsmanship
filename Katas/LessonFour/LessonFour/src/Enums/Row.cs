@@ -1,4 +1,4 @@
-namespace src.Enums;
+namespace LessonFour.src.Enums;
 
 public enum Row
 {

@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace GameOfLife.src.Services;
 
 using Models;
 

@@ -1,4 +1,4 @@
-namespace src.Extensions;
+namespace LeapYearKata.src.Extensions;
 
 internal static class LeapYearServiceExtensions
 {

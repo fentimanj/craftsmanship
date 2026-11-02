@@ -1,4 +1,4 @@
-namespace src;
+namespace CaffineScriptKata.src;
 
 public static class Kata
 {

@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace KnightVsRook.src.Models;
 
 public class Position(object[] rawPosition)
 {

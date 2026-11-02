@@ -1,7 +1,7 @@
-namespace tests;
+namespace KnightVsRook.tests;
 
 using FluentAssertions;
-using src;
+using KnightVsRook.src;
 
 public class KnightRookShould
 {

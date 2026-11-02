@@ -39,6 +39,13 @@ fi
 echo ""
 read -rp "Kata name: " KATA
 
+# The kata name becomes the root namespace (e.g. MarsRover.src.Models),
+# so it has to be a valid C# identifier
+if [[ ! "$KATA" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
+    echo "Error: kata name must be a valid C# identifier (letters, digits, underscores)" >&2
+    exit 1
+fi
+
 # --- Description ---
 echo ""
 read -rp "Short description: " DESCRIPTION
@@ -56,10 +63,11 @@ fi
 
 mkdir -p "$SRC_DIR" "$TESTS_DIR"
 
-cat > "$SRC_DIR/src.csproj" << 'CSPROJ'
+cat > "$SRC_DIR/src.csproj" << CSPROJ
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <RootNamespace>${KATA}.src</RootNamespace>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -68,10 +76,11 @@ cat > "$SRC_DIR/src.csproj" << 'CSPROJ'
 </Project>
 CSPROJ
 
-cat > "$TESTS_DIR/tests.csproj" << 'CSPROJ'
+cat > "$TESTS_DIR/tests.csproj" << CSPROJ
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <RootNamespace>${KATA}.tests</RootNamespace>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -98,6 +107,8 @@ cat > "$TESTS_DIR/tests.csproj" << 'CSPROJ'
 CSPROJ
 
 cat > "$TESTS_DIR/${KATA}Should.cs" << TESTCLASS
+namespace ${KATA}.tests;
+
 public class ${KATA}Should
 {
     [Fact]

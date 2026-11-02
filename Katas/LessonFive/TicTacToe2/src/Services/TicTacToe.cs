@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace TicTacToe2.src.Services;
 
 using Enums;
 using Models;

@@ -1,7 +1,7 @@
-namespace tests;
+namespace NthFibonacci.tests;
 
 using FluentAssertions;
-using src.Services;
+using NthFibonacci.src.Services;
 
 public class FibonacciServiceShould
 {

@@ -1,8 +1,8 @@
-namespace tests;
+namespace Lesson10.tests;
 
 using FluentAssertions;
-using src.Enums;
-using src.Models;
+using Lesson10.src.Enums;
+using Lesson10.src.Models;
 
 public class RoverShould
 {

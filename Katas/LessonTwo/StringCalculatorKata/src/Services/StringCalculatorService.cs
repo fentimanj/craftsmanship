@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace StringCalculatorKata.src.Services;
 
 using System.Data;
 using Extensions;

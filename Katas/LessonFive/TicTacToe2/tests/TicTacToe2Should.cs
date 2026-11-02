@@ -1,6 +1,8 @@
+namespace TicTacToe2.tests;
+
 using FluentAssertions;
-using src.Enums;
-using src.Services;
+using TicTacToe2.src.Enums;
+using TicTacToe2.src.Services;
 
 public class TicTacToe2Should
 {

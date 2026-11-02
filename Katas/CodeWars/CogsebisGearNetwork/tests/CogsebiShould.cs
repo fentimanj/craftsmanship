@@ -1,6 +1,7 @@
-namespace tests;
+namespace CogsebisGearNetwork.tests;
 
 using FluentAssertions;
+using CogsebisGearNetwork.src;
 
 public class CogsebiShould
 {

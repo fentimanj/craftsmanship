@@ -1,3 +1,5 @@
+namespace ROT13.tests;
+
 using FluentAssertions;
 
 public class Rot13Should

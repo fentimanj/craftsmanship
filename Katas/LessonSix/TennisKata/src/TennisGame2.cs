@@ -1,4 +1,4 @@
-using src;
+namespace TennisKata.src;
 
 public class TennisGame2 : ITennisGame
 {

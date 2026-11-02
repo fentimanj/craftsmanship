@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace GameOfLife.src.Models;
 
 public class Cell(GridPosition position)
 {

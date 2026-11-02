@@ -1,3 +1,5 @@
+namespace CogsebisGearNetwork.src;
+
 public class Cogsebi
 {
     public static double[] CalculateRpms(int[] gears, (int, int)[] connections, int driverId, double driverRpm)

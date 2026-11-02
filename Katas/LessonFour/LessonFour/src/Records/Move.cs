@@ -1,4 +1,4 @@
-namespace src.Records;
+namespace LessonFour.src.Records;
 
 using Enums;
 

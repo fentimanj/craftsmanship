@@ -1,4 +1,4 @@
-namespace src.Enums;
+namespace TicTacToeRefactor.src.Enums;
 
 public enum Symbol
 {

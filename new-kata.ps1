@@ -79,6 +79,12 @@ if ([string]::IsNullOrWhiteSpace($Kata)) {
     $Kata = Read-Host 'Kata name'
 }
 
+# The kata name becomes the root namespace (e.g. MarsRover.src.Models),
+# so it has to be a valid C# identifier
+if ($Kata -notmatch '^[A-Za-z_][A-Za-z0-9_]*$') {
+    throw 'Error: kata name must be a valid C# identifier (letters, digits, underscores)'
+}
+
 if ([string]::IsNullOrWhiteSpace($Description)) {
     Write-Host ''
     $Description = Read-Host 'Short description'
@@ -98,22 +104,24 @@ Invoke-Step "Create kata directories" {
     New-Item -Path $testsDir -ItemType Directory -Force | Out-Null
 }
 
-$srcCsproj = @'
+$srcCsproj = @"
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <RootNamespace>${Kata}.src</RootNamespace>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
 </Project>
-'@
+"@
 
-$testsCsproj = @'
+$testsCsproj = @"
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <RootNamespace>${Kata}.tests</RootNamespace>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -137,9 +145,11 @@ $testsCsproj = @'
     </ItemGroup>
 
 </Project>
-'@
+"@
 
 $testClass = @"
+namespace ${Kata}.tests;
+
 public class ${Kata}Should
 {
     [Fact]

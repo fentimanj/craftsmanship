@@ -1,7 +1,7 @@
-namespace Tennis;
+namespace TennisKata.tests;
 
 using NUnit.Framework;
-using src;
+using TennisKata.src;
 using Assert = NUnit.Framework.Assert;
 
 [TestFixture(0, 0, "Love-All")]

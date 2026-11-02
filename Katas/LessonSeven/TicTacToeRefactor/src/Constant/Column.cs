@@ -1,4 +1,4 @@
-namespace src.Constant;
+namespace TicTacToeRefactor.src.Constant;
 
 public enum Column
 {

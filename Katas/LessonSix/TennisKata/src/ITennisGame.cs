@@ -1,4 +1,4 @@
-namespace src;
+namespace TennisKata.src;
 
 public interface ITennisGame
 {

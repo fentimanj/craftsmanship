@@ -1,7 +1,7 @@
-namespace tests;
+namespace RomanNumbersKata.tests;
 
 using FluentAssertions;
-using src.Services;
+using RomanNumbersKata.src.Services;
 
 public class RomanNumbersServiceShould
 {

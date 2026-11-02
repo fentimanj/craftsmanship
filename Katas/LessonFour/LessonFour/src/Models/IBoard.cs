@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace LessonFour.src.Models;
 
 using Records;
 

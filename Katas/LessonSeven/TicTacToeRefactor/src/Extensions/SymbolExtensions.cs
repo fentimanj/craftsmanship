@@ -1,4 +1,4 @@
-namespace src.Extensions;
+namespace TicTacToeRefactor.src.Extensions;
 
 using Constant;
 using Enums;

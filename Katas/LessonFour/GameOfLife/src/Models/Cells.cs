@@ -1,4 +1,4 @@
-namespace src.Models;
+namespace GameOfLife.src.Models;
 
 public sealed class Cells(List<Cell> cells)
 {

@@ -1,4 +1,4 @@
-namespace src;
+namespace ValidParentheses.src;
 
 public static class Kata
 {

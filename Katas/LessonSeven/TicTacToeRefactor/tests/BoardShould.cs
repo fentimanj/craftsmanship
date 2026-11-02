@@ -1,10 +1,10 @@
-namespace tests;
+namespace TicTacToeRefactor.tests;
 
 using FluentAssertions;
-using src;
-using src.Constant;
-using src.Enums;
-using src.Models;
+using TicTacToeRefactor.src;
+using TicTacToeRefactor.src.Constant;
+using TicTacToeRefactor.src.Enums;
+using TicTacToeRefactor.src.Models;
 
 public class BoardShould
 {

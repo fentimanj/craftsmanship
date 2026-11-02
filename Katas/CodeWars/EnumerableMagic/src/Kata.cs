@@ -1,4 +1,4 @@
-namespace src;
+namespace EnumerableMagic.src;
 
 using System;
 using System.Linq;

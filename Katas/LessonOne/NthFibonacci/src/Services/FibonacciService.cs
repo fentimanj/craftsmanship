@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace NthFibonacci.src.Services;
 
 public static class FibonacciService
 {

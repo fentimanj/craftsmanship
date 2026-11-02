@@ -1,7 +1,7 @@
-namespace tests;
+namespace GameOfLife2.tests;
 
 using FluentAssertions;
-using src.Models;
+using GameOfLife2.src.Models;
 
 public class GameOfLife2Should
 {

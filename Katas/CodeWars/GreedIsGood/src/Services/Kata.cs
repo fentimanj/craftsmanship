@@ -1,4 +1,4 @@
-﻿namespace src.Services;
+﻿namespace GreedIsGood.src.Services;
 
 public static class Kata
 {

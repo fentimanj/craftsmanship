@@ -1,4 +1,4 @@
-namespace src.Extensions;
+namespace BowlingGameKata.src.Extensions;
 
 using Models;
 

@@ -1,8 +1,8 @@
-namespace tests;
+namespace StringCalculatorKata.tests;
 
 using System.Data;
 using FluentAssertions;
-using src.Services;
+using StringCalculatorKata.src.Services;
 
 public class StringCalculatorServiceShould
 {

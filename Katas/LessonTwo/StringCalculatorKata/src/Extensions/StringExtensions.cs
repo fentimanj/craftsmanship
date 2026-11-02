@@ -1,4 +1,4 @@
-namespace src.Extensions;
+namespace StringCalculatorKata.src.Extensions;
 
 internal static class StringExtensions
 {

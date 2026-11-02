@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace BreakCamelCase.src.Services;
 
 public static class StringExtensions
 {

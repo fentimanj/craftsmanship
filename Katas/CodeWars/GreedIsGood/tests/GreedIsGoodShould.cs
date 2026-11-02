@@ -1,5 +1,7 @@
+namespace GreedIsGood.tests;
+
 using FluentAssertions;
-using src.Services;
+using GreedIsGood.src.Services;
 
 public class GreedIsGoodShould
 {

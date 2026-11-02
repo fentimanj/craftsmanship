@@ -1,4 +1,4 @@
-namespace src.Extensions;
+namespace Lesson10.src.Extensions;
 
 using Enums;
 

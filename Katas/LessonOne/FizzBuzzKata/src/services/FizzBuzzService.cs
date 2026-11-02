@@ -1,4 +1,4 @@
-namespace src.services;
+namespace FizzBuzzKata.src.services;
 
 public class FizzBuzzService
 {

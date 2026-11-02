@@ -1,4 +1,4 @@
-namespace src;
+namespace KnightVsRook.src;
 
 using Extensions;
 using Models;

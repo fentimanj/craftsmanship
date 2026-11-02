@@ -1,7 +1,7 @@
-﻿namespace tests;
+﻿namespace FizzBuzzKata.tests;
 
 using FluentAssertions;
-using src.services;
+using FizzBuzzKata.src.services;
 
 public class FizzBuzzServiceShould
 {

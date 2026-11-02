@@ -1,4 +1,4 @@
-namespace src.Services;
+namespace TitleCase.src.Services;
 
 public static class Kata
 {
