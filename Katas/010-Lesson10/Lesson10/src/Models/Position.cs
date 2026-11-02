@@ -56,4 +56,16 @@ public struct Position(int x, int y, Direction direction)
     {
         return this.x < 0 || this.y < 0;
     }
+    
+    public void ProcessMove(Map map)
+    {
+        var stagedPosition = this;
+        
+        this.Move();
+
+        if (map.PositionOutRange(this))
+        {
+            this = stagedPosition;
+        }
+    }
 }

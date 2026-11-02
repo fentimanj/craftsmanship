@@ -26,22 +26,13 @@ public class Rover(Position startingPosition, Map map)
         {
             { Command.TurnRight, () => this.currentPosition.TurnClockwise() },
             { Command.TurnLeft, () => this.currentPosition.TurnAntiClockwise() },
-            { Command.Move, this.ProcessMove }
+            { Command.Move, () => this.currentPosition.ProcessMove(map) },
+           
         };
 
         var executable = commands[command];
         executable.Invoke();
     }
 
-    private void ProcessMove()
-    {
-        var stagedPosition = this.currentPosition;
-        
-        this.currentPosition.Move();
-
-        if (map.PositionOutRange(this.currentPosition))
-        {
-            this.currentPosition = stagedPosition;
-        }
-    }
+ 
 }
