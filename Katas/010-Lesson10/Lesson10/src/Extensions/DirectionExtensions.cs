@@ -1,4 +1,6 @@
-namespace src.Enums;
+namespace src.Extensions;
+
+using Enums;
 
 public static class DirectionExtensions
 {

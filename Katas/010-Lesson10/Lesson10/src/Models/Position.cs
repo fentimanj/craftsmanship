@@ -1,6 +1,7 @@
 namespace src.Models;
 
 using Enums;
+using Extensions;
 
 public struct Position(int x, int y, Direction direction)
 {
