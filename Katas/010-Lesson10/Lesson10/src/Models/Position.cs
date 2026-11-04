@@ -10,6 +10,8 @@ public struct Position
         this.x = x;
         this.y = y;
         this.direction = direction;
+       this.coordinates = new Coordinates(x, y);
+        
     }
     
     public Position(Coordinates coordinates, Direction direction)
@@ -17,8 +19,11 @@ public struct Position
         this.x = coordinates.X;
         this.y = coordinates.Y;
         this.direction = direction;
+        this.coordinates = coordinates;
+        
     }
     
+    private Coordinates coordinates;
     private int x;
     private int y;
     private Direction direction;
@@ -49,6 +54,7 @@ public struct Position
 
         this.x += movement.XAxisAdjustment;
         this.y += movement.YAxisAdjustment;
+        this.coordinates = new Coordinates(this.x, this.y);
     }
 
     public void TurnClockwise()
@@ -64,22 +70,17 @@ public struct Position
 
     public override string ToString()
     {
-        return $"{this.x}:{this.y}:{this.direction}";
+        return $"{this.x}:{this.y}:{this.direction}:{this.coordinates}";
     }
 
     public bool OutsideRange(int xAxisLimit, int yAxisLimit)
     {
-        return this.AxisPositionsLessThanZero() || 
+        return this.coordinates.AxisPositionsLessThanZero() || 
                this.PositionExceededMapLimits(xAxisLimit, yAxisLimit);
     }
 
     private bool PositionExceededMapLimits(int xAxisLimit, int yAxisLimit)
     {
         return this.x > xAxisLimit || this.y > yAxisLimit;
-    }
-
-    private bool AxisPositionsLessThanZero()
-    {
-        return this.x < 0 || this.y < 0;
     }
 }

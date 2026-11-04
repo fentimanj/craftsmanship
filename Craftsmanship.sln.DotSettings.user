@@ -26,7 +26,12 @@
     &lt;TestId&gt;xUnit::4548DEE4-D96D-4552-84D7-234973B60AB1::net10.0::tests.GameShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b868622e_002D8955_002D4ccc_002Da7ff_002Dce315d4d7993/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RoverShould #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=af50cc10_002Dd65d_002D4fea_002Da02c_002D7c02d1b5a2a5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReturnCorrectPosition_GivenCommands_WhenCheckingCurrentPosition" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10.tests.RoverShould.ReturnCorrectPosition_GivenCommands_WhenCheckingCurrentPosition&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b868622e_002D8955_002D4ccc_002Da7ff_002Dce315d4d7993/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RoverShould #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10.tests.RoverShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
@@ -41,7 +46,7 @@
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f698c3b7_002D3a31_002D48d2_002D848d_002D1b1c78e7bedd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Lesson10Should #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::tests.Lesson10Should&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10.tests.RoverShould.ReturnCorrectPosition_GivenCommands_WhenCheckingCurrentPosition&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	
