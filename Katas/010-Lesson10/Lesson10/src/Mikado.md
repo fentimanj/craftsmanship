@@ -10,6 +10,6 @@ GOAL:  Remove x and y primitives in code
     [ ] TurnClockwise should use coordinate
     [ ] TurnAntiClockwise should use coordinate
 [ ] Coordinate should make x and y private
-    [ ] AxisPositoins should use coordinate
+    [X] AxisPositoins should use coordinate
         [X] Coordinates should have it's own AxisPositionsLEssThanZero
-    [ ] PositionExceededMapLimits should use coordinate
+    [X] PositionExceededMapLimits should use coordinate

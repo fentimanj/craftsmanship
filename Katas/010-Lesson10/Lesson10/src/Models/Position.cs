@@ -10,17 +10,14 @@ public struct Position
         this.x = x;
         this.y = y;
         this.direction = direction;
-       this.coordinates = new Coordinates(x, y);
+        this.coordinates = new Coordinates(x, y);
         
     }
     
     public Position(Coordinates coordinates, Direction direction)
     {
-        this.x = coordinates.X;
-        this.y = coordinates.Y;
         this.direction = direction;
         this.coordinates = coordinates;
-        
     }
     
     private Coordinates coordinates;
@@ -76,11 +73,6 @@ public struct Position
     public bool OutsideRange(int xAxisLimit, int yAxisLimit)
     {
         return this.coordinates.AxisPositionsLessThanZero() || 
-               this.PositionExceededMapLimits(xAxisLimit, yAxisLimit);
-    }
-
-    private bool PositionExceededMapLimits(int xAxisLimit, int yAxisLimit)
-    {
-        return this.x > xAxisLimit || this.y > yAxisLimit;
+               this.coordinates.PositionExceededMapLimits(xAxisLimit, yAxisLimit);
     }
 }
