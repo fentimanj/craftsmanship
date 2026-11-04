@@ -26,5 +26,3 @@ public class Map(int width, int height)
         return x < 0 || y < 0;
     }
 }
-
-public record Coordinates(int Y, int X);
