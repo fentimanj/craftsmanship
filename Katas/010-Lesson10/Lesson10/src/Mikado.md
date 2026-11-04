@@ -8,4 +8,8 @@ GOAL:  Remove x and y primitives in code
     [ ] PositionExceededMapLimits should use coordinate
     [ ] AxisPosition should use coordinate
     [ ] TurnClockwise should use coordinate
-    [ ] TurnAntiClockwise should use coordinate[]
+    [ ] TurnAntiClockwise should use coordinate
+[ ] Coordinate should make x and y private
+    [ ] AxisPositoins should use coordinate
+        [X] Coordinates should have it's own AxisPositionsLEssThanZero
+    [ ] PositionExceededMapLimits should use coordinate
