@@ -5,13 +5,6 @@ using Extensions;
 
 public struct Position
 {
-    // public Position(int x, int y, Direction direction)
-    // {
-    //     this.direction = direction;
-    //     this.coordinates = new Coordinates(x, y);
-    //     
-    // }
-    
     public Position(Coordinates coordinates, Direction direction)
     {
         this.direction = direction;
