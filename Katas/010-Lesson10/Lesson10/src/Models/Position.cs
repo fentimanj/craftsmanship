@@ -3,16 +3,10 @@ namespace Lesson10.src.Models;
 using Enums;
 using Extensions;
 
-public struct Position
+public struct Position(Coordinates coordinates, Direction direction)
 {
-    public Position(Coordinates coordinates, Direction direction)
-    {
-        this.direction = direction;
-        this.coordinates = coordinates;
-    }
-    
-    private Coordinates coordinates;
-    private Direction direction;
+    private Coordinates coordinates = coordinates;
+    private Direction direction = direction;
 
     public void Move(Map map)
     {
@@ -57,9 +51,9 @@ public struct Position
         return $"{this.direction}:{this.coordinates}";
     }
 
-    public bool OutsideRange(Coordinates coordinates)
+    public bool OutsideRange(Coordinates inputCoordinates)
     {
         return this.coordinates.AxisPositionsLessThanZero() || 
-               this.coordinates.PositionExceededMapLimits(coordinates);
+               this.coordinates.PositionExceededMapLimits(inputCoordinates);
     }
 }
