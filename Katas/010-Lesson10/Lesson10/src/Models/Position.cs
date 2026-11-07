@@ -7,8 +7,6 @@ public struct Position
 {
     public Position(int x, int y, Direction direction)
     {
-        this.x = x;
-        this.y = y;
         this.direction = direction;
         this.coordinates = new Coordinates(x, y);
         
@@ -21,8 +19,6 @@ public struct Position
     }
     
     private Coordinates coordinates;
-    private int x;
-    private int y;
     private Direction direction;
 
     public void Move(Map map)
@@ -49,8 +45,6 @@ public struct Position
 
         var movement = movements[this.direction];
 
-        this.x += movement.XAxisAdjustment;
-        this.y += movement.YAxisAdjustment;
         this.coordinates = this.coordinates.AdjustBy(movement.XAxisAdjustment, movement.YAxisAdjustment); 
     }
 
@@ -67,12 +61,18 @@ public struct Position
 
     public override string ToString()
     {
-        return $"{this.x}:{this.y}:{this.direction}:{this.coordinates}";
+        return $"{this.direction}:{this.coordinates}";
     }
 
     public bool OutsideRange(int xAxisLimit, int yAxisLimit)
     {
         return this.coordinates.AxisPositionsLessThanZero() || 
-               this.coordinates.PositionExceededMapLimits(xAxisLimit, yAxisLimit);
+               this.coordinates.PositionExceededMapLimits(new Coordinates(xAxisLimit, yAxisLimit));
+    }
+
+    public bool OutsideRange(Coordinates coordinates)
+    {
+        return this.coordinates.AxisPositionsLessThanZero() || 
+               this.coordinates.PositionExceededMapLimits(this.coordinates);
     }
 }

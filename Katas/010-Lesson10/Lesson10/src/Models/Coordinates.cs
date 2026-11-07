@@ -10,9 +10,9 @@ public record Coordinates(int X, int Y)
         return this.X < 0 || this.Y < 0;
     }
 
-    public bool PositionExceededMapLimits(int xAxisLimit, int yAxisLimit)
+    public bool PositionExceededMapLimits(Coordinates coordinatesLimits)
     {
-        return this.X > xAxisLimit || this.Y > yAxisLimit;
+        return this.X > coordinatesLimits.X || this.Y > coordinatesLimits.Y;
     }
 
     public Coordinates AdjustBy(int xAxisAdjustment, int yAxisAdjustment)
@@ -21,5 +21,10 @@ public record Coordinates(int X, int Y)
         var adjustedY = this.Y + yAxisAdjustment;
 
         return new Coordinates(adjustedX, adjustedY);
+    }
+
+    public override string ToString()
+    {
+        return $"{this.X}:{this.Y}";
     }
 }
