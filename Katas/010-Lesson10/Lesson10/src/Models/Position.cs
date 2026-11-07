@@ -51,7 +51,7 @@ public struct Position
 
         this.x += movement.XAxisAdjustment;
         this.y += movement.YAxisAdjustment;
-        this.coordinates = new Coordinates(this.x, this.y);
+        this.coordinates = this.coordinates.AdjustBy(movement.XAxisAdjustment, movement.YAxisAdjustment); 
     }
 
     public void TurnClockwise()
