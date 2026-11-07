@@ -6,9 +6,9 @@ GOAL:  Remove x and y primitives in code
     [X] ToString should use coordinate
     [X] OutsideRange should use coordinate
     [X] PositionExceededMapLimits should use coordinate
-    [ ] AxisPosition should use coordinate
-    [ ] TurnClockwise should use coordinate
-    [ ] TurnAntiClockwise should use coordinate
+    [X] AxisPosition should use coordinate
+    [X] TurnClockwise should use coordinate
+    [X] TurnAntiClockwise should use coordinate
 [X] Coordinate should make x and y private
     [X] AxisPositoins should use coordinate
         [X] Coordinates should have it's own AxisPositionsLEssThanZero
