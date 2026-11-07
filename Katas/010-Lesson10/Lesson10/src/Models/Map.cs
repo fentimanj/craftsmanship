@@ -7,6 +7,11 @@ public class Map(int width, int height)
 
     public bool PositionOutRange(Position currentPosition)
     {
-        return currentPosition.OutsideRange(this.xAxisLimit, this.yAxisLimit);
+        return currentPosition.OutsideRange(new Coordinates(this.xAxisLimit, this.yAxisLimit));
+    }
+    
+    public bool PositionOutRange(Position currentPosition,  Coordinates coordinates)
+    {
+        return currentPosition.OutsideRange(coordinates);
     }
 }

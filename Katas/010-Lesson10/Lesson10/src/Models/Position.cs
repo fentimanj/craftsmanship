@@ -64,15 +64,9 @@ public struct Position
         return $"{this.direction}:{this.coordinates}";
     }
 
-    public bool OutsideRange(int xAxisLimit, int yAxisLimit)
-    {
-        return this.coordinates.AxisPositionsLessThanZero() || 
-               this.coordinates.PositionExceededMapLimits(new Coordinates(xAxisLimit, yAxisLimit));
-    }
-
     public bool OutsideRange(Coordinates coordinates)
     {
         return this.coordinates.AxisPositionsLessThanZero() || 
-               this.coordinates.PositionExceededMapLimits(this.coordinates);
+               this.coordinates.PositionExceededMapLimits(coordinates);
     }
 }
