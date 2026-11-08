@@ -19,6 +19,21 @@ public class Rover(Position startingPosition, Map map)
         }
     }
 
+    public void Move()
+    {
+        this.currentPosition.Move(map);
+    }
+
+    public void TurnLeft()
+    {
+        this.currentPosition.TurnAntiClockwise();
+    }
+
+    public void TurnRight()
+    {
+        this.currentPosition.TurnClockwise();
+    }
+    
     private void ProcessCommand(Command command)
     {
         var commands = new Dictionary<Command, Action>
