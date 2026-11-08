@@ -36,14 +36,14 @@ public class Rover(Position startingPosition, Map map)
     
     private void ProcessCommand(Command command)
     {
-        var commands = new Dictionary<Command, Action>
+        var commands = new Dictionary<Command, ICommand>
         {
-            { Command.TurnRight, () => this.currentPosition.TurnClockwise() },
-            { Command.TurnLeft, () => this.currentPosition.TurnAntiClockwise() },
-            { Command.Move, () => this.currentPosition.Move(map) },
+            { Command.TurnRight, new TurnRightCommand(this) },
+            { Command.TurnLeft, new TurnLeftCommand(this) },
+            { Command.Move, new MoveCommand(this) },
         };
 
         var executable = commands[command];
-        executable.Invoke();
+        executable.Execute();
     }
 }
