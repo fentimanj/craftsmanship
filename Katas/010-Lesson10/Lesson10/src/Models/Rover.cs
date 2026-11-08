@@ -2,7 +2,6 @@ namespace Lesson10.src.Models;
 
 using Enums;
 
-
 public class Rover(Position startingPosition, Map map)
 {
     private Position currentPosition = startingPosition;
