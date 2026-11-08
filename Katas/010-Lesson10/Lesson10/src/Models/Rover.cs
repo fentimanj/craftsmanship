@@ -36,14 +36,7 @@ public class Rover(Position startingPosition, Map map)
     
     private void ProcessCommand(CommandType commandType)
     {
-        var commands = new Dictionary<CommandType, ICommand>
-        {
-            { CommandType.TurnRight, new TurnRightCommand(this) },
-            { CommandType.TurnLeft, new TurnLeftCommand(this) },
-            { CommandType.Move, new MoveCommand(this) },
-        };
-
-        var executable = commands[commandType];
-        executable.Execute();
+        var command = CommandFactory.Build(commandType, this);
+        command.Execute();
     }
 }
