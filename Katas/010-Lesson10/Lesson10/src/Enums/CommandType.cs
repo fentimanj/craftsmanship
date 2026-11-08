@@ -1,6 +1,6 @@
 namespace Lesson10.src.Enums;
 
-public enum Command
+public enum CommandType
 {
     Move,
     TurnRight,

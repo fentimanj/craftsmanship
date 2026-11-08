@@ -11,7 +11,7 @@ public class Rover(Position startingPosition, Map map)
         return this.currentPosition;
     }
 
-    public void TakeInstructions(Command[] moves)
+    public void TakeInstructions(CommandType[] moves)
     {
         foreach (var command in moves)
         {
@@ -34,16 +34,16 @@ public class Rover(Position startingPosition, Map map)
         this.currentPosition.TurnClockwise();
     }
     
-    private void ProcessCommand(Command command)
+    private void ProcessCommand(CommandType commandType)
     {
-        var commands = new Dictionary<Command, ICommand>
+        var commands = new Dictionary<CommandType, ICommand>
         {
-            { Command.TurnRight, new TurnRightCommand(this) },
-            { Command.TurnLeft, new TurnLeftCommand(this) },
-            { Command.Move, new MoveCommand(this) },
+            { CommandType.TurnRight, new TurnRightCommand(this) },
+            { CommandType.TurnLeft, new TurnLeftCommand(this) },
+            { CommandType.Move, new MoveCommand(this) },
         };
 
-        var executable = commands[command];
+        var executable = commands[commandType];
         executable.Execute();
     }
 }
