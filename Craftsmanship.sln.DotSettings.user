@@ -19,6 +19,11 @@
     &lt;TestId&gt;xUnit::4548DEE4-D96D-4552-84D7-234973B60AB1::net10.0::tests.GameShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9452f744_002D8c3e_002D4b37_002D808f_002D95bbc7d7b34c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CharacterCopierShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::D34DE6A7-3341-486B-9E23-F61A702A595F::net10.0::CharacterCopier.tests.CharacterCopierShould&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a2795b25_002D0c96_002D499b_002Dab0d_002D370831f7fe43/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GameShould #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
@@ -31,7 +36,7 @@
     &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10.tests.RoverShould.ReturnCorrectPosition_GivenCommands_WhenCheckingCurrentPosition&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b13dac25_002Dd4f4_002D4eb5_002D877c_002D3fa9f9387507/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RoverShould #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b13dac25_002Dd4f4_002D4eb5_002D877c_002D3fa9f9387507/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RoverShould #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::843D56F6-B557-4BC4-889E-07C18834A28E::net10.0::Lesson10.tests.RoverShould&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
