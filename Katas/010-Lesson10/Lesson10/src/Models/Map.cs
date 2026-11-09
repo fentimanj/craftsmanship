@@ -2,12 +2,10 @@ namespace Lesson10.src.Models;
 
 public class Map(int width, int height)
 {
-    private readonly int xAxisLimit = width - 1;
-    private readonly int yAxisLimit = height - 1;
+    private readonly Coordinates Boundaries = new(width - 1, height - 1);
 
-    public bool PositionOutRange(Position currentPosition)
+    public Coordinates GetMaximumCoordinates()
     {
-        return currentPosition.OutsideRange(new Coordinates(this.xAxisLimit, this.yAxisLimit));
-
+        return this.Boundaries;
     }
 }

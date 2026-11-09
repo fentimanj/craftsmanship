@@ -15,10 +15,10 @@ public record Coordinates(int X, int Y)
         return this.X > coordinatesLimits.X || this.Y > coordinatesLimits.Y;
     }
 
-    public bool OutsideRange(Coordinates coordinates)
+    public bool OutsideRange(Coordinates boundaries)
     {
         return this.AxisPositionsLessThanZero() ||
-               this.PositionExceededMapLimits(coordinates);
+               this.PositionExceededMapLimits(boundaries);
     }
 
     public Coordinates AdjustBy(Coordinates coordinates)
@@ -32,5 +32,10 @@ public record Coordinates(int X, int Y)
     public override string ToString()
     {
         return $"{this.X}:{this.Y}";
+    }
+
+    public static bool OutsideRange(Coordinates inputCoordinates, Coordinates maximumCoordinates)
+    {
+        return inputCoordinates.OutsideRange(maximumCoordinates);
     }
 }

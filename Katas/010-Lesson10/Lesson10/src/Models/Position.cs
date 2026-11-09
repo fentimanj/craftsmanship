@@ -14,7 +14,7 @@ public struct Position(Coordinates coordinates, Direction direction)
         
         this.StepForward();
 
-        if (map.PositionOutRange(this))
+        if (Coordinates.OutsideRange(this.coordinates, map.GetMaximumCoordinates()))
         {
             this = stagedPosition;
         }
