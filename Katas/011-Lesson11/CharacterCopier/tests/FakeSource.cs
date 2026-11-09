@@ -2,11 +2,11 @@ namespace CharacterCopier.tests;
 
 using src;
 
-public class FakeSource : ISource
+public class FakeSource(char[] sourceChar) : ISource
 {
     public char GetChar()
     {
-        return 'a';
+        return sourceChar[0];
     }
     
 }

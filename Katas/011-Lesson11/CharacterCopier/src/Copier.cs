@@ -14,6 +14,7 @@ public class Copier
     public void Copy()
     {
         var nextChar = this.source.GetChar();
+        if(nextChar == '\n') return;
         this.destination.SetChar(nextChar);
     }
 }
