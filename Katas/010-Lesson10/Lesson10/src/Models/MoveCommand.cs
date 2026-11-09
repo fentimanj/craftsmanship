@@ -7,3 +7,14 @@ public class MoveCommand : ICommand
         rover.Move();
     }
 }
+
+public class RunForwardCommand : ICommand
+{
+    public void Execute(Rover rover)
+    {
+        rover.Move();
+        rover.Move();
+        rover.Move();
+        rover.Move();
+    }
+}

@@ -4,13 +4,14 @@ using Enums;
 
 public static class CommandFactory
 {
-    public static ICommand Build(CommandType commandType)
+    public static ICommand Build(this CommandType commandType)
     {
         return commandType switch
         {
             CommandType.Move => new MoveCommand(),
             CommandType.TurnLeft => new TurnLeftCommand(),
             CommandType.TurnRight => new TurnRightCommand(),
+            CommandType.Run => new RunForwardCommand(),
             _ => throw new ArgumentOutOfRangeException(nameof(commandType), commandType, null)
         };
     }

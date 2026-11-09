@@ -4,5 +4,6 @@ public enum CommandType
 {
     Move,
     TurnRight,
-    TurnLeft
+    TurnLeft,
+    Run
 }
