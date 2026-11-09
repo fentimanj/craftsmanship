@@ -13,9 +13,9 @@ public class StringExtentionsShould
             { "R", [CommandType.TurnRight] },
             { "L", [CommandType.TurnLeft] },
             { "MR", [CommandType.Move, CommandType.TurnRight] },
-            //  { "ML", [CommandType.Move, CommandType.TurnLeft] },
-            //  { "RML", [CommandType.TurnRight, CommandType.Move, CommandType.TurnLeft] },
-            //  { "MRML", [CommandType.Move, CommandType.TurnRight, CommandType.Move, CommandType.TurnLeft] }
+            { "ML", [CommandType.Move, CommandType.TurnLeft] },
+            { "RML", [CommandType.TurnRight, CommandType.Move, CommandType.TurnLeft] },
+            { "MRML", [CommandType.Move, CommandType.TurnRight, CommandType.Move, CommandType.TurnLeft] }
         };
 
 

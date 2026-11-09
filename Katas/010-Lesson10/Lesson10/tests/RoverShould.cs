@@ -84,15 +84,9 @@ public class RoverShould
         finalPosition.Should().Be(expectedPosition);
     }
 
-    //[Fact]
+    [Fact]
     public void ReturnCorrectPosition_GivenStringForMovementsInCommand_WhenCheckingCurrentPosition()
     {
-        /*
-         {
-                          new Position(new Coordinates(5, 5), Direction.North), [CommandType.TurnLeft, CommandType.Move],
-                          new Position(new Coordinates(4, 5), Direction.West), new Coordinates(9, 9)
-                      },
-         */
         var rover = new Rover( new Position(new Coordinates(5, 5), Direction.North), new Coordinates(9, 9));
 
         rover.TakeInstructions("LM");
