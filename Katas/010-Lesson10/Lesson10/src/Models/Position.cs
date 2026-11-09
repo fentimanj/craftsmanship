@@ -11,11 +11,10 @@ public struct Position(Coordinates coordinates, Direction direction)
     public void Move(Coordinates maximumCoordinates)
     {
         var stagedPosition = this;
-        var maxCoordinates = maximumCoordinates;
-        
+
         this.StepForward();
 
-        if (Coordinates.OutsideRange(this.coordinates, maxCoordinates))
+        if (Coordinates.OutsideRange(this.coordinates, maximumCoordinates))
         {
             this = stagedPosition;
         }
@@ -42,11 +41,5 @@ public struct Position(Coordinates coordinates, Direction direction)
     public override string ToString()
     {
         return $"{this.direction}:{this.coordinates}";
-    }
-
-    public bool OutsideRange(Coordinates inputCoordinates)
-    {
-        return this.coordinates.AxisPositionsLessThanZero() || 
-               this.coordinates.PositionExceededMapLimits(inputCoordinates);
     }
 }
