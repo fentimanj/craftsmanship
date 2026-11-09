@@ -6,7 +6,7 @@ using src;
 public class CharacterCopierShould
 {
     [Fact]
-    public void Return_When_Given()
+    public void ReturnCharsInDestination_WhenCopyInvoked_GivenSimpleSetup()
     {
         ISource source = new FakeSource();
         var destination= new SpyDestination();
