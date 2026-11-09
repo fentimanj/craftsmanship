@@ -26,4 +26,15 @@ public class CharacterCopierShould
         
         destination.Chars.Should().BeEmpty();
     }
+    
+    [Fact]
+    public void ReturnOneCharInDestination_WhenCopyInvoked_GivenOneCharAndANewLineInFakeSource()
+    {
+        ISource source = new FakeSource(['a', 'b']);
+        var destination= new SpyDestination();
+        Copier copier = new Copier(source, destination);
+        copier.Copy();
+
+        destination.Chars.Should().ContainInOrder('a', 'b');
+    }
 }

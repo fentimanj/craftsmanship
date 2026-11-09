@@ -4,9 +4,15 @@ using src;
 
 public class FakeSource(char[] sourceChar) : ISource
 {
+    private int indexCounter = 0;
     public char GetChar()
     {
-        return sourceChar[0];
+        if (indexCounter < sourceChar.Length)
+        {
+            return sourceChar[this.indexCounter++];
+        }
+
+        return '\n';
     }
     
 }

@@ -13,8 +13,13 @@ public class Copier
 
     public void Copy()
     {
+        
         var nextChar = this.source.GetChar();
-        if(nextChar == '\n') return;
-        this.destination.SetChar(nextChar);
+        while (nextChar != '\n')
+        {
+            this.destination.SetChar(nextChar);
+            nextChar = this.source.GetChar();
+        }
+
     }
 }
