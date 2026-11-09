@@ -1,7 +1,7 @@
 namespace TicTacToeRefactor.tests;
 
-using TicTacToeRefactor.src.Enums;
-using TicTacToeRefactor.src.Models;
+using src.Enums;
+using src.Models;
 
 public class GameShould
 {

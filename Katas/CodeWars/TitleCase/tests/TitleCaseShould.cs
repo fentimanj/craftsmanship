@@ -1,7 +1,7 @@
 namespace TitleCase.tests;
 
 using FluentAssertions;
-using TitleCase.src.Services;
+using src.Services;
 
 public class TitleCaseShould
 {

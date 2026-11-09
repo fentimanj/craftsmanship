@@ -25,7 +25,7 @@ public record Coordinates(int X, int Y)
     {
         var adjustedX = this.X + coordinates.X;
         var adjustedY = this.Y + coordinates.Y;
-        
+
         return new Coordinates(adjustedX, adjustedY);
     }
 

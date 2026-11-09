@@ -1,7 +1,7 @@
 namespace BowlingGameKata.tests;
 
 using FluentAssertions;
-using BowlingGameKata.src.Services;
+using src.Services;
 
 public class BowlingScoreKataShould
 {

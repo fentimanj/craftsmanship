@@ -2,7 +2,7 @@ namespace Lesson10.src.Enums;
 
 public enum Direction
 {
-    North,   
+    North,
     East,
     South,
     West

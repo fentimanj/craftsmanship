@@ -2,7 +2,7 @@ namespace StringCalculatorKata.tests;
 
 using System.Data;
 using FluentAssertions;
-using StringCalculatorKata.src.Services;
+using src.Services;
 
 public class StringCalculatorServiceShould
 {

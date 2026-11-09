@@ -1,7 +1,7 @@
 namespace EnumerableMagic.tests;
 
 using FluentAssertions;
-using EnumerableMagic.src;
+using src;
 
 public class OneShould
 {

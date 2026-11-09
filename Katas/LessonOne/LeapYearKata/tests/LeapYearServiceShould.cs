@@ -1,7 +1,7 @@
 namespace LeapYearKata.tests;
 
 using FluentAssertions;
-using LeapYearKata.src.Services;
+using src.Services;
 
 public class LeapYearServiceShould
 {

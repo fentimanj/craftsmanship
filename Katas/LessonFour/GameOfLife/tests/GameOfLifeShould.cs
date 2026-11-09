@@ -1,8 +1,8 @@
 namespace GameOfLife.tests;
 
 using FluentAssertions;
-using GameOfLife.src.Models;
-using GameOfLife.src.Services;
+using src.Models;
+using src.Services;
 
 public class GameOfLifeShould
 {
