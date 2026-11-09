@@ -15,7 +15,7 @@ public record Coordinates(int X, int Y)
         return this.X > coordinatesLimits.X || this.Y > coordinatesLimits.Y;
     }
 
-    public bool OutsideRange(Coordinates boundaries)
+    private bool OutsideRange(Coordinates boundaries)
     {
         return this.AxisPositionsLessThanZero() ||
                this.PositionExceededMapLimits(boundaries);
