@@ -2,7 +2,7 @@ namespace Lesson10.src.Models;
 
 using Enums;
 
-public class Rover(Position startingPosition, Map map, Coordinates? maximumCoordinates = null)
+public class Rover(Position startingPosition, Map map, Coordinates? maximumCoordinates)
 {
     private Position currentPosition = startingPosition;
 
