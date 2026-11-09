@@ -1,4 +1,6 @@
-namespace CharacterCopier.src;
+namespace CharacterCopier.tests;
+
+using src;
 
 public class SpyDestination : IDestination
 {
