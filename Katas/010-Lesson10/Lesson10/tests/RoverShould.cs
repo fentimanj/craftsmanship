@@ -34,7 +34,7 @@ public class RoverShould
     public void ReturnCorrectPosition_GivenCommands_WhenCheckingCurrentPosition(Position startingPosition, CommandType[] moves,
         Position expectedPosition, Map map, Coordinates? maximumCoordinates)
     {
-        var rover = new Rover(startingPosition, maximumCoordinates, map);
+        var rover = new Rover(startingPosition, maximumCoordinates);
 
         rover.TakeInstructions(moves);
 

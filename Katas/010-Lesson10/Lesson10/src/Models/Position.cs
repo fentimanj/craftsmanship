@@ -8,10 +8,10 @@ public struct Position(Coordinates coordinates, Direction direction)
     private Coordinates coordinates = coordinates;
     private Direction direction = direction;
 
-    public void Move(Map map, Coordinates maximumCoordinates)
+    public void Move(Coordinates maximumCoordinates)
     {
         var stagedPosition = this;
-        var maxCoordinates = maximumCoordinates ?? map.GetMaximumCoordinates();
+        var maxCoordinates = maximumCoordinates;
         
         this.StepForward();
 

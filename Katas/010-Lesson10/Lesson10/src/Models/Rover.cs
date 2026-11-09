@@ -2,12 +2,10 @@ namespace Lesson10.src.Models;
 
 using Enums;
 
-public class Rover(Position startingPosition, Coordinates maximumCoordinates, Map map)
+public class Rover(Position startingPosition, Coordinates maximumCoordinates)
 {
     private Position currentPosition = startingPosition;
 
-    private Coordinates MaximumCoordinates = maximumCoordinates ?? map.GetMaximumCoordinates();
-    
     public Position CurrentPosition()
     {
         return this.currentPosition;
@@ -23,7 +21,7 @@ public class Rover(Position startingPosition, Coordinates maximumCoordinates, Ma
 
     public void Move()
     {
-        this.currentPosition.Move(map, maximumCoordinates);
+        this.currentPosition.Move(maximumCoordinates);
     }
 
     public void TurnLeft()
