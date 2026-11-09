@@ -8,7 +8,7 @@ public class CharacterCopierShould
     [Fact]
     public void ReturnSingleCharsInDestination_WhenCopyInvoked_GivenSingleCharInFakeSource()
     {
-        ISource source = new FakeSource(['a']);
+        ISource source = new FakeSource(['a', '\n']);
         var destination= new SpyDestination();
         Copier copier = new Copier(source, destination);
         copier.Copy();
@@ -30,7 +30,7 @@ public class CharacterCopierShould
     [Fact]
     public void ReturnOneCharInDestination_WhenCopyInvoked_GivenOneCharAndANewLineInFakeSource()
     {
-        ISource source = new FakeSource(['a', 'b']);
+        ISource source = new FakeSource(['a', 'b', '\n']);
         var destination= new SpyDestination();
         Copier copier = new Copier(source, destination);
         copier.Copy();
