@@ -133,8 +133,31 @@ a mutable struct with three instance variables; `CurrentPosition()` as a
 getter; the scope gaps vs. the README (input parsing, multiple rovers,
 `"1 3 N"` output format); and small whitespace nits.
 
-**Next step**: John picks the earliest unclean RPP phase from the
-questions above and works through it.
+**Status (2026-11-08)**: 14/14 tests green, all committed. Since the
+10-11 review:
+- **Coordinates (Mikado, graph in `src/Mikado.md`)**: `Position` is now
+  `struct Position(Coordinates, Direction)` with no `x`/`y` ints.
+  `Coordinates` is a record with private `X`/`Y`, and it owns the range
+  checks and an immutable `AdjustBy` that returns a new `Coordinates`.
+  The tests build positions with `new Coordinates(x, y)`. In
+  `Mikado.md` every child is ticked, but the parent node "Position
+  should not have x and y as integers" is still `[ ]`.
+- **Command pattern** (requested by Alex): `ICommand { void Execute(); }`
+  with `MoveCommand`/`TurnLeftCommand`/`TurnRightCommand`, each holding
+  the `Rover`. `Rover` is the invoker (`TakeInstructions`) and the
+  receiver (public `Move`/`TurnLeft`/`TurnRight`). A static
+  `CommandFactory.Build(CommandType, Rover)` is the client. The enum
+  `Command` was renamed to `CommandType`. John's decisions: Rover is the
+  receiver, because a command holding a `Position` struct would mutate a
+  copy; there are two turn methods rather than `Turn(enum)`; the
+  factory's `switch` is acceptable; and Rover's thin delegating methods
+  aren't Middle Man, though the pattern is arguably Speculative
+  Generality until something like `Undo()` uses it.
+
+**Next step**: a full code review ahead of the lesson (planned for
+2026-11-09). Some of the 2026-10-11 open questions above are now stale
+(the dictionaries are gone, and `x`/`y` are gone), so re-check each one
+before raising it.
 
 ---
 
@@ -449,3 +472,17 @@ all three staying accurate. Add a new dated entry; don't rewrite history.
   statements with dictionaries (adding `Movement`); and added a `Map`
   with an edge test (now required by `Rover`). 11/11 green. See the
   Current-kata section for the open review questions.
+- **2026-11-02 → 2026-11-08** — Changed every kata's namespaces from
+  bare `src`/`tests` to `<Kata>.src…`/`<Kata>.tests…`, and added
+  `<RootNamespace>` to every csproj. Updated `new-kata.sh`/`.ps1` to
+  generate these, and to reject kata names that aren't valid C#
+  identifiers. Mars Rover: John replaced the `x`/`y` ints with a
+  `Coordinates` record using a Mikado graph (`src/Mikado.md`). Along the
+  way he hit the struct-holding-a-mutable-reference bug: a rollback
+  "copy" shared a mutated `Coordinates`, and since a record's
+  `ToString()` hides private members, the expected and actual values
+  printed the same. It was fixed by making `AdjustBy` immutable. He then
+  added the Command pattern, coached one question at a time (John asked
+  for that pace mid-session): `ICommand`, three command classes,
+  `Rover` as invoker and receiver, a `CommandFactory` as client, and
+  `Command` renamed to `CommandType`. 14/14 green.
