@@ -2,8 +2,8 @@ namespace CharacterCopier.src;
 
 public class Copier
 {
-    private readonly ISource source;
     private readonly IDestination destination;
+    private readonly ISource source;
 
     public Copier(ISource source, IDestination destination)
     {
@@ -13,13 +13,11 @@ public class Copier
 
     public void Copy()
     {
-        
         var nextChar = this.source.GetChar();
         while (nextChar != '\n')
         {
             this.destination.SetChar(nextChar);
             nextChar = this.source.GetChar();
         }
-
     }
 }
