@@ -1,6 +1,6 @@
 namespace CharacterCopier.src;
 
-public interface IDestination //COMMAND
+public interface IDestination 
 {
-    void SetChar(char character);  //MOCK OR SPY
+    void SetChar(char character);
 }

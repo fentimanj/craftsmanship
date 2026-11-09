@@ -32,9 +32,22 @@ public class CharacterCopierShould
     {
         ISource source = new FakeSource(['a', 'b', '\n']);
         var destination= new SpyDestination();
-        Copier copier = new Copier(source, destination);
+        var copier = new Copier(source, destination);
+        
         copier.Copy();
 
         destination.Chars.Should().ContainInOrder('a', 'b');
+    } 
+    
+    [Fact]
+    public void ReturnManyCharsDestination_WhenCopyInvoked_GivenOneCharAndANewLineInFakeSource()
+    {
+        ISource source = new FakeSource(['a', 'b', 'c', 'd', '\n']);
+        var destination= new SpyDestination();
+        var copier = new Copier(source, destination);
+        
+        copier.Copy();
+
+        destination.Chars.Should().ContainInOrder('a', 'b', 'c', 'd');
     }
 }
