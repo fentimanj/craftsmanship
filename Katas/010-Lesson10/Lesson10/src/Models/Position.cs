@@ -23,7 +23,7 @@ public struct Position(Coordinates coordinates, Direction direction)
 
     private void StepForward()
     {
-        var movementCoordinate = MovementFactory.BuildMovementCoordinate(this.direction);
+        var movementCoordinate = MovementFactory.BuildCoordinateAdjustment(this.direction);
 
         this.coordinates = this.coordinates.AdjustBy(movementCoordinate); 
     }

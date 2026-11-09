@@ -4,7 +4,7 @@ using Enums;
 
 public static class MovementFactory
 {
-    public static Coordinates BuildMovementCoordinate(Direction direction)
+    public static Coordinates BuildCoordinateAdjustment(Direction direction)
     {
         return direction switch
         {
