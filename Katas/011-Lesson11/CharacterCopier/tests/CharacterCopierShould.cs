@@ -10,43 +10,43 @@ public class CharacterCopierShould
     public void ReturnSingleCharsInDestination_WhenCopyInvoked_GivenSingleCharInFakeSource()
     {
         ISource source = new FakeSource(['a', '\n']);
-        var destination= new SpyDestination();
-        Copier copier = new Copier(source, destination);
+        var destination = new SpyDestination();
+        var copier = new Copier(source, destination);
         copier.Copy();
 
         destination.Chars.Should().Contain('a');
     }
 
-   //[Fact]
+    //[Fact]
     public void ReturnEmptyDestination_WhenCopyInvoked_GiveNewLineInFakeSource()
     {
         ISource source = new FakeSource(['\n']);
-        var destination= new SpyDestination();
-        Copier copier = new Copier(source, destination);
+        var destination = new SpyDestination();
+        var copier = new Copier(source, destination);
         copier.Copy();
-        
+
         destination.Chars.Should().BeEmpty();
     }
-    
-   // [Fact]
+
+    // [Fact]
     public void ReturnOneCharInDestination_WhenCopyInvoked_GivenOneCharAndANewLineInFakeSource()
     {
         ISource source = new FakeSource(['a', 'b', '\n']);
-        var destination= new SpyDestination();
+        var destination = new SpyDestination();
         var copier = new Copier(source, destination);
-        
+
         copier.Copy();
 
         destination.Chars.Should().ContainInOrder('a', 'b');
-    } 
-    
+    }
+
     //[Fact]
     public void ReturnManyCharsDestination_WhenCopyInvoked_GivenOneCharAndANewLineInFakeSource()
     {
         ISource source = new FakeSource(['a', 'b', 'c', 'd', '\n']);
-        var destination= new SpyDestination();
+        var destination = new SpyDestination();
         var copier = new Copier(source, destination);
-        
+
         copier.Copy();
 
         destination.Chars.Should().ContainInOrder('a', 'b', 'c', 'd');
@@ -57,28 +57,28 @@ public class CharacterCopierShould
     {
         var source = Substitute.For<ISource>();
         source.GetChar().Returns('a', '\n');
-        
+
         var destination = Substitute.For<IDestination>();
-        
+
         var copier = new Copier(source, destination);
         copier.Copy();
-        
+
         destination.Received(1).SetChar('a');
     }
-    
+
     [Fact]
     public void ReturnEmptyDestination_WhenCopyInvoked_GiveNewLineUsingNSubstitute()
     {
         var source = Substitute.For<ISource>();
         source.GetChar().Returns('\n');
-        
+
         var destination = Substitute.For<IDestination>();
         var copier = new Copier(source, destination);
         copier.Copy();
-        
+
         destination.Received(0).SetChar(Arg.Any<char>());
     }
-    
+
     [Fact]
     public void ReturnManyCharsDestination_WhenCopyInvoked_GivenOneCharAndANewLineUsingNSubstitute()
     {
@@ -86,11 +86,16 @@ public class CharacterCopierShould
         source.GetChar().Returns('a', 'b', 'c', 'd', '\n');
         var destination = Substitute.For<IDestination>();
         var copier = new Copier(source, destination);
-        
-        copier.Copy();
-        
-        destination.Received(4).SetChar(Arg.Any<char>());
 
+        copier.Copy();
+
+        Received.InOrder(() =>
+            {
+                destination.SetChar('a');
+                destination.SetChar('b');
+                destination.SetChar('c');
+                destination.SetChar('d');
+            }
+        );
     }
-    
 }
