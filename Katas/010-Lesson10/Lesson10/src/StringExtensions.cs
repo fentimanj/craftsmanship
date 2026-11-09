@@ -24,21 +24,21 @@ public static class StringExtensions
             return commands;
         }
 
-        if (commandsAsString[0] == 'M')
-        {
-            commands.Add(CommandType.Move);
-        }
-
-        if (commandsAsString[0] == 'R')
-        {
-            commands.Add(CommandType.TurnRight);
-        }
-
-        if (commandsAsString[0] == 'L')
-        {
-            commands.Add(CommandType.TurnLeft);
-        }
+        var command = CreateCommandType(commandsAsString[0]);
+        commands.Add(command);
 
         return commands;
+    }
+
+    private static CommandType CreateCommandType(char commandAsChar)
+    {
+        var charToCommandMap = new Dictionary<char, CommandType>()
+        {
+            { 'M', CommandType.Move },
+            { 'R', CommandType.TurnRight },
+            { 'L', CommandType.TurnLeft },
+        };
+
+        return charToCommandMap[commandAsChar];
     }
 }
