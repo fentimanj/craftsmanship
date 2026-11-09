@@ -22,17 +22,9 @@ public struct Position(Coordinates coordinates, Direction direction)
 
     private void StepForward()
     {
-        var movements = new Dictionary<Direction, Movement>
-        {
-            { Direction.East, new Movement { XAxisAdjustment = 1, YAxisAdjustment = 0 } },
-            { Direction.South, new Movement { XAxisAdjustment = 0, YAxisAdjustment = -1 } },
-            { Direction.West, new Movement { XAxisAdjustment = -1, YAxisAdjustment = 0 } },
-            { Direction.North, new Movement { XAxisAdjustment = 0, YAxisAdjustment = 1 } }
-        };
+        var movementCoordinate = MovementFactory.BuildMovementCoordinate(this.direction);
 
-        var movement = movements[this.direction];
-
-        this.coordinates = this.coordinates.AdjustBy(movement.XAxisAdjustment, movement.YAxisAdjustment); 
+        this.coordinates = this.coordinates.AdjustBy(movementCoordinate); 
     }
 
     public void TurnClockwise()

@@ -36,7 +36,7 @@ public class Rover(Position startingPosition, Map map)
     
     private void ProcessCommand(CommandType commandType)
     {
-        var command = CommandFactory.Build(commandType, this);
-        command.Execute();
+        var command = CommandFactory.Build(commandType);
+        command.Execute(this);
     }
 }

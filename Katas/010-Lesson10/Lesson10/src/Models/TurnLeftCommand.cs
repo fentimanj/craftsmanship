@@ -1,8 +1,8 @@
 namespace Lesson10.src.Models;
 
-public class TurnLeftCommand(Rover rover) : ICommand
+public class TurnLeftCommand : ICommand
 {
-    public void Execute()
+    public void Execute(Rover rover)
     {
         rover.TurnLeft();
     }

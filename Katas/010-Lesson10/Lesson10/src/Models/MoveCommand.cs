@@ -1,8 +1,8 @@
 namespace Lesson10.src.Models;
 
-public class MoveCommand(Rover rover) : ICommand
+public class MoveCommand : ICommand
 {
-    public void Execute()
+    public void Execute(Rover rover)
     {
         rover.Move();
     }

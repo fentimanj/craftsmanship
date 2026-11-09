@@ -15,11 +15,17 @@ public record Coordinates(int X, int Y)
         return this.X > coordinatesLimits.X || this.Y > coordinatesLimits.Y;
     }
 
-    public Coordinates AdjustBy(int xAxisAdjustment, int yAxisAdjustment)
+    public bool OutsideRange(Coordinates coordinates)
     {
-        var adjustedX = this.X + xAxisAdjustment;
-        var adjustedY = this.Y + yAxisAdjustment;
+        return this.AxisPositionsLessThanZero() ||
+               this.PositionExceededMapLimits(coordinates);
+    }
 
+    public Coordinates AdjustBy(Coordinates coordinates)
+    {
+        var adjustedX = this.X + coordinates.X;
+        var adjustedY = this.Y + coordinates.Y;
+        
         return new Coordinates(adjustedX, adjustedY);
     }
 
