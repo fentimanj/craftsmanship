@@ -19,6 +19,13 @@ public class Rover(Position startingPosition, Coordinates maximumCoordinates)
         }
     }
 
+    public void TakeInstructions(string moves)
+    {
+        var commands = moves.ParseCommands();
+        
+        this.TakeInstructions(commands);
+    }
+
     public void Move()
     {
         this.currentPosition.Move(maximumCoordinates);
