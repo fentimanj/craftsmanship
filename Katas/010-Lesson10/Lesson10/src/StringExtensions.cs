@@ -10,14 +10,14 @@ public static class StringExtensions
 
         while (!string.IsNullOrEmpty(commandsAsString))
         {
-            commands = BuildCommandTypes(commandsAsString, commands);
+            commands = BuildCommandTypesList(commandsAsString, commands);
             commandsAsString = commandsAsString[1..];
         }
         
         return commands.ToArray();
     }
 
-    private static List<CommandType> BuildCommandTypes(string commandsAsString, List<CommandType> commands)
+    private static List<CommandType> BuildCommandTypesList(string commandsAsString, List<CommandType> commands)
     {
         if (commandsAsString.Length == 0 || string.IsNullOrEmpty(commandsAsString) || commandsAsString.Length <= 0)
         {
